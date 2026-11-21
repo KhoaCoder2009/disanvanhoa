@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Compass, Landmark } from "lucide-react";
+import { ArrowRight, CheckCircle2, Compass, Landmark } from "lucide-react";
 import { SITE_CONFIG } from "@/config/externalLinks";
 import { AuroraParticlesCanvas } from "./effects/AuroraParticlesCanvas";
 
@@ -26,14 +26,22 @@ export const CallToActionAndFooter: React.FC = () => {
             Mỗi trang văn dân gian và sử thi đều ẩn chứa nguồn cảm hứng bất tận. Hãy bắt đầu hành trình giải mã văn hóa, thiết kế và chế tác sản phẩm sáng tạo của riêng bạn ngay hôm nay.
           </p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#chu-de-hoc-tap"
+            <Link
+              href="/#chu-de-hoc-tap"
               className="inline-flex items-center gap-2.5 rounded-xl bg-white px-7 py-3.5 text-sm sm:text-base font-bold text-heritage-crimson border-2 border-white shadow-cabinet transition-colors duration-200 hover:bg-heritage-woodDark hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <Compass className="h-5 w-5" aria-hidden="true" />
               <span>KHÁM PHÁ CÁC CHỦ ĐỀ HỌC TẬP</span>
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </a>
+            </Link>
+
+            <Link
+              href="/trac-nghiem"
+              className="inline-flex items-center gap-2.5 rounded-xl bg-heritage-woodDark px-7 py-3.5 text-sm sm:text-base font-bold text-white border-2 border-heritage-goldAntique/80 shadow-cabinet transition-colors duration-200 hover:bg-white hover:text-heritage-crimson focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            >
+              <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
+              <span>THỬ SỨC TRẮC NGHIỆM DI SẢN</span>
+            </Link>
           </div>
         </div>
       </section>
@@ -76,29 +84,34 @@ export const CallToActionAndFooter: React.FC = () => {
               </h3>
               <ul className="space-y-2 text-xs sm:text-sm text-white/90">
                 <li>
-                  <a href="#bao-tang-so" className="hover:text-heritage-goldSoft transition-colors">
+                  <Link href="/#bao-tang-so" className="hover:text-heritage-goldSoft transition-colors">
                     1. Bảo tàng số (Hồn Chèo, Sắc Tuồng, Hồn Nước)
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#chu-de-hoc-tap" className="hover:text-heritage-goldSoft transition-colors">
+                  <Link href="/#chu-de-hoc-tap" className="hover:text-heritage-goldSoft transition-colors">
                     2. Chủ đề học tập (Huyện đường &amp; Sử thi Đăm Săn)
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#xuong-steam" className="hover:text-heritage-goldSoft transition-colors">
+                  <Link href="/#xuong-steam" className="hover:text-heritage-goldSoft transition-colors">
                     3. Xưởng sáng tạo STEAM (Quy trình 5 bước)
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#trien-lam-so" className="hover:text-heritage-goldSoft transition-colors">
+                  <Link href="/#trien-lam-so" className="hover:text-heritage-goldSoft transition-colors">
                     4. Triển lãm số (Sản phẩm học tập)
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#dien-dan-hoc-tap" className="hover:text-heritage-goldSoft transition-colors">
+                  <Link href="/#dien-dan-hoc-tap" className="hover:text-heritage-goldSoft transition-colors">
                     5. Diễn đàn học tập (Thảo luận &amp; Nói - Nghe)
-                  </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/trac-nghiem" className="font-semibold text-heritage-goldSoft hover:text-white transition-colors">
+                    6. Trắc nghiệm Di sản Văn học &amp; STEAM
+                  </Link>
                 </li>
               </ul>
             </div>

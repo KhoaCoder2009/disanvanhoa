@@ -18,6 +18,7 @@ const NAV_ITEMS = [
   { label: "Xưởng STEAM", id: "xuong-steam", href: "/#xuong-steam" },
   { label: "Triển lãm số", id: "trien-lam-so", href: "/#trien-lam-so" },
   { label: "Diễn đàn học tập", id: "dien-dan-hoc-tap", href: "/#dien-dan-hoc-tap" },
+  { label: "Trắc nghiệm", id: "trac-nghiem", href: "/trac-nghiem" },
 ];
 
 interface QuickIndexEntry {
@@ -29,52 +30,59 @@ interface QuickIndexEntry {
 
 const HERITAGE_SEARCH_INDEX: QuickIndexEntry[] = [
   {
+    title: "Trắc nghiệm Di sản Văn học & STEAM (20 câu hỏi)",
+    subtitle:
+      "Chuyên trang ôn luyện Hồn Chèo, Sắc Tuồng Huyện đường, Múa rối nước, Đăm Săn & STEAM",
+    category: "Trắc nghiệm",
+    href: "/trac-nghiem",
+  },
+  {
     title: "Chặng 01: Bảo tàng số — Hồn Chèo (Xúy Vân giả dại)",
     subtitle: "Cuộn tới không gian sân khấu chiếu chèo truyền thống – Ngữ văn 10 Bài 5",
     category: "Bảo tàng số",
-    href: "#bao-tang-so",
+    href: "/#bao-tang-so",
   },
   {
     title: "Chặng 01: Bảo tàng số — Sắc Tuồng (Huyện đường)",
     subtitle: "Cuộn tới nghệ thuật hóa trang mặt nạ ước lệ & Trích đoạn Huyện đường",
     category: "Bảo tàng số",
-    href: "#bao-tang-so",
+    href: "/#bao-tang-so",
   },
   {
     title: "Chặng 01: Bảo tàng số — Hồn Nước (Múa rối nước)",
     subtitle: "Cuộn tới kiến trúc Thủy đình, con rối gỗ sung & Múa rối nước",
     category: "Bảo tàng số",
-    href: "#bao-tang-so",
+    href: "/#bao-tang-so",
   },
   {
     title: "Chặng 02: Chủ đề 01 — Mã màu và nét mặt ước lệ (Đang triển khai)",
     subtitle: "Cuộn tới hồ sơ giải mã 4 nhân vật: Tri huyện, Đề lại, Lính lệ, Trùm Sò",
     category: "Chủ đề học tập",
-    href: "#chu-de-hoc-tap",
+    href: "/#chu-de-hoc-tap",
   },
   {
     title: "Chặng 02: Chủ đề 02 — Đánh thức thế giới sử thi (Dự kiến phát triển)",
     subtitle: "Cuộn tới thiết kế hộp kể chuyện 3 lớp cảnh Đăm Săn đi bắt Nữ thần Mặt Trời",
     category: "Chủ đề học tập",
-    href: "#chu-de-hoc-tap",
+    href: "/#chu-de-hoc-tap",
   },
   {
     title: "Chặng 03: Xưởng sáng tạo STEAM & Bàn mô phỏng trực tuyến",
     subtitle: "Cuộn tới quy trình 5 bước thiết kế, 5 thành tố S-T-E-A-M & Bàn phối màu mặt nạ",
     category: "Xưởng STEAM",
-    href: "#xuong-steam",
+    href: "/#xuong-steam",
   },
   {
     title: "Chặng 04: Triển lãm số — Những sáng tạo từ trang sách",
     subtitle: "Cuộn tới bộ lọc 7 danh mục sản phẩm học tập: Mặt nạ, Hộp kể chuyện, Thủy đình",
     category: "Triển lãm số",
-    href: "#trien-lam-so",
+    href: "/#trien-lam-so",
   },
   {
     title: "Chặng 05: Diễn đàn học tập & Bảng Rubric Nói và Nghe",
     subtitle: "Cuộn tới câu hỏi thảo luận mở, cấu trúc bài thuyết trình & Cổng Padlet / Forms",
     category: "Diễn đàn",
-    href: "#dien-dan-hoc-tap",
+    href: "/#dien-dan-hoc-tap",
   },
 ];
 
@@ -194,19 +202,34 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Menu điều hướng Desktop (Cuộn mượt theo từng chặng Landing Page) */}
-          <nav aria-label="Điều hướng chính" className="hidden lg:flex items-center gap-0.5 xl:gap-1">
+          <nav aria-label="Điều hướng chính" className="hidden lg:flex items-center gap-0.5">
             {NAV_ITEMS.map((item) => {
               const isActive = isNavItemActive(item);
+              const navClass = `whitespace-nowrap rounded-lg px-2.5 py-1.5 text-[13px] font-medium tracking-[-0.005em] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson ${
+                isActive
+                  ? "bg-heritage-crimson text-white shadow-sm"
+                  : "text-heritage-ink hover:bg-heritage-ivoryDeep hover:text-heritage-crimson"
+              }`;
+
+              if (!item.href.startsWith("/#")) {
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={navClass}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+
               return (
                 <a
                   key={item.id}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.id)}
-                  className={`whitespace-nowrap rounded-lg px-2.5 xl:px-3 py-1.5 text-[13.5px] font-medium tracking-[-0.005em] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson ${
-                    isActive
-                      ? "bg-heritage-crimson text-white shadow-sm"
-                      : "text-heritage-ink hover:bg-heritage-ivoryDeep hover:text-heritage-crimson"
-                  }`}
+                  className={navClass}
                 >
                   {item.label}
                 </a>
@@ -223,7 +246,7 @@ export const Header: React.FC = () => {
               className="whitespace-nowrap inline-flex items-center gap-2 rounded-xl bg-heritage-ivoryLight px-3 py-2 text-xs font-semibold text-heritage-crimson border border-heritage-crimson/30 hover:bg-heritage-crimson hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
             >
               <Search className="h-3.5 w-3.5" aria-hidden="true" />
-              <span className="hidden xl:inline">Tra cứu học liệu</span>
+              <span className="hidden xl:inline">Tra cứu</span>
               <kbd className="hidden md:inline-block rounded bg-white px-1.5 py-0.5 font-mono text-[11px] text-heritage-crimson border border-heritage-crimson/25">
                 Ctrl K
               </kbd>
@@ -264,16 +287,31 @@ export const Header: React.FC = () => {
             <div className="flex flex-col space-y-1.5">
               {NAV_ITEMS.map((item) => {
                 const isActive = isNavItemActive(item);
+                const mobileClass = `rounded-lg px-4 py-2.5 text-base font-semibold transition-colors ${
+                  isActive
+                    ? "bg-heritage-crimson text-white"
+                    : "text-heritage-ink hover:bg-heritage-ivoryDeep hover:text-heritage-crimson"
+                }`;
+
+                if (!item.href.startsWith("/#")) {
+                  return (
+                    <Link
+                      key={item.id}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={mobileClass}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                }
+
                 return (
                   <a
                     key={item.id}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.id)}
-                    className={`rounded-lg px-4 py-2.5 text-base font-semibold transition-colors ${
-                      isActive
-                        ? "bg-heritage-crimson text-white"
-                        : "text-heritage-ink hover:bg-heritage-ivoryDeep hover:text-heritage-crimson"
-                    }`}
+                    className={mobileClass}
                   >
                     {item.label}
                   </a>
@@ -320,17 +358,19 @@ export const Header: React.FC = () => {
                 </div>
               ) : (
                 filteredEntries.map((entry, idx) => (
-                  <a
+                  <Link
                     key={idx}
                     href={entry.href}
                     onClick={(e) => {
                       setSearchOpen(false);
                       setSearchQuery("");
-                      const secId = entry.href.replace("#", "");
-                      const el = document.getElementById(secId);
-                      if (el) {
-                        e.preventDefault();
-                        el.scrollIntoView({ behavior: "smooth", block: "start" });
+                      if (pathname === "/" && entry.href.startsWith("/#")) {
+                        const secId = entry.href.replace("/#", "");
+                        const el = document.getElementById(secId);
+                        if (el) {
+                          e.preventDefault();
+                          el.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
                       }
                     }}
                     className="flex items-center justify-between gap-4 rounded-xl p-3 hover:bg-heritage-ivoryDeep transition-colors"
@@ -347,7 +387,7 @@ export const Header: React.FC = () => {
                       </p>
                     </div>
                     <ArrowRight className="h-4 w-4 shrink-0 text-heritage-crimson" />
-                  </a>
+                  </Link>
                 ))
               )}
             </div>
