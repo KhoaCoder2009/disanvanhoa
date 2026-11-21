@@ -293,7 +293,7 @@ export const HeritageQuizStudio: React.FC = () => {
                       scope === "all" ? "text-white/90" : "text-heritage-ink/80"
                     }`}
                   >
-                    Bao quát đủ 5 chuyên đề từ nghệ thuật sân khấu dân gian, sử thi Tây Nguyên tới phương pháp chế tác STEAM.
+                    Bao quát đủ 4 chuyên đề trọng tâm: Ngữ liệu Huyện đường, Mã màu 4 nhân vật, Sử thi Đăm Săn và Quy trình thiết kế STEAM.
                   </p>
                 </button>
 
