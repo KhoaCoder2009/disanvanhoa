@@ -64,12 +64,12 @@ function getMasteryBadge(percent: number): {
   if (percent >= 50) {
     return {
       title: "Người Khám phá Tri thức",
-      note: "Bạn đã nắm được các nét chính; nên ôn thêm mã màu Tuồng và cơ chế Múa rối nước.",
+      note: "Bạn đã nắm được các nét chính; nên ôn thêm mã màu Tuồng Huyện đường và bối cảnh Sử thi Đăm Săn.",
     };
   }
   return {
     title: "Hành trình Khởi đầu",
-    note: "Hãy ghé lại Bảo tàng số và Xưởng STEAM để củng cố ngữ liệu trước khi thử sức lại.",
+    note: "Hãy ghé lại Bảo tàng số và Xưởng STEAM để củng cố ngữ liệu Huyện đường & Đăm Săn trước khi thử sức lại.",
   };
 }
 
@@ -252,7 +252,7 @@ export const HeritageQuizStudio: React.FC = () => {
                 </span>
               </div>
               <p className="mt-2 text-sm sm:text-base text-heritage-ink/85">
-                Câu hỏi được biên soạn trực tiếp từ ngữ liệu Ngữ văn 10 (Chèo, Tuồng Huyện đường, Múa rối nước, Sử thi Đăm Săn) và Quy trình STEAM 5 bước.
+                Câu hỏi được biên soạn trực tiếp từ ngữ liệu Ngữ văn 10 (Dự án Tuồng đồ Huyện đường, Sử thi Đăm Săn) và Quy trình STEAM 5 bước.
               </p>
 
               {/* Hai gói đề tổng hợp */}
@@ -345,20 +345,28 @@ export const HeritageQuizStudio: React.FC = () => {
                 </button>
               </div>
 
-              {/* 5 Chuyên đề riêng lẻ */}
-              <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+              {/* 4 Chuyên đề riêng lẻ */}
+              <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {QUIZ_CATEGORIES.map((cat) => {
                   const count = QUIZ_QUESTIONS.filter(
                     (q) => q.category === cat.id
                   ).length;
                   const isSelected = scope === cat.id;
+                  const topBarClass =
+                    cat.accentColor === "emerald"
+                      ? "border-t-4 border-t-heritage-emerald"
+                      : cat.accentColor === "indigo"
+                      ? "border-t-4 border-t-heritage-indigo"
+                      : cat.accentColor === "bronze"
+                      ? "border-t-4 border-t-heritage-bronze"
+                      : "border-t-4 border-t-heritage-crimson";
 
                   return (
                     <button
                       key={cat.id}
                       type="button"
                       onClick={() => setScope(cat.id)}
-                      className={`group flex flex-col overflow-hidden rounded-2xl border-2 text-left transition-colors ${
+                      className={`group flex flex-col overflow-hidden rounded-2xl border-2 text-left transition-colors ${topBarClass} ${
                         isSelected
                           ? "bg-heritage-crimson text-white border-heritage-crimson shadow-museum"
                           : "bg-white text-heritage-ink border-heritage-crimson/20 hover:border-heritage-crimson"

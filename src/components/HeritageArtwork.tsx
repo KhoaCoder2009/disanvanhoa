@@ -11,13 +11,17 @@ interface HeritageArtworkProps {
 
 const MUSEUM_IMAGE_MAP: Partial<Record<ArtSubject, string>> = {
   "hero-stage": "/images/cinema/scene-01-di-san.png",
-  "cheo-xuy-van": "/images/cinema/scene-02-hon-cheo.png",
   "tuong-huyen-duong": "/images/cinema/scene-03-sac-tuong.png",
-  "mua-roi-nuoc": "/images/cinema/scene-04-hon-nuoc.png",
+  "huyen-duong-court": "/images/cinema/scene-07-huyen-duong.png",
   "epic-dam-san": "/images/cinema/scene-05-dam-san-steam.png",
-  "exhibit-mask-set": "/images/cinema/scene-09-xuong-steam.png",
+  "dam-san-longhouse": "/images/cinema/scene-dam-san-nha-dai.png",
+  "dam-san-sun-goddess": "/images/cinema/scene-dam-san-mat-troi.png",
+  "exhibit-mask-set": "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
   "exhibit-storybox": "/images/cinema/scene-05-dam-san-steam.png",
-  "exhibit-water-stage": "/images/cinema/scene-08-co-hoc-roi.png",
+  "exhibit-longhouse": "/images/cinema/scene-dam-san-nha-dai.png",
+  "exhibit-infographic": "/images/cinema/scene-vi-dien-podcast.png",
+  "exhibit-micro-acting": "/images/cinema/scene-07-huyen-duong.png",
+  "exhibit-podcast": "/images/cinema/scene-dam-san-mat-troi.png",
 };
 
 /**
@@ -208,25 +212,11 @@ export const HeritageArtwork: React.FC<HeritageArtworkProps> = ({
               </g>
             ))}
 
-            {/* Bên trái: Bản vẽ nan quạt Chèo cổ */}
-            <g transform="translate(155, 310)">
-              <path
-                d="M 0 0 L -68 -88 A 110 110 0 0 1 68 -88 Z"
-                fill="url(#crimson-fill)"
-                stroke="#D6B77E"
-                strokeWidth="1.6"
-              />
-              <path
-                d="M -52 -68 A 85 85 0 0 1 52 -68"
-                fill="none"
-                stroke="#D6B77E"
-                strokeWidth="0.9"
-                strokeDasharray="3 3"
-              />
-              {[-50, -30, -10, 10, 30, 50].map((dx, i) => (
-                <line key={i} x1="0" y1="0" x2={dx} y2="-92" stroke="#D6B77E" strokeWidth="0.9" strokeOpacity="0.8" />
-              ))}
-              <circle cx="0" cy="0" r="4.5" fill="#D6B77E" />
+            {/* Bên trái: Cồng chiêng & Hoa văn Sử thi Đăm Săn */}
+            <g transform="translate(155, 255)">
+              <circle cx="0" cy="0" r="56" fill="url(#gold-stroke)" stroke="#F2E8D5" strokeWidth="1.6" />
+              <circle cx="0" cy="0" r="24" fill="url(#crimson-fill)" stroke="#D6B77E" strokeWidth="1.4" />
+              <circle cx="0" cy="0" r="8" fill="#D6B77E" />
             </g>
 
             {/* Bên phải: Bản khắc đường nét ước lệ Mặt nạ Tuồng cổ (Không dùng nét mặt hoạt hình) */}
@@ -269,66 +259,6 @@ export const HeritageArtwork: React.FC<HeritageArtworkProps> = ({
               strokeWidth="1.1"
               strokeOpacity="0.65"
             />
-          </g>
-        )}
-
-        {/* 2. HỒN CHÈO: Bản vẽ Quạt Chèo, Trống Đế & Chiếu Sân Đình */}
-        {subject === "cheo-xuy-van" && (
-          <g>
-            {/* Khung mặt bằng chiếu chèo */}
-            <rect x="110" y="336" width="580" height="72" fill="#7A2925" fillOpacity="0.35" stroke="#D6B77E" strokeWidth="1.2" />
-            <rect x="122" y="346" width="556" height="52" fill="none" stroke="#A77B3D" strokeWidth="0.8" strokeDasharray="6 4" />
-
-            {/* Chiếc quạt giấy 11 nan khắc tỉ mỉ */}
-            <path
-              d="M 400 336 L 208 144 A 270 270 0 0 1 592 144 Z"
-              fill="url(#crimson-fill)"
-              stroke="#D6B77E"
-              strokeWidth="2.2"
-            />
-            <path
-              d="M 244 180 A 220 220 0 0 1 556 180"
-              fill="none"
-              stroke="#D6B77E"
-              strokeWidth="1"
-              strokeOpacity="0.7"
-            />
-            <path
-              d="M 284 220 A 164 164 0 0 1 516 220"
-              fill="none"
-              stroke="#D6B77E"
-              strokeWidth="0.8"
-              strokeDasharray="4 4"
-              strokeOpacity="0.6"
-            />
-            {[-180, -144, -108, -72, -36, 0, 36, 72, 108, 144, 180].map((offset, i) => (
-              <line
-                key={i}
-                x1="400"
-                y1="336"
-                x2={400 + offset}
-                y2={98 + Math.abs(offset) * 0.24}
-                stroke="#D6B77E"
-                strokeWidth="1.1"
-                strokeOpacity="0.8"
-              />
-            ))}
-            <circle cx="400" cy="336" r="8" fill="#D6B77E" stroke="#2D211B" strokeWidth="2" />
-
-            {/* Trống chèo & Phách nhịp */}
-            <g transform="translate(170, 275)">
-              <circle cx="0" cy="0" r="42" fill="#F2E8D5" stroke="#A77B3D" strokeWidth="4" />
-              <circle cx="0" cy="0" r="32" fill="none" stroke="#7A2925" strokeWidth="1.2" strokeDasharray="3 3" />
-              <circle cx="0" cy="0" r="12" fill="#7A2925" fillOpacity="0.8" />
-            </g>
-
-            {/* Biểu đồ nhịp phách làn điệu */}
-            <g transform="translate(565, 255)">
-              <line x1="0" y1="0" x2="120" y2="0" stroke="#A77B3D" strokeWidth="0.8" />
-              <path d="M 0 0 Q 15 -28 30 0 T 60 0 T 90 0 T 120 0" fill="none" stroke="#D6B77E" strokeWidth="1.8" />
-              <circle cx="30" cy="0" r="3" fill="#D6B77E" />
-              <circle cx="90" cy="0" r="3" fill="#D6B77E" />
-            </g>
           </g>
         )}
 
@@ -478,53 +408,6 @@ export const HeritageArtwork: React.FC<HeritageArtworkProps> = ({
                 </text>
               </g>
             ))}
-          </g>
-        )}
-
-        {/* 4. HỒN NƯỚC: Mặt cắt Kỹ thuật Thủy Đình & Cơ cấu Máy Sào - Máy Dây */}
-        {(subject === "mua-roi-nuoc" || subject === "exhibit-water-stage") && (
-          <g>
-            {/* Mặt hồ & Tầng nước ngầm */}
-            <rect x="60" y="318" width="680" height="128" fill="url(#moss-fill)" fillOpacity="0.78" stroke="#A77B3D" strokeWidth="1.2" />
-            <line x1="60" y1="318" x2="740" y2="318" stroke="#D6B77E" strokeWidth="2" />
-
-            {/* Kiến trúc mái Thủy Đình */}
-            <path
-              d="M 180 148 Q 225 168 270 142 L 400 104 L 530 142 Q 575 168 620 148 Q 582 178 542 172 L 258 172 Q 218 178 180 148 Z"
-              fill="url(#crimson-fill)"
-              stroke="#D6B77E"
-              strokeWidth="1.8"
-            />
-            <path
-              d="M 225 180 L 400 148 L 575 180 L 542 204 L 258 204 Z"
-              fill="url(#gold-stroke)"
-            />
-
-            {/* Buồng trò & Mành tre */}
-            <rect x="275" y="204" width="250" height="114" fill="#3B281E" stroke="#D6B77E" strokeWidth="1.4" />
-            {[295, 315, 335, 355, 375, 395, 415, 435, 455, 475, 495].map((xPos) => (
-              <line key={xPos} x1={xPos} y1="204" x2={xPos} y2="318" stroke="#D6B77E" strokeWidth="0.9" strokeOpacity="0.45" />
-            ))}
-
-            {/* Sơ đồ cơ học sào tre & ròng rọc ngầm dưới mặt nước */}
-            <line x1="360" y1="318" x2="230" y2="392" stroke="#D6B77E" strokeWidth="2.2" strokeDasharray="5 4" />
-            <line x1="440" y1="318" x2="570" y2="392" stroke="#D6B77E" strokeWidth="2.2" strokeDasharray="5 4" />
-            <circle cx="230" cy="392" r="5" fill="#D6B77E" />
-            <circle cx="570" cy="392" r="5" fill="#D6B77E" />
-            <line x1="230" y1="392" x2="230" y2="345" stroke="#F2E8D5" strokeWidth="2" />
-            <line x1="570" y1="392" x2="570" y2="345" stroke="#F2E8D5" strokeWidth="2" />
-
-            {/* Ký hiệu quân rối trên mặt nước */}
-            <path d="M 212 345 L 230 308 L 248 345 Z" fill="url(#crimson-fill)" stroke="#D6B77E" strokeWidth="1.5" />
-            <path d="M 552 345 L 570 308 L 588 345 Z" fill="url(#gold-stroke)" stroke="#7A2925" strokeWidth="1.5" />
-
-            {/* Nhãn chú thích bản vẽ kỹ thuật */}
-            <text x="400" y="265" textAnchor="middle" fill="#F2E8D5" fontSize="11" fontWeight="600" letterSpacing="1.5">
-              BUỒNG TRÒ (HẬU TRƯỜNG MÀNH TRE)
-            </text>
-            <text x="400" y="388" textAnchor="middle" fill="#D6B77E" fontSize="10.5" fontWeight="600" letterSpacing="1.5">
-              HỆ THỐNG MÁY SÀO &amp; DÂY ĐIỀU KHIỂN NGẦM
-            </text>
           </g>
         )}
 

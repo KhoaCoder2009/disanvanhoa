@@ -1,9 +1,8 @@
 export type QuizCategoryId =
-  | "hon-cheo"
-  | "sac-tuong"
-  | "hon-nuoc"
-  | "dam-san"
-  | "steam";
+  | "huyen-duong-van-ban"
+  | "huyen-duong-mat-na"
+  | "su-thi-dam-san"
+  | "steam-du-an";
 
 export type QuizDifficulty =
   | "Nhận biết"
@@ -14,6 +13,7 @@ export interface QuizCategoryMeta {
   id: QuizCategoryId;
   label: string;
   shortLabel: string;
+  accentColor: "crimson" | "bronze" | "emerald" | "indigo";
   description: string;
   artworkImage: string;
 }
@@ -33,445 +33,437 @@ export interface QuizQuestion {
 
 export const QUIZ_CATEGORIES: QuizCategoryMeta[] = [
   {
-    id: "hon-cheo",
-    label: "Hồn Chèo & Xúy Vân giả dại",
-    shortLabel: "Hồn Chèo",
+    id: "huyen-duong-van-ban",
+    label: "Dự án Huyện đường: Ngữ liệu & Châm biếm",
+    shortLabel: "Ngữ liệu Huyện đường",
+    accentColor: "crimson",
     description:
-      "Không gian chiếu chèo sân đình, tiếng đế, làn điệu dân ca và bi kịch nội tâm của Xúy Vân.",
-    artworkImage: "/images/cinema/scene-02-hon-cheo.png",
+      "Bối cảnh công đường Nghêu, Sò, Ốc, Hến, lời thoại tự xưng và bút pháp trào phúng.",
+    artworkImage: "/images/cinema/scene-07-huyen-duong.png",
   },
   {
-    id: "sac-tuong",
-    label: "Sắc Tuồng & Huyện đường",
-    shortLabel: "Sắc Tuồng",
+    id: "huyen-duong-mat-na",
+    label: "Dự án Huyện đường: Mã màu & 4 Nhân vật",
+    shortLabel: "Mặt nạ 4 Nhân vật",
+    accentColor: "bronze",
     description:
-      "Nghệ thuật hóa trang ước lệ và giải mã 4 nhân vật: Tri huyện, Đề lại, Lính lệ, Trùm Sò.",
-    artworkImage: "/images/cinema/scene-03-sac-tuong.png",
+      "Giải mã hóa trang ước lệ của Tri huyện, Đề lại, Lính lệ và trọc phú Trùm Sò.",
+    artworkImage: "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
   },
   {
-    id: "hon-nuoc",
-    label: "Hồn Nước & Múa rối nước",
-    shortLabel: "Múa rối nước",
-    description:
-      "Kiến trúc Thủy đình, gỗ sung sơn ta, Chú Tễu và nguyên lý cơ học điều khiển dưới nước.",
-    artworkImage: "/images/cinema/scene-04-hon-nuoc.png",
-  },
-  {
-    id: "dam-san",
-    label: "Sử thi Đăm Săn",
+    id: "su-thi-dam-san",
+    label: "Sử thi Đăm Săn & Văn hóa Ê-đê",
     shortLabel: "Sử thi Đăm Săn",
+    accentColor: "emerald",
     description:
-      "Không gian sử thi Ê-đê, diễn xướng Klei Khan và sa bàn hộp kể chuyện 3 lớp ánh sáng.",
-    artworkImage: "/images/cinema/scene-05-dam-san-steam.png",
+      "Không gian nhà dài, diễn xướng Klei Khan, rừng Sáp Đen và hành trình bắt Nữ thần Mặt Trời.",
+    artworkImage: "/images/cinema/scene-dam-san-nha-dai.png",
   },
   {
-    id: "steam",
-    label: "Xưởng Sáng tạo STEAM",
-    shortLabel: "Xưởng STEAM",
+    id: "steam-du-an",
+    label: "Thiết kế STEAM: Mặt nạ & Hộp kể chuyện",
+    shortLabel: "Quy trình STEAM",
+    accentColor: "indigo",
     description:
-      "Quy trình thiết kế kỹ thuật 5 bước, liên môn S-T-E-A-M và thẻ giải mã học thuật.",
+      "Quy trình 5 bước STEAM, quang học Hộp sáng 3 lớp Đăm Săn và kỹ thuật chế tạo mặt nạ.",
     artworkImage: "/images/cinema/scene-09-xuong-steam.png",
   },
 ];
 
 export const QUIZ_QUESTIONS: QuizQuestion[] = [
   // ==========================================
-  // 1. HỒN CHÈO (4 câu)
+  // 1. HUYỆN ĐƯỜNG: NGỮ LIỆU & CHÂM BIẾM (5 câu)
   // ==========================================
   {
-    id: "cheo-01",
-    category: "hon-cheo",
-    categoryLabel: "Hồn Chèo & Xúy Vân giả dại",
+    id: "hdvb-01",
+    category: "huyen-duong-van-ban",
+    categoryLabel: "Dự án Huyện đường: Ngữ liệu & Châm biếm",
     difficulty: "Nhận biết",
     question:
-      "Trích đoạn kinh điển 'Xúy Vân giả dại' (Ngữ văn 10 – Bài 5) thuộc vở chèo cổ nào và gắn liền với không gian biểu diễn truyền thống nào?",
+      "Trích đoạn tuồng hài 'Huyện đường' (Ngữ văn 10) thuộc vở tuồng đồ dân gian nào, và dựng lại không gian đặc trưng nào?",
     options: [
-      "Vở chèo Kim Nham, biểu diễn trên chiếu chèo ở sân đình làng quê Bắc Bộ",
-      "Vở tuồng Nghêu, Sò, Ốc, Hến, biểu diễn trong cung đình Huế",
-      "Vở chèo Quan Âm Thị Kính, biểu diễn tại nhà hát hiện đại có phông màn khép kín",
-      "Vở rối nước cổ truyền, biểu diễn trên sân khấu Thủy đình giữa mặt hồ",
+      "Thuộc vở Nghêu, Sò, Ốc, Hến; tái hiện cảnh công đường nơi quan huyện và thuộc hạ xử kiện",
+      "Thuộc sử thi Đăm Săn; tái hiện nhà dài của tù trưởng Tây Nguyên",
+      "Thuộc vở tuồng cung đình Sơn Hậu; tái hiện cảnh triều đình đánh giặc ngoại xâm",
+      "Thuộc vở kịch hiện đại Hồn Trương Ba, da hàng thịt",
     ],
     correctIndex: 0,
     explanation:
-      "'Xúy Vân giả dại' là trích đoạn nổi tiếng của vở chèo cổ 'Kim Nham'. Nghệ thuật Chèo gắn bó mật thiết với không gian chiếu chèo trải giữa sân đình đồng bằng Bắc Bộ trong các dịp lễ hội.",
-    artworkImage: "/images/cinema/scene-02-hon-cheo.png",
-    sourceRef: "Bảo tàng số – Phòng 01: Hồn Chèo (SGK Ngữ văn 10, Bài 5)",
+      "'Huyện đường' là trích đoạn tiêu biểu của vở tuồng đồ 'Nghêu, Sò, Ốc, Hến', dựng lại không gian chốn công đường phong kiến để phơi bày thói tham nhũng, xử án vì lợi lộc.",
+    artworkImage: "/images/cinema/scene-07-huyen-duong.png",
+    sourceRef: "Phòng 02: Công đường & Bốn nhân vật (SGK Ngữ văn 10)",
   },
   {
-    id: "cheo-02",
-    category: "hon-cheo",
-    categoryLabel: "Hồn Chèo & Xúy Vân giả dại",
+    id: "hdvb-02",
+    category: "huyen-duong-van-ban",
+    categoryLabel: "Dự án Huyện đường: Ngữ liệu & Châm biếm",
     difficulty: "Thông hiểu",
     question:
-      "Trong sân khấu chiếu chèo truyền thống, 'tiếng đế' đóng vai trò gì đối với nhân vật và khán giả?",
+      "Ngay khi bước ra sân khấu trong 'Huyện đường', thủ pháp nghệ thuật độc đáo nào giúp nhân vật Tri huyện tự lột trần bản chất của mình trước khán giả?",
     options: [
-      "Chỉ là tiếng gõ giữ nhịp cho nhạc công thổi sáo lúc mở màn",
-      "Tạo sự giao lưu hai chiều, gợi mở – dẫn dắt tâm lý và khơi gợi đồng cảm với số phận nhân vật",
-      "Là lời tuyên án của quan lại ở cuối mỗi vở chèo",
-      "Là nhạc nền thay thế hoàn toàn lời hát của diễn viên trên chiếu chèo",
+      "Thủ pháp im lặng hoàn toàn từ đầu đến cuối màn diễn",
+      "Thủ pháp tự giới thiệu (xưng danh) và thẳng thắn nói toạc phương châm làm quan ăn hối lộ",
+      "Để một nhân vật ẩn danh đứng ngoài sân khấu kể lại tiểu sử quan huyện",
+      "Trình chiếu văn bản cáo trạng bằng chữ trên màn hình nền",
     ],
     correctIndex: 1,
     explanation:
-      "Khác với sân khấu đóng kín, chiếu chèo mở ra sự tương tác trực tiếp: 'tiếng đế' từ hậu trường hoặc người xem cất lên đúng lúc giúp dẫn dắt mạch tâm lý, bộc lộ mâu thuẫn nội tâm và tạo sự đồng cảm sâu sắc với Xúy Vân.",
-    artworkImage: "/images/cinema/scene-02-hon-cheo.png",
-    sourceRef: "Bảo tàng số – Đặc trưng nghệ thuật Chèo truyền thống",
+      "Nghệ thuật tuồng đồ sử dụng lời xưng danh tự bộc lộ rất đặc sắc: Tri huyện vừa khoe uy quyền vừa công khai tuyên bố xử kiện dựa theo túi tiền nhiều hay ít và nhan sắc của đương sự.",
+    artworkImage: "/images/cinema/scene-07-huyen-duong.png",
+    sourceRef: "Diễn đàn học tập – Câu hỏi định hướng Huyện đường",
   },
   {
-    id: "cheo-03",
-    category: "hon-cheo",
-    categoryLabel: "Hồn Chèo & Xúy Vân giả dại",
+    id: "hdvb-03",
+    category: "huyen-duong-van-ban",
+    categoryLabel: "Dự án Huyện đường: Ngữ liệu & Châm biếm",
     difficulty: "Thông hiểu",
     question:
-      "Động tác múa quạt, xe tơ của Xúy Vân trong cảnh giả dại được kết hợp chặt chẽ cùng những làn điệu chèo đặc trưng nào?",
+      "Bộ bốn nhân vật trọng tâm tạo nên mạng lưới quan hệ mua chuộc và tiếng cười châm biếm tại Huyện đường gồm những ai?",
     options: [
-      "Hát nói, ca trù và điệu lý phương Nam",
-      "Hát văn chầu và hò giã gạo",
-      "Làn điệu Con gà rừng, Sa lệch, Quá giang và hát ngược",
-      "Lối nói lối, hát khách và hát nam trong nghệ thuật Tuồng",
-    ],
-    correctIndex: 2,
-    explanation:
-      "Trích đoạn sử dụng ngôn ngữ nửa tỉnh nửa mê đan xen nói vần với các làn điệu chèo kinh điển như Con gà rừng, Sa lệch, Quá giang và hát ngược, hòa quyện cùng vũ đạo quạt lụa tuân thủ nghiêm ngặt nhịp trống chèo.",
-    artworkImage: "/images/cinema/scene-06-xuy-van.png",
-    sourceRef: "Hồ sơ Phòng 01: Hồn Chèo – Đặc điểm nghệ thuật",
-  },
-  {
-    id: "cheo-04",
-    category: "hon-cheo",
-    categoryLabel: "Hồn Chèo & Xúy Vân giả dại",
-    difficulty: "Thông hiểu",
-    question:
-      "Ẩn sau những câu hát ngược tưởng như điên đảo, vô nghĩa của Xúy Vân trong trích đoạn 'Xúy Vân giả dại' là tầng nghĩa nhân văn sâu sắc nào?",
-    options: [
-      "Nỗi đau bế tắc, sự cô đơn và khát vọng hạnh phúc gia đình sum vầy giữa lễ giáo phong kiến",
-      "Niềm vui thắng trận của người anh hùng bộ tộc",
-      "Sự châm biếm thói tham nhũng nơi chốn công đường",
-      "Lời ngợi ca cảnh đẹp thiên nhiên thuần túy không gắn với số phận con người",
+      "Tri huyện, Đề lại, Lính lệ và Trùm Sò",
+      "Đăm Săn, Hơ Nhị, Mtao Mxây và Nữ thần Mặt Trời",
+      "Tri huyện, thầy đồ Nho, người nông dân và người lái đò",
+      "Trùm Sò, bà huyện và hai người lính gác cổng thành",
     ],
     correctIndex: 0,
     explanation:
-      "Xúy Vân phải giả điên để thoát khỏi cuộc hôn nhân không tình yêu. Đằng sau những nghịch lý trong lời hát ngược ('Chờ cho bông lúa chín vàng...') là nỗi dằn vặt cô đơn và khát vọng chính đáng về mái ấm sum vầy của người phụ nữ xưa.",
-    artworkImage: "/images/cinema/scene-06-xuy-van.png",
-    sourceRef: "Gợi ý thảo luận – Phòng 01: Hồn Chèo",
+      "Chủ đề 01 và cảnh xử kiện công đường xoay quanh tứ giác nhân vật: Tri huyện (chủ tọa), Đề lại (thư lại hiến kế), Lính lệ (tay sai gác cửa quan) và trọc phú Trùm Sò.",
+    artworkImage: "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
+    sourceRef: "Chủ đề 01: Mã màu và nét mặt ước lệ (Huyện đường)",
+  },
+  {
+    id: "hdvb-04",
+    category: "huyen-duong-van-ban",
+    categoryLabel: "Dự án Huyện đường: Ngữ liệu & Châm biếm",
+    difficulty: "Thông hiểu",
+    question:
+      "Vai trò của Trùm Sò trong cảnh kiện cáo nơi Huyện đường mang tính chất bi hài như thế nào?",
+    options: [
+      "Là người anh hùng đứng ra dẹp bỏ nạn tham nhũng của quan huyện",
+      "Tuy là nạn nhân bị mất trộm đi kêu quan nhưng bản tính giàu có mà keo kiệt, khúm núm nhưng khư khư giữ hầu bao",
+      "Là viên thư lại nắm giữ toàn bộ hồ sơ án từ của nha môn",
+      "Là người nghệ nhân chế tác trống chầu và mặt nạ cho đoàn hát",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Trùm Sò mang tâm lý vừa xót của mất trộm vừa tiếc từng đồng lễ lót tay cửa quan, khiến cuộc đối đáp mặc cả ở chốn Huyện đường trở thành tấn hài kịch sâu cay.",
+    artworkImage: "/images/cinema/scene-vi-dien-podcast.png",
+    sourceRef: "Hồ sơ nhân vật Trùm Sò (Chủ đề 01)",
+  },
+  {
+    id: "hdvb-05",
+    category: "huyen-duong-van-ban",
+    categoryLabel: "Dự án Huyện đường: Ngữ liệu & Châm biếm",
+    difficulty: "Thông hiểu",
+    question:
+      "Trong vi diễn trích đoạn Huyện đường, các động tác hình thể nào của diễn viên cần phối hợp ăn khớp để làm nổi bật tính ước lệ trào phúng?",
+    options: [
+      "Diễn viên ngồi bất động đọc thoại như phát thanh viên",
+      "Cử chỉ vuốt râu, vỗ án, khom lưng rỉ tai, xoa tay vái lạy và ánh mắt liếc ngang dọc dò xét lễ vật",
+      "Thực hiện các màn nhào lộn võ thuật cung đình suốt toàn bộ trích đoạn",
+      "Đi lại tự nhiên hoàn toàn giống đời thường không cường điệu",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Mỗi động tác ước lệ như Tri huyện vuốt râu vỗ án, Đề lại khom lưng rỉ tai hay Trùm Sò ôm túi tiền vái lạy đều gắn chặt với tính cách nhân vật và nhịp trống sân khấu tuồng.",
+    artworkImage: "/images/cinema/scene-vi-dien-podcast.png",
+    sourceRef: "Triển lãm số – Tư liệu Vi diễn Huyện đường",
   },
 
   // ==========================================
-  // 2. SẮC TUỒNG & HUYỆN ĐƯỜNG (5 câu)
+  // 2. HUYỆN ĐƯỜNG: MÃ MÀU & 4 NHÂN VẬT (5 câu)
   // ==========================================
   {
-    id: "tuong-01",
-    category: "sac-tuong",
-    categoryLabel: "Sắc Tuồng & Huyện đường",
+    id: "hdmn-01",
+    category: "huyen-duong-mat-na",
+    categoryLabel: "Dự án Huyện đường: Mã màu & 4 Nhân vật",
     difficulty: "Nhận biết",
     question:
-      "Trích đoạn tuồng hài 'Huyện đường' thuộc tác phẩm tuồng đồ dân gian nào, và gồm những nhân vật trọng tâm nào xuất hiện tại công đường?",
+      "Theo hệ thống mã màu hóa trang Tuồng trong Chủ đề 01, gương mặt nhân vật Tri huyện được phối màu và tạo hình đặc trưng như thế nào?",
     options: [
-      "Thuộc vở Nghêu, Sò, Ốc, Hến; 4 nhân vật trọng tâm gồm Tri huyện, Đề lại, Lính lệ và Trùm Sò",
-      "Thuộc vở Sơn Hậu; gồm Khương Linh Tá, Đổng Kim Lân và Phàn Công",
-      "Thuộc vở Kim Nham; gồm Xúy Vân, Kim Nham và Trần Phương",
-      "Thuộc sử thi Đăm Săn; gồm Đăm Săn, Hơ Nhị và Nữ thần Mặt Trời",
+      "Nền mặt trắng mốc pha xám bệch, điểm vệt đỏ sẫm nơi gò má, mày xếch đuôi cụp và râu ba chòm tỉa mảnh",
+      "Toàn bộ khuôn mặt sơn đỏ rực rỡ biểu trưng cho võ tướng trung liệt",
+      "Mặt nâu đất với một vệt phấn trắng vắt ngang sống mũi",
+      "Khuôn mặt toàn vàng kim cân đối không có nếp nhăn",
     ],
     correctIndex: 0,
     explanation:
-      "'Huyện đường' trích từ vở tuồng đồ đặc sắc 'Nghêu, Sò, Ốc, Hến', phơi bày bộ máy quan lại tham nhũng qua 4 nhân vật điển hình: Tri huyện, Đề lại, Lính lệ và trọc phú Trùm Sò.",
-    artworkImage: "/images/cinema/scene-07-huyen-duong.png",
-    sourceRef: "Chủ đề 01 – Ngữ văn 10 Bài 5: Huyện đường",
-  },
-  {
-    id: "tuong-02",
-    category: "sac-tuong",
-    categoryLabel: "Sắc Tuồng & Huyện đường",
-    difficulty: "Thông hiểu",
-    question:
-      "Theo hệ thống mã màu hóa trang Tuồng trong Chủ đề 01, gương mặt nhân vật Tri huyện thường mang đặc điểm tạo hình chủ đạo nào?",
-    options: [
-      "Sắc đỏ son rực rỡ toàn mặt biểu trưng cho bậc anh hùng trung liệt",
-      "Nền trắng mốc pha xám bệch, điểm vệt đỏ sẫm ở gò má, mày xếch đuôi cụp và râu ba chòm vểnh",
-      "Nền mặt vàng sậm nhiều nếp nhăn rủ xuống vì tiếc của",
-      "Mặt vẽ mảng xanh xám mọt sách kèm sống mũi trắng bệch",
-    ],
-    correctIndex: 1,
-    explanation:
-      "Nền trắng mốc pha xám bệch kết hợp vệt đỏ sẫm nơi gò má của Tri huyện lột tả kẻ đội lốt quan trường đạo mạo nhưng thực chất tham tiền, háo sắc và tự đắc.",
+      "Sắc trắng mốc pha xám bệch điểm đỏ gò má cùng râu ba chòm tự đắc của Tri huyện mã hóa trực quan kẻ đội lốt quan trường đạo mạo nhưng tham lam và háo sắc.",
     artworkImage: "/images/cinema/scene-03-sac-tuong.png",
-    sourceRef: "Chủ đề 01 – Bảng giải mã 4 nhân vật Huyện đường (Tri huyện)",
+    sourceRef: "Chủ đề 01 – Hồ sơ giải mã nhân vật Tri huyện",
   },
   {
-    id: "tuong-03",
-    category: "sac-tuong",
-    categoryLabel: "Sắc Tuồng & Huyện đường",
+    id: "hdmn-02",
+    category: "huyen-duong-mat-na",
+    categoryLabel: "Dự án Huyện đường: Mã màu & 4 Nhân vật",
     difficulty: "Thông hiểu",
     question:
-      "Nhân vật nào trong trích đoạn 'Huyện đường' được tạo hình với nền mặt trắng bệch điểm mảng xanh xám quanh hốc mắt, khóe miệng nhếch lệch biểu trưng cho kẻ thư lại mưu mô hai mang?",
+      "Nhân vật nào trong bộ tứ Huyện đường có nền mặt trắng bệch điểm mảng xanh xám quanh hốc mắt, đường nét sắc mảnh và khóe miệng nhếch lệch?",
     options: [
-      "Tri huyện",
       "Lính lệ",
-      "Đề lại",
       "Trùm Sò",
+      "Đề lại",
+      "Tri huyện",
     ],
     correctIndex: 2,
     explanation:
-      "Đề lại là viên thư lại thông thuộc luật lệ giấy tờ nhưng dùng chữ nghĩa để xoay chuyển trắng đen, cấu kết với Tri huyện vắt kiệt dân lành – thể hiện qua nền trắng bệch, mảng xanh xám quanh hốc mắt và nét vẽ sắc, lệch.",
-    artworkImage: "/images/cinema/scene-03-sac-tuong.png",
-    sourceRef: "Chủ đề 01 – Hồ sơ nhân vật Đề lại",
+      "Đề lại là viên thư lại thân cận thông thuộc giấy tờ nhưng gian ngoan, chuyên bày mưu ăn đút hai mang; mã màu trắng bệch pha xanh xám và khóe miệng lệch khắc họa rõ bản chất mọt sách xảo quyệt này.",
+    artworkImage: "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
+    sourceRef: "Chủ đề 01 – Hồ sơ giải mã nhân vật Đề lại",
   },
   {
-    id: "tuong-04",
-    category: "sac-tuong",
-    categoryLabel: "Sắc Tuồng & Huyện đường",
+    id: "hdmn-03",
+    category: "huyen-duong-mat-na",
+    categoryLabel: "Dự án Huyện đường: Mã màu & 4 Nhân vật",
     difficulty: "Thông hiểu",
     question:
-      "Điểm nhận diện tạo hình đặc trưng của 'Lính lệ' (hề tuồng nơi công đường) là chi tiết nào sau đây?",
+      "Đặc điểm tạo hình 'vệt phấn trắng ngang sống mũi' trên nền mặt nâu đất là mã nhận diện vai diễn nào trong trích đoạn Huyện đường?",
     options: [
-      "Đeo mão quan cao và vuốt chòm râu ba chòm màu trắng bạc",
-      "Mặt nâu đất pha vệt chàm, cọ vẽ tròn khỏe và vệt phấn trắng ngang sống mũi tạo nét hài",
-      "Khuôn mặt toàn vàng kim cân đối tuyệt đối không có nét nhăn",
-      "Che kín toàn bộ gương mặt bằng mạng lụa trắng",
-    ],
-    correctIndex: 1,
-    explanation:
-      "Lính lệ mang sắc mặt nâu đất kết hợp vệt phấn trắng ngang sống mũi đặc trưng của vai hề tuồng – vừa phản ánh nét dân dã bộc trực nói toạc thói tham của quan trên, vừa hách dịch kiếm chác tiền trà nước.",
-    artworkImage: "/images/cinema/scene-03-sac-tuong.png",
-    sourceRef: "Chủ đề 01 – Hồ sơ nhân vật Lính lệ",
-  },
-  {
-    id: "tuong-05",
-    category: "sac-tuong",
-    categoryLabel: "Sắc Tuồng & Huyện đường",
-    difficulty: "Vận dụng STEAM",
-    question:
-      "Khi thiết kế mặt nạ cho Trùm Sò bằng phương pháp tạo hình Tuồng đồ, vì sao học sinh nên chọn nền mặt vàng sậm pha nâu bủn xỉn cùng nhiều nếp nhăn rủ?",
-    options: [
-      "Vì nền vàng sậm – nâu và lông mày rủ xoắn thể hiện trực quan bản chất giàu có nhưng keo kiệt, co rúm lo mất của",
-      "Vì màu vàng là quy ước bắt buộc dành riêng cho võ tướng ra trận",
-      "Vì bìa carton không thể sơn được các màu sáng như trắng hay đỏ",
-      "Vì Trùm Sò là vị quan thanh liêm nhất trong trích đoạn Huyện đường",
+      "Vai hề tuồng Lính lệ – vừa dân dã bộc trực nói toạc sự thật, vừa hách dịch kiếm tiền trà nước",
+      "Vai quan đầu huyện uy nghiêm giữ phép nước",
+      "Vai trọc phú Trùm Sò keo kiệt",
+      "Vai người anh hùng sử thi Tây Nguyên",
     ],
     correctIndex: 0,
     explanation:
-      "Mã màu và đường nét hóa trang Tuồng là bản đồ tính cách trực quan: sắc vàng sậm pha nâu bủn xỉn cùng nhiều nếp nhăn co rúm phản ánh đúng tâm lý hà tiện, khúm núm nhưng khư khư giữ túi tiền của Trùm Sò.",
-    artworkImage: "/images/cinema/scene-07-huyen-duong.png",
-    sourceRef: "Chủ đề 01 – Hồ sơ nhân vật Trùm Sò",
+      "Trên sân khấu Tuồng, vệt phấn trắng ngang sống mũi kết hợp nền nâu đất và nét cọ tròn khỏe tạo hiệu ứng hài hước cho Lính lệ – tay sai công đường tinh ranh.",
+    artworkImage: "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
+    sourceRef: "Chủ đề 01 – Hồ sơ giải mã nhân vật Lính lệ",
+  },
+  {
+    id: "hdmn-04",
+    category: "huyen-duong-mat-na",
+    categoryLabel: "Dự án Huyện đường: Mã màu & 4 Nhân vật",
+    difficulty: "Vận dụng STEAM",
+    question:
+      "Khi phác thảo mặt nạ cho Trùm Sò, vì sao nhóm thiết kế STEAM chọn nền vàng sậm pha nâu bủn xỉn với trán nhiều nếp nhăn và lông mày rủ xoắn?",
+    options: [
+      "Để thể hiện vẻ đẹp oai phong lẫm liệt của bậc anh hùng",
+      "Vì nền vàng sậm pha nâu bủn xỉn và nét nhăn co rúm khắc họa trực quan tâm lý giàu có nhưng hà tiện, xót của",
+      "Vì chỉ có hai màu vàng và nâu mới vẽ được trên giấy mỹ thuật",
+      "Vì mọi nhân vật tuồng đều bắt buộc phải tô màu vàng giống nhau",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Trong nguyên tắc STEAM Ngữ văn, mọi đường nét mặt nạ đều xuất phát từ tâm lý nhân vật: gương mặt Trùm Sò co rúm nhiều nếp nhăn và sắc vàng bủn xỉn lột tả thói bủn xỉn đến cực độ.",
+    artworkImage: "/images/cinema/scene-03-sac-tuong.png",
+    sourceRef: "Chủ đề 01 – Hồ sơ giải mã nhân vật Trùm Sò",
+  },
+  {
+    id: "hdmn-05",
+    category: "huyen-duong-mat-na",
+    categoryLabel: "Dự án Huyện đường: Mã màu & 4 Nhân vật",
+    difficulty: "Thông hiểu",
+    question:
+      "Mục đích chính của việc thiết kế 'mặt nạ ước lệ' thay vì vẽ mặt nạ tả thực giống ảnh chụp trong dự án Huyện đường là gì?",
+    options: [
+      "Giúp khán giả trong lớp học nhận diện ngay tính cách nhân vật từ xa qua hệ thống mã màu và nét cường điệu tương phản",
+      "Để tiết kiệm thời gian bằng cách bỏ qua công đoạn tìm hiểu tính cách nhân vật",
+      "Vì sân khấu tuồng truyền thống cấm sử dụng màu sắc tươi sáng",
+      "Để che giấu hoàn toàn biểu cảm của nhân vật trước người xem",
+    ],
+    correctIndex: 0,
+    explanation:
+      "Tính ước lệ và cường điệu là linh hồn của hóa trang Tuồng: bằng độ tương phản sắc nét và các mảng màu biểu tượng, thông điệp tính cách truyền tải rõ ràng ngay từ ánh nhìn đầu tiên.",
+    artworkImage: "/images/cinema/scene-03-sac-tuong.png",
+    sourceRef: "Phòng 01: Sắc Tuồng Huyện đường",
   },
 
   // ==========================================
-  // 3. HỒN NƯỚC & MÚA RỐI NƯỚC (4 câu)
+  // 3. SỬ THI ĐĂM SĂN & VĂN HÓA Ê-ĐÊ (5 câu)
   // ==========================================
   {
-    id: "nuoc-01",
-    category: "hon-nuoc",
-    categoryLabel: "Hồn Nước & Múa rối nước",
+    id: "ds-01",
+    category: "su-thi-dam-san",
+    categoryLabel: "Sử thi Đăm Săn & Văn hóa Ê-đê",
     difficulty: "Nhận biết",
     question:
-      "Trong kiến trúc Thủy đình của nghệ thuật Múa rối nước, 'bức mành tre' rủ trước buồng trò có tác dụng quan trọng nào?",
+      "Sử thi Đăm Săn là kiệt tác văn học dân gian của dân tộc nào ở Tây Nguyên và được diễn xướng theo hình thức truyền thống nào?",
     options: [
-      "Chỉ để che nắng cho khán giả ngồi xem trên bờ",
-      "Ngăn cách bí mật không gian buồng trò nơi nghệ nhân đứng điều khiển với mặt nước biểu diễn bên ngoài",
-      "Dùng làm phông chiếu phim điện ảnh phía sau Thủy đình",
-      "Làm hàng rào ngăn nước ao không tràn vào khu vực hậu trường",
+      "Dân tộc Ê-đê, diễn xướng kể khan (Klei Khan) bên bếp lửa nhà dài",
+      "Dân tộc Kinh, diễn xướng tuồng đồ nơi công đường",
+      "Dân tộc Thái, diễn xướng múa xòe vòng tròn",
+      "Dân tộc Tày, diễn xướng hát Then đàn Tính",
     ],
-    correctIndex: 1,
+    correctIndex: 0,
     explanation:
-      "Mặt ao là sân khấu mở, còn bức mành tre rủ xuống trước Thủy đình tạo ranh giới bí ẩn che buồng trò – nơi các nghệ nhân điều khiển quân rối bằng máy sào, máy dây ẩn dưới làn nước.",
-    artworkImage: "/images/cinema/scene-04-hon-nuoc.png",
-    sourceRef: "Bảo tàng số – Phòng 03: Hồn Nước",
+      "Sử thi Đăm Săn gắn liền với đời sống tinh thần của cộng đồng Ê-đê Tây Nguyên; nghệ nhân hát kể khan (Klei Khan) suốt nhiều đêm bên bếp lửa nhà dài và tiếng cồng chiêng.",
+    artworkImage: "/images/cinema/scene-dam-san-nha-dai.png",
+    sourceRef: "Phòng 03: Không gian Sử thi Đăm Săn",
   },
   {
-    id: "nuoc-02",
-    category: "hon-nuoc",
-    categoryLabel: "Hồn Nước & Múa rối nước",
-    difficulty: "Nhận biết",
-    question:
-      "Quân rối nước truyền thống (như nhân vật Chú Tễu) thường được tạc từ loại gỗ nào và phủ lớp gì để vừa nhẹ, nổi tốt vừa bền trong nước?",
-    options: [
-      "Gỗ lim nặng phủ véc-ni công nghiệp",
-      "Gỗ sung nhẹ, dễ đục tạc, phủ sơn ta chống thấm nước",
-      "Kim loại đồng đúc rỗng sơn tĩnh điện",
-      "Đất nung tráng men gốm sứ",
-    ],
-    correctIndex: 1,
-    explanation:
-      "Nghệ nhân dân gian chọn gỗ sung vì nhẹ, nổi tự nhiên trên mặt nước và dễ chạm khắc, sau đó phủ nhiều lớp sơn ta truyền thống để chống thấm và tạo sắc màu rực rỡ bền lâu.",
-    artworkImage: "/images/cinema/scene-08-co-hoc-roi.png",
-    sourceRef: "Văn bản: Múa rối nước – hiện đại soi bóng tiền nhân",
-  },
-  {
-    id: "nuoc-03",
-    category: "hon-nuoc",
-    categoryLabel: "Hồn Nước & Múa rối nước",
-    difficulty: "Vận dụng STEAM",
-    question:
-      "Khi khảo sát bộ máy điều khiển múa rối nước từ góc độ Vật lí – Kỹ thuật (STEAM), những nguyên lý khoa học nào được nghệ nhân xưa vận dụng trực tiếp?",
-    options: [
-      "Từ trường nam châm siêu dẫn và cảm biến hồng ngoại",
-      "Lực đẩy Archimedes giữ rối nổi cùng hệ thống đòn bẩy, sào tre, dây kéo, ròng rọc truyền động dưới mặt nước",
-      "Động cơ đốt trong chạy bằng hơi nước áp suất cao",
-      "Hiện tượng khúc xạ tia laser trong buồng tối",
-    ],
-    correctIndex: 1,
-    explanation:
-      "Múa rối nước là minh chứng sống động cho tư duy cơ học dân gian: tận dụng lực đẩy Archimedes của mặt nước kết hợp thanh sào tre, khớp xoay, dây kéo và ròng rọc đặt ngầm dưới mặt hồ.",
-    artworkImage: "/images/cinema/scene-08-co-hoc-roi.png",
-    sourceRef: "Phòng 03: Hồn Nước – Kết nối Vật lí & Kỹ thuật STEAM",
-  },
-  {
-    id: "nuoc-04",
-    category: "hon-nuoc",
-    categoryLabel: "Hồn Nước & Múa rối nước",
+    id: "ds-02",
+    category: "su-thi-dam-san",
+    categoryLabel: "Sử thi Đăm Săn & Văn hóa Ê-đê",
     difficulty: "Thông hiểu",
     question:
-      "Nhan đề văn bản thông tin 'Múa rối nước – hiện đại soi bóng tiền nhân' nhấn mạnh thông điệp cốt lõi nào?",
+      "Trong văn bản 'Đăm Săn đi bắt Nữ thần Mặt Trời', vùng đất đầy thử thách mà người anh hùng phải cưỡi ngựa vượt qua trước khi tới nhà Nữ thần có tên là gì?",
     options: [
-      "Múa rối nước chỉ là trò chơi tiêu khiển đã lỗi thời trong xã hội hiện đại",
-      "Nghệ thuật rối nước cổ truyền vẫn giữ nguyên sức sống sáng tạo và đối thoại hài hòa với đời sống đương đại",
-      "Múa rối nước ngày nay phải xóa bỏ hoàn toàn Thủy đình để diễn trên sân khấu khô",
-      "Chỉ có khán giả nước ngoài mới có thể tiếp cận nghệ thuật múa rối nước",
+      "Rừng Sáp Đen với cỏ tranh sắc như dao và bùn lầy ngập ngụa",
+      "Vùng đồng bằng châu thổ sông Hồng mùa lễ hội",
+      "Cửa biển Đông với những đoàn thuyền buôn tấp nập",
+      "Kinh thành cổ với lũy tre làng và sân đình gạch đỏ",
+    ],
+    correctIndex: 0,
+    explanation:
+      "Vượt rừng Sáp Đen âm u, cỏ tranh sắc như lưỡi dao là thử thách cực hạn khẳng định ý chí phi thường, không chùn bước của Đăm Săn trên hành trình chinh phục Nữ thần Mặt Trời.",
+    artworkImage: "/images/cinema/scene-dam-san-mat-troi.png",
+    sourceRef: "Phòng 04: Rừng Sáp Đen & Nữ thần Mặt Trời",
+  },
+  {
+    id: "ds-03",
+    category: "su-thi-dam-san",
+    categoryLabel: "Sử thi Đăm Săn & Văn hóa Ê-đê",
+    difficulty: "Thông hiểu",
+    question:
+      "Ý nghĩa biểu tượng sâu sắc nhất trong hành trình Đăm Săn quyết tâm đi bắt Nữ thần Mặt Trời làm vợ là gì?",
+    options: [
+      "Chỉ vì tò mò trước vẻ đẹp trang sức bằng vàng bạc",
+      "Thể hiện khát vọng chinh phục tự nhiên kỳ vĩ, vươn tới nguồn sáng lý tưởng và khẳng định uy danh cộng đồng thị tộc",
+      "Nhằm trốn tránh trách nhiệm làm tù trưởng tại buôn làng",
+      "Tìm kiếm con đường giao thương trao đổi hàng hóa",
     ],
     correctIndex: 1,
     explanation:
-      "Từ mái đình ao làng truyền thống, múa rối nước bước ra đời sống hiện đại với những cách tân ánh sáng, âm nhạc và ngôn ngữ tạo hình nhưng vẫn bảo tồn nguyên vẹn căn cốt văn hóa lúa nước của cha ông.",
-    artworkImage: "/images/cinema/scene-04-hon-nuoc.png",
-    sourceRef: "Bảo tàng số – Phòng 03: Văn bản thông tin Ngữ văn 10",
+      "Với tâm thức sử thi Ê-đê, Đăm Săn đi bắt Nữ thần Mặt Trời là biểu tượng cho tầm vóc lớn lao và khát vọng vươn lên sánh ngang lực lượng thiên nhiên tối cao của cộng đồng.",
+    artworkImage: "/images/cinema/scene-dam-san-mat-troi.png",
+    sourceRef: "Diễn đàn học tập – Nhóm câu hỏi Sử thi Đăm Săn",
+  },
+  {
+    id: "ds-04",
+    category: "su-thi-dam-san",
+    categoryLabel: "Sử thi Đăm Săn & Văn hóa Ê-đê",
+    difficulty: "Thông hiểu",
+    question:
+      "Cái chết của Đăm Săn trong rừng Sáp Đen trên đường trở về khi Mặt Trời lên mang giá trị thẩm mỹ nào của thể loại sử thi?",
+    options: [
+      "Thể hiện sự thất bại thảm hại và phủ nhận hoàn toàn sức mạnh con người",
+      "Mang vẻ đẹp bi tráng: thể xác ngã xuống trước quy luật tự nhiên nhưng linh hồn và khát vọng anh hùng được bất tử hóa",
+      "Chỉ nhằm gây tiếng cười trào phúng nhẹ nhàng cho người nghe",
+      "Đánh dấu sự kết thúc hoàn toàn truyền thống kể khan của người Ê-đê",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Bi kịch của Đăm Săn không hề bi lụy mà tỏa sáng chất bi tráng anh hùng: dám theo đuổi lý tưởng lớn lao đến hơi thở cuối cùng, hóa thân thành sức sống bất diệt trong ký ức buôn làng.",
+    artworkImage: "/images/cinema/scene-dam-san-nha-dai.png",
+    sourceRef: "Phòng 04: Rừng Sáp Đen & Nữ thần Mặt Trời",
+  },
+  {
+    id: "ds-05",
+    category: "su-thi-dam-san",
+    categoryLabel: "Sử thi Đăm Săn & Văn hóa Ê-đê",
+    difficulty: "Vận dụng STEAM",
+    question:
+      "Khi thực hiện sản phẩm Podcast thuyết minh 'Không gian văn hóa Ê-đê trong Sử thi Đăm Săn', chi tiết văn hóa bản địa nào nên được nhấn mạnh để gắn kết với mô hình trưng bày?",
+    options: [
+      "Tục kể khan (Klei Khan) bên bếp lửa nhà dài, tiếng cồng chiêng Hlong và ý nghĩa cầu thang – hoa văn thổ cẩm Ê-đê",
+      "Cách tổ chức xử án tại nha môn huyện đường",
+      "Kỹ thuật đan quạt giấy và trống chầu trong sân khấu tuồng",
+      "Kiến trúc nhà hát kính hiện đại của châu Âu thế kỷ XXI",
+    ],
+    correctIndex: 0,
+    explanation:
+      "Podcast của Chủ đề 02 giúp người xem khi quét mã QR trên Hộp kể chuyện vừa quan sát ánh sáng diorama vừa cảm nhận được linh hồn sử thi qua bếp lửa nhà dài và âm vang cồng chiêng Ê-đê.",
+    artworkImage: "/images/cinema/scene-dam-san-nha-dai.png",
+    sourceRef: "Triển lãm số – Podcast Sử thi Đăm Săn",
   },
 
   // ==========================================
-  // 4. SỬ THI ĐĂM SĂN (3 câu)
+  // 4. THIẾT KẾ STEAM: MẶT NẠ & HỘP KỂ CHUYỆN (5 câu)
   // ==========================================
   {
-    id: "damsan-01",
-    category: "dam-san",
-    categoryLabel: "Sử thi Đăm Săn",
+    id: "st-01",
+    category: "steam-du-an",
+    categoryLabel: "Thiết kế STEAM: Mặt nạ & Hộp kể chuyện",
     difficulty: "Nhận biết",
     question:
-      "Sử thi Đăm Săn thuộc di sản văn hóa dân gian của cộng đồng dân tộc nào ở Tây Nguyên và thường được nghệ nhân diễn xướng theo hình thức truyền thống gọi là gì?",
+      "Quy trình thiết kế kỹ thuật 5 bước tại Xưởng sáng tạo STEAM Ngữ văn tuân theo trình tự chuẩn nào?",
     options: [
-      "Dân tộc Mường, diễn xướng Đẻ đất đẻ nước",
-      "Dân tộc Ê-đê, diễn xướng kể khan (Klei Khan)",
-      "Dân tộc Thái, diễn xướng hát Xòe",
-      "Dân tộc Khmer, diễn xướng sân khấu Dù Kê",
+      "Xác định vấn đề → Nghiên cứu & Thiết kế → Chế tạo → Thử nghiệm → Đánh giá & Cải tiến",
+      "Chế tạo → Thử nghiệm → Đọc hiểu văn bản → Trình chiếu → Viết báo cáo",
+      "Thiết kế đồ họa → Mua sản phẩm sẵn → Đặt tên nhóm → Chụp ảnh",
+      "Đọc lướt văn bản → Thi viết tự luận → Thử nghiệm ánh sáng",
     ],
-    correctIndex: 1,
+    correctIndex: 0,
     explanation:
-      "Sử thi Đăm Săn là kiệt tác sử thi anh hùng của đồng bào Ê-đê Tây Nguyên, được các nghệ nhân hát kể bên bếp lửa nhà dài trong hình thức diễn xướng Klei Khan.",
-    artworkImage: "/images/cinema/scene-05-dam-san-steam.png",
-    sourceRef: "Chủ đề 02: Đánh thức thế giới sử thi (Ngữ văn 10)",
+      "Cả Dự án Huyện đường và Dự án Sử thi Đăm Săn đều vận hành chuẩn qua 5 bước STEAM: Xác định vấn đề → Nghiên cứu & Thiết kế → Chế tạo → Thử nghiệm → Đánh giá & Cải tiến.",
+    artworkImage: "/images/cinema/scene-09-xuong-steam.png",
+    sourceRef: "Xưởng sáng tạo STEAM – Quy trình 5 bước",
   },
   {
-    id: "damsan-02",
-    category: "dam-san",
-    categoryLabel: "Sử thi Đăm Săn",
-    difficulty: "Thông hiểu",
-    question:
-      "Trong hành trình 'Đăm Săn đi bắt Nữ thần Mặt Trời', việc người anh hùng vượt qua rừng Sáp Đen hiểm trở thể hiện phẩm chất và khát vọng nào?",
-    options: [
-      "Sự sợ hãi trước sức mạnh thiên nhiên và quyết định quay trở về buôn làng",
-      "Ý chí phi thường, lòng kiêu hãnh và khát vọng chinh phục tự nhiên, vươn tới nguồn sáng lý tưởng của cộng đồng",
-      "Khát vọng buôn bán giao thương đổi lấy châu báu phương xa",
-      "Mục đích tìm nơi ẩn dật xa lánh đời sống bộ tộc",
-    ],
-    correctIndex: 1,
-    explanation:
-      "Cuộc hành trình táo bạo vượt rừng Sáp Đen lên trời gặp Nữ thần Mặt Trời khắc họa tầm vóc kỳ vĩ của Đăm Săn – biểu tượng cho khát vọng khẳng định uy danh và sức mạnh tập thể của thị tộc Ê-đê.",
-    artworkImage: "/images/cinema/scene-05-dam-san-steam.png",
-    sourceRef: "Chủ đề 02 – Chặng 1: Khảo cứu văn bản Sử thi Đăm Săn",
-  },
-  {
-    id: "damsan-03",
-    category: "dam-san",
-    categoryLabel: "Sử thi Đăm Săn",
+    id: "st-02",
+    category: "steam-du-an",
+    categoryLabel: "Thiết kế STEAM: Mặt nạ & Hộp kể chuyện",
     difficulty: "Vận dụng STEAM",
     question:
-      "Khi chế tạo Hộp kể chuyện sử thi 3 lớp (Diorama Shadowbox) cho Chủ đề 02, vật liệu nào tối ưu nhất ở Lớp hậu cảnh để tán dịu ánh sáng LED vàng ấm tạo hiệu ứng Mặt Trời tỏa rạng?",
+      "Trong Hộp kể chuyện 3 lớp 'Đăm Săn đi bắt Nữ thần Mặt Trời', vai trò kỹ thuật của Lớp hậu cảnh (Layer 03) sử dụng giấy can mờ kết hợp LED vàng ấm là gì?",
     options: [
-      "Tấm gỗ dày 2cm sơn đen hoàn toàn không xuyên sáng",
-      "Giấy can mờ (tracing paper) kết hợp nguồn LED vàng ấm đặt phía sau hộp",
-      "Giấy bạc nhôm che kín toàn bộ mặt sau",
-      "Băng dính đen quấn quanh bóng đèn LED",
+      "Che kín toàn bộ ánh sáng để hộp tối hoàn toàn",
+      "Khuếch tán đều nguồn sáng LED tạo hiệu ứng hào quang bình minh sử thi mà không bị chói gắt",
+      "Làm bề mặt bảng viết phấn ghi câu hỏi thảo luận",
+      "Tăng trọng lượng hộp lên mức tối đa để khỏi di chuyển",
     ],
     correctIndex: 1,
     explanation:
-      "Theo định hướng S – T – E – A – M của Chủ đề 02, lớp hậu cảnh dùng giấy can mờ (tracing paper) giúp khuếch tán đều ánh sáng từ đèn LED vàng ấm, tránh gắt điểm sáng và tạo chiều sâu sử thi khi phối với 2 lớp cắt trổ phía trước.",
+      "Ứng dụng nguyên lý Khoa học quang học (tán xạ ánh sáng qua giấy can mờ), lớp hậu cảnh chuyển ánh sáng điểm từ LED thành vầng hào quang êm dịu tôn bật bóng cắt nhân vật phía trước.",
     artworkImage: "/images/cinema/scene-05-dam-san-steam.png",
     sourceRef: "Chủ đề 02 – Thiết kế cấu trúc Hộp kể chuyện 3 lớp",
   },
-
-  // ==========================================
-  // 5. XƯỞNG SÁNG TẠO STEAM (4 câu)
-  // ==========================================
   {
-    id: "steam-01",
-    category: "steam",
-    categoryLabel: "Xưởng Sáng tạo STEAM",
-    difficulty: "Nhận biết",
-    question:
-      "Quy trình thiết kế kỹ thuật 5 bước trong Xưởng sáng tạo STEAM Ngữ văn được sắp xếp theo trình tự chuẩn nào sau đây?",
-    options: [
-      "Chế tạo → Thử nghiệm → Xác định vấn đề → Đánh giá → Nghiên cứu & Thiết kế",
-      "Xác định vấn đề → Nghiên cứu & Thiết kế → Chế tạo → Thử nghiệm → Đánh giá & Cải tiến",
-      "Thử nghiệm → Cải tiến → Thiết kế → Chế tạo → Trình chiếu",
-      "Đọc văn bản → Chép lại nội dung → Thi viết tự luận → Chấm điểm",
-    ],
-    correctIndex: 1,
-    explanation:
-      "Quy trình 5 bước của Xưởng sáng tạo STEAM gồm: Bước 1 Xác định vấn đề → Bước 2 Nghiên cứu & Thiết kế → Bước 3 Chế tạo → Bước 4 Thử nghiệm → Bước 5 Đánh giá & Cải tiến.",
-    artworkImage: "/images/cinema/scene-09-xuong-steam.png",
-    sourceRef: "Khu vực 3: Xưởng sáng tạo STEAM – Quy trình 5 bước",
-  },
-  {
-    id: "steam-02",
-    category: "steam",
-    categoryLabel: "Xưởng Sáng tạo STEAM",
+    id: "st-03",
+    category: "steam-du-an",
+    categoryLabel: "Thiết kế STEAM: Mặt nạ & Hộp kể chuyện",
     difficulty: "Thông hiểu",
     question:
-      "Trong mô hình S-T-E-A-M của dự án thiết kế mặt nạ Tuồng và hộp sử thi, yếu tố 'E – Engineering (Kỹ thuật)' tập trung trực tiếp vào nhiệm vụ nào?",
+      "Trong yếu tố 'M – Mathematics (Toán học)' của Dự án 01 (Mặt nạ Huyện đường), nhóm học sinh cần tính toán điều gì trước khi cắt bìa cứng?",
     options: [
-      "Tìm hiểu hoàn cảnh sáng tác và ngôn ngữ thơ ca của tác phẩm",
-      "Tính toán tỉ lệ đối xứng của gương mặt trên trục tọa độ",
-      "Thiết kế kết cấu chịu lực, bồi bìa cứng 3D nhiều lớp, rãnh trượt cơ học và khớp nối bền vững cho mô hình",
-      "Ghi âm bài thuyết minh Podcast sau khi đã hoàn thành triển lãm",
-    ],
-    correctIndex: 2,
-    explanation:
-      "Nếu Mathematics lo tỉ lệ – kích thước và Science nghiên cứu tính chất vật liệu – ánh sáng, thì Engineering (Kỹ thuật) giải quyết kết cấu chịu lực, kỹ thuật lắp ghép mộng giấy, rãnh trượt và tay cầm chắc chắn khi biểu diễn.",
-    artworkImage: "/images/cinema/scene-09-xuong-steam.png",
-    sourceRef: "Xưởng STEAM – Phân tích 5 yếu tố S-T-E-A-M",
-  },
-  {
-    id: "steam-03",
-    category: "steam",
-    categoryLabel: "Xưởng Sáng tạo STEAM",
-    difficulty: "Thông hiểu",
-    question:
-      "Theo quy tắc Nhật ký dự án tại Xưởng sáng tạo STEAM, yêu cầu học thuật quan trọng nhất cho mọi chi tiết tạo hình trên sản phẩm của học sinh là gì?",
-    options: [
-      "Phải trang trí càng nhiều màu sắc hiện đại rực rỡ càng tốt dù không có trong văn bản",
-      "Mọi lựa chọn màu sắc, đường nét và cấu trúc đều phải giải trình được bằng dẫn chứng cụ thể từ văn bản SGK Ngữ văn 10",
-      "Phải mua sẵn mô hình nhựa ngoài thị trường rồi dán tên tác phẩm lên trên",
-      "Chỉ cần đẹp về mặt thẩm mỹ, không cần viết thẻ giải mã hay thuyết minh",
-    ],
-    correctIndex: 1,
-    explanation:
-      "Giá trị cốt lõi của Ngữ văn – STEAM nằm ở Phiếu giải mã học thuật (Decoding Card): học sinh phải liên kết chặt chẽ từng đường nét, gam màu hay lớp cảnh với dẫn chứng lời thoại, hành động trong văn bản gốc.",
-    artworkImage: "/images/cinema/scene-09-xuong-steam.png",
-    sourceRef: "Sổ tay Xưởng STEAM – Nhật ký dự án 4 biểu mẫu",
-  },
-  {
-    id: "steam-04",
-    category: "steam",
-    categoryLabel: "Xưởng Sáng tạo STEAM",
-    difficulty: "Vận dụng STEAM",
-    question:
-      "Ở Bước 4 (Thử nghiệm) đối với bộ mặt nạ nhân vật Huyện đường, tiêu chí kiểm chứng thực tế nào giúp sản phẩm phát huy hiệu quả cao nhất khi vi diễn trên lớp?",
-    options: [
-      "Kiểm tra độ bền khung bìa, tầm nhìn của diễn viên khi đeo và độ rõ tương phản của sắc mặt từ khoảng cách khán giả cuối lớp",
-      "Chỉ đặt mặt nạ trong tủ kính và tuyệt đối không cho ai chạm vào",
-      "Thử nghiệm ngâm mặt nạ bìa carton trong nước sôi để đo độ co giãn",
-      "Cắt bỏ hoàn toàn chi tiết chân mày và râu để mặt nạ nhẹ hơn",
+      "Đo đạc tỉ lệ nhân trắc khuôn mặt theo trục dọc sống mũi, trục ngang mắt – mày – miệng và góc lệch nét bất đối xứng có chủ ý",
+      "Tính tốc độ phát âm thanh của loa Bluetooth trong hội trường",
+      "Tính diện tích mặt hồ ao làng nơi biểu diễn",
+      "Chỉ ước lượng ngẫu nhiên bằng mắt mà không cần thước đo",
     ],
     correctIndex: 0,
     explanation:
-      "Trong Bước 4 – Thử nghiệm, sản phẩm được đưa vào tập luyện vi diễn ngay tại lớp học để đo độ chắc chắn khi chuyển động, sự thông thoáng – tầm nhìn của người diễn và khả năng nhận diện biểu cảm từ xa, từ đó cải tiến ở Bước 5.",
+      "Toán học tỷ lệ và lưới tọa độ đối xứng giúp mặt nạ vừa vặn khuôn mặt người diễn, đồng thời cho phép tạo độ lệch nét tinh tế (như khóe miệng lệch của Đề lại) để nhấn mạnh tính cách.",
+    artworkImage: "/images/cinema/scene-09-xuong-steam.png",
+    sourceRef: "Xưởng STEAM – Yếu tố Mathematics (Toán học)",
+  },
+  {
+    id: "st-04",
+    category: "steam-du-an",
+    categoryLabel: "Thiết kế STEAM: Mặt nạ & Hộp kể chuyện",
+    difficulty: "Vận dụng STEAM",
+    question:
+      "Ở Bước 4 (Thử nghiệm) của Dự án 01 (Mặt nạ Huyện đường), bài kiểm tra thực tế nào quyết định hiệu quả sân khấu của sản phẩm?",
+    options: [
+      "Đeo thử khi tập luyện vi diễn trên lớp để kiểm tra độ bền khung bìa, tầm nhìn mắt, độ thoáng giọng nói và khả năng nhận diện sắc mặt từ cuối lớp",
+      "Cất kín mặt nạ trong tủ không cho diễn viên đeo thử trước giờ trình bày",
+      "Chỉ chụp ảnh cận cảnh ở khoảng cách 10cm trong phòng tối",
+      "Xóa hết màu sắc tương phản để mặt nạ có màu giống tường lớp học",
+    ],
+    correctIndex: 0,
+    explanation:
+      "Bước 4 Thử nghiệm giúp phát hiện sớm hạn chế thực tế (ví dụ khe mắt hẹp hay viền nét quá mảnh) để điều chỉnh kích thước hốc mắt và tăng độ tương phản màu ở Bước 5 Cải tiến.",
     artworkImage: "/images/cinema/scene-10-trien-lam.png",
-    sourceRef: "Xưởng STEAM – Bước 4: Thử nghiệm thực tế",
+    sourceRef: "Xưởng STEAM – Bước 4: Thử nghiệm & Cải tiến",
+  },
+  {
+    id: "st-05",
+    category: "steam-du-an",
+    categoryLabel: "Thiết kế STEAM: Mặt nạ & Hộp kể chuyện",
+    difficulty: "Thông hiểu",
+    question:
+      "Vì sao Phiếu 01 (Giải mã Ngữ văn) và Thẻ giải mã (Decoding Card) là yêu cầu bắt buộc đi kèm mọi sản phẩm trong Xưởng sáng tạo STEAM?",
+    options: [
+      "Để chứng minh mọi lựa chọn gam màu, đường nét mặt nạ hay lớp cảnh sử thi đều bắt nguồn từ dẫn chứng cụ thể trong văn bản SGK Ngữ văn 10",
+      "Chỉ để trang trí cho bài trưng bày trông dày dặn hơn",
+      "Để thay thế hoàn toàn phần chế tạo mô hình bằng bìa cứng",
+      "Vì đây là quy định dành riêng cho bài thi môn Mỹ thuật không liên quan tới Ngữ văn",
+    ],
+    correctIndex: 0,
+    explanation:
+      "Điểm đặc trưng của học liệu STEAM Ngữ văn là sợi dây nối tri thức văn bản với tạo hình kỹ thuật: học sinh phải giải trình rõ chi tiết màu sắc hay bố cục bắt nguồn từ lời thoại hoặc câu văn nào.",
+    artworkImage: "/images/cinema/scene-10-trien-lam.png",
+    sourceRef: "Sổ tay Xưởng STEAM & Rubric đánh giá Nói và Nghe",
   },
 ];

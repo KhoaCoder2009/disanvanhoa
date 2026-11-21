@@ -85,7 +85,7 @@ export const CallToActionAndFooter: React.FC = () => {
               <ul className="space-y-2 text-xs sm:text-sm text-white/90">
                 <li>
                   <Link href="/#bao-tang-so" className="hover:text-heritage-goldSoft transition-colors">
-                    1. Bảo tàng số (Hồn Chèo, Sắc Tuồng, Hồn Nước)
+                    1. Bảo tàng số (Tuồng Huyện đường &amp; Sử thi Đăm Săn)
                   </Link>
                 </li>
                 <li>

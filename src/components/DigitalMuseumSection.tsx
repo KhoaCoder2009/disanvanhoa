@@ -31,70 +31,113 @@ export const DigitalMuseumSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 3 Thẻ trưng bày lớn trang trọng như các phòng trưng bày bảo tàng */}
-        <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {MUSEUM_WINGS.map((wing) => (
-            <TiltSpotlightCard
-              key={wing.id}
-              className="group rounded-2xl bg-heritage-ivoryLight border border-heritage-crimson/30"
-            >
-              <div>
-                {/* Hình ảnh lớn của phòng trưng bày */}
-                <div
-                  onClick={() => setSelectedWing(wing)}
-                  className="block cursor-pointer"
-                >
-                  <HeritageArtwork
-                    subject={wing.artSubject}
-                    expectedFile={wing.expectedAssetFile}
-                    caption={wing.title}
-                    className="aspect-[16/10] w-full"
-                  />
-                </div>
+        {/* 4 Thẻ trưng bày (2×2 Grid): 2 phòng Dự án Huyện đường (Đỏ Son/Vàng) & 2 phòng Sử thi Đăm Săn (Xanh Đại Ngàn/Hổ Phách) */}
+        <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+          {MUSEUM_WINGS.map((wing) => {
+            const accent = wing.themeAccent || "crimson";
+            const themeStyles =
+              accent === "emerald"
+                ? {
+                    cardBorder: "border-heritage-emerald/35",
+                    badge: "bg-heritage-emeraldSoft text-heritage-emerald",
+                    subtitle: "text-heritage-emerald",
+                    dot: "bg-heritage-emerald",
+                    btn: "bg-heritage-emerald border-heritage-emerald hover:bg-heritage-woodDark focus-visible:ring-heritage-emerald",
+                  }
+                : accent === "amber"
+                ? {
+                    cardBorder: "border-heritage-amber/35",
+                    badge: "bg-heritage-amberSoft text-heritage-amber",
+                    subtitle: "text-heritage-amber",
+                    dot: "bg-heritage-amber",
+                    btn: "bg-heritage-amber border-heritage-amber hover:bg-heritage-woodDark focus-visible:ring-heritage-amber",
+                  }
+                : accent === "bronze"
+                ? {
+                    cardBorder: "border-heritage-bronze/35",
+                    badge: "bg-heritage-ivoryDeep text-heritage-woodDark",
+                    subtitle: "text-heritage-bronze",
+                    dot: "bg-heritage-bronze",
+                    btn: "bg-heritage-woodDark border-heritage-woodDark hover:bg-heritage-crimson focus-visible:ring-heritage-woodDark",
+                  }
+                : {
+                    cardBorder: "border-heritage-crimson/35",
+                    badge: "bg-heritage-ivoryDeep text-heritage-crimson",
+                    subtitle: "text-heritage-crimson",
+                    dot: "bg-heritage-crimson",
+                    btn: "bg-heritage-crimson border-heritage-crimson hover:bg-heritage-woodDark focus-visible:ring-heritage-crimson",
+                  };
 
-                {/* Nội dung phòng trưng bày */}
-                <div className="p-6">
-                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-medium text-heritage-woodLight">
-                    <span className="rounded-md bg-heritage-ivoryDeep px-2.5 py-1 text-heritage-crimson font-semibold">
-                      {wing.gradeReference}
-                    </span>
+            return (
+              <TiltSpotlightCard
+                key={wing.id}
+                className={`group rounded-2xl bg-heritage-ivoryLight border-2 ${themeStyles.cardBorder}`}
+              >
+                <div>
+                  {/* Hình ảnh lớn của phòng trưng bày */}
+                  <div
+                    onClick={() => setSelectedWing(wing)}
+                    className="block cursor-pointer"
+                  >
+                    <HeritageArtwork
+                      subject={wing.artSubject}
+                      expectedFile={wing.expectedAssetFile}
+                      caption={wing.title}
+                      className="aspect-[16/10] w-full"
+                    />
                   </div>
 
-                  <h3 className="mt-3.5 font-serif text-2xl font-bold text-heritage-woodDark">
-                    {wing.title}
-                  </h3>
-                  <p className="mt-1 text-sm font-semibold text-heritage-crimson">
-                    {wing.workReference}
-                  </p>
+                  {/* Nội dung phòng trưng bày */}
+                  <div className="p-6">
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-medium text-heritage-woodLight">
+                      <span
+                        className={`rounded-md px-2.5 py-1 font-semibold ${themeStyles.badge}`}
+                      >
+                        {wing.gradeReference}
+                      </span>
+                      <span className="font-mono text-[11px] font-bold text-heritage-ink/60">
+                        {wing.code}
+                      </span>
+                    </div>
 
-                  <p className="mt-3 text-sm text-heritage-ink leading-relaxed">
-                    {wing.shortDescription}
-                  </p>
+                    <h3 className="mt-3.5 font-serif text-2xl font-bold text-heritage-woodDark">
+                      {wing.title}
+                    </h3>
+                    <p className={`mt-1 text-sm font-semibold ${themeStyles.subtitle}`}>
+                      {wing.workReference}
+                    </p>
 
-                  <ul className="mt-4 space-y-2 border-t border-heritage-crimson/20 pt-4 text-xs sm:text-sm text-heritage-ink">
-                    {wing.highlights.map((pt, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-heritage-crimson" />
-                        <span>{pt}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    <p className="mt-3 text-sm text-heritage-ink leading-relaxed">
+                      {wing.shortDescription}
+                    </p>
+
+                    <ul className="mt-4 space-y-2 border-t border-heritage-crimson/15 pt-4 text-xs sm:text-sm text-heritage-ink">
+                      {wing.highlights.map((pt, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span
+                            className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${themeStyles.dot}`}
+                          />
+                          <span>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </div>
 
-              {/* Nút hành động thực tế mở ngay trên Scrolling Landing Page */}
-              <div className="px-6 pb-6 pt-2">
-                <button
-                  type="button"
-                  onClick={() => setSelectedWing(wing)}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-crimson px-5 py-3 text-sm font-semibold text-white border border-heritage-crimson transition-colors duration-200 hover:bg-heritage-woodDark focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
-                >
-                  <span>{wing.buttonLabel}</span>
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </button>
-              </div>
-            </TiltSpotlightCard>
-          ))}
+                {/* Nút hành động thực tế mở ngay trên Scrolling Landing Page */}
+                <div className="px-6 pb-6 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedWing(wing)}
+                    className={`w-full inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white border transition-colors duration-200 focus:outline-none focus-visible:ring-2 ${themeStyles.btn}`}
+                  >
+                    <span>{wing.buttonLabel}</span>
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </button>
+                </div>
+              </TiltSpotlightCard>
+            );
+          })}
         </div>
       </div>
 

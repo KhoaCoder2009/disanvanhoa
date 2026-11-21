@@ -60,7 +60,7 @@ export const SITE_CONFIG = {
       id: "quizizz-practice",
       title: "Trò chơi giải mã tri thức văn học",
       toolName: "Quizizz",
-      purpose: "Hệ thống câu hỏi tương tác kiểm tra kiến thức nền về Chèo, Tuồng, Múa rối nước và Sử thi Tây Nguyên.",
+      purpose: "Hệ thống câu hỏi tương tác kiểm tra kiến thức nền về trích đoạn Tuồng Huyện đường và Sử thi Đăm Săn.",
       url: "",
       placeholderStatus: "Giáo viên sẽ cập nhật",
       configKeyName: "externalTools[4].url (Quizizz)",

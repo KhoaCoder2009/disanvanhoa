@@ -22,6 +22,8 @@ interface CinemaScene {
   ctaHref: string;
   image: string;
   transitionType: TransitionType;
+  accentHex: string;
+  hoverHex: string;
 }
 
 const CINEMA_SCENES: CinemaScene[] = [
@@ -29,112 +31,106 @@ const CINEMA_SCENES: CinemaScene[] = [
     id: "scene-01",
     title: "DI SẢN VĂN HỌC VIỆT",
     isHeroTitle: true,
-    slogan: "Từ trang sách đến không gian di sản – Từ tri thức đến sáng tạo.",
+    slogan: "Dự án Tuồng đồ Huyện đường & Sử thi Đăm Săn (Ngữ văn 10 – STEAM)",
     description:
-      "Không gian học tập số kết nối văn học Ngữ văn 10, nghệ thuật truyền thống và STEM/STEAM trong kiến trúc trưng bày bảo tàng đương đại.",
+      "Không gian học tập số kết nối hai kiệt tác văn học dân gian: tiếng cười trào phúng chốn công đường Huyện đường và khát vọng kỳ vĩ của sử thi Đăm Săn.",
     ctaLabel: "Khám phá Bảo tàng số",
     ctaHref: "#bao-tang-so",
     image: "/images/cinema/scene-01-di-san.png",
     transitionType: "base",
+    accentHex: "#B91C1C",
+    hoverHex: "#7A1C18",
   },
   {
     id: "scene-02",
-    title: "HỒN CHÈO — SÂN KHẤU CHIẾU CHÈO",
-    slogan: "Ngữ văn 10 – Bài 5 • Không gian sân đình dân gian",
+    title: "SẮC TUỒNG — NGÔN NGỮ MẶT NẠ ƯỚC LỆ",
+    slogan: "Bảng mã màu đỏ – trắng mốc – xanh xám – vàng sậm trong hóa trang cổ",
     description:
-      "Tái hiện chiếu chèo sân đình với quạt lụa, trống đế và ước lệ vũ đạo trữ tình, nơi tiếng hát dân gian hòa cùng nhịp sống làng quê Việt.",
-    ctaLabel: "Mở hồ sơ Hồn Chèo",
+      "Đọc vị bản chất trung – nịnh qua từng đường nét vẽ mặt và tỷ lệ hình khối đối xứng đặc trưng của nghệ thuật tuồng hài dân gian.",
+    ctaLabel: "Xem Sắc Tuồng Huyện đường",
     ctaHref: "#bao-tang-so",
-    image: "/images/cinema/scene-02-hon-cheo.png",
+    image: "/images/cinema/scene-03-sac-tuong.png",
     transitionType: "iris-right",
+    accentHex: "#B91C1C",
+    hoverHex: "#7A1C18",
   },
   {
     id: "scene-03",
-    title: "XÚY VÂN GIẢ DẠI — VŨ ĐẠO & QUẠT LỤA",
-    slogan: "Nghệ thuật biểu trưng nội tâm qua đạo cụ và dải lụa",
+    title: "HUYỆN ĐƯỜNG — PHONG THÁI CÔNG ĐƯỜNG",
+    slogan: "Trích đoạn tuồng đồ Nghêu, Sò, Ốc, Hến (Ngữ văn 10)",
     description:
-      "Giải mã bi kịch khát vọng qua động tác xoay quạt, khung cửi dệt tơ và nhịp trống đế truyền thống trên nền sân khấu ước lệ.",
-    ctaLabel: "Đọc giải mã Xúy Vân",
-    ctaHref: "#bao-tang-so",
-    image: "/images/cinema/scene-06-xuy-van.png",
+      "Khảo sát không gian án thư nơi công lý bị mua chuộc bằng lễ vật, mở màn tấn hài kịch phê phán bộ máy quan lại phong kiến xưa.",
+    ctaLabel: "Vào Dự án 01: Huyện đường",
+    ctaHref: "#chu-de-hoc-tap",
+    image: "/images/cinema/scene-07-huyen-duong.png",
     transitionType: "curtain-up",
+    accentHex: "#96241F",
+    hoverHex: "#7A1C18",
   },
   {
     id: "scene-04",
-    title: "SẮC TUỒNG — NGÔN NGỮ MẶT NẠ ƯỚC LỆ",
-    slogan: "Bảng mã màu đỏ – trắng – đen – vàng kim trong hóa trang cổ",
+    title: "TỨ ĐẠI NHÂN VẬT CÔNG ĐƯỜNG",
+    slogan: "Tri huyện • Đề lại • Lính lệ • Trùm Sò",
     description:
-      "Đọc vị bản chất trung – nịnh qua từng đường nét vẽ mặt và tỷ lệ hình khối đối xứng đặc trưng của nghệ thuật sân khấu Tuồng.",
-    ctaLabel: "Khám phá nghệ thuật Tuồng",
-    ctaHref: "#bao-tang-so",
-    image: "/images/cinema/scene-03-sac-tuong.png",
+      "Chuyển hóa lời thoại tự xưng và bản tính tham lam, lươn lẹo, keo kiệt thành bộ chân dung mặt nạ 3D bằng bìa cứng và vi diễn sân khấu hóa.",
+    ctaLabel: "Giải mã 4 nhân vật Huyện đường",
+    ctaHref: "#chu-de-hoc-tap",
+    image: "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
     transitionType: "screen-sweep",
+    accentHex: "#B91C1C",
+    hoverHex: "#7A1C18",
   },
   {
     id: "scene-05",
-    title: "HUYỆN ĐƯỜNG — BỐN NHÂN VẬT CHÂM BIẾM",
-    slogan: "Tri huyện • Đề lại • Lính lệ • Trùm Sò",
+    title: "KHÔNG GIAN Ê-ĐÊ — NHÀ DÀI & KLEI KHAN",
+    slogan: "Bối cảnh văn hóa Tây Nguyên trong Sử thi Đăm Săn",
     description:
-      "Chủ đề 01 đang triển khai: bóc tách lớp lang tiếng cười phê phán chốn công đường và chuyển hóa tri thức văn bản thành mặt nạ thủ công STEAM.",
-    ctaLabel: "Vào Chủ đề 01: Huyện đường",
-    ctaHref: "#chu-de-hoc-tap",
-    image: "/images/cinema/scene-07-huyen-duong.png",
+      "Tái hiện kiến trúc nhà dài cổ truyền, tiếng cồng chiêng Hlong và nhịp hát kể khan vang vọng bên bếp lửa buôn làng Tây Nguyên.",
+    ctaLabel: "Khám phá Sử thi Đăm Săn",
+    ctaHref: "#bao-tang-so",
+    image: "/images/cinema/scene-dam-san-nha-dai.png",
     transitionType: "solar-iris",
+    accentHex: "#1F5E3B",
+    hoverHex: "#16442A",
   },
   {
     id: "scene-06",
-    title: "HỒN NƯỚC — KIẾN TRÚC THỦY ĐÌNH",
-    slogan: "Múa rối nước • Nghệ thuật sân khấu trên mặt hồ",
+    title: "ĐĂM SĂN ĐI BẮT NỮ THẦN MẶT TRỜI",
+    slogan: "Đánh thức thế giới sử thi qua Hộp kể chuyện 3 lớp ánh sáng",
     description:
-      "Khám phá kiến trúc hai tầng mái đao cong Thủy đình, bức mành tre che buồng trò và ánh phản chiếu lung linh trên mặt thủy đình.",
-    ctaLabel: "Khám phá Thủy đình",
-    ctaHref: "#bao-tang-so",
-    image: "/images/cinema/scene-04-hon-nuoc.png",
-    transitionType: "curtain-down",
-  },
-  {
-    id: "scene-07",
-    title: "CƠ HỌC DÂN GIAN — RỐI GỖ SUNG",
-    slogan: "Nguyên lý đòn bẩy, khớp xoay và sào tre dưới làn nước",
-    description:
-      "Kết nối tri thức Vật lí – Kỹ thuật trong từng con rối gỗ sung sơn son thếp vàng và hệ thống dây lèo truyền động tài hoa của nghệ nhân.",
-    ctaLabel: "Tìm hiểu cơ chế Múa rối nước",
-    ctaHref: "#bao-tang-so",
-    image: "/images/cinema/scene-08-co-hoc-roi.png",
-    transitionType: "screen-right",
-  },
-  {
-    id: "scene-08",
-    title: "SỬ THI ĐĂM SĂN — HỘP SÁNG BA LỚP",
-    slogan: "Đánh thức không gian sử thi Tây Nguyên qua quang học & cắt lớp",
-    description:
-      "Chủ đề 02: chuyển thể trường đoạn Đăm Săn đi bắt Nữ thần Mặt Trời thành sa bàn hộp kể chuyện 3 lớp phối hợp ánh sáng LED ấm.",
+      "Vượt rừng Sáp Đen tiến tới ánh dương chói lòa: kết hợp quang học LED vàng ấm, giấy can mờ và thanh trượt cơ học kể chuyện tương tác.",
     ctaLabel: "Xem Chủ đề 02: Đăm Săn",
     ctaHref: "#chu-de-hoc-tap",
     image: "/images/cinema/scene-05-dam-san-steam.png",
-    transitionType: "iris-right",
+    transitionType: "curtain-down",
+    accentHex: "#B45309",
+    hoverHex: "#854D0E",
   },
   {
-    id: "scene-09",
-    title: "XƯỞNG CHẾ TÁC STEAM — QUY TRÌNH NĂM BƯỚC",
-    slogan: "Nghiên cứu văn bản • Phác thảo kỹ thuật • Thử nghiệm • Hoàn thiện",
+    id: "scene-07",
+    title: "XƯỞNG CHẾ TÁC STEAM — QUY TRÌNH 5 BƯỚC",
+    slogan: "Xác định vấn đề • Thiết kế • Chế tạo • Thử nghiệm • Cải tiến",
     description:
-      "Từ bản vẽ hình học tỷ lệ chuẩn, pha màu thủ công đến lắp ráp vật liệu bền vững nhằm tạo nên sản phẩm mang dấu ấn cá nhân.",
+      "Từ bản vẽ hình học tỉ lệ chuẩn, pha màu mặt nạ Huyện đường đến thử nghiệm mạch LED cho hộp sử thi Đăm Săn.",
     ctaLabel: "Vào Xưởng sáng tạo STEAM",
     ctaHref: "#xuong-steam",
     image: "/images/cinema/scene-09-xuong-steam.png",
-    transitionType: "curtain-up",
+    transitionType: "screen-right",
+    accentHex: "#1E3A5F",
+    hoverHex: "#152943",
   },
   {
-    id: "scene-10",
+    id: "scene-08",
     title: "TRIỂN LÃM SỐ — TỪ TRANG SÁCH ĐẾN HIỆN ĐẠI",
-    slogan: "Trưng bày • Thuyết minh học thuật • Lan tỏa di sản",
+    slogan: "Mặt nạ 3D • Sa bàn sử thi • Infographic • Podcast & Trắc nghiệm",
     description:
-      "Không gian tôn vinh các sản phẩm mặt nạ, sa bàn, thủy đình, infographic và podcast sáng tạo từ chính những giờ học Ngữ văn THPT.",
+      "Lưu trữ và tôn vinh các sản phẩm sáng tạo học sinh, sẵn sàng cho hoạt động Nói – Nghe và củng cố kiến thức qua trắc nghiệm trực tuyến.",
     ctaLabel: "Tham quan Triển lãm số",
     ctaHref: "#trien-lam-so",
     image: "/images/cinema/scene-10-trien-lam.png",
     transitionType: "solar-iris",
+    accentHex: "#B91C1C",
+    hoverHex: "#7A1C18",
   },
 ];
 
@@ -250,7 +246,6 @@ export const ScrollVisualCinema: React.FC = () => {
       let verticalSeamPos: number | null = null;
       let verticalSeamAlpha = 0;
 
-      // 1. Update 10 visual layers & GPU-composited clip-path morphs
       for (let i = 0; i < CINEMA_SCENES.length; i++) {
         const scene = CINEMA_SCENES[i];
         const layer = layerRefs.current[i];
@@ -322,7 +317,6 @@ export const ScrollVisualCinema: React.FC = () => {
         }
       }
 
-      // Synchronized architectural seam accent lines
       if (curtainLineRef.current) {
         if (horizontalSeamPos !== null && horizontalSeamAlpha > 0.01) {
           curtainLineRef.current.style.opacity = horizontalSeamAlpha.toFixed(3);
@@ -340,7 +334,6 @@ export const ScrollVisualCinema: React.FC = () => {
         }
       }
 
-      // 2. Cross-morph editorial copy blocks smoothly
       for (let i = 0; i < CINEMA_SCENES.length; i++) {
         const copyEl = copyRefs.current[i];
         if (!copyEl) continue;
@@ -381,15 +374,13 @@ export const ScrollVisualCinema: React.FC = () => {
     <section
       id="trang-chu"
       ref={runwayRef}
-      aria-label="Hành trình thị giác Di sản Văn học Việt"
-      className="relative h-[840vh] sm:h-[920vh] bg-white"
+      aria-label="Hành trình thị giác Dự án Huyện đường và Sử thi Đăm Săn"
+      className="relative h-[680vh] sm:h-[750vh] bg-white"
     >
-      {/* Khung sân khấu ghim cố định toàn màn hình (Ultra-Clean Sticky Visual Morphing Stage) */}
       <div
         ref={stageRef}
         className="sticky top-16 h-[calc(100vh-4rem)] w-full overflow-hidden bg-white border-b border-heritage-crimson/15"
       >
-        {/* 10 TẦNG HÌNH ẢNH DI SẢN BIẾN ĐỔI THEO CUỘN */}
         {CINEMA_SCENES.map((scene, idx) => (
           <div
             key={scene.id}
@@ -416,7 +407,6 @@ export const ScrollVisualCinema: React.FC = () => {
           </div>
         ))}
 
-        {/* Đường chỉ Đỏ Son - Vàng Kim lướt dọc mép vén màn */}
         <div
           ref={curtainLineRef}
           aria-hidden="true"
@@ -428,13 +418,11 @@ export const ScrollVisualCinema: React.FC = () => {
           className="pointer-events-none absolute top-0 bottom-0 z-20 w-1 bg-gradient-to-b from-heritage-crimson via-heritage-goldAntique to-heritage-crimson shadow-[0_0_24px_rgba(185,28,28,0.45)] opacity-0"
         />
 
-        {/* Lớp phủ Gradient Trắng Ngà tạo độ tương phản chữ biên tập */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-white/95 via-white/80 to-white/15 lg:bg-gradient-to-r lg:from-white/95 lg:via-white/80 lg:to-transparent"
         />
 
-        {/* KHỐI CHỮ BIÊN TẬP TỐI GIẢN CHUẨN BẢO TÀNG (Pure Editorial Left Block) */}
         <div className="relative z-30 mx-auto h-full max-w-7xl px-4 sm:px-6 lg:px-8 flex items-end lg:items-center pb-12 lg:pb-0">
           <div className="relative w-full max-w-xl h-[340px] sm:h-[360px] lg:h-[400px]">
             {CINEMA_SCENES.map((scene, idx) => (
@@ -450,17 +438,31 @@ export const ScrollVisualCinema: React.FC = () => {
                   visibility: idx === 0 ? "visible" : "hidden",
                 }}
               >
-                <div className="flex items-center gap-3 text-xs font-mono font-medium tracking-[0.26em] text-heritage-crimson/80">
-                  <span>{String(idx + 1).padStart(2, "0")} / 10</span>
-                  <span className="h-px w-8 bg-heritage-crimson/40" />
+                <div
+                  className="flex items-center gap-3 text-xs font-mono font-medium tracking-[0.26em]"
+                  style={{ color: scene.accentHex }}
+                >
+                  <span>
+                    {String(idx + 1).padStart(2, "0")} / 0{CINEMA_SCENES.length}
+                  </span>
+                  <span
+                    className="h-px w-8 opacity-50"
+                    style={{ backgroundColor: scene.accentHex }}
+                  />
                 </div>
 
                 {scene.isHeroTitle ? (
-                  <h1 className="mt-4 font-serif text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-[-0.025em] text-heritage-crimson leading-[1.08]">
+                  <h1
+                    className="mt-4 font-serif text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-[-0.025em] leading-[1.08]"
+                    style={{ color: scene.accentHex }}
+                  >
                     {scene.title}
                   </h1>
                 ) : (
-                  <h2 className="mt-4 font-serif text-2xl sm:text-4xl lg:text-[2.9rem] font-bold tracking-[-0.025em] text-heritage-crimson leading-[1.1]">
+                  <h2
+                    className="mt-4 font-serif text-2xl sm:text-4xl lg:text-[2.85rem] font-bold tracking-[-0.025em] leading-[1.1]"
+                    style={{ color: scene.accentHex }}
+                  >
                     {scene.title}
                   </h2>
                 )}
@@ -477,7 +479,8 @@ export const ScrollVisualCinema: React.FC = () => {
                   <a
                     href={scene.ctaHref}
                     onClick={(e) => handleAnchorScroll(e, scene.ctaHref)}
-                    className="inline-flex w-fit items-center gap-2.5 rounded-xl bg-heritage-crimson px-6 py-3.5 text-sm font-semibold text-white shadow-museum hover:bg-heritage-woodDark transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
+                    style={{ backgroundColor: scene.accentHex }}
+                    className="inline-flex w-fit items-center gap-2.5 rounded-xl px-6 py-3.5 text-sm font-semibold text-white shadow-museum hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
                   >
                     <span>{scene.ctaLabel}</span>
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />

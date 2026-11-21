@@ -1,12 +1,13 @@
 export type ArtSubject =
   | "hero-stage"
-  | "cheo-xuy-van"
   | "tuong-huyen-duong"
-  | "mua-roi-nuoc"
+  | "huyen-duong-court"
   | "epic-dam-san"
+  | "dam-san-longhouse"
+  | "dam-san-sun-goddess"
   | "exhibit-mask-set"
   | "exhibit-storybox"
-  | "exhibit-water-stage"
+  | "exhibit-longhouse"
   | "exhibit-infographic"
   | "exhibit-micro-acting"
   | "exhibit-podcast";
@@ -16,6 +17,7 @@ export interface MuseumWing {
   code: string;
   title: string;
   subtitle: string;
+  themeAccent?: "crimson" | "bronze" | "emerald" | "amber";
   workReference: string;
   gradeReference: string;
   shortDescription: string;

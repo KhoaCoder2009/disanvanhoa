@@ -41,17 +41,17 @@ export const DISCUSSION_CORNER_GROUPS: DiscussionTopicGroup[] = [
     ],
   },
   {
-    id: "discussion-cheo-roi-nuoc",
-    topicName: "Chuyên đề Bảo tàng số: Hồn Chèo & Múa rối nước",
+    id: "discussion-steam-lien-mon",
+    topicName: "Chuyên đề Liên môn STEAM: Kết nối Huyện đường & Sử thi Đăm Săn",
     guidingQuestions: [
-      "Trong trích đoạn Xúy Vân giả dại, tiếng đế và các làn điệu chèo đóng vai trò gì trong việc bộc lộ nỗi cô đơn của nhân vật?",
-      "Từ văn bản 'Múa rối nước – hiện đại soi bóng tiền nhân', yếu tố nào tạo nên sự khác biệt độc đáo của sân khấu thủy đình so với sân khấu cạn?",
+      "Điểm khác biệt lớn nhất khi chuyển hóa ngôn ngữ trào phúng của 'Huyện đường' thành mặt nạ 3D so với chuyển hóa không gian kỳ vĩ của 'Đăm Săn' thành Hộp kể chuyện ánh sáng là gì?",
+      "Những nguyên lý Khoa học – Toán học – Kỹ thuật nào đóng vai trò quyết định giúp sản phẩm thủ công vừa bám sát văn bản SGK vừa bền đẹp khi trình diễn trên lớp?",
     ],
     exchangeIssues: [
-      "So sánh tính ước lệ trong động tác múa quạt của Chèo, nét vẽ mặt của Tuồng và chuyển động quân rối trên mặt nước.",
+      "Chuẩn hóa Phiếu 01–04 trong Nhật ký dự án STEAM để mọi lựa chọn màu sắc hay cấu trúc mô hình đều có dẫn chứng cụ thể từ văn bản Ngữ văn 10.",
     ],
     openResearchQuestions: [
-      "Người trẻ có thể ứng dụng công nghệ số và tư duy STEAM như thế nào để bảo tồn và lan tỏa các loại hình kịch hát dân gian Việt Nam?",
+      "Người trẻ có thể kết hợp nghệ thuật tạo hình truyền thống với công nghệ số (Triển lãm số, Podcast, QR thuyết minh) như thế nào để đưa Huyện đường và Đăm Săn đến gần bạn học?",
     ],
   },
 ];

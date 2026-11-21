@@ -5,7 +5,7 @@ export const EXHIBITION_SECTION_META = {
   englishName: "DIGITAL EXHIBITION",
   title: "NHỮNG SÁNG TẠO TỪ TRANG SÁCH",
   description:
-    "Mỗi sản phẩm là kết quả của một hành trình đọc hiểu, nghiên cứu, thiết kế và sáng tạo.",
+    "Không gian trưng bày số chuyên sâu cho hai dự án Ngữ văn 10 trọng tâm: Tuồng đồ Huyện đường và Sử thi Đăm Săn.",
   sampleNotice:
     "Lưu ý minh bạch học liệu: Các thẻ dưới đây hiện là MẪU MINH HỌA định hướng cấu trúc trưng bày. Giáo viên sẽ cập nhật hình ảnh, video và thông tin nhóm học sinh thực tế sau khi kết thúc từng chặng dự án.",
 };
@@ -22,10 +22,9 @@ export const EXHIBITION_CATEGORIES: ExhibitionCategory[] = [
 ];
 
 export const EXHIBITION_TOPICS_FILTER = [
-  { id: "all", label: "Tất cả chủ đề" },
-  { id: "chu-de-01-huyen-duong", label: "Chủ đề 01: Huyện đường (Tuồng)" },
-  { id: "chu-de-02-dam-san", label: "Chủ đề 02: Sử thi Đăm Săn" },
-  { id: "bao-tang-di-san", label: "Chuyên đề: Chèo & Múa rối nước" },
+  { id: "all", label: "Tất cả hai dự án" },
+  { id: "chu-de-01-huyen-duong", label: "Dự án 01: Huyện đường (Tuồng)" },
+  { id: "chu-de-02-dam-san", label: "Dự án 02: Sử thi Đăm Săn" },
 ];
 
 export const EXHIBITION_ITEMS: ExhibitionItem[] = [
@@ -53,7 +52,7 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     videoStatusNote:
       "Khung video giới thiệu sản phẩm (Tệp chờ cập nhật: /public/videos/exhibition/bo-chan-dung-huyen-duong.mp4)",
     artSubject: "exhibit-mask-set",
-    expectedAssetFile: "/images/exhibition/mau-mat-na-huyen-duong.jpg",
+    expectedAssetFile: "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
   },
   {
     id: "exhibit-02-hop-ke-chuyen-dam-san",
@@ -61,7 +60,7 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     category: "Hộp kể chuyện",
     topicTitle: "Đánh thức thế giới sử thi (Đăm Săn)",
     topicId: "chu-de-02-dam-san",
-    authorNote: "Mẫu minh họa học liệu – Dự kiến triển khai ở Chủ đề 02",
+    authorNote: "Mẫu minh họa học liệu – Dự án 02: Sử thi Đăm Săn",
     isIllustrativeSample: true,
     ideaDescription:
       "Mô hình hộp kể chuyện (Storybox) kết hợp 3 lớp cảnh giấy cắt xuyên sáng, tái hiện hành trình chàng Đăm Săn vượt rừng Sáp Đen đến ngôi nhà rực rỡ của Nữ thần Mặt Trời.",
@@ -79,32 +78,32 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     videoStatusNote:
       "Khung video thử nghiệm hiệu ứng ánh sáng hộp kể chuyện (Tệp chờ cập nhật: /public/videos/exhibition/hop-ke-chuyen-dam-san.mp4)",
     artSubject: "exhibit-storybox",
-    expectedAssetFile: "/images/exhibition/mau-hop-ke-chuyen-dam-san.jpg",
+    expectedAssetFile: "/images/cinema/scene-05-dam-san-steam.png",
   },
   {
-    id: "exhibit-03-mo-hinh-thuy-dinh",
-    title: "Mô hình kiến trúc Thủy đình & Cơ cấu rối dây",
+    id: "exhibit-03-mo-hinh-nha-dai-dam-san",
+    title: "Sa bàn Nhà dài Ê-đê & Hoa văn thổ cẩm trong Sử thi Đăm Săn",
     category: "Mô hình sân khấu",
-    topicTitle: "Múa rối nước – hiện đại soi bóng tiền nhân",
-    topicId: "bao-tang-di-san",
-    authorNote: "Mẫu minh họa học liệu – Gợi ý sản phẩm mở rộng Bài 5",
+    topicTitle: "Đánh thức thế giới sử thi (Đăm Săn)",
+    topicId: "chu-de-02-dam-san",
+    authorNote: "Mẫu minh họa học liệu – Dự án 02: Sử thi Đăm Săn",
     isIllustrativeSample: true,
     ideaDescription:
-      "Mô hình thu nhỏ không gian thủy đình mái đao cổ truyền kèm mặt cắt minh họa buồng trò phía sau mành tre và nguyên lý điều khiển quân rối qua hệ thống sào – dây.",
+      "Sa bàn tái hiện kiến trúc nhà dài Ê-đê với cầu thang gỗ chạm khắc, dãy cồng chiêng đồng và dải hoa văn thổ cẩm đỏ – đen – vàng làm phông nền kể chuyện Klei Khan.",
     makingProcess: [
-      "Bước 1: Đọc văn bản thông tin, lập sơ đồ cấu tạo 2 phần: buồng trò (hậu trường) và mặt nước (sân khấu).",
-      "Bước 2: Tính toán tỉ lệ thu nhỏ mái đình, cột trụ và mành tre bằng que gỗ và bìa cứng.",
-      "Bước 3: Chế tạo mô hình chú Tễu và thử nghiệm thanh trượt mô phỏng chuyển động dưới mặt nước.",
+      "Bước 1: Khảo cứu tư liệu kiến trúc nhà dài Tây Nguyên và họa tiết thổ cẩm bản địa.",
+      "Bước 2: Tính toán tỉ lệ thu nhỏ sàn nhà, cầu thang đục bậc và độ dốc mái tranh.",
+      "Bước 3: Lắp ghép vật liệu tre gỗ tái chế và bổ sung bảng chú giải văn hóa Ê-đê.",
     ],
     materialsUsed: [
-      "Bìa cứng, que tre, mành trúc nhỏ",
-      "Giấy bóng kính xanh mô phỏng mặt nước hồ",
-      "Màu nước và bảng chú thích cấu tạo kỹ thuật",
+      "Que tre, gỗ balsa mảnh và bìa kraft nâu",
+      "Vải thổ cẩm hoặc giấy vẽ hoa văn đỏ – đen – vàng",
+      "Bảng chú thích thuật ngữ văn hóa Tây Nguyên",
     ],
     videoStatusNote:
-      "Khung video thuyết minh cơ chế điều khiển rối nước (Tệp chờ cập nhật: /public/videos/exhibition/mo-hinh-thuy-dinh.mp4)",
-    artSubject: "exhibit-water-stage",
-    expectedAssetFile: "/images/exhibition/mau-mo-hinh-thuy-dinh.jpg",
+      "Khung video giới thiệu sa bàn nhà dài Ê-đê (Tệp chờ cập nhật: /public/videos/exhibition/sa-ban-nha-dai-dam-san.mp4)",
+    artSubject: "exhibit-longhouse",
+    expectedAssetFile: "/images/cinema/scene-dam-san-nha-dai.png",
   },
   {
     id: "exhibit-04-vi-dien-huyen-duong",
@@ -129,43 +128,43 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     videoStatusNote:
       "Khung phát video vi diễn của nhóm học sinh (Giáo viên cập nhật tệp video sau buổi thực hành trên lớp)",
     artSubject: "exhibit-micro-acting",
-    expectedAssetFile: "/images/exhibition/mau-video-vi-dien-huyen-duong.jpg",
+    expectedAssetFile: "/images/cinema/scene-07-huyen-duong.png",
   },
   {
-    id: "exhibit-05-infographic-xuy-van",
-    title: "Bản đồ tâm lý & Làn điệu trong Xúy Vân giả dại",
+    id: "exhibit-05-infographic-huyen-duong",
+    title: "Infographic giải mã Tứ giác nhân vật & Bút pháp châm biếm Huyện đường",
     category: "Infographic và học liệu số",
-    topicTitle: "Nghệ thuật Chèo – Xúy Vân giả dại",
-    topicId: "bao-tang-di-san",
-    authorNote: "Mẫu minh họa học liệu – Sản phẩm học liệu số",
+    topicTitle: "Mã màu và nét mặt ước lệ (Huyện đường)",
+    topicId: "chu-de-01-huyen-duong",
+    authorNote: "Mẫu minh họa học liệu – Sản phẩm học liệu số Dự án 01",
     isIllustrativeSample: true,
     ideaDescription:
-      "Infographic phân tích sự biến chuyển nhịp điệu âm nhạc (Nói lệch, Hát quá giang, Con gà rừng, Sa lệch) tương ứng với từng cung bậc bi kịch nội tâm của nhân vật Xúy Vân.",
+      "Infographic trực quan hóa mạng lưới quan hệ lợi ích giữa Tri huyện – Đề lại – Lính lệ – Trùm Sò, đối chiếu từng câu thoại trào phúng với mã màu sắc diện mặt tuồng.",
     makingProcess: [
-      "Bước 1: Chia bố cục văn bản Xúy Vân giả dại theo các lớp làn điệu chèo.",
-      "Bước 2: Giải mã các hình ảnh ẩn dụ (con gà rừng, bông lúa, dòng sông, chiếc thuyền chờ đợi).",
-      "Bước 3: Trình bày dưới dạng sơ đồ trực quan theo phong cách giấy dó cổ truyền.",
+      "Bước 1: Lập bảng đối chiếu 4 nhân vật theo 3 cột: Lời tự xưng – Hành động công đường – Mã màu hóa trang.",
+      "Bước 2: Vẽ sơ đồ mũi tên quan hệ mua chuộc và đảo lộn công lý trong phiên xử kiện.",
+      "Bước 3: Dàn trang đồ họa theo tông Đỏ son – Trắng ngà – Vàng kim rõ nét, dễ tra cứu.",
     ],
     materialsUsed: [
-      "Bản phân tích văn bản Ngữ văn 10",
-      "Hệ thống bảng biểu, sơ đồ hóa cấu trúc làn điệu",
-      "Tư liệu chú giải thuật ngữ sân khấu chèo",
+      "Ngữ liệu trích đoạn Huyện đường (SGK Ngữ văn 10)",
+      "Bảng mã hex màu sắc mặt nạ tuồng chuẩn hóa",
+      "Phần mềm thiết kế đồ họa và in ấn học tập",
     ],
     videoStatusNote:
-      "Tài liệu học liệu số đính kèm (Tệp chờ cập nhật: /public/docs/infographic-xuy-van.pdf)",
+      "Tài liệu học liệu số đính kèm (Tệp chờ cập nhật: /public/docs/infographic-huyen-duong.pdf)",
     artSubject: "exhibit-infographic",
-    expectedAssetFile: "/images/exhibition/mau-infographic-xuy-van.jpg",
+    expectedAssetFile: "/images/cinema/scene-vi-dien-podcast.png",
   },
   {
     id: "exhibit-06-podcast-am-vang-su-thi",
-    title: "Podcast thuyết minh: Không gian văn hóa Ê-đê trong Sử thi Đăm Săn",
+    title: "Podcast thuyết minh: Không gian văn hóa Ê-đê & Hành trình Đăm Săn",
     category: "Podcast và thuyết minh",
     topicTitle: "Đánh thức thế giới sử thi (Đăm Săn)",
     topicId: "chu-de-02-dam-san",
-    authorNote: "Mẫu minh họa học liệu – Hồ sơ âm thanh thuyết minh",
+    authorNote: "Mẫu minh họa học liệu – Hồ sơ âm thanh thuyết minh Dự án 02",
     isIllustrativeSample: true,
     ideaDescription:
-      "Bản thu âm thuyết minh giới thiệu tục kể khan bên bếp lửa nhà dài, ý nghĩa chiếc cồng Hlong và khát vọng chinh phục tự nhiên của cộng đồng Ê-đê qua hình tượng Đăm Săn.",
+      "Bản thu âm thuyết minh giới thiệu tục kể khan bên bếp lửa nhà dài, ý nghĩa chiếc cồng Hlong và khát vọng chinh phục Nữ thần Mặt Trời của cộng đồng Ê-đê qua hình tượng Đăm Săn.",
     makingProcess: [
       "Bước 1: Tổng hợp kiến thức ngữ văn và tư liệu văn hóa dân tộc Ê-đê ở Tây Nguyên.",
       "Bước 2: Viết kịch bản lời bình ngắn gọn, giàu hình ảnh và cảm xúc.",
@@ -179,31 +178,31 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     videoStatusNote:
       "Khung nghe tệp âm thanh thuyết minh (Tệp chờ cập nhật: /public/audio/podcast-su-thi-dam-san.mp3)",
     artSubject: "exhibit-podcast",
-    expectedAssetFile: "/images/exhibition/mau-podcast-su-thi.jpg",
+    expectedAssetFile: "/images/cinema/scene-dam-san-mat-troi.png",
   },
   {
     id: "exhibit-07-the-giai-ma-thu-cong",
-    title: "Bộ sổ tay & Thẻ gỗ giải mã quy ước sân khấu dân gian",
+    title: "Bộ sổ tay & Thẻ gỗ giải mã quy ước hóa trang Tuồng Huyện đường",
     category: "Sản phẩm thủ công",
     topicTitle: "Mã màu và nét mặt ước lệ (Huyện đường)",
     topicId: "chu-de-01-huyen-duong",
     authorNote: "Mẫu minh họa học liệu – Sản phẩm thủ công nhóm",
     isIllustrativeSample: true,
     ideaDescription:
-      "Bộ thẻ tra cứu thủ công trình bày hệ thống thuật ngữ sân khấu (ước lệ, cách điệu, tiếng đế, nói lối, mặt nạ tuồng) dưới dạng thẻ xếp quạt tiện dụng khi học Bài 5.",
+      "Bộ thẻ tra cứu thủ công trình bày hệ thống thuật ngữ sân khấu Tuồng (ước lệ, cách điệu, nói lối, mặt nạ mã màu, râu ba chòm) dưới dạng thẻ xếp quạt tiện dụng khi học Huyện đường.",
     makingProcess: [
-      "Bước 1: Hệ thống hóa các khái niệm ngữ văn trong phần Tri thức ngữ văn Bài 5.",
-      "Bước 2: Vẽ minh họa thủ công từng đặc trưng trên thẻ bìa bồi giấy ngà.",
+      "Bước 1: Hệ thống hóa các khái niệm và quy ước hóa trang từ kịch bản Huyện đường.",
+      "Bước 2: Vẽ minh họa thủ công từng sắc diện Tri huyện, Đề lại, Lính lệ, Trùm Sò trên thẻ bìa bồi giấy ngà.",
       "Bước 3: Đóng quyển bằng dây gai truyền thống để lưu trữ tại góc học tập lớp.",
     ],
     materialsUsed: [
       "Bìa kraft định lượng 400gsm, giấy ngà",
       "Dây gai, khoen đồng cố định thẻ",
-      "Mực vẽ và bút viết thư pháp",
+      "Mực vẽ và bút lông tỉa nét",
     ],
     videoStatusNote:
       "Khung video lật mở bộ thẻ thủ công (Tệp chờ cập nhật: /public/videos/exhibition/bo-the-thu-cong.mp4)",
     artSubject: "exhibit-mask-set",
-    expectedAssetFile: "/images/exhibition/mau-so-tay-the-giai-ma.jpg",
+    expectedAssetFile: "/images/cinema/scene-09-xuong-steam.png",
   },
 ];

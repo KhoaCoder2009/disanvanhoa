@@ -78,7 +78,7 @@ export const STEAM_ELEMENTS: SteamElement[] = [
     englishName: "SCIENCE",
     vietnameseName: "Khoa học",
     shortExplanation:
-      "Nghiên cứu đặc tính vật liệu (độ bền, độ hút ẩm của giấy bồi, bìa cứng, gỗ sung), quang học ánh sáng – bóng đổ và tâm lý học thị giác về màu sắc trong nghệ thuật truyền thống.",
+      "Nghiên cứu đặc tính vật liệu (độ bền, độ hút ẩm của giấy bồi, bìa cứng, giấy can), quang học ánh sáng – bóng đổ và tâm lý học thị giác về màu sắc trong nghệ thuật tạo hình truyền thống.",
     huyenDuongExample:
       "Khảo sát độ bám dính của chất liệu màu trên bề mặt bìa cứng và hiệu ứng tương phản thị giác giúp nhận diện biểu cảm nhân vật Huyện đường từ xa.",
     damSanExample:

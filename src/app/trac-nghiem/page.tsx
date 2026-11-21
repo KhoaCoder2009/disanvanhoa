@@ -7,9 +7,9 @@ import { CallToActionAndFooter } from "@/components/CallToActionAndFooter";
 import { BookOpen, Compass } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Trắc nghiệm Di sản Văn học & STEAM | DI SẢN VĂN HỌC VIỆT",
+  title: "Trắc nghiệm Huyện đường & Sử thi Đăm Săn | DI SẢN VĂN HỌC VIỆT",
   description:
-    "Hệ thống câu hỏi trắc nghiệm củng cố kiến thức Ngữ văn 10 (Hồn Chèo, Sắc Tuồng Huyện đường, Múa rối nước, Sử thi Đăm Săn) và Quy trình Sáng tạo STEAM.",
+    "Hệ thống câu hỏi trắc nghiệm củng cố kiến thức Ngữ văn 10 (Dự án Tuồng đồ Huyện đường, Sử thi Đăm Săn) và Quy trình Sáng tạo STEAM.",
 };
 
 export default function TracNghiemPage() {

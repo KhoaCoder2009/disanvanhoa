@@ -23,24 +23,31 @@ export default function BaoTangSoPage() {
           actions={
             <>
               <Link
-                href="/bao-tang-so/hon-cheo"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-5 py-3 text-sm font-semibold text-heritage-ivory border border-heritage-goldSoft/60 hover:bg-heritage-goldAntique hover:text-heritage-woodDark transition-colors"
+                href="/bao-tang-so/sac-tuong-huyen-duong"
+                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2.5 text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
               >
-                <span>Phòng 01: Hồn Chèo</span>
+                <span>Phòng 01: Sắc Tuồng Huyện đường</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/bao-tang-so/sac-tuong"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-woodLight px-5 py-3 text-sm font-semibold text-heritage-goldSoft border border-heritage-goldAntique hover:bg-heritage-goldSoft hover:text-heritage-woodDark transition-colors"
+                href="/bao-tang-so/tu-dai-nhan-vat"
+                className="inline-flex items-center gap-2 rounded-xl bg-heritage-woodDark px-4 py-2.5 text-sm font-semibold text-heritage-goldSoft hover:bg-heritage-crimson transition-colors"
               >
-                <span>Phòng 02: Sắc Tuồng</span>
+                <span>Phòng 02: Bốn nhân vật</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/bao-tang-so/hon-nuoc"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-woodLight px-5 py-3 text-sm font-semibold text-heritage-goldSoft border border-heritage-goldAntique hover:bg-heritage-goldSoft hover:text-heritage-woodDark transition-colors"
+                href="/bao-tang-so/khong-gian-dam-san"
+                className="inline-flex items-center gap-2 rounded-xl bg-heritage-emerald px-4 py-2.5 text-sm font-semibold text-white hover:bg-heritage-amber transition-colors"
               >
-                <span>Phòng 03: Hồn Nước</span>
+                <span>Phòng 03: Sử thi Đăm Săn</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/bao-tang-so/hanh-trinh-mat-troi"
+                className="inline-flex items-center gap-2 rounded-xl bg-heritage-amber px-4 py-2.5 text-sm font-semibold text-white hover:bg-heritage-bronze transition-colors"
+              >
+                <span>Phòng 04: Nữ thần Mặt Trời</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </>
@@ -144,52 +151,51 @@ export default function BaoTangSoPage() {
           </div>
         </section>
 
-        {/* Bảng đối chiếu 3 loại hình Sân khấu dân gian Việt Nam */}
+        {/* Bảng đối chiếu Song hành Hai Dự Án Trọng Tâm (Huyện đường & Sử thi Đăm Săn) */}
         <section className="py-16 bg-heritage-ivoryLight border-b border-heritage-goldAntique/30">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-heritage-woodDark">
-                BẢNG ĐỐI CHIẾU ĐẶC TRƯNG SÂN KHẤU DÂN GIAN (BÀI 5 – NGỮ VĂN 10)
+                BẢNG ĐỐI CHIẾU HAI DỰ ÁN: TUỒNG HUYỆN ĐƯỜNG &amp; SỬ THI ĐĂM SĂN
               </h2>
               <p className="mt-2 text-sm sm:text-base text-heritage-ink">
-                Tư liệu hệ thống hóa kiến thức giúp học sinh so sánh không gian diễn xướng, nghệ thuật tạo hình và ngôn ngữ ước lệ trước khi bước vào Xưởng STEAM.
+                Tư liệu hệ thống hóa giúp học sinh đối chiếu đặc trưng thể loại, không gian văn hóa, ngôn ngữ tạo hình và sản phẩm chế tác tại Xưởng STEAM.
               </p>
             </div>
 
-            <div className="mt-8 overflow-x-auto rounded-2xl border border-heritage-goldAntique/50 shadow-museum">
-              <table className="w-full text-left border-collapse bg-heritage-ivory text-xs sm:text-sm">
+            <div className="mt-8 overflow-x-auto rounded-2xl border border-heritage-crimson/30 shadow-museum">
+              <table className="w-full text-left border-collapse bg-white text-xs sm:text-sm">
                 <thead>
                   <tr className="bg-heritage-woodDark text-heritage-goldSoft font-serif text-sm sm:text-base">
                     <th className="p-4 border-b border-heritage-goldAntique/40">Tiêu chí đối chiếu</th>
-                    <th className="p-4 border-b border-heritage-goldAntique/40">Nghệ thuật Chèo (Hồn Chèo)</th>
-                    <th className="p-4 border-b border-heritage-goldAntique/40">Nghệ thuật Tuồng (Sắc Tuồng)</th>
-                    <th className="p-4 border-b border-heritage-goldAntique/40">Múa rối nước (Hồn Nước)</th>
+                    <th className="p-4 border-b border-heritage-goldAntique/40 bg-heritage-crimson text-white">
+                      Dự án 01: Tuồng đồ Huyện đường
+                    </th>
+                    <th className="p-4 border-b border-heritage-goldAntique/40 bg-heritage-emerald text-white">
+                      Dự án 02: Sử thi Đăm Săn
+                    </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-heritage-goldAntique/30">
+                <tbody className="divide-y divide-heritage-crimson/15">
                   <tr>
                     <td className="p-4 font-bold text-heritage-woodDark bg-heritage-ivoryLight">Văn bản trọng tâm SGK</td>
-                    <td className="p-4">Xúy Vân giả dại (Chèo cổ Kim Nham)</td>
-                    <td className="p-4">Huyện đường (Tuồng đồ Nghêu, Sò, Ốc, Hến)</td>
-                    <td className="p-4">Múa rối nước – hiện đại soi bóng tiền nhân</td>
+                    <td className="p-4">Huyện đường (Trích vở tuồng đồ Nghêu, Sò, Ốc, Hến)</td>
+                    <td className="p-4">Đăm Săn đi bắt Nữ thần Mặt Trời (Sử thi Ê-đê Tây Nguyên)</td>
                   </tr>
                   <tr>
-                    <td className="p-4 font-bold text-heritage-woodDark bg-heritage-ivoryLight">Không gian biểu diễn</td>
-                    <td className="p-4">Chiếu chèo trải giữa sân đình, khán giả vây quanh 3 mặt, tương tác qua tiếng đế.</td>
-                    <td className="p-4">Sân khấu công đường hoặc đình làng với đạo cụ tối giản, lấy diễn viên làm trung tâm.</td>
-                    <td className="p-4">Thủy đình (nhà rối) dựng giữa mặt hồ/ao làng; buồng trò ẩn sau mành tre.</td>
+                    <td className="p-4 font-bold text-heritage-woodDark bg-heritage-ivoryLight">Không gian văn hóa &amp; diễn xướng</td>
+                    <td className="p-4">Sân khấu công đường lấy diễn viên làm trung tâm với đối đáp trào phúng và nói lối.</td>
+                    <td className="p-4">Không gian nhà dài Tây Nguyên, bếp lửa cộng đồng, tiếng cồng chiêng và nghệ thuật kể khan (Klei Khan).</td>
                   </tr>
                   <tr>
-                    <td className="p-4 font-bold text-heritage-woodDark bg-heritage-ivoryLight">Đặc trưng tạo hình &amp; Ước lệ</td>
-                    <td className="p-4">Trang phục dân gian cách điệu, đạo cụ chiếc quạt biểu đạt tâm trạng đa chiều.</td>
-                    <td className="p-4">Mặt nạ hóa trang mã màu đậm nét (trắng mốc, đỏ, xanh xám, râu ba chòm) quy ước rõ tính cách.</td>
-                    <td className="p-4">Quân rối tạc bằng gỗ sung nhẹ, phủ sơn ta chống thấm với tạo hình tươi vui, hóm hỉnh.</td>
+                    <td className="p-4 font-bold text-heritage-woodDark bg-heritage-ivoryLight">Đặc trưng tạo hình &amp; Mã màu</td>
+                    <td className="p-4">Mặt nạ ước lệ bộ tứ Tri huyện, Đề lại, Lính lệ, Trùm Sò (trắng mốc, đỏ son, xanh xám, vàng sậm).</td>
+                    <td className="p-4">Bóng cắt đa tầng (nhà dài Ê-đê, rừng Sáp Đen, vầng Mặt Trời rực sáng) phối hoa văn thổ cẩm đỏ – đen – vàng.</td>
                   </tr>
                   <tr>
-                    <td className="p-4 font-bold text-heritage-woodDark bg-heritage-ivoryLight">Ứng dụng thực hành STEAM</td>
-                    <td className="p-4">Thiết kế Infographic bản đồ làn điệu &amp; tâm lý nhân vật Xúy Vân.</td>
-                    <td className="p-4">Thiết kế, chế tạo bộ chân dung mặt nạ 4 nhân vật bằng bìa cứng và vi diễn.</td>
-                    <td className="p-4">Mô hình kiến trúc Thủy đình thu nhỏ và khảo sát cơ cấu đòn bẩy, dây kéo.</td>
+                    <td className="p-4 font-bold text-heritage-woodDark bg-heritage-ivoryLight">Sản phẩm thực hành STEAM</td>
+                    <td className="p-4">Bộ chân dung mặt nạ 3D bằng bìa cứng nhiều lớp, thẻ giải mã và video vi diễn 3–5 phút.</td>
+                    <td className="p-4">Sa bàn Hộp kể chuyện 3 lớp (Storybox Diorama) dùng giấy can tán sáng LED ấm, thanh trượt cơ học và Podcast QR.</td>
                   </tr>
                 </tbody>
               </table>

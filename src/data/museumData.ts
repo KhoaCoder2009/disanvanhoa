@@ -5,110 +5,148 @@ export const MUSEUM_SECTION_META = {
   englishName: "DIGITAL MUSEUM",
   title: "KHÁM PHÁ KHO TÀNG DI SẢN",
   description:
-    "Mỗi tác phẩm văn học là một cánh cửa mở ra thế giới nghệ thuật và văn hóa. Hãy cùng khám phá những giá trị truyền thống qua các không gian trưng bày số.",
+    "Hai không gian di sản trọng tâm của Ngữ văn 10: Nghệ thuật Tuồng đồ Huyện đường (Nghêu, Sò, Ốc, Hến) và Sử thi anh hùng Đăm Săn của đồng bào Ê-đê Tây Nguyên.",
 };
 
 export const MUSEUM_WINGS: MuseumWing[] = [
   {
-    id: "hon-cheo",
+    id: "sac-tuong-huyen-duong",
     code: "PHÒNG TRƯNG BÀY 01",
-    title: "HỒN CHÈO",
-    subtitle: "Sân khấu chiếu chèo & Bi kịch nội tâm nhân vật",
-    workReference: "Trích đoạn: Xúy Vân giả dại (Chèo cổ Kim Nham)",
-    gradeReference: "Ngữ văn 10 – Bài 5: Tích trò sân khấu dân gian",
-    shortDescription:
-      "Khám phá không gian sân khấu chiếu chèo truyền thống vùng đồng bằng Bắc Bộ, nơi tiếng trống chèo, làn điệu dân ca và vũ đạo cách điệu khắc họa sâu sắc bi kịch tâm trạng của nhân vật Xúy Vân.",
-    highlights: [
-      "Đặc trưng sân khấu chiếu chèo và sự giao lưu hai chiều với khán giả (tiếng đế).",
-      "Nhân vật Xúy Vân trong trích đoạn kinh điển Xúy Vân giả dại.",
-      "Sự hòa quyện giữa làn điệu Con gà rừng, Sa lệch và động tác múa quạt, xe tơ.",
-    ],
-    buttonLabel: "KHÁM PHÁ CHÈO",
-    artSubject: "cheo-xuy-van",
-    expectedAssetFile: "/images/museum/san-khau-cheo-xuy-van.jpg",
-    assetNote: "Tranh minh họa đồ họa sân khấu chiếu chèo (Cập nhật ảnh tư liệu tại /public/images/museum/san-khau-cheo-xuy-van.jpg)",
-    detailContent: {
-      culturalContext:
-        "Chèo là loại hình kịch hát dân gian lâu đời của người Việt ở châu thổ sông Hồng, gắn liền với sân đình và lễ hội làng quê. Nghệ thuật chèo kết hợp nhuần nhuyễn giữa ngôn từ thơ ca, âm nhạc dân tộc và múa dân gian có tính ước lệ cao.",
-      literaryExcerptInfo:
-        "Trích đoạn 'Xúy Vân giả dại' (thuộc vở chèo cổ Kim Nham) tái hiện đỉnh điểm bi kịch tinh thần của Xúy Vân – người phụ nữ khao khát hạnh phúc gia đình sum vầy nhưng rơi vào bế tắc, dằn vặt giữa lầm lỗi và nỗi cô đơn giữa định kiến lễ giáo.",
-      artisticFeatures: [
-        "Ngôn ngữ nửa tỉnh nửa mê, đan xen giữa lời nói vần, hát quá giang, hát con gà rừng và hát ngược.",
-        "Vũ đạo tay quạt, bước chân lảo đảo nhưng tuân thủ nghiêm ngặt nhịp trống chèo.",
-        "Tiếng đế từ hậu trường vừa dẫn dắt tâm lý, vừa tạo sự đồng cảm sâu sắc với số phận nhân vật.",
-      ],
-      steamConnection:
-        "Phân tích cấu trúc âm thanh nhịp phách chèo, thiết kế sơ đồ không gian sân đình ba mặt và biên tập infographic giải mã tầng nghĩa biểu tượng trong lời hát của Xúy Vân.",
-      discussionPrompt:
-        "Vì sao trong cảnh giả dại, đằng sau những câu hát tưởng như điên đảo, vô nghĩa của Xúy Vân lại ẩn chứa nỗi đau rất thật của người phụ nữ truyền thống?",
-    },
-  },
-  {
-    id: "sac-tuong",
-    code: "PHÒNG TRƯNG BÀY 02",
-    title: "SẮC TUỒNG",
-    subtitle: "Nghệ thuật hóa trang, ước lệ & Châm biếm dân gian",
+    title: "SẮC TUỒNG HUYỆN ĐƯỜNG",
+    subtitle: "Nghệ thuật hóa trang ước lệ & Mã màu tính cách",
+    themeAccent: "crimson",
     workReference: "Trích đoạn: Huyện đường (Tuồng đồ Nghêu, Sò, Ốc, Hến)",
-    gradeReference: "Ngữ văn 10 – Bài 5: Tích trò sân khấu dân gian",
+    gradeReference: "Ngữ văn 10 – Dự án Huyện đường",
     shortDescription:
-      "Tìm hiểu ngôn ngữ màu sắc hóa trang mặt nạ tuồng, kỹ thuật biểu diễn ước lệ, động tác hình thể sắc sảo và tiếng cười phê phán sâu cay qua trích đoạn tuồng hài Huyện đường.",
+      "Giải mã hệ thống mã màu sắc – đường nét ước lệ trên mặt nạ Tuồng đồ truyền thống, nơi sắc trắng mốc, vệt đỏ sẫm, mảng xanh xám hay vàng sậm bộc lộ ngay bản chất từng nhân vật trước khi cất lời.",
     highlights: [
-      "Đặc trưng hóa trang mặt tuồng: mỗi gam màu và đường cọ là một bản mã tính cách.",
-      "Nghệ thuật biểu diễn ước lệ, cường điệu trong động tác, dáng đi và giọng nói.",
-      "Liên kết trực tiếp tới trích đoạn Huyện đường và dự án STEAM thiết kế mặt nạ.",
+      "Bảng quy ước màu sắc mặt tuồng: trắng mốc giả nhân, xanh xám gian ngoan, nâu đất hề tuồng.",
+      "Kỹ thuật cường điệu dáng mày, râu ba chòm và tỷ lệ đối xứng trên khuôn mặt.",
+      "Liên kết trực tiếp tới Dự án 01 chế tạo mặt nạ bìa cứng nhiều lớp.",
     ],
-    buttonLabel: "KHÁM PHÁ TUỒNG",
+    buttonLabel: "KHÁM PHÁ SẮC TUỒNG",
     artSubject: "tuong-huyen-duong",
-    expectedAssetFile: "/images/museum/hoa-trang-san-khau-tuong.jpg",
-    assetNote: "Tranh minh họa đồ họa mặt nạ và sân khấu tuồng (Cập nhật ảnh tư liệu tại /public/images/museum/hoa-trang-san-khau-tuong.jpg)",
+    expectedAssetFile: "/images/cinema/scene-03-sac-tuong.png",
+    assetNote: "Tư liệu Diorama Mặt nạ Tuồng ước lệ tại Bảo tàng số",
     detailContent: {
       culturalContext:
-        "Tuồng (Hát bội) là nghệ thuật sân khấu cổ điển mang tính ước lệ, tượng trưng và cách điệu bậc cao. Bên cạnh Tuồng pho (tuồng cung đình bi hùng), Tuồng đồ (tuồng hài dân gian) sử dụng bút pháp trào phúng sắc bén để phơi bày thói hư tật xấu của tầng lớp quan lại phong kiến.",
+        "Tuồng đồ là dòng tuồng hài dân gian giàu tinh thần phê phán, sử dụng thủ pháp ước lệ, tượng trưng và phóng đại để bóc trần những thói hư tật xấu của bộ máy quan lại phong kiến xưa.",
       literaryExcerptInfo:
-        "Trích đoạn 'Huyện đường' (thuộc vở tuồng đồ đặc sắc Nghêu, Sò, Ốc, Hến) dựng lại cảnh xử kiện tại công đường nơi Tri huyện, Đề lại, Lính lệ và Trùm Sò tự bộc lộ bản chất tham lam, lươn lẹo qua từng lời thoại và cử chỉ.",
+        "Trích đoạn 'Huyện đường' (trích vở Nghêu, Sò, Ốc, Hến) mở ra cảnh công đường nơi vị quan đầu huyện và thuộc hạ công khai bàn chuyện xử kiện vì tiền tài và tư lợi.",
       artisticFeatures: [
-        "Ngôn ngữ hóa trang ước lệ: sắc trắng mốc, nét râu vểnh, vết chàm hay mảng màu tương phản phản ánh tức thì bản chất nhân vật.",
-        "Động tác hình thể (vuốt râu, xoa tay, khom lưng, trợn mắt) gắn chặt với nhịp trống chầu.",
-        "Kết cấu đối thoại nhịp nhàng, dùng chính lời nhân vật tự giới thiệu để lột trần bộ mặt thật.",
+        "Mặt nạ không mô tả tả thực mà mã hóa tính cách thông qua gam màu đỏ son, trắng mốc, xanh rêu, vàng sậm.",
+        "Đường nét mày xếch, khóe miệng lệch hay vệt phấn sống mũi giúp khán giả nhận diện tức thì vai nịnh – vai hài.",
+        "Mối liên kết chặt chẽ giữa tạo hình khuôn mặt và điệu bộ vuốt râu, khom lưng, vỗ án.",
       ],
       steamConnection:
-        "Kết nối trực tiếp với Chủ đề học tập 01: Giải mã tâm lý nhân vật thành hệ mã màu sắc – đường nét, thiết kế và chế tạo bộ chân dung mô phỏng hóa trang tuồng bằng bìa cứng kèm video vi diễn.",
+        "Ứng dụng Toán học tỷ lệ gương mặt và Kỹ thuật bồi bìa cứng 3D nhiều lớp để chế tạo mặt nạ biểu diễn trực quan ngay trên lớp.",
       discussionPrompt:
-        "Màu sắc và đường nét hóa trang trên gương mặt các nhân vật tại Huyện đường hỗ trợ người xem nhận diện bản chất của bộ máy quan lại xưa như thế nào trước cả khi nhân vật cất lời?",
+        "Vì sao nghệ thuật hóa trang mặt tuồng truyền thống lại giúp người xem nhận diện được bản chất nhân vật nơi Huyện đường ngay trước cả khi họ cất lời?",
     },
   },
   {
-    id: "hon-nuoc",
-    code: "PHÒNG TRƯNG BÀY 03",
-    title: "HỒN NƯỚC",
-    subtitle: "Thủy đình, con rối & Cơ chế điều khiển dưới mặt nước",
-    workReference: "Văn bản: Múa rối nước – hiện đại soi bóng tiền nhân",
-    gradeReference: "Ngữ văn 10 – Bài 5: Tích trò sân khấu dân gian",
+    id: "tu-dai-nhan-vat",
+    code: "PHÒNG TRƯNG BÀY 02",
+    title: "CÔNG ĐƯỜNG & BỐN NHÂN VẬT",
+    subtitle: "Tiếng cười trào phúng qua Tri huyện, Đề lại, Lính lệ, Trùm Sò",
+    themeAccent: "bronze",
+    workReference: "Trích đoạn: Huyện đường (Tứ đại nhân vật công đường)",
+    gradeReference: "Ngữ văn 10 – Dự án Huyện đường",
     shortDescription:
-      "Chiêm ngưỡng kiến trúc thủy đình mái đao soi bóng mặt hồ, nghệ thuật tạc con rối gỗ sung và cơ chế máy sào, máy dây tài hoa ẩn dưới làn nước của các nghệ nhân dân gian.",
+      "Khảo sát không gian án thư công đường nơi bốn nhân vật Tri huyện, Đề lại, Lính lệ và Trùm Sò tự bộc lộ chân tướng tham lam, lươn lẹo và keo kiệt qua lời thoại xưng danh và đối đáp.",
     highlights: [
-      "Kiến trúc thủy đình giữa mặt nước – buồng trò bí mật và sân khấu mở.",
-      "Nghệ thuật tạo hình con rối gỗ sung sơn ta và nhân vật chú Tễu hóm hỉnh.",
-      "Liên kết văn bản thông tin Múa rối nước – hiện đại soi bóng tiền nhân.",
+      "Bóc tách quan hệ quyền lực – lợi ích giữa Tri huyện, Đề lại, Lính lệ và Trùm Sò.",
+      "Nghệ thuật dùng lời nhân vật tự giới thiệu để tự lột trần thói xấu.",
+      "Tài liệu nền cho kịch bản vi diễn sân khấu hóa 3–5 phút trên lớp.",
     ],
-    buttonLabel: "KHÁM PHÁ MÚA RỐI NƯỚC",
-    artSubject: "mua-roi-nuoc",
-    expectedAssetFile: "/images/museum/mua-roi-nuoc-thuy-dinh.jpg",
-    assetNote: "Tranh minh họa đồ họa thủy đình và con rối nước (Cập nhật ảnh tư liệu tại /public/images/museum/mua-roi-nuoc-thuy-dinh.jpg)",
+    buttonLabel: "KHÁM PHÁ CÔNG ĐƯỜNG",
+    artSubject: "huyen-duong-court",
+    expectedAssetFile: "/images/cinema/scene-07-huyen-duong.png",
+    assetNote: "Tư liệu Diorama Bàn án thư công đường Huyện đường",
     detailContent: {
       culturalContext:
-        "Múa rối nước là sáng tạo nghệ thuật độc nhất vô nhị của cư dân văn minh lúa nước đồng bằng sông Hồng. Mặt nước ao làng trở thành sàn diễn sống động, vừa che giấu bộ máy điều khiển bên dưới, vừa tạo hiệu ứng sóng nước, ánh sáng lung linh.",
+        "Trong nghệ thuật Tuồng hài dân gian, chốn công đường vốn là biểu tượng của công lý nhưng lại bị biến thành sàn giao dịch lễ vật, tạo nên sức mạnh phê phán sâu sắc.",
       literaryExcerptInfo:
-        "Văn bản thông tin 'Múa rối nước – hiện đại soi bóng tiền nhân' giúp người đọc khám phá lịch sử hình thành, không gian biểu diễn thủy đình, kỹ thuật chế tác quân rối và sức sống bền bỉ của môn nghệ thuật này trong nhịp sống đương đại.",
+        "Qua màn chào đầu tự xưng của Tri huyện, lời rỉ tai xúi bẩy của Đề lại, giọng đùa cợt bộc trực của Lính lệ và dáng vẻ khúm núm giữ tiền của Trùm Sò, toàn bộ vụ kiện bị đảo lộn trắng đen.",
       artisticFeatures: [
-        "Thủy đình (nhà rối nước) mang dáng dấp mái đình cổ truyền với bức mành tre ngăn cách buồng trò và mặt nước.",
-        "Con rối được đục đẽo từ gỗ sung nhẹ, nổi trên nước, phủ sơn ta chống thấm và trang trí rực rỡ.",
-        "Cơ chế điều khiển từ xa dưới nước qua hệ thống sào tre, dây kéo, bàn xoay, bánh lái đòi hỏi sự hiệp đồng chính xác.",
+        "Thủ pháp tự bộc lộ: nhân vật đứng ra kể thẳng phương châm 'làm quan ăn lễ' một cách thản nhiên.",
+        "Ngôn ngữ đối đáp giàu tính khẩu ngữ dân gian, xen giữa nói lối và hát khách trào lộng.",
+        "Tứ giác tính cách tương phản tạo nhịp kịch sinh động khi đưa lên sân khấu học đường.",
       ],
       steamConnection:
-        "Khảo sát nguyên lý lực đẩy Archimedes, đòn bẩy và cơ cấu truyền động dây – ròng rọc trong điều khiển rối nước để dựng mô hình sân khấu thủy đình thu nhỏ.",
+        "Thiết kế bộ tứ chân dung 4 nhân vật (Tri huyện – Đề lại – Lính lệ – Trùm Sò) đi kèm 4 Thẻ giải mã học thuật trích dẫn lời thoại gốc SGK.",
       discussionPrompt:
-        "Sự kết hợp giữa chất liệu tự nhiên (mặt nước, gỗ sung, tre trúc) và tư duy kỹ thuật cơ học của nghệ nhân xưa đã tạo nên vẻ đẹp kỳ ảo cho múa rối nước như thế nào?",
+        "Sự cấu kết và đối lập tính cách giữa Tri huyện, Đề lại, Lính lệ và Trùm Sò phơi bày điều gì về hiện thực xã hội phong kiến?",
+    },
+  },
+  {
+    id: "khong-gian-dam-san",
+    code: "PHÒNG TRƯNG BÀY 03",
+    title: "KHÔNG GIAN SỬ THI ĐĂM SĂN",
+    subtitle: "Văn hóa Ê-đê, Nhà dài, Cồng chiêng & Diễn xướng Klei Khan",
+    themeAccent: "emerald",
+    workReference: "Sử thi Tây Nguyên: Đăm Săn đi bắt Nữ thần Mặt Trời",
+    gradeReference: "Ngữ văn 10 – Dự án Sử thi Đăm Săn",
+    shortDescription:
+      "Bước vào thế giới sử thi anh hùng của đồng bào Ê-đê với kiến trúc nhà dài, tiếng cồng chiêng Hlong vang vọng đại ngàn và truyền thống hát kể khan (Klei Khan) bên bếp lửa.",
+    highlights: [
+      "Tái hiện không gian buôn làng Ê-đê: nhà dài, cầu thang gỗ và hoa văn thổ cẩm.",
+      "Hình tượng người tù trưởng Đăm Săn kỳ vĩ đại diện cho ý chí thị tộc.",
+      "Kết nối tư liệu âm thanh Podcast thuyết minh văn hóa Tây Nguyên.",
+    ],
+    buttonLabel: "KHÁM PHÁ SỬ THI ĐĂM SĂN",
+    artSubject: "dam-san-longhouse",
+    expectedAssetFile: "/images/cinema/scene-dam-san-nha-dai.png",
+    assetNote: "Tư liệu Diorama Đăm Săn & Nhà dài Ê-đê Tây Nguyên",
+    detailContent: {
+      culturalContext:
+        "Sử thi (Klei Khan) là pho sử bằng lời của các dân tộc Tây Nguyên, gắn với không gian sinh hoạt cộng đồng nơi bếp lửa nhà dài và nhịp cồng chiêng trang trọng.",
+      literaryExcerptInfo:
+        "Hình tượng chàng Đăm Săn mang tầm vóc vũ trụ với ngoại hình, sức mạnh và danh tiếng vang dội khắp núi rừng, sẵn sàng chinh phục những thử thách vượt giới hạn con người.",
+      artisticFeatures: [
+        "Ngôn ngữ sử thi giàu tính khoa trương, trùng điệp và hình ảnh so sánh phóng đại lấy từ thiên nhiên đại ngàn.",
+        "Không gian văn hóa vật chất đặc trưng: cầu thang chạm khắc, ghế Kpan dài, ché rượu cần và vải thổ cẩm.",
+        "Vẻ đẹp bi tráng hòa quyện giữa con người anh hùng và núi rừng Tây Nguyên.",
+      ],
+      steamConnection:
+        "Phân tích kiến trúc nhà dài Ê-đê và hoa văn thổ cẩm để dựng mô hình tiền cảnh hộp diorama kết hợp thu âm Podcast thuyết minh.",
+      discussionPrompt:
+        "Không gian nhà dài và tiếng cồng chiêng góp phần khắc họa tầm vóc người anh hùng Đăm Săn như thế nào?",
+    },
+  },
+  {
+    id: "hanh-trinh-mat-troi",
+    code: "PHÒNG TRƯNG BÀY 04",
+    title: "RỪNG SÁP ĐEN & NỮ THẦN MẶT TRỜI",
+    subtitle: "Khát vọng chinh phục thiên nhiên & Quang học Hộp sáng 3 lớp",
+    themeAccent: "amber",
+    workReference: "Trích đoạn: Đăm Săn đi bắt Nữ thần Mặt Trời",
+    gradeReference: "Ngữ văn 10 – Dự án Sử thi Đăm Săn",
+    shortDescription:
+      "Theo dấu hành trình Đăm Săn cưỡi ngựa vượt rừng Sáp Đen tiến tới ngôi nhà Nữ thần Mặt Trời – nơi vẻ đẹp bi tráng của sử thi gặp gỡ nghệ thuật cắt lớp và quang học LED trong Hộp kể chuyện 3 lớp.",
+    highlights: [
+      "Biểu tượng Nữ thần Mặt Trời và thử thách khắc nghiệt của rừng Sáp Đen.",
+      "Ý nghĩa bất tử hóa khát vọng vươn tới ánh sáng lý tưởng của cộng đồng.",
+      "Cơ sở khoa học quang học tán sáng qua giấy can cho Hộp kể chuyện 3 lớp.",
+    ],
+    buttonLabel: "KHÁM PHÁ HÀNH TRÌNH MẶT TRỜI",
+    artSubject: "dam-san-sun-goddess",
+    expectedAssetFile: "/images/cinema/scene-dam-san-mat-troi.png",
+    assetNote: "Tư liệu Diorama Vầng Mặt Trời & Rừng Sáp Đen Sử thi Đăm Săn",
+    detailContent: {
+      culturalContext:
+        "Chuyến đi bắt Nữ thần Mặt Trời là đỉnh cao táo bạo trong sử thi Đăm Săn, biểu trưng cho khát vọng khẳng định uy danh và sức mạnh tập thể trước tự nhiên huyền bí.",
+      literaryExcerptInfo:
+        "Dù biết con đường qua rừng Sáp Đen cỏ tranh sắc như dao và bùn lầy ngập ngụa đầy hiểm nguy, Đăm Săn vẫn dấn bước không lùi trước vầng sáng chói lòa của Nữ thần Mặt Trời.",
+      artisticFeatures: [
+        "Thủ pháp tương phản ánh sáng – bóng tối giữa rừng Sáp Đen âm u và ngôi nhà Nữ thần rực rỡ.",
+        "Nhịp điệu dồn dập mô tả bước ngựa phi và thái độ kiêu hãnh bất khuất trước sự từ chối của Nữ thần.",
+        "Kết cục bi tráng nâng người anh hùng lên tầm biểu tượng vĩnh cửu trong ký ức buôn làng.",
+      ],
+      steamConnection:
+        "Thiết kế hộp kể chuyện 3 lớp (Tiền cảnh – Trung cảnh có rãnh trượt Đăm Săn – Hậu cảnh giấy can tán sáng đèn LED vàng ấm).",
+      discussionPrompt:
+        "Vì sao cái chết của Đăm Săn trên đường trở về từ nhà Nữ thần Mặt Trời lại mang vẻ đẹp bi tráng và bất tử thay vì bi lụy?",
     },
   },
 ];

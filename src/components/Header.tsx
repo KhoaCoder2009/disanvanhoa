@@ -32,36 +32,30 @@ const HERITAGE_SEARCH_INDEX: QuickIndexEntry[] = [
   {
     title: "Trắc nghiệm Di sản Văn học & STEAM (20 câu hỏi)",
     subtitle:
-      "Chuyên trang ôn luyện Hồn Chèo, Sắc Tuồng Huyện đường, Múa rối nước, Đăm Săn & STEAM",
+      "Chuyên trang ôn luyện Tuồng đồ Huyện đường, Sử thi Đăm Săn & Quy trình STEAM",
     category: "Trắc nghiệm",
     href: "/trac-nghiem",
   },
   {
-    title: "Chặng 01: Bảo tàng số — Hồn Chèo (Xúy Vân giả dại)",
-    subtitle: "Cuộn tới không gian sân khấu chiếu chèo truyền thống – Ngữ văn 10 Bài 5",
+    title: "Chặng 01: Bảo tàng số — Sắc Tuồng & Công đường Huyện đường",
+    subtitle: "Cuộn tới không gian hóa trang ước lệ và 4 nhân vật: Tri huyện, Đề lại, Lính lệ, Trùm Sò",
     category: "Bảo tàng số",
     href: "/#bao-tang-so",
   },
   {
-    title: "Chặng 01: Bảo tàng số — Sắc Tuồng (Huyện đường)",
-    subtitle: "Cuộn tới nghệ thuật hóa trang mặt nạ ước lệ & Trích đoạn Huyện đường",
+    title: "Chặng 01: Bảo tàng số — Không gian Sử thi Đăm Săn (Ê-đê)",
+    subtitle: "Cuộn tới nhà dài Tây Nguyên, diễn xướng Klei Khan, Rừng Sáp Đen & Nữ thần Mặt Trời",
     category: "Bảo tàng số",
     href: "/#bao-tang-so",
   },
   {
-    title: "Chặng 01: Bảo tàng số — Hồn Nước (Múa rối nước)",
-    subtitle: "Cuộn tới kiến trúc Thủy đình, con rối gỗ sung & Múa rối nước",
-    category: "Bảo tàng số",
-    href: "/#bao-tang-so",
-  },
-  {
-    title: "Chặng 02: Chủ đề 01 — Mã màu và nét mặt ước lệ (Đang triển khai)",
+    title: "Chặng 02: Chủ đề 01 — Mã màu và nét mặt ước lệ (Huyện đường)",
     subtitle: "Cuộn tới hồ sơ giải mã 4 nhân vật: Tri huyện, Đề lại, Lính lệ, Trùm Sò",
     category: "Chủ đề học tập",
     href: "/#chu-de-hoc-tap",
   },
   {
-    title: "Chặng 02: Chủ đề 02 — Đánh thức thế giới sử thi (Dự kiến phát triển)",
+    title: "Chặng 02: Chủ đề 02 — Đánh thức thế giới sử thi (Đăm Săn)",
     subtitle: "Cuộn tới thiết kế hộp kể chuyện 3 lớp cảnh Đăm Săn đi bắt Nữ thần Mặt Trời",
     category: "Chủ đề học tập",
     href: "/#chu-de-hoc-tap",
@@ -74,13 +68,13 @@ const HERITAGE_SEARCH_INDEX: QuickIndexEntry[] = [
   },
   {
     title: "Chặng 04: Triển lãm số — Những sáng tạo từ trang sách",
-    subtitle: "Cuộn tới bộ lọc 7 danh mục sản phẩm học tập: Mặt nạ, Hộp kể chuyện, Thủy đình",
+    subtitle: "Cuộn tới sản phẩm Mặt nạ Huyện đường, Hộp kể chuyện Đăm Săn, Infographic & Podcast",
     category: "Triển lãm số",
     href: "/#trien-lam-so",
   },
   {
     title: "Chặng 05: Diễn đàn học tập & Bảng Rubric Nói và Nghe",
-    subtitle: "Cuộn tới câu hỏi thảo luận mở, cấu trúc bài thuyết trình & Cổng Padlet / Forms",
+    subtitle: "Cuộn tới câu hỏi thảo luận Huyện đường & Đăm Săn, cấu trúc thuyết trình & Rubric",
     category: "Diễn đàn",
     href: "/#dien-dan-hoc-tap",
   },
@@ -338,7 +332,7 @@ export const Header: React.FC = () => {
                 autoFocus
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Tìm nhanh: Huyện đường, Xúy Vân, Đăm Săn, Tri huyện, Thủy đình, Rubric..."
+                placeholder="Tìm nhanh: Huyện đường, Tri huyện, Đề lại, Trùm Sò, Đăm Săn, Nhà dài, Rubric..."
                 className="w-full bg-transparent text-sm sm:text-base text-white placeholder:text-white/75 focus:outline-none"
               />
               <button

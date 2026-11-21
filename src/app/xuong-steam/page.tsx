@@ -13,7 +13,7 @@ const DIARY_FORMS = [
     code: "PHIẾU 01",
     title: "Hồ sơ Giải mã Văn bản Ngữ văn",
     fields: [
-      "Tên văn bản & Trích đoạn nghiên cứu (Huyện đường / Đăm Săn / Xúy Vân giả dại).",
+      "Tên văn bản & Trích đoạn nghiên cứu (Tuồng đồ Huyện đường hoặc Sử thi Đăm Săn).",
       "Bảng trích xuất từ khóa: Lời thoại – Cử chỉ – Đặc điểm tính cách nhân vật.",
       "Ý tưởng chuyển hóa từ ngôn từ văn chương sang hình tượng thị giác (màu sắc, đường nét, lớp cảnh).",
     ],

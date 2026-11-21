@@ -178,8 +178,8 @@ export const LearningTopicsSection: React.FC = () => {
             </div>
           </TiltSpotlightCard>
 
-          {/* CHỦ ĐỀ 02: ĐÁNH THỨC THẾ GIỚI SỬ THI (Đăm Săn - Dự kiến phát triển) */}
-          <TiltSpotlightCard className="lg:col-span-5 rounded-2xl bg-heritage-ivory text-heritage-ink border-2 border-heritage-goldAntique/60 shadow-museum">
+          {/* CHỦ ĐỀ 02: ĐÁNH THỨC THẾ GIỚI SỬ THI (Đăm Săn - Xanh Đại Ngàn & Vàng Hổ Phách) */}
+          <TiltSpotlightCard className="lg:col-span-5 rounded-2xl bg-white text-heritage-ink border-2 border-heritage-emerald shadow-museum">
             <div>
               <div className="relative">
                 <HeritageArtwork
@@ -189,10 +189,10 @@ export const LearningTopicsSection: React.FC = () => {
                   className="aspect-[16/10] w-full"
                 />
                 <div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
-                  <span className="rounded-lg bg-heritage-woodDark/90 px-3 py-1 text-xs font-bold tracking-wider text-heritage-goldSoft border border-heritage-goldAntique">
+                  <span className="rounded-lg bg-heritage-emeraldSoft/95 px-3 py-1 text-xs font-bold tracking-wider text-heritage-emerald border border-heritage-emerald">
                     {topic02.topicNumber} • {topic02.subjectInfo}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-heritage-moss px-3.5 py-1 text-xs font-semibold text-heritage-ivory border border-heritage-goldSoft/50">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-heritage-amber px-3.5 py-1 text-xs font-semibold text-white border border-white/60">
                     <Clock className="h-3.5 w-3.5" aria-hidden="true" />
                     <span>{topic02.status}</span>
                   </span>
@@ -200,28 +200,28 @@ export const LearningTopicsSection: React.FC = () => {
               </div>
 
               <div className="p-6 sm:p-7">
-                <p className="text-xs font-semibold uppercase tracking-wider text-heritage-crimson">
+                <p className="text-xs font-bold uppercase tracking-wider text-heritage-emerald">
                   {topic02.lessonInfo}
                 </p>
                 <h3 className="mt-1.5 font-serif text-2xl font-bold text-heritage-woodDark">
                   {topic02.title}
                 </h3>
-                <p className="mt-2 text-sm sm:text-base font-medium text-heritage-woodLight">
+                <p className="mt-2 text-sm sm:text-base font-medium text-heritage-amber">
                   {topic02.summary}
                 </p>
 
                 {/* Cấu trúc 3 lớp cảnh Hộp kể chuyện sử thi */}
-                <div className="mt-5 rounded-xl bg-heritage-ivoryDeep/60 p-4 border border-heritage-goldAntique/40">
-                  <span className="text-xs font-bold uppercase tracking-wider text-heritage-woodDark block">
+                <div className="mt-5 rounded-xl bg-heritage-emeraldSoft/55 p-4 border border-heritage-emerald/30">
+                  <span className="text-xs font-bold uppercase tracking-wider text-heritage-emerald block">
                     Cấu trúc Hộp kể chuyện sử thi (3 lớp cảnh)
                   </span>
                   <div className="mt-2.5 space-y-2 text-xs sm:text-sm">
                     {topic02.storyboxLayers?.map((layer, idx) => (
                       <div
                         key={idx}
-                        className="rounded-lg bg-heritage-ivoryLight p-2.5 border border-heritage-goldAntique/30"
+                        className="rounded-lg bg-white p-2.5 border border-heritage-emerald/20"
                       >
-                        <span className="font-semibold text-heritage-crimson">
+                        <span className="font-semibold text-heritage-amber">
                           {layer.layerName}:
                         </span>{" "}
                         <span className="text-heritage-ink">{layer.description}</span>
@@ -231,16 +231,16 @@ export const LearningTopicsSection: React.FC = () => {
                 </div>
 
                 <div className="mt-5 space-y-3 text-sm">
-                  <div className="rounded-xl bg-heritage-ivoryLight p-3.5 border border-heritage-goldAntique/40">
-                    <span className="font-serif font-bold text-heritage-woodDark">
+                  <div className="rounded-xl bg-heritage-amberSoft/40 p-3.5 border border-heritage-amber/30">
+                    <span className="font-serif font-bold text-heritage-amber">
                       Nội dung &amp; Hoạt động:
                     </span>
                     <p className="mt-1 text-heritage-ink leading-relaxed">
                       Hình tượng người anh hùng, không gian sử thi và văn hóa Ê-đê. Tìm hiểu văn bản, thiết kế cảnh, chế tạo hộp kể chuyện, thử nghiệm ánh sáng và chuyển động nhân vật.
                     </p>
                   </div>
-                  <div className="rounded-xl bg-heritage-ivoryLight p-3.5 border border-heritage-goldAntique/40">
-                    <span className="font-serif font-bold text-heritage-woodDark">
+                  <div className="rounded-xl bg-heritage-emeraldSoft/45 p-3.5 border border-heritage-emerald/25">
+                    <span className="font-serif font-bold text-heritage-emerald">
                       Sản phẩm dự kiến:
                     </span>
                     <p className="mt-1 text-heritage-ink leading-relaxed">
@@ -255,7 +255,7 @@ export const LearningTopicsSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setSelectedTopic(topic02)}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-crimson px-6 py-3.5 text-sm sm:text-base font-semibold text-white border border-heritage-crimson transition-colors duration-200 hover:bg-heritage-woodDark focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-emerald px-6 py-3.5 text-sm sm:text-base font-semibold text-white border border-heritage-emerald transition-colors duration-200 hover:bg-heritage-amber focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-emerald"
               >
                 <span>{topic02.buttonLabel}</span>
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

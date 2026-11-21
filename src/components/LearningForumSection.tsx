@@ -73,8 +73,24 @@ export const LearningForumSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Bộ chọn chủ đề thảo luận */}
+              {/* Bộ chọn chủ đề thảo luận kèm ảnh bối cảnh trực quan */}
               <div className="mt-4">
+                <div className="mb-4 overflow-hidden rounded-xl border border-heritage-crimson/20 bg-white">
+                  <div className="aspect-[16/8] w-full overflow-hidden">
+                    <img
+                      src={
+                        selectedDiscussionId === "discussion-dam-san"
+                          ? "/images/cinema/scene-dam-san-mat-troi.png"
+                          : selectedDiscussionId === "discussion-steam-lien-mon"
+                          ? "/images/cinema/scene-10-trien-lam.png"
+                          : "/images/cinema/scene-07-huyen-duong.png"
+                      }
+                      alt={currentDiscussion.topicName}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+
                 <label
                   htmlFor="discussion-topic-select"
                   className="text-xs font-bold uppercase tracking-wider text-heritage-woodDark block mb-2"
@@ -84,6 +100,12 @@ export const LearningForumSection: React.FC = () => {
                 <div className="flex flex-col gap-2">
                   {DISCUSSION_CORNER_GROUPS.map((grp) => {
                     const active = grp.id === selectedDiscussionId;
+                    const activeClass =
+                      grp.id === "discussion-dam-san"
+                        ? "bg-heritage-emerald text-white border border-heritage-emerald"
+                        : grp.id === "discussion-steam-lien-mon"
+                        ? "bg-heritage-indigo text-white border border-heritage-indigo"
+                        : "bg-heritage-crimson text-white border border-heritage-crimson";
                     return (
                       <button
                         key={grp.id}
@@ -91,7 +113,7 @@ export const LearningForumSection: React.FC = () => {
                         onClick={() => setSelectedDiscussionId(grp.id)}
                         className={`rounded-xl px-4 py-2.5 text-left text-xs sm:text-sm font-semibold transition-colors ${
                           active
-                            ? "bg-heritage-woodDark text-heritage-goldSoft border border-heritage-goldAntique"
+                            ? activeClass
                             : "bg-heritage-ivoryLight text-heritage-ink border border-heritage-goldAntique/30 hover:bg-heritage-ivoryDeep"
                         }`}
                       >
