@@ -109,7 +109,7 @@ export const SteamMakerspaceSection: React.FC = () => {
           <div className="group overflow-hidden rounded-2xl bg-heritage-emeraldSoft/40 border-2 border-heritage-emerald/30 shadow-museum">
             <div className="aspect-[16/9] w-full overflow-hidden bg-white">
               <img
-                src="/images/cinema/scene-05-dam-san-steam.png"
+                src="/images/cinema/scene-dam-san-mat-troi.png"
                 alt="Mô hình Hộp kể chuyện 3 lớp Sử thi Đăm Săn với ánh sáng LED"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 loading="lazy"

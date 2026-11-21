@@ -10,7 +10,8 @@ export type ArtSubject =
   | "exhibit-longhouse"
   | "exhibit-infographic"
   | "exhibit-micro-acting"
-  | "exhibit-podcast";
+  | "exhibit-podcast"
+  | "exhibit-handbook";
 
 export interface MuseumWing {
   id: string;

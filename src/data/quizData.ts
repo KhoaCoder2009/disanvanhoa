@@ -147,7 +147,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       "Trùm Sò mang tâm lý vừa xót của mất trộm vừa tiếc từng đồng lễ lót tay cửa quan, khiến cuộc đối đáp mặc cả ở chốn Huyện đường trở thành tấn hài kịch sâu cay.",
-    artworkImage: "/images/cinema/scene-vi-dien-podcast.png",
+    artworkImage: "/images/cinema/scene-vi-dien-huyen-duong.png",
     sourceRef: "Hồ sơ nhân vật Trùm Sò (Chủ đề 01)",
   },
   {
@@ -166,7 +166,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       "Mỗi động tác ước lệ như Tri huyện vuốt râu vỗ án, Đề lại khom lưng rỉ tai hay Trùm Sò ôm túi tiền vái lạy đều gắn chặt với tính cách nhân vật và nhịp trống sân khấu tuồng.",
-    artworkImage: "/images/cinema/scene-vi-dien-podcast.png",
+    artworkImage: "/images/cinema/scene-vi-dien-huyen-duong.png",
     sourceRef: "Triển lãm số – Tư liệu Vi diễn Huyện đường",
   },
 
@@ -208,7 +208,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     correctIndex: 2,
     explanation:
       "Đề lại là viên thư lại thân cận thông thuộc giấy tờ nhưng gian ngoan, chuyên bày mưu ăn đút hai mang; mã màu trắng bệch pha xanh xám và khóe miệng lệch khắc họa rõ bản chất mọt sách xảo quyệt này.",
-    artworkImage: "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
+    artworkImage: "/images/cinema/scene-infographic-tu-giac.png",
     sourceRef: "Chủ đề 01 – Hồ sơ giải mã nhân vật Đề lại",
   },
   {
@@ -364,7 +364,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     correctIndex: 0,
     explanation:
       "Podcast của Chủ đề 02 giúp người xem khi quét mã QR trên Hộp kể chuyện vừa quan sát ánh sáng diorama vừa cảm nhận được linh hồn sử thi qua bếp lửa nhà dài và âm vang cồng chiêng Ê-đê.",
-    artworkImage: "/images/cinema/scene-dam-san-nha-dai.png",
+    artworkImage: "/images/cinema/scene-podcast-klei-khan.png",
     sourceRef: "Triển lãm số – Podcast Sử thi Đăm Săn",
   },
 
@@ -463,7 +463,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     correctIndex: 0,
     explanation:
       "Điểm đặc trưng của học liệu STEAM Ngữ văn là sợi dây nối tri thức văn bản với tạo hình kỹ thuật: học sinh phải giải trình rõ chi tiết màu sắc hay bố cục bắt nguồn từ lời thoại hoặc câu văn nào.",
-    artworkImage: "/images/cinema/scene-10-trien-lam.png",
+    artworkImage: "/images/cinema/scene-so-tay-the-giai-ma.png",
     sourceRef: "Sổ tay Xưởng STEAM & Rubric đánh giá Nói và Nghe",
   },
 ];

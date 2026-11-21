@@ -80,10 +80,10 @@ export const LearningForumSection: React.FC = () => {
                     <img
                       src={
                         selectedDiscussionId === "discussion-dam-san"
-                          ? "/images/cinema/scene-dam-san-mat-troi.png"
+                          ? "/images/cinema/scene-podcast-klei-khan.png"
                           : selectedDiscussionId === "discussion-steam-lien-mon"
-                          ? "/images/cinema/scene-10-trien-lam.png"
-                          : "/images/cinema/scene-07-huyen-duong.png"
+                          ? "/images/cinema/scene-so-tay-the-giai-ma.png"
+                          : "/images/cinema/scene-vi-dien-huyen-duong.png"
                       }
                       alt={currentDiscussion.topicName}
                       className="h-full w-full object-cover"

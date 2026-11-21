@@ -128,7 +128,7 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     videoStatusNote:
       "Khung phát video vi diễn của nhóm học sinh (Giáo viên cập nhật tệp video sau buổi thực hành trên lớp)",
     artSubject: "exhibit-micro-acting",
-    expectedAssetFile: "/images/cinema/scene-07-huyen-duong.png",
+    expectedAssetFile: "/images/cinema/scene-vi-dien-huyen-duong.png",
   },
   {
     id: "exhibit-05-infographic-huyen-duong",
@@ -153,7 +153,7 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     videoStatusNote:
       "Tài liệu học liệu số đính kèm (Tệp chờ cập nhật: /public/docs/infographic-huyen-duong.pdf)",
     artSubject: "exhibit-infographic",
-    expectedAssetFile: "/images/cinema/scene-vi-dien-podcast.png",
+    expectedAssetFile: "/images/cinema/scene-infographic-tu-giac.png",
   },
   {
     id: "exhibit-06-podcast-am-vang-su-thi",
@@ -178,7 +178,7 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     videoStatusNote:
       "Khung nghe tệp âm thanh thuyết minh (Tệp chờ cập nhật: /public/audio/podcast-su-thi-dam-san.mp3)",
     artSubject: "exhibit-podcast",
-    expectedAssetFile: "/images/cinema/scene-dam-san-mat-troi.png",
+    expectedAssetFile: "/images/cinema/scene-podcast-klei-khan.png",
   },
   {
     id: "exhibit-07-the-giai-ma-thu-cong",
@@ -202,7 +202,7 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     ],
     videoStatusNote:
       "Khung video lật mở bộ thẻ thủ công (Tệp chờ cập nhật: /public/videos/exhibition/bo-the-thu-cong.mp4)",
-    artSubject: "exhibit-mask-set",
-    expectedAssetFile: "/images/cinema/scene-09-xuong-steam.png",
+    artSubject: "exhibit-handbook",
+    expectedAssetFile: "/images/cinema/scene-so-tay-the-giai-ma.png",
   },
 ];

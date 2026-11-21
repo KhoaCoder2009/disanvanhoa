@@ -19,9 +19,10 @@ const MUSEUM_IMAGE_MAP: Partial<Record<ArtSubject, string>> = {
   "exhibit-mask-set": "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
   "exhibit-storybox": "/images/cinema/scene-05-dam-san-steam.png",
   "exhibit-longhouse": "/images/cinema/scene-dam-san-nha-dai.png",
-  "exhibit-infographic": "/images/cinema/scene-vi-dien-podcast.png",
-  "exhibit-micro-acting": "/images/cinema/scene-07-huyen-duong.png",
-  "exhibit-podcast": "/images/cinema/scene-dam-san-mat-troi.png",
+  "exhibit-infographic": "/images/cinema/scene-infographic-tu-giac.png",
+  "exhibit-micro-acting": "/images/cinema/scene-vi-dien-huyen-duong.png",
+  "exhibit-podcast": "/images/cinema/scene-podcast-klei-khan.png",
+  "exhibit-handbook": "/images/cinema/scene-so-tay-the-giai-ma.png",
 };
 
 /**
