@@ -58,12 +58,12 @@ export const HeritageArtwork: React.FC<HeritageArtworkProps> = ({
           className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-heritage-ivoryLight/95 via-white/40 to-transparent"
         />
         {showFileBadge && (caption || expectedFile) && (
-          <div className="absolute bottom-2.5 left-3 right-3 flex flex-wrap items-center justify-between gap-2 rounded-lg bg-white/92 backdrop-blur-sm px-3 py-1.5 text-[11px] text-heritage-crimson border border-heritage-crimson/25 shadow-sm">
-            <span className="font-semibold tracking-wide truncate">
+          <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between gap-2 rounded-lg bg-white/95 backdrop-blur-sm px-3 py-1.5 text-[11px] text-heritage-crimson border border-heritage-crimson/25 shadow-sm">
+            <span className="min-w-0 flex-1 font-semibold tracking-wide truncate">
               {caption || "Tư liệu Diorama Bảo tàng số"}
             </span>
             {expectedFile && (
-              <span className="font-mono text-[10px] text-heritage-woodDark/80">
+              <span className="hidden sm:inline shrink-0 font-mono text-[10px] text-heritage-woodDark/80">
                 Gallery Plate
               </span>
             )}

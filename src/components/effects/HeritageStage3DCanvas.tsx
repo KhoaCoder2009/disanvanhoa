@@ -397,17 +397,17 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
     <div
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
-      className={`relative rounded-2xl bg-heritage-woodLight p-3 border border-heritage-goldAntique/60 shadow-cabinet select-none ${className}`}
+      className={`relative rounded-2xl bg-heritage-woodLight p-2.5 sm:p-3 border border-heritage-goldAntique/60 shadow-cabinet select-none ${className}`}
     >
-      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-heritage-woodDark">
+      <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden rounded-xl bg-heritage-woodDark">
         <canvas
           ref={canvasRef}
           aria-label="Mô hình không gian 3D tương tác: Mặt nạ Tuồng Huyện đường và Sử thi Đăm Săn"
-          className="block h-full w-full cursor-grab active:cursor-grabbing"
+          className="block h-full w-full touch-pan-y cursor-grab active:cursor-grabbing"
         />
 
-        <div className="absolute top-3 left-3 right-3 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-          <span className="inline-flex items-center gap-1.5 rounded-lg bg-heritage-woodDark/90 px-2.5 py-1 text-[11px] font-medium text-heritage-goldSoft border border-heritage-goldAntique/40">
+        <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-3 sm:left-3 sm:right-3 flex flex-wrap items-center justify-end sm:justify-between gap-2 pointer-events-none">
+          <span className="hidden sm:inline-flex items-center gap-1.5 rounded-lg bg-heritage-woodDark/90 px-2.5 py-1 text-[11px] font-medium text-heritage-goldSoft border border-heritage-goldAntique/40">
             <Layers className="h-3.5 w-3.5" aria-hidden="true" />
             <span>Sân khấu 3D Tương tác (Di chuột xoay góc nhìn)</span>
           </span>
@@ -419,7 +419,7 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
                 prev === "court-stage" ? "storybox-backlight" : "court-stage"
               )
             }
-            className="pointer-events-auto inline-flex items-center gap-1.5 rounded-lg bg-heritage-woodDark/90 px-2.5 py-1 text-[11px] font-semibold text-heritage-goldSoft border border-heritage-goldAntique/50 transition-transform duration-150 active:scale-[0.97] hover:bg-heritage-crimson hover:text-heritage-ivory"
+            className="pointer-events-auto inline-flex items-center gap-1.5 rounded-lg bg-heritage-woodDark/90 px-2.5 py-1.5 text-[11px] font-semibold text-heritage-goldSoft border border-heritage-goldAntique/50 transition-transform duration-150 active:scale-[0.97] hover:bg-heritage-crimson hover:text-heritage-ivory"
           >
             <Sun className="h-3.5 w-3.5" aria-hidden="true" />
             <span>
@@ -430,17 +430,17 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
           </button>
         </div>
 
-        <div className="absolute bottom-2.5 left-3 right-3 flex flex-wrap items-center justify-between gap-2 rounded bg-heritage-woodDark/90 px-3 py-1 text-[11px] text-heritage-ivory/90 border border-heritage-goldAntique/40 pointer-events-none">
-          <span className="font-medium text-heritage-goldSoft">
+        <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:left-3 sm:right-3 flex flex-wrap items-center justify-between gap-2 rounded bg-heritage-woodDark/90 px-2.5 py-1 sm:px-3 text-[11px] text-heritage-ivory/90 border border-heritage-goldAntique/40 pointer-events-none">
+          <span className="font-medium text-heritage-goldSoft truncate">
             Mô hình song hành: Huyện đường (Tuồng) &amp; Sử thi Đăm Săn
           </span>
-          <span className="font-mono text-[10px] text-heritage-goldSoft/90">
+          <span className="hidden sm:inline font-mono text-[10px] text-heritage-goldSoft/90 shrink-0">
             Ngữ văn 10 • STEAM
           </span>
         </div>
       </div>
 
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-1">
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-0.5 sm:px-1">
         <div
           role="group"
           aria-label="Chọn mô hình di sản 3D"
@@ -457,7 +457,7 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveSubject(tab.id as StageSubject)}
-                className={`rounded-lg px-3 py-1 text-xs font-semibold transition-all duration-150 active:scale-[0.97] ${
+                className={`min-h-[38px] rounded-lg px-3 py-1.5 text-xs font-semibold transition-all duration-150 active:scale-[0.97] ${
                   active
                     ? "bg-heritage-crimson text-heritage-ivory border border-heritage-goldSoft/60"
                     : "bg-heritage-woodDark/80 text-heritage-goldSoft border border-heritage-goldAntique/30 hover:bg-heritage-woodDark"
@@ -476,7 +476,7 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
             setActiveSubject("all");
           }}
           title="Đặt lại góc nhìn chính diện"
-          className="inline-flex items-center gap-1 rounded-lg bg-heritage-woodDark/70 px-2.5 py-1 text-xs text-heritage-goldSoft hover:bg-heritage-woodDark active:scale-[0.97] transition-transform duration-150"
+          className="min-h-[38px] inline-flex items-center gap-1 rounded-lg bg-heritage-woodDark/70 px-3 py-1.5 text-xs text-heritage-goldSoft hover:bg-heritage-woodDark active:scale-[0.97] transition-transform duration-150"
         >
           <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
           <span>Chính diện</span>

@@ -68,12 +68,12 @@ export default async function MuseumWingDetailPage({
           }
         />
 
-        <section className="py-14 sm:py-18 bg-heritage-ivory">
+        <section className="py-10 sm:py-14 lg:py-16 bg-heritage-ivory">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+            <div className="grid grid-cols-1 gap-8 lg:gap-10 lg:grid-cols-12">
               {/* Cột trái: Tranh lớn & Khung Video tư liệu */}
               <div className="lg:col-span-6 space-y-6">
-                <div className="rounded-2xl bg-heritage-woodDark p-3 border border-heritage-goldAntique shadow-cabinet">
+                <div className="rounded-2xl bg-heritage-woodDark p-2.5 sm:p-3 border border-heritage-goldAntique shadow-cabinet">
                   <HeritageArtwork
                     subject={wing.artSubject}
                     expectedFile={wing.expectedAssetFile}
@@ -83,19 +83,19 @@ export default async function MuseumWingDetailPage({
                 </div>
 
                 {/* Khung Video tư liệu */}
-                <div className="rounded-2xl bg-heritage-woodDark p-6 text-heritage-ivory border border-heritage-goldAntique/60 shadow-cabinet">
+                <div className="rounded-2xl bg-heritage-woodDark p-4 sm:p-6 text-heritage-ivory border border-heritage-goldAntique/60 shadow-cabinet">
                   <div className="flex items-center gap-2.5 text-heritage-goldSoft font-serif text-lg font-bold">
-                    <Film className="h-5 w-5" />
+                    <Film className="h-5 w-5 shrink-0" />
                     <h2>Tư liệu Video Trích đoạn &amp; Diễn xướng</h2>
                   </div>
                   <p className="mt-2 text-sm text-heritage-ivory/90 leading-relaxed">
                     Không gian trình chiếu trích đoạn sân khấu phục vụ hoạt động quan sát, phân tích ngôn ngữ hình thể, làn điệu và hóa trang trên lớp.
                   </p>
-                  <div className="mt-4 rounded-xl bg-heritage-woodLight/80 p-4 border border-heritage-goldAntique/40 text-xs space-y-1.5">
+                  <div className="mt-4 rounded-xl bg-heritage-woodLight/80 p-3.5 sm:p-4 border border-heritage-goldAntique/40 text-xs space-y-1.5">
                     <p className="font-semibold text-heritage-goldSoft">
                       Đường dẫn tệp video dành cho giáo viên cập nhật:
                     </p>
-                    <code className="block bg-heritage-woodDark px-3 py-2 rounded text-heritage-ivory">
+                    <code className="block break-all bg-heritage-woodDark px-3 py-2 rounded text-heritage-ivory">
                       /public/videos/museum/{wing.id}.mp4
                     </code>
                   </div>
@@ -104,9 +104,9 @@ export default async function MuseumWingDetailPage({
 
               {/* Cột phải: Hồ sơ học thuật chi tiết */}
               <div className="lg:col-span-6 space-y-6">
-                <div className="rounded-2xl bg-heritage-ivoryLight p-6 border border-heritage-goldAntique/50 shadow-museum">
-                  <div className="flex items-center gap-2 font-serif text-xl font-bold text-heritage-woodDark">
-                    <BookMarked className="h-5 w-5 text-heritage-crimson" />
+                <div className="rounded-2xl bg-heritage-ivoryLight p-4 sm:p-6 border border-heritage-goldAntique/50 shadow-museum">
+                  <div className="flex items-center gap-2 font-serif text-lg sm:text-xl font-bold text-heritage-woodDark">
+                    <BookMarked className="h-5 w-5 text-heritage-crimson shrink-0" />
                     <h2>1. Bối cảnh Văn hóa &amp; Lịch sử</h2>
                   </div>
                   <p className="mt-3 text-sm sm:text-base text-heritage-ink leading-relaxed">
@@ -114,9 +114,9 @@ export default async function MuseumWingDetailPage({
                   </p>
                 </div>
 
-                <div className="rounded-2xl bg-heritage-ivoryLight p-6 border border-heritage-goldAntique/50 shadow-museum">
-                  <div className="flex items-center gap-2 font-serif text-xl font-bold text-heritage-woodDark">
-                    <Sparkles className="h-5 w-5 text-heritage-crimson" />
+                <div className="rounded-2xl bg-heritage-ivoryLight p-4 sm:p-6 border border-heritage-goldAntique/50 shadow-museum">
+                  <div className="flex items-center gap-2 font-serif text-lg sm:text-xl font-bold text-heritage-woodDark">
+                    <Sparkles className="h-5 w-5 text-heritage-crimson shrink-0" />
                     <h2>2. Trọng tâm Văn bản Ngữ văn 10</h2>
                   </div>
                   <p className="mt-1 text-xs sm:text-sm font-semibold text-heritage-crimson">
@@ -139,8 +139,8 @@ export default async function MuseumWingDetailPage({
                   </ul>
                 </div>
 
-                <div className="rounded-2xl bg-heritage-ivoryLight p-6 border border-heritage-goldAntique/50 shadow-museum">
-                  <h2 className="font-serif text-xl font-bold text-heritage-woodDark">
+                <div className="rounded-2xl bg-heritage-ivoryLight p-4 sm:p-6 border border-heritage-goldAntique/50 shadow-museum">
+                  <h2 className="font-serif text-lg sm:text-xl font-bold text-heritage-woodDark">
                     3. Kết nối Xưởng sáng tạo STEAM
                   </h2>
                   <p className="mt-2.5 text-sm sm:text-base text-heritage-ink leading-relaxed">
@@ -148,28 +148,28 @@ export default async function MuseumWingDetailPage({
                   </p>
                 </div>
 
-                <div className="rounded-2xl bg-heritage-ivoryDeep/75 p-6 border border-heritage-goldAntique">
+                <div className="rounded-2xl bg-heritage-ivoryDeep/75 p-4 sm:p-6 border border-heritage-goldAntique">
                   <div className="flex items-center gap-2 font-serif text-lg font-bold text-heritage-woodDark">
-                    <MessageSquare className="h-5 w-5 text-heritage-moss" />
+                    <MessageSquare className="h-5 w-5 text-heritage-moss shrink-0" />
                     <h2>Câu hỏi Định hướng Thảo luận</h2>
                   </div>
                   <p className="mt-2 text-sm sm:text-base italic text-heritage-ink leading-relaxed">
                     &ldquo;{wing.detailContent.discussionPrompt}&rdquo;
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-3">
+                  <div className="mt-4 flex flex-col sm:flex-row sm:flex-wrap gap-3">
                     <Link
                       href="/dien-dan-hoc-tap"
-                      className="inline-flex items-center gap-2 rounded-xl bg-heritage-woodDark px-4 py-2 text-xs sm:text-sm font-semibold text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory transition-colors"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-woodDark px-4 py-2.5 text-xs sm:text-sm font-semibold text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory transition-colors"
                     >
                       <span>Tham gia thảo luận tại Diễn đàn</span>
-                      <ArrowRight className="h-4 w-4" />
+                      <ArrowRight className="h-4 w-4 shrink-0" />
                     </Link>
                     <Link
                       href={`/bao-tang-so/${nextWing.id}`}
-                      className="inline-flex items-center gap-2 rounded-xl bg-heritage-moss px-4 py-2 text-xs sm:text-sm font-semibold text-heritage-ivory hover:bg-heritage-woodDark transition-colors"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-moss px-4 py-2.5 text-xs sm:text-sm font-semibold text-heritage-ivory hover:bg-heritage-woodDark transition-colors"
                     >
                       <span>Phòng tiếp theo: {nextWing.title}</span>
-                      <ArrowRight className="h-4 w-4" />
+                      <ArrowRight className="h-4 w-4 shrink-0" />
                     </Link>
                   </div>
                 </div>

@@ -11,7 +11,7 @@ export const CallToActionAndFooter: React.FC = () => {
       <section
         id="loi-moi-tham-gia"
         aria-labelledby="cta-invitation-heading"
-        className="relative bg-heritage-crimson text-white py-14 sm:py-16 border-b-2 border-heritage-goldAntique overflow-hidden"
+        className="relative bg-heritage-crimson text-white py-12 sm:py-16 border-b-2 border-heritage-goldAntique overflow-hidden"
       >
         <AuroraParticlesCanvas variant="cta" />
 
@@ -22,24 +22,24 @@ export const CallToActionAndFooter: React.FC = () => {
           >
             DI SẢN KHÔNG CHỈ ĐỂ LƯU GIỮ, MÀ CÒN ĐỂ TIẾP NỐI
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg text-white/95 leading-relaxed">
+          <p className="mx-auto mt-3 sm:mt-4 max-w-2xl text-sm sm:text-lg text-white/95 leading-relaxed">
             Mỗi trang văn dân gian và sử thi đều ẩn chứa nguồn cảm hứng bất tận. Hãy bắt đầu hành trình giải mã văn hóa, thiết kế và chế tác sản phẩm sáng tạo của riêng bạn ngay hôm nay.
           </p>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Link
               href="/#chu-de-hoc-tap"
-              className="inline-flex items-center gap-2.5 rounded-xl bg-white px-7 py-3.5 text-sm sm:text-base font-bold text-heritage-crimson border-2 border-white shadow-cabinet transition-colors duration-200 hover:bg-heritage-woodDark hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-5 sm:px-7 py-3.5 text-xs sm:text-base font-bold text-heritage-crimson border-2 border-white shadow-cabinet transition-colors duration-200 hover:bg-heritage-woodDark hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
-              <Compass className="h-5 w-5" aria-hidden="true" />
+              <Compass className="h-5 w-5 shrink-0" aria-hidden="true" />
               <span>KHÁM PHÁ CÁC CHỦ ĐỀ HỌC TẬP</span>
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
             </Link>
 
             <Link
               href="/trac-nghiem"
-              className="inline-flex items-center gap-2.5 rounded-xl bg-heritage-woodDark px-7 py-3.5 text-sm sm:text-base font-bold text-white border-2 border-heritage-goldAntique/80 shadow-cabinet transition-colors duration-200 hover:bg-white hover:text-heritage-crimson focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-heritage-woodDark px-5 sm:px-7 py-3.5 text-xs sm:text-base font-bold text-white border-2 border-heritage-goldAntique/80 shadow-cabinet transition-colors duration-200 hover:bg-white hover:text-heritage-crimson focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
-              <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
+              <CheckCircle2 className="h-5 w-5 shrink-0" aria-hidden="true" />
               <span>THỬ SỨC TRẮC NGHIỆM DI SẢN</span>
             </Link>
           </div>
@@ -49,7 +49,7 @@ export const CallToActionAndFooter: React.FC = () => {
       <div className="h-1 w-full heritage-ribbon-bar" aria-hidden="true" />
 
       {/* FOOTER */}
-      <footer className="bg-heritage-woodDark text-heritage-ivory pt-14 pb-10">
+      <footer className="bg-heritage-woodDark text-heritage-ivory pt-10 pb-8 sm:pt-14 sm:pb-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-12 border-b border-heritage-goldAntique/30 pb-10">
             {/* Cột 1: Tên website, Khẩu hiệu, Mục đích học tập */}
@@ -141,12 +141,13 @@ export const CallToActionAndFooter: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-heritage-ivory/75">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left text-xs text-heritage-ivory/75">
             <p>
               © {SITE_CONFIG.teacherInfo.academicYear} {SITE_CONFIG.brand.vietnameseName}. Phục vụ mục đích giáo dục và nghiên cứu sư phạm.
             </p>
             <p className="text-heritage-goldSoft">
-              Cấu hình hệ thống tại: <code>src/config/externalLinks.ts</code>
+              Cấu hình hệ thống tại:{" "}
+              <code className="break-all sm:break-normal">src/config/externalLinks.ts</code>
             </p>
           </div>
         </div>

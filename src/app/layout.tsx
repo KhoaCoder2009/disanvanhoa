@@ -1,10 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "DI SẢN VĂN HỌC VIỆT | Digital Literature & STEAM Heritage",
   description:
     "Từ trang sách đến không gian di sản – Từ tri thức đến sáng tạo. Website học liệu số phục vụ dạy học Ngữ văn THPT theo định hướng STEM/STEAM, bảo tàng số và triển lãm sáng tạo.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#B91C1C",
 };
 
 export default function RootLayout({
@@ -26,7 +33,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans antialiased bg-heritage-ivory text-heritage-ink min-h-screen flex flex-col">
+      <body className="font-sans antialiased bg-heritage-ivory text-heritage-ink min-h-screen flex flex-col overflow-x-clip">
         {children}
       </body>
     </html>

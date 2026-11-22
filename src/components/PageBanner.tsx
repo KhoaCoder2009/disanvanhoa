@@ -25,9 +25,9 @@ export const PageBanner: React.FC<PageBannerProps> = ({
       <div className="h-1 w-full heritage-ribbon-bar" aria-hidden="true" />
       <AuroraParticlesCanvas variant={accentVariant} />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:py-12 sm:px-6 lg:px-8 lg:py-16">
         {/* Thanh điều hướng Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="mb-5">
+        <nav aria-label="Breadcrumb" className="mb-4 sm:mb-5">
           <ol className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-heritage-ink/80">
             <li>
               <Link
@@ -61,18 +61,22 @@ export const PageBanner: React.FC<PageBannerProps> = ({
           </ol>
         </nav>
 
-        <div className="max-w-4xl space-y-4">
+        <div className="max-w-4xl space-y-3 sm:space-y-4">
           <SplitTextReveal
             text={title}
             as="h1"
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-heritage-crimson leading-tight"
+            className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-heritage-crimson leading-tight"
           />
 
-          <p className="text-base sm:text-lg text-heritage-ink leading-relaxed max-w-3xl">
+          <p className="text-sm sm:text-base lg:text-lg text-heritage-ink leading-relaxed max-w-3xl">
             {subtitle}
           </p>
 
-          {actions && <div className="pt-2 flex flex-wrap gap-3">{actions}</div>}
+          {actions && (
+            <div className="pt-2 flex flex-col sm:flex-row sm:flex-wrap gap-2.5 sm:gap-3 [&>a]:justify-center">
+              {actions}
+            </div>
+          )}
         </div>
       </div>
     </section>

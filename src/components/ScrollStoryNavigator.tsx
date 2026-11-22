@@ -197,13 +197,13 @@ export const ScrollStoryNavigator: React.FC = () => {
       {/* 2. MOBILE & TABLET FLOATING BOTTOM DOCK (Hiện khi cuộn qua rạp chiếu ghim để không chồng lấn scrubber) */}
       <nav
         aria-label="Điều hướng cuộn nhanh trên di động"
-        className={`fixed bottom-3 left-3 right-3 z-40 xl:hidden transition-all duration-300 [transition-timing-function:var(--ease-out-strong)] ${
+        className={`fixed bottom-3 left-3 right-3 z-40 pb-[env(safe-area-inset-bottom)] xl:hidden transition-all duration-300 [transition-timing-function:var(--ease-out-strong)] ${
           showRail
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-4 pointer-events-none"
         }`}
       >
-        <div className="mx-auto max-w-lg rounded-2xl bg-white/95 backdrop-blur-md px-2 py-1.5 border-2 border-heritage-crimson/30 shadow-cabinet flex items-center justify-between gap-1 overflow-x-auto">
+        <div className="no-scrollbar mx-auto max-w-lg rounded-2xl bg-white/95 backdrop-blur-md px-2 py-1.5 border-2 border-heritage-crimson/30 shadow-cabinet flex items-center justify-between gap-1 overflow-x-auto">
           {CHAPTERS.slice(0, 6).map((ch) => {
             const isActive = activeId === ch.id;
             return (

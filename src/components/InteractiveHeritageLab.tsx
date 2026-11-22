@@ -131,18 +131,18 @@ export const InteractiveHeritageLab: React.FC = () => {
   };
 
   return (
-    <div className="mt-14 rounded-2xl bg-heritage-ivory text-heritage-ink border-2 border-heritage-goldAntique shadow-cabinet overflow-hidden">
+    <div className="mt-12 sm:mt-14 rounded-2xl bg-heritage-ivory text-heritage-ink border-2 border-heritage-goldAntique shadow-cabinet overflow-hidden">
       {/* Thanh tiêu đề App-Frame của Bàn Thực Hành */}
-      <div className="bg-heritage-woodDark text-heritage-ivory px-6 py-4 border-b border-heritage-goldAntique/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="bg-heritage-woodDark text-heritage-ivory px-4 py-4 sm:px-6 border-b border-heritage-goldAntique/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-heritage-crimson text-heritage-goldSoft border border-heritage-goldAntique">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-heritage-crimson text-heritage-goldSoft border border-heritage-goldAntique">
             <Sliders className="h-5 w-5" aria-hidden="true" />
           </span>
-          <div>
-            <h3 className="font-serif text-lg sm:text-xl font-bold text-heritage-ivory">
+          <div className="min-w-0">
+            <h3 className="font-serif text-base sm:text-xl font-bold text-heritage-ivory leading-snug">
               BÀN MÔ PHỎNG THIẾT KẾ KỸ THUẬT STEAM TRỰC TUYẾN
             </h3>
-            <p className="text-xs text-heritage-goldSoft">
+            <p className="text-xs text-heritage-goldSoft leading-snug">
               Thử nghiệm mã màu mặt nạ Tuồng &amp; Quang học hộp kể chuyện sử thi trước khi chế tác thủ công
             </p>
           </div>
@@ -152,20 +152,20 @@ export const InteractiveHeritageLab: React.FC = () => {
         <div
           role="tablist"
           aria-label="Chọn mô phỏng dự án STEAM"
-          className="inline-flex rounded-xl bg-heritage-woodLight p-1 border border-heritage-goldAntique/40"
+          className="grid w-full sm:w-auto grid-cols-1 gap-1 sm:inline-flex sm:gap-0 rounded-xl bg-heritage-woodLight p-1 border border-heritage-goldAntique/40"
         >
           <button
             type="button"
             role="tab"
             aria-selected={activeTab === "mask-studio"}
             onClick={() => setActiveTab("mask-studio")}
-            className={`inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors duration-200 ${
+            className={`inline-flex min-h-[42px] items-center justify-center gap-2 rounded-lg px-3 sm:px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors duration-200 ${
               activeTab === "mask-studio"
                 ? "bg-heritage-crimson text-heritage-ivory shadow-sm"
                 : "text-heritage-goldSoft hover:text-heritage-ivory"
             }`}
           >
-            <Palette className="h-4 w-4" aria-hidden="true" />
+            <Palette className="h-4 w-4 shrink-0" aria-hidden="true" />
             <span>Chủ đề 01: Phối màu Mặt nạ Tuồng</span>
           </button>
           <button
@@ -173,13 +173,13 @@ export const InteractiveHeritageLab: React.FC = () => {
             role="tab"
             aria-selected={activeTab === "storybox-light"}
             onClick={() => setActiveTab("storybox-light")}
-            className={`inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors duration-200 ${
+            className={`inline-flex min-h-[42px] items-center justify-center gap-2 rounded-lg px-3 sm:px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors duration-200 ${
               activeTab === "storybox-light"
                 ? "bg-heritage-crimson text-heritage-ivory shadow-sm"
                 : "text-heritage-goldSoft hover:text-heritage-ivory"
             }`}
           >
-            <Sun className="h-4 w-4" aria-hidden="true" />
+            <Sun className="h-4 w-4 shrink-0" aria-hidden="true" />
             <span>Chủ đề 02: Quang học Hộp Sử thi</span>
           </button>
         </div>
@@ -187,9 +187,9 @@ export const InteractiveHeritageLab: React.FC = () => {
 
       {/* MÔ PHỎNG 01: XƯỞNG PHỐI MÀU & NÉT CỌ MẶT NẠ TUỒNG (HUYỆN ĐƯỜNG) */}
       {activeTab === "mask-studio" && (
-        <div className="p-6 sm:p-8 grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* Cột trái: Bảng điều khiển thông số thiết kế */}
-          <div className="lg:col-span-7 space-y-6">
+        <div className="p-4 sm:p-6 lg:p-8 grid grid-cols-1 gap-6 lg:gap-8 lg:grid-cols-12">
+          {/* Cột trái trên desktop, xuống thứ 2 trên mobile/tablet để bản xem trước hiện ngay đầu */}
+          <div className="order-2 lg:order-1 lg:col-span-7 space-y-5 sm:space-y-6">
             {/* 1. Chọn nhân vật mẫu từ văn bản Huyện đường */}
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-heritage-woodDark block mb-2.5">
@@ -343,11 +343,11 @@ export const InteractiveHeritageLab: React.FC = () => {
 
             {/* Thanh trượt Clip-Path đối chiếu Bản phác thảo chì ↔ Bản hoàn thiện màu (Emil Kowalski clip-path slider) */}
             <div className="rounded-xl bg-heritage-ivoryDeep/60 p-4 border border-heritage-goldAntique/50">
-              <div className="flex items-center justify-between text-xs font-bold text-heritage-woodDark mb-2">
-                <span>
+              <div className="flex items-center justify-between gap-2 text-xs font-bold text-heritage-woodDark mb-2">
+                <span className="leading-snug">
                   Thanh kéo đối chiếu: Bản vẽ khung tỉ lệ bìa cứng (0%) ↔ Bản hoàn thiện màu ước lệ (100%)
                 </span>
-                <span className="rounded bg-heritage-woodDark px-2 py-0.5 text-heritage-goldSoft">
+                <span className="shrink-0 rounded bg-heritage-woodDark px-2 py-0.5 text-heritage-goldSoft">
                   {comparePercent}%
                 </span>
               </div>
@@ -363,15 +363,15 @@ export const InteractiveHeritageLab: React.FC = () => {
             </div>
           </div>
 
-          {/* Cột phải: Khung hiển thị Mặt nạ trực tiếp & Thẻ Giải Mã Tự Động */}
-          <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl bg-heritage-woodDark p-5 text-heritage-ivory border border-heritage-goldAntique">
+          {/* Cột phải trên desktop, hiển thị trước trên mobile/tablet: Khung hiển thị Mặt nạ trực tiếp & Thẻ Giải Mã Tự Động */}
+          <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col justify-between rounded-2xl bg-heritage-woodDark p-4 sm:p-5 text-heritage-ivory border border-heritage-goldAntique">
             <div>
-              <div className="flex items-center justify-between border-b border-heritage-goldAntique/40 pb-3">
-                <div>
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-heritage-goldAntique/40 pb-3">
+                <div className="min-w-0">
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-heritage-goldSoft block">
                     Bản xem trước tỉ lệ 1:1
                   </span>
-                  <h4 className="font-serif text-xl font-bold text-heritage-ivory">
+                  <h4 className="font-serif text-lg sm:text-xl font-bold text-heritage-ivory">
                     {currentPreset.name} — {currentPreset.role}
                   </h4>
                 </div>
@@ -381,7 +381,7 @@ export const InteractiveHeritageLab: React.FC = () => {
                     handleSelectPreset(currentPreset);
                     setComparePercent(100);
                   }}
-                  className="inline-flex items-center gap-1 rounded-lg bg-heritage-woodLight px-2.5 py-1.5 text-xs text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory"
+                  className="shrink-0 inline-flex items-center gap-1 rounded-lg bg-heritage-woodLight px-2.5 py-1.5 text-xs text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory"
                 >
                   <RotateCcw className="h-3.5 w-3.5" />
                   <span>Mặc định</span>
@@ -573,14 +573,14 @@ export const InteractiveHeritageLab: React.FC = () => {
 
       {/* MÔ PHỎNG 02: BÀN THỬ NGHIỆM ÁNH SÁNG & LỚP CẢNH HỘP KỂ CHUYỆN SỬ THI ĐĂM SĂN */}
       {activeTab === "storybox-light" && (
-        <div className="p-6 sm:p-8 grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* Cột trái: Điều khiển nguồn sáng LED, Vị trí Mặt Trời & Thanh trượt Đăm Săn */}
-          <div className="lg:col-span-6 space-y-5">
-            <div className="rounded-xl bg-heritage-ivoryLight p-5 border border-heritage-goldAntique/40 space-y-4">
+        <div className="p-4 sm:p-6 lg:p-8 grid grid-cols-1 gap-6 lg:gap-8 lg:grid-cols-12">
+          {/* Cột trái trên desktop, hiển thị sau bản xem trước trên mobile/tablet */}
+          <div className="order-2 lg:order-1 lg:col-span-6 space-y-5">
+            <div className="rounded-xl bg-heritage-ivoryLight p-4 sm:p-5 border border-heritage-goldAntique/40 space-y-4">
               <div>
-                <div className="flex items-center justify-between text-xs sm:text-sm font-bold text-heritage-woodDark mb-1.5">
-                  <span>1. Độ cao Vầng Mặt Trời (Lớp hậu cảnh 03):</span>
-                  <span className="rounded bg-heritage-woodDark px-2 py-0.5 text-xs text-heritage-goldSoft">
+                <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-bold text-heritage-woodDark mb-1.5">
+                  <span className="leading-snug">1. Độ cao Vầng Mặt Trời (Lớp hậu cảnh 03):</span>
+                  <span className="shrink-0 rounded bg-heritage-woodDark px-2 py-0.5 text-xs text-heritage-goldSoft">
                     {sunElevation}%
                   </span>
                 </div>
@@ -596,9 +596,9 @@ export const InteractiveHeritageLab: React.FC = () => {
               </div>
 
               <div>
-                <div className="flex items-center justify-between text-xs sm:text-sm font-bold text-heritage-woodDark mb-1.5">
-                  <span>2. Cường độ đèn LED xuyên qua giấy can tán sáng (S – Science):</span>
-                  <span className="rounded bg-heritage-woodDark px-2 py-0.5 text-xs text-heritage-goldSoft">
+                <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-bold text-heritage-woodDark mb-1.5">
+                  <span className="leading-snug">2. Cường độ đèn LED xuyên qua giấy can tán sáng (S – Science):</span>
+                  <span className="shrink-0 rounded bg-heritage-woodDark px-2 py-0.5 text-xs text-heritage-goldSoft">
                     {ledIntensity}%
                   </span>
                 </div>
@@ -614,9 +614,9 @@ export const InteractiveHeritageLab: React.FC = () => {
               </div>
 
               <div>
-                <div className="flex items-center justify-between text-xs sm:text-sm font-bold text-heritage-woodDark mb-1.5">
-                  <span>3. Rãnh trượt cơ học đưa Đăm Săn vượt rừng Sáp Đen (E – Engineering):</span>
-                  <span className="rounded bg-heritage-woodDark px-2 py-0.5 text-xs text-heritage-goldSoft">
+                <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-bold text-heritage-woodDark mb-1.5">
+                  <span className="leading-snug">3. Rãnh trượt cơ học đưa Đăm Săn vượt rừng Sáp Đen (E – Engineering):</span>
+                  <span className="shrink-0 rounded bg-heritage-woodDark px-2 py-0.5 text-xs text-heritage-goldSoft">
                     Vị trí: {heroProgress}%
                   </span>
                 </div>
@@ -632,15 +632,15 @@ export const InteractiveHeritageLab: React.FC = () => {
               </div>
             </div>
 
-            <div className="rounded-xl bg-heritage-ivoryDeep/65 p-5 border border-heritage-goldAntique/50 space-y-3 text-xs sm:text-sm">
-              <div className="flex items-center justify-between">
+            <div className="rounded-xl bg-heritage-ivoryDeep/65 p-4 sm:p-5 border border-heritage-goldAntique/50 space-y-3 text-xs sm:text-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
                 <span className="font-serif font-bold text-heritage-woodDark text-base">
                   Nguyên lý Quang học &amp; Cơ học trong Hộp kể chuyện
                 </span>
                 <button
                   type="button"
                   onClick={() => setShowLayerExplode((prev) => !prev)}
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-heritage-woodDark px-3 py-1.5 text-xs font-semibold text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 rounded-lg bg-heritage-woodDark px-3 py-2 text-xs font-semibold text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory shrink-0"
                 >
                   <Layers className="h-3.5 w-3.5" />
                   <span>
@@ -665,18 +665,18 @@ export const InteractiveHeritageLab: React.FC = () => {
             </div>
           </div>
 
-          {/* Cột phải: Mô phỏng Hộp kể chuyện Diorama thời gian thực */}
-          <div className="lg:col-span-6 rounded-2xl bg-heritage-woodDark p-5 text-heritage-ivory border border-heritage-goldAntique flex flex-col justify-between">
-            <div className="flex items-center justify-between border-b border-heritage-goldAntique/40 pb-3">
-              <div>
+          {/* Cột phải trên desktop, hiển thị đầu tiên trên mobile/tablet: Mô phỏng Hộp kể chuyện Diorama thời gian thực */}
+          <div className="order-1 lg:order-2 lg:col-span-6 rounded-2xl bg-heritage-woodDark p-4 sm:p-5 text-heritage-ivory border border-heritage-goldAntique flex flex-col justify-between">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-heritage-goldAntique/40 pb-3">
+              <div className="min-w-0">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-heritage-goldSoft block">
                   Mô phỏng Hộp kể chuyện 3 lớp (Diorama)
                 </span>
-                <h4 className="font-serif text-xl font-bold text-heritage-ivory">
+                <h4 className="font-serif text-lg sm:text-xl font-bold text-heritage-ivory">
                   Đăm Săn đi bắt Nữ thần Mặt Trời
                 </h4>
               </div>
-              <span className="rounded-md bg-heritage-moss px-2.5 py-1 text-xs font-semibold text-heritage-ivory">
+              <span className="shrink-0 rounded-md bg-heritage-moss px-2.5 py-1 text-xs font-semibold text-heritage-ivory">
                 Đèn LED: {ledIntensity}%
               </span>
             </div>
@@ -805,11 +805,11 @@ export const InteractiveHeritageLab: React.FC = () => {
               </svg>
             </div>
 
-            <div className="mt-3 flex items-center justify-between text-xs text-heritage-goldSoft">
+            <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-heritage-goldSoft">
               <span>
-                Gợi ý thực hành: Kéo thanh trượt 1, 2, 3 bên trái để kiểm tra hiệu ứng xuyên sáng
+                Gợi ý thực hành: Kéo thanh trượt 1, 2, 3 để kiểm tra hiệu ứng xuyên sáng
               </span>
-              <span className="font-mono">Tỉ lệ hộp: 40×25×15cm</span>
+              <span className="font-mono shrink-0">Tỉ lệ hộp: 40×25×15cm</span>
             </div>
           </div>
         </div>

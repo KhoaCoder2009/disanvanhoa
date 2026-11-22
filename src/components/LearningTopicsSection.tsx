@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -22,6 +22,15 @@ export const LearningTopicsSection: React.FC = () => {
   const [selectedTopic, setSelectedTopic] = useState<LearningTopic | null>(null);
   const [activeCharId, setActiveCharId] = useState<string>("tri-huyen");
 
+  useEffect(() => {
+    if (!selectedTopic) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedTopic(null);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selectedTopic]);
+
   const topic01 = LEARNING_TOPICS[0];
   const topic02 = LEARNING_TOPICS[1];
 
@@ -29,24 +38,24 @@ export const LearningTopicsSection: React.FC = () => {
     <section
       id="chu-de-hoc-tap"
       aria-labelledby="topics-section-heading"
-      className="py-16 sm:py-20 bg-heritage-ivoryLight border-b border-heritage-goldAntique/30"
+      className="py-12 sm:py-16 lg:py-20 bg-heritage-ivoryLight border-b border-heritage-goldAntique/30"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Tiêu đề Khu vực 2: CHỦ ĐỀ HỌC TẬP */}
         <div className="max-w-3xl">
           <h2
             id="topics-section-heading"
-            className="font-serif text-3xl sm:text-4xl font-bold text-heritage-crimson tracking-tight"
+            className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-heritage-crimson tracking-tight"
           >
             {LEARNING_TOPICS_META.title}
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-heritage-ink leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base lg:text-lg text-heritage-ink leading-relaxed">
             {LEARNING_TOPICS_META.description}
           </p>
         </div>
 
         {/* Hai thẻ chủ đề trên nền Trắng - Đỏ Son */}
-        <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-12">
+        <div className="mt-8 sm:mt-10 grid grid-cols-1 gap-6 lg:gap-10 lg:grid-cols-12">
           {/* CHỦ ĐỀ 01: MÃ MÀU VÀ NÉT MẶT ƯỚC LỆ (Huyện đường - Đang triển khai) */}
           <TiltSpotlightCard className="lg:col-span-7 rounded-2xl bg-white text-heritage-ink border-2 border-heritage-crimson shadow-museum">
             <div>
@@ -57,31 +66,31 @@ export const LearningTopicsSection: React.FC = () => {
                   caption={topic01.title}
                   className="aspect-[16/9] w-full"
                 />
-                <div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
-                  <span className="rounded-lg bg-white/95 px-3 py-1 text-xs font-bold tracking-wider text-heritage-crimson border border-heritage-crimson">
+                <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-4 sm:left-4 sm:right-4 flex flex-wrap items-center justify-between gap-2">
+                  <span className="rounded-lg bg-white/95 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[11px] sm:text-xs font-bold tracking-wider text-heritage-crimson border border-heritage-crimson">
                     {topic01.topicNumber} • {topic01.subjectInfo}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-heritage-crimson px-3.5 py-1 text-xs font-semibold text-white border border-white/60">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-heritage-crimson px-2.5 py-0.5 sm:px-3.5 sm:py-1 text-[11px] sm:text-xs font-semibold text-white border border-white/60">
                     <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />
                     <span>{topic01.status}</span>
                   </span>
                 </div>
               </div>
 
-              <div className="p-6 sm:p-8">
+              <div className="p-4 sm:p-6 lg:p-8">
                 <p className="text-xs font-bold uppercase tracking-wider text-heritage-crimson">
                   {topic01.lessonInfo}
                 </p>
-                <h3 className="mt-1.5 font-serif text-2xl sm:text-3xl font-bold text-heritage-crimson">
+                <h3 className="mt-1.5 font-serif text-xl sm:text-3xl font-bold text-heritage-crimson">
                   {topic01.title}
                 </h3>
-                <p className="mt-2 text-base text-heritage-woodDark font-medium">
+                <p className="mt-2 text-sm sm:text-base text-heritage-woodDark font-medium">
                   {topic01.summary}
                 </p>
 
                 {/* Lưới 4 nhân vật cần hiển thị đúng: Tri huyện, Đề lại, Lính lệ, Trùm Sò */}
-                <div className="mt-6 rounded-xl bg-heritage-ivoryLight p-4 border border-heritage-crimson/30">
-                  <div className="flex items-center justify-between gap-2">
+                <div className="mt-5 sm:mt-6 rounded-xl bg-heritage-ivoryLight p-3.5 sm:p-4 border border-heritage-crimson/30">
+                  <div className="flex flex-wrap items-center justify-between gap-1.5">
                     <span className="text-xs font-bold uppercase tracking-wider text-heritage-crimson">
                       Bốn nhân vật giải mã tạo hình (Huyện đường)
                     </span>
@@ -98,7 +107,7 @@ export const LearningTopicsSection: React.FC = () => {
                           key={char.id}
                           type="button"
                           onClick={() => setActiveCharId(char.id)}
-                          className={`flex flex-col items-start rounded-lg p-2.5 text-left transition-colors ${
+                          className={`flex min-h-[44px] flex-col items-start rounded-lg p-2.5 text-left transition-colors ${
                             isSelected
                               ? "bg-heritage-crimson text-white border border-heritage-crimson shadow-sm"
                               : "bg-white text-heritage-ink border border-heritage-crimson/25 hover:border-heritage-crimson"
@@ -166,7 +175,7 @@ export const LearningTopicsSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="px-6 pb-6 sm:px-8 sm:pb-8">
+            <div className="px-4 pb-4 sm:px-8 sm:pb-8">
               <button
                 type="button"
                 onClick={() => setSelectedTopic(topic01)}
@@ -188,18 +197,18 @@ export const LearningTopicsSection: React.FC = () => {
                   caption={topic02.title}
                   className="aspect-[16/10] w-full"
                 />
-                <div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
-                  <span className="rounded-lg bg-heritage-emeraldSoft/95 px-3 py-1 text-xs font-bold tracking-wider text-heritage-emerald border border-heritage-emerald">
+                <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-4 sm:left-4 sm:right-4 flex flex-wrap items-center justify-between gap-2">
+                  <span className="rounded-lg bg-heritage-emeraldSoft/95 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[11px] sm:text-xs font-bold tracking-wider text-heritage-emerald border border-heritage-emerald">
                     {topic02.topicNumber} • {topic02.subjectInfo}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-heritage-amber px-3.5 py-1 text-xs font-semibold text-white border border-white/60">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-heritage-amber px-2.5 py-0.5 sm:px-3.5 sm:py-1 text-[11px] sm:text-xs font-semibold text-white border border-white/60">
                     <Clock className="h-3.5 w-3.5" aria-hidden="true" />
                     <span>{topic02.status}</span>
                   </span>
                 </div>
               </div>
 
-              <div className="p-6 sm:p-7">
+              <div className="p-4 sm:p-6 lg:p-7">
                 <p className="text-xs font-bold uppercase tracking-wider text-heritage-emerald">
                   {topic02.lessonInfo}
                 </p>
@@ -251,7 +260,7 @@ export const LearningTopicsSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="px-6 pb-6 sm:px-7 sm:pb-7">
+            <div className="px-4 pb-4 sm:px-6 sm:pb-6 lg:px-7 lg:pb-7">
               <button
                 type="button"
                 onClick={() => setSelectedTopic(topic02)}
@@ -268,14 +277,17 @@ export const LearningTopicsSection: React.FC = () => {
       {/* Modal xem chi tiết Chủ đề học tập */}
       {selectedTopic && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-heritage-woodDark/80 p-4 overflow-y-auto"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setSelectedTopic(null);
+          }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-heritage-woodDark/80 p-3 sm:p-4 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-labelledby="topic-modal-title"
         >
-          <div className="relative my-8 w-full max-w-4xl rounded-2xl bg-heritage-ivory border-2 border-heritage-goldAntique p-6 sm:p-8 text-heritage-ink shadow-cabinet max-h-[90vh] overflow-y-auto">
-            <div className="flex items-start justify-between gap-4 border-b border-heritage-goldAntique/40 pb-4">
-              <div>
+          <div className="relative my-2 sm:my-8 w-full max-w-4xl rounded-2xl bg-heritage-ivory border-2 border-heritage-goldAntique p-4 sm:p-8 text-heritage-ink shadow-cabinet max-h-[92dvh] overflow-y-auto">
+            <div className="flex items-start justify-between gap-3 sm:gap-4 border-b border-heritage-goldAntique/40 pb-4">
+              <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-md bg-heritage-woodDark px-3 py-1 text-xs font-semibold text-heritage-goldSoft">
                     {selectedTopic.topicNumber} • {selectedTopic.subjectInfo}
@@ -292,7 +304,7 @@ export const LearningTopicsSection: React.FC = () => {
                 </div>
                 <h3
                   id="topic-modal-title"
-                  className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-heritage-woodDark"
+                  className="mt-2 font-serif text-xl sm:text-3xl font-bold text-heritage-woodDark"
                 >
                   {selectedTopic.title}
                 </h3>
@@ -304,7 +316,7 @@ export const LearningTopicsSection: React.FC = () => {
                 type="button"
                 onClick={() => setSelectedTopic(null)}
                 aria-label="Đóng chi tiết chủ đề"
-                className="rounded-lg bg-heritage-woodDark p-2 text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-heritage-woodDark text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -419,7 +431,7 @@ export const LearningTopicsSection: React.FC = () => {
                 <Link
                   href={`/chu-de-hoc-tap/${selectedTopic.id}`}
                   onClick={() => setSelectedTopic(null)}
-                  className="rounded-lg bg-heritage-crimson px-4 py-2 text-xs sm:text-sm font-semibold text-heritage-ivory hover:bg-heritage-goldAntique hover:text-heritage-woodDark transition-colors"
+                  className="w-full sm:w-auto text-center rounded-lg bg-heritage-crimson px-4 py-2.5 text-xs sm:text-sm font-semibold text-heritage-ivory hover:bg-heritage-goldAntique hover:text-heritage-woodDark transition-colors"
                 >
                   Mở toàn trang chủ đề này
                 </Link>

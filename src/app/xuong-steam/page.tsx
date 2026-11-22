@@ -82,12 +82,12 @@ export default function XuongSteamPage() {
         <SteamMakerspaceSection />
 
         {/* Bộ 4 Phiếu Nhật ký Dự án STEAM dành cho học sinh */}
-        <section className="py-16 sm:py-20 bg-heritage-ivory border-b border-heritage-goldAntique/30">
+        <section className="py-12 sm:py-16 lg:py-20 bg-heritage-ivory border-b border-heritage-goldAntique/30">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <div className="flex items-center gap-2.5">
-                <ClipboardList className="h-6 w-6 text-heritage-crimson" />
-                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-heritage-woodDark">
+              <div className="flex items-start sm:items-center gap-2.5">
+                <ClipboardList className="mt-0.5 sm:mt-0 h-6 w-6 shrink-0 text-heritage-crimson" />
+                <h2 className="font-serif text-xl sm:text-3xl font-bold text-heritage-woodDark">
                   BỘ HỒ SƠ &amp; NHẬT KÝ DỰ ÁN STEAM (4 PHIẾU HỌC TẬP)
                 </h2>
               </div>
@@ -100,13 +100,13 @@ export default function XuongSteamPage() {
               {DIARY_FORMS.map((form) => (
                 <TiltSpotlightCard
                   key={form.code}
-                  className="rounded-2xl bg-heritage-ivoryLight p-6 border border-heritage-goldAntique/50 shadow-museum"
+                  className="rounded-2xl bg-heritage-ivoryLight p-4 sm:p-6 border border-heritage-goldAntique/50 shadow-museum"
                 >
                   <div>
                     <span className="inline-block rounded-lg bg-heritage-woodDark px-3 py-1 text-xs font-semibold text-heritage-goldSoft">
                       {form.code}
                     </span>
-                    <h3 className="mt-3 font-serif text-xl font-bold text-heritage-woodDark">
+                    <h3 className="mt-3 font-serif text-lg sm:text-xl font-bold text-heritage-woodDark">
                       {form.title}
                     </h3>
                     <ul className="mt-3 space-y-2 text-sm text-heritage-ink">
@@ -122,12 +122,12 @@ export default function XuongSteamPage() {
               ))}
             </div>
 
-            <div className="mt-10 rounded-2xl bg-heritage-woodDark p-6 sm:p-8 text-heritage-ivory border border-heritage-goldAntique shadow-cabinet">
+            <div className="mt-8 sm:mt-10 rounded-2xl bg-heritage-woodDark p-4 sm:p-8 text-heritage-ivory border border-heritage-goldAntique shadow-cabinet">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-start gap-3.5">
                   <ShieldCheck className="h-7 w-7 text-heritage-goldSoft shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-serif text-xl font-bold text-heritage-ivory">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-heritage-ivory">
                       Nguyên tắc An toàn, Tiết kiệm &amp; Bền vững tại Xưởng STEAM
                     </h3>
                     <p className="mt-1.5 text-sm text-heritage-ivory/90 leading-relaxed">
@@ -137,7 +137,7 @@ export default function XuongSteamPage() {
                 </div>
                 <Link
                   href="/dien-dan-hoc-tap"
-                  className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-5 py-3 text-xs sm:text-sm font-semibold text-heritage-ivory border border-heritage-goldSoft/60 hover:bg-heritage-goldAntique hover:text-heritage-woodDark transition-colors shrink-0"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-crimson px-5 py-3 text-xs sm:text-sm font-semibold text-heritage-ivory border border-heritage-goldSoft/60 hover:bg-heritage-goldAntique hover:text-heritage-woodDark transition-colors shrink-0"
                 >
                   <Wrench className="h-4 w-4" />
                   <span>Gửi nhật ký qua Diễn đàn</span>

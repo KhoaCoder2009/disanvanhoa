@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import {
   Eye,
@@ -31,6 +31,15 @@ export const DigitalExhibitionSection: React.FC = () => {
     null
   );
 
+  useEffect(() => {
+    if (!activeExhibit) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveExhibit(null);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [activeExhibit]);
+
   const filteredItems = useMemo(() => {
     return EXHIBITION_ITEMS.filter((item) => {
       const matchCategory =
@@ -45,18 +54,18 @@ export const DigitalExhibitionSection: React.FC = () => {
     <section
       id="trien-lam-so"
       aria-labelledby="exhibition-section-heading"
-      className="py-16 sm:py-20 bg-heritage-ivory border-b border-heritage-goldAntique/30"
+      className="py-12 sm:py-16 lg:py-20 bg-heritage-ivory border-b border-heritage-goldAntique/30"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Tiêu đề Khu vực 4: TRIỂN LÃM SỐ */}
         <div className="max-w-3xl">
           <h2
             id="exhibition-section-heading"
-            className="font-serif text-3xl sm:text-4xl font-bold text-heritage-crimson tracking-tight"
+            className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-heritage-crimson tracking-tight"
           >
             {EXHIBITION_SECTION_META.title}
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-heritage-ink leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base lg:text-lg text-heritage-ink leading-relaxed">
             {EXHIBITION_SECTION_META.description}
           </p>
         </div>
@@ -73,7 +82,7 @@ export const DigitalExhibitionSection: React.FC = () => {
         </div>
 
         {/* Bộ lọc theo loại sản phẩm và chủ đề */}
-        <div className="mt-8 space-y-4 rounded-2xl bg-heritage-ivoryLight p-5 border border-heritage-goldAntique/40">
+        <div className="mt-7 sm:mt-8 space-y-4 rounded-2xl bg-heritage-ivoryLight p-4 sm:p-5 border border-heritage-goldAntique/40">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-heritage-goldAntique/30 pb-4">
             <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-heritage-woodDark">
               <Filter className="h-4 w-4 text-heritage-crimson" />
@@ -87,7 +96,7 @@ export const DigitalExhibitionSection: React.FC = () => {
                     key={tp.id}
                     type="button"
                     onClick={() => setSelectedTopicFilter(tp.id)}
-                    className={`rounded-lg px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors ${
+                    className={`rounded-lg px-3.5 py-2 sm:py-1.5 text-xs sm:text-sm font-medium transition-colors ${
                       active
                         ? "bg-heritage-woodDark text-heritage-goldSoft border border-heritage-goldAntique"
                         : "bg-heritage-ivory text-heritage-ink border border-heritage-goldAntique/30 hover:bg-heritage-ivoryDeep"
@@ -104,7 +113,7 @@ export const DigitalExhibitionSection: React.FC = () => {
             <span className="text-xs font-bold uppercase tracking-wider text-heritage-woodLight block mb-2.5">
               Danh mục trưng bày bảo tàng:
             </span>
-            <div className="flex flex-wrap gap-2">
+            <div className="no-scrollbar flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
               {EXHIBITION_CATEGORIES.map((cat) => {
                 const isSelected = selectedCategory === cat;
                 return (
@@ -112,7 +121,7 @@ export const DigitalExhibitionSection: React.FC = () => {
                     key={cat}
                     type="button"
                     onClick={() => setSelectedCategory(cat)}
-                    className={`rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition-all ${
+                    className={`shrink-0 whitespace-nowrap min-h-[38px] rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition-all ${
                       isSelected
                         ? "bg-heritage-crimson text-heritage-ivory border border-heritage-goldSoft shadow-sm"
                         : "bg-heritage-ivory text-heritage-ink border border-heritage-goldAntique/40 hover:bg-heritage-ivoryDeep"
@@ -176,11 +185,11 @@ export const DigitalExhibitionSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="p-6">
+                  <div className="p-4 sm:p-6">
                     <p className="text-xs font-semibold text-heritage-crimson">
                       Chủ đề: {item.topicTitle}
                     </p>
-                    <h3 className="mt-1.5 font-serif text-xl font-bold text-heritage-woodDark leading-snug">
+                    <h3 className="mt-1.5 font-serif text-lg sm:text-xl font-bold text-heritage-woodDark leading-snug">
                       {item.title}
                     </h3>
                     <p className="mt-1.5 text-xs text-heritage-woodLight italic">
@@ -214,7 +223,7 @@ export const DigitalExhibitionSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="px-6 pb-6 pt-2">
+                <div className="px-4 pb-4 sm:px-6 sm:pb-6 pt-2">
                   <button
                     type="button"
                     onClick={() => setActiveExhibit(item)}
@@ -233,14 +242,17 @@ export const DigitalExhibitionSection: React.FC = () => {
       {/* Modal Xem chi tiết Hồ sơ Sản phẩm Triển lãm số */}
       {activeExhibit && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-heritage-woodDark/80 p-4 overflow-y-auto"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setActiveExhibit(null);
+          }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-heritage-woodDark/80 p-3 sm:p-4 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-labelledby="exhibit-modal-title"
         >
-          <div className="relative my-8 w-full max-w-3xl rounded-2xl bg-heritage-ivory border-2 border-heritage-goldAntique p-6 sm:p-8 text-heritage-ink shadow-cabinet max-h-[90vh] overflow-y-auto">
-            <div className="flex items-start justify-between gap-4 border-b border-heritage-goldAntique/40 pb-4">
-              <div>
+          <div className="relative my-2 sm:my-8 w-full max-w-3xl rounded-2xl bg-heritage-ivory border-2 border-heritage-goldAntique p-4 sm:p-8 text-heritage-ink shadow-cabinet max-h-[92dvh] overflow-y-auto">
+            <div className="flex items-start justify-between gap-3 sm:gap-4 border-b border-heritage-goldAntique/40 pb-4">
+              <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-md bg-heritage-woodDark px-3 py-1 text-xs font-semibold text-heritage-goldSoft">
                     {activeExhibit.category}
@@ -253,7 +265,7 @@ export const DigitalExhibitionSection: React.FC = () => {
                 </div>
                 <h3
                   id="exhibit-modal-title"
-                  className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-heritage-woodDark"
+                  className="mt-2 font-serif text-xl sm:text-3xl font-bold text-heritage-woodDark"
                 >
                   {activeExhibit.title}
                 </h3>
@@ -268,7 +280,7 @@ export const DigitalExhibitionSection: React.FC = () => {
                 type="button"
                 onClick={() => setActiveExhibit(null)}
                 aria-label="Đóng hồ sơ sản phẩm"
-                className="rounded-lg bg-heritage-woodDark p-2 text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-heritage-woodDark text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -329,7 +341,8 @@ export const DigitalExhibitionSection: React.FC = () => {
                     {activeExhibit.videoStatusNote}
                   </p>
                   <p className="mt-2 text-[11px] text-heritage-goldSoft/90">
-                    Giáo viên cập nhật đường dẫn video tại <code>src/data/exhibitionData.ts</code>
+                    Giáo viên cập nhật đường dẫn video tại{" "}
+                    <code className="break-all">src/data/exhibitionData.ts</code>
                   </p>
                 </div>
               </div>

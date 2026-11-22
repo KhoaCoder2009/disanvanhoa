@@ -41,10 +41,10 @@ export default function TrienLamSoPage() {
 
         <DigitalExhibitionSection />
 
-        <section className="py-16 bg-heritage-ivoryLight border-b border-heritage-goldAntique/30">
+        <section className="py-12 sm:py-16 bg-heritage-ivoryLight border-b border-heritage-goldAntique/30">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-heritage-woodDark">
+              <h2 className="font-serif text-xl sm:text-3xl font-bold text-heritage-woodDark">
                 QUY CHUẨN LƯU TRỮ MINH CHỨNG &amp; TRƯNG BÀY SẢN PHẨM
               </h2>
               <p className="mt-2 text-sm sm:text-base text-heritage-ink">
@@ -79,7 +79,7 @@ export default function TrienLamSoPage() {
                   3. Kiểm duyệt &amp; Công bố
                 </h3>
                 <p className="mt-2 text-sm text-heritage-ink leading-relaxed">
-                  Giáo viên kiểm duyệt nội dung học thuật và sự đồng thuận công bố tên nhóm/lớp trước khi cập nhật chính thức vào tệp dữ liệu <code>src/data/exhibitionData.ts</code>.
+                  Giáo viên kiểm duyệt nội dung học thuật và sự đồng thuận công bố tên nhóm/lớp trước khi cập nhật chính thức vào tệp dữ liệu <code className="break-all sm:break-normal">src/data/exhibitionData.ts</code>.
                 </p>
               </div>
             </div>

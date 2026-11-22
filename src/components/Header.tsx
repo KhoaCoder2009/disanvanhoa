@@ -121,6 +121,7 @@ export const Header: React.FC = () => {
         setSearchOpen((prev) => !prev);
       } else if (e.key === "Escape") {
         setSearchOpen(false);
+        setMobileMenuOpen(false);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -168,7 +169,7 @@ export const Header: React.FC = () => {
   return (
     <>
       <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md text-heritage-ink border-b-2 border-heritage-crimson/20 shadow-museum">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-3 py-2.5 sm:px-6 sm:py-3 lg:px-8">
           {/* Logo và tên website (Trắng & Đỏ Son) */}
           <Link
             href="/"
@@ -180,26 +181,26 @@ export const Header: React.FC = () => {
                 setActiveSectionId("trang-chu");
               }
             }}
-            className="group flex shrink-0 items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson rounded-lg"
+            className="group flex min-w-0 shrink items-center gap-2.5 sm:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson rounded-lg"
           >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-heritage-crimson text-white border border-heritage-goldAntique transition-transform duration-200 group-hover:scale-105 shadow-sm">
-              <Landmark className="h-5 w-5" aria-hidden="true" />
+            <span className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-heritage-crimson text-white border border-heritage-goldAntique transition-transform duration-200 group-hover:scale-105 shadow-sm">
+              <Landmark className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
             </span>
-            <div className="whitespace-nowrap">
-              <span className="block font-serif text-lg sm:text-xl font-bold tracking-[-0.015em] text-heritage-crimson">
+            <div className="min-w-0 whitespace-nowrap">
+              <span className="block font-serif text-[15px] sm:text-lg xl:text-xl font-bold tracking-[-0.015em] leading-tight text-heritage-crimson truncate">
                 DI SẢN VĂN HỌC VIỆT
               </span>
-              <span className="block text-[11px] font-medium tracking-[0.02em] text-heritage-ink/75">
+              <span className="block text-[10px] sm:text-[11px] font-medium tracking-[0.02em] text-heritage-ink/75 truncate">
                 Digital Literature &amp; STEAM Heritage
               </span>
             </div>
           </Link>
 
-          {/* Menu điều hướng Desktop (Cuộn mượt theo từng chặng Landing Page) */}
-          <nav aria-label="Điều hướng chính" className="hidden lg:flex items-center gap-0.5">
+          {/* Menu điều hướng Desktop & Tablet ngang (fit gọn 1 hàng tại 1024px) */}
+          <nav aria-label="Điều hướng chính" className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             {NAV_ITEMS.map((item) => {
               const isActive = isNavItemActive(item);
-              const navClass = `whitespace-nowrap rounded-lg px-2.5 py-1.5 text-[13px] font-medium tracking-[-0.005em] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson ${
+              const navClass = `whitespace-nowrap rounded-lg px-2 py-1.5 xl:px-2.5 text-[12px] xl:text-[13px] font-medium tracking-[-0.005em] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson ${
                 isActive
                   ? "bg-heritage-crimson text-white shadow-sm"
                   : "text-heritage-ink hover:bg-heritage-ivoryDeep hover:text-heritage-crimson"
@@ -231,17 +232,20 @@ export const Header: React.FC = () => {
             })}
           </nav>
 
-          {/* Nút Tra cứu nhanh Học liệu (Command Palette) & Nút Menu Mobile */}
-          <div className="flex shrink-0 items-center gap-2">
+          {/* Nút Tra cứu nhanh Học liệu (Command Palette) & Nút Menu Mobile/Tablet */}
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
             <button
               type="button"
-              onClick={() => setSearchOpen(true)}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setSearchOpen(true);
+              }}
               aria-label="Tra cứu nhanh học liệu và phòng trưng bày (Ctrl+K)"
-              className="whitespace-nowrap inline-flex items-center gap-2 rounded-xl bg-heritage-ivoryLight px-3 py-2 text-xs font-semibold text-heritage-crimson border border-heritage-crimson/30 hover:bg-heritage-crimson hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
+              className="whitespace-nowrap inline-flex min-h-[40px] sm:min-h-[42px] items-center gap-1.5 sm:gap-2 rounded-xl bg-heritage-ivoryLight px-2.5 sm:px-3 py-2 text-xs font-semibold text-heritage-crimson border border-heritage-crimson/30 hover:bg-heritage-crimson hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
             >
-              <Search className="h-3.5 w-3.5" aria-hidden="true" />
-              <span className="hidden xl:inline">Tra cứu</span>
-              <kbd className="hidden md:inline-block rounded bg-white px-1.5 py-0.5 font-mono text-[11px] text-heritage-crimson border border-heritage-crimson/25">
+              <Search className="h-4 w-4 sm:h-3.5 sm:w-3.5" aria-hidden="true" />
+              <span className="hidden sm:inline lg:hidden xl:inline">Tra cứu</span>
+              <kbd className="hidden xl:inline-block rounded bg-white px-1.5 py-0.5 font-mono text-[11px] text-heritage-crimson border border-heritage-crimson/25">
                 Ctrl K
               </kbd>
             </button>
@@ -252,7 +256,7 @@ export const Header: React.FC = () => {
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation-menu"
               aria-label={mobileMenuOpen ? "Đóng menu điều hướng" : "Mở menu điều hướng"}
-              className="inline-flex items-center justify-center rounded-lg p-2.5 text-heritage-crimson hover:bg-heritage-ivoryDeep focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson lg:hidden"
+              className="inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl text-heritage-crimson hover:bg-heritage-ivoryDeep focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson lg:hidden"
             >
               {mobileMenuOpen ? (
                 <X className="h-6 w-6" aria-hidden="true" />
@@ -271,19 +275,19 @@ export const Header: React.FC = () => {
           />
         </div>
 
-        {/* Menu thu gọn trên điện thoại */}
+        {/* Menu thu gọn trên điện thoại & máy tính bảng dọc */}
         {mobileMenuOpen && (
           <nav
             id="mobile-navigation-menu"
             aria-label="Điều hướng di động"
-            className="border-t border-heritage-crimson/20 bg-white px-4 pb-5 pt-3 lg:hidden"
+            className="relative z-40 border-t border-heritage-crimson/20 bg-white px-4 pb-5 pt-3 shadow-cabinet lg:hidden max-h-[calc(100dvh-64px)] overflow-y-auto"
           >
-            <div className="flex flex-col space-y-1.5">
+            <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2 sm:gap-2">
               {NAV_ITEMS.map((item) => {
                 const isActive = isNavItemActive(item);
-                const mobileClass = `rounded-lg px-4 py-2.5 text-base font-semibold transition-colors ${
+                const mobileClass = `flex min-h-[44px] items-center rounded-xl px-4 py-2.5 text-sm sm:text-base font-semibold transition-colors ${
                   isActive
-                    ? "bg-heritage-crimson text-white"
+                    ? "bg-heritage-crimson text-white shadow-sm"
                     : "text-heritage-ink hover:bg-heritage-ivoryDeep hover:text-heritage-crimson"
                 }`;
 
@@ -311,41 +315,68 @@ export const Header: React.FC = () => {
                   </a>
                 );
               })}
+
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setSearchOpen(true);
+                }}
+                className="sm:col-span-2 mt-1 flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-heritage-ivoryLight px-4 py-2.5 text-sm font-semibold text-heritage-crimson border border-heritage-crimson/30 hover:bg-heritage-crimson hover:text-white transition-colors"
+              >
+                <Search className="h-4 w-4" aria-hidden="true" />
+                <span>Tra cứu nhanh học liệu</span>
+              </button>
             </div>
           </nav>
         )}
       </header>
 
+      {/* Nền mờ đóng nhanh Menu di động khi chạm bên ngoài */}
+      {mobileMenuOpen && (
+        <div
+          aria-hidden="true"
+          onClick={() => setMobileMenuOpen(false)}
+          className="fixed inset-0 top-[60px] z-30 bg-black/35 lg:hidden"
+        />
+      )}
+
       {/* Hộp thoại Tra cứu nhanh Học liệu (Trắng & Đỏ Son) */}
       {searchOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 p-4 pt-16 sm:pt-24"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setSearchOpen(false);
+            }
+          }}
+          className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 p-3 pt-10 sm:p-4 sm:pt-24"
           role="dialog"
           aria-modal="true"
           aria-label="Tra cứu nhanh học liệu và chuyên trang"
         >
           <div className="w-full max-w-2xl rounded-2xl bg-white text-heritage-ink border-2 border-heritage-crimson shadow-cabinet overflow-hidden">
-            <div className="flex items-center gap-3 bg-heritage-crimson px-4 py-3.5 text-white">
+            <div className="flex items-center gap-2.5 sm:gap-3 bg-heritage-crimson px-3.5 py-3 sm:px-4 sm:py-3.5 text-white">
               <Search className="h-5 w-5 text-white shrink-0" />
               <input
                 type="text"
                 autoFocus
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Tìm nhanh: Huyện đường, Tri huyện, Đề lại, Trùm Sò, Đăm Săn, Nhà dài, Rubric..."
-                className="w-full bg-transparent text-sm sm:text-base text-white placeholder:text-white/75 focus:outline-none"
+                placeholder="Tìm nhanh: Huyện đường, Tri huyện, Đề lại, Trùm Sò, Đăm Săn..."
+                className="min-w-0 w-full bg-transparent text-sm sm:text-base text-white placeholder:text-white/75 focus:outline-none"
               />
               <button
                 type="button"
                 onClick={() => setSearchOpen(false)}
                 aria-label="Đóng hộp thoại tra cứu"
-                className="rounded-lg bg-white/20 px-2.5 py-1 text-xs font-semibold text-white hover:bg-white hover:text-heritage-crimson"
+                className="shrink-0 rounded-lg bg-white/20 px-2.5 py-1.5 text-xs font-semibold text-white hover:bg-white hover:text-heritage-crimson"
               >
-                ESC
+                <X className="h-4 w-4 sm:hidden" aria-hidden="true" />
+                <span className="hidden sm:inline">ESC</span>
               </button>
             </div>
 
-            <div className="max-h-[65vh] overflow-y-auto p-3 divide-y divide-heritage-crimson/15">
+            <div className="max-h-[75dvh] sm:max-h-[65vh] overflow-y-auto p-3 divide-y divide-heritage-crimson/15">
               {filteredEntries.length === 0 ? (
                 <div className="py-8 text-center text-sm text-heritage-ink/70">
                   Không tìm thấy mục học liệu nào khớp với từ khóa &ldquo;{searchQuery}&rdquo;.
@@ -367,16 +398,16 @@ export const Header: React.FC = () => {
                         }
                       }
                     }}
-                    className="flex items-center justify-between gap-4 rounded-xl p-3 hover:bg-heritage-ivoryDeep transition-colors"
+                    className="flex items-center justify-between gap-3 sm:gap-4 rounded-xl p-3 hover:bg-heritage-ivoryDeep transition-colors"
                   >
-                    <div>
+                    <div className="min-w-0">
                       <span className="inline-block rounded bg-heritage-crimson px-2 py-0.5 text-[11px] font-semibold text-white">
                         {entry.category}
                       </span>
-                      <h4 className="mt-1 font-serif text-base font-bold text-heritage-woodDark">
+                      <h4 className="mt-1 font-serif text-sm sm:text-base font-bold text-heritage-woodDark">
                         {entry.title}
                       </h4>
-                      <p className="text-xs text-heritage-ink">
+                      <p className="text-xs text-heritage-ink leading-relaxed">
                         {entry.subtitle}
                       </p>
                     </div>

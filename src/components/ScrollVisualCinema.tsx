@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 
 type TransitionType =
   | "base"
@@ -174,11 +174,15 @@ export const ScrollVisualCinema: React.FC = () => {
       const runway = runwayRef.current;
       if (!runway) return;
       const rect = runway.getBoundingClientRect();
+      const stageEl = stageRef.current;
+      const headerOffset = stageEl
+        ? parseFloat(window.getComputedStyle(stageEl).top) || HEADER_OFFSET
+        : HEADER_OFFSET;
       const scrollable = Math.max(
         1,
-        runway.offsetHeight - (window.innerHeight - HEADER_OFFSET)
+        runway.offsetHeight - (window.innerHeight - headerOffset)
       );
-      const ratio = clamp((HEADER_OFFSET - rect.top) / scrollable, 0, 1);
+      const ratio = clamp((headerOffset - rect.top) / scrollable, 0, 1);
       targetProgressRef.current = ratio * (CINEMA_SCENES.length - 1);
     };
 
@@ -375,11 +379,11 @@ export const ScrollVisualCinema: React.FC = () => {
       id="trang-chu"
       ref={runwayRef}
       aria-label="Hành trình thị giác Dự án Huyện đường và Sử thi Đăm Săn"
-      className="relative h-[680vh] sm:h-[750vh] bg-white"
+      className="relative h-[440vh] md:h-[580vh] lg:h-[720vh] bg-white"
     >
       <div
         ref={stageRef}
-        className="sticky top-16 h-[calc(100vh-4rem)] w-full overflow-hidden bg-white border-b border-heritage-crimson/15"
+        className="sticky top-[60px] sm:top-[68px] lg:top-16 h-[calc(100dvh-60px)] sm:h-[calc(100dvh-68px)] lg:h-[calc(100vh-4rem)] w-full overflow-hidden bg-white border-b border-heritage-crimson/15"
       >
         {CINEMA_SCENES.map((scene, idx) => (
           <div
@@ -420,11 +424,21 @@ export const ScrollVisualCinema: React.FC = () => {
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-white/95 via-white/80 to-white/15 lg:bg-gradient-to-r lg:from-white/95 lg:via-white/80 lg:to-transparent"
+          className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-white via-white/95 via-45% to-white/10 lg:bg-gradient-to-r lg:from-white/95 lg:via-white/80 lg:to-transparent"
         />
 
-        <div className="relative z-30 mx-auto h-full max-w-7xl px-4 sm:px-6 lg:px-8 flex items-end lg:items-center pb-12 lg:pb-0">
-          <div className="relative w-full max-w-xl h-[340px] sm:h-[360px] lg:h-[400px]">
+        {/* Nút cuộn nhanh bỏ qua phần trình chiếu trên màn hình chạm */}
+        <a
+          href="#gioi-thieu-khong-gian"
+          onClick={(e) => handleAnchorScroll(e, "#gioi-thieu-khong-gian")}
+          className="absolute top-3 right-3 sm:top-4 sm:right-6 z-30 inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur-sm px-3 py-1.5 text-[11px] sm:text-xs font-semibold text-heritage-crimson border border-heritage-crimson/30 shadow-sm hover:bg-heritage-crimson hover:text-white transition-colors"
+        >
+          <span>Bỏ qua trình chiếu</span>
+          <ArrowDown className="h-3.5 w-3.5" aria-hidden="true" />
+        </a>
+
+        <div className="relative z-30 mx-auto h-full max-w-7xl px-4 sm:px-6 lg:px-8 flex items-end lg:items-center pb-6 sm:pb-10 lg:pb-0">
+          <div className="relative w-full max-w-xl min-h-[290px] sm:min-h-[330px] lg:h-[400px]">
             {CINEMA_SCENES.map((scene, idx) => (
               <div
                 key={scene.id}
@@ -439,7 +453,7 @@ export const ScrollVisualCinema: React.FC = () => {
                 }}
               >
                 <div
-                  className="flex items-center gap-3 text-xs font-mono font-medium tracking-[0.26em]"
+                  className="flex items-center gap-2.5 sm:gap-3 text-[11px] sm:text-xs font-mono font-medium tracking-[0.22em] sm:tracking-[0.26em]"
                   style={{ color: scene.accentHex }}
                 >
                   <span>
@@ -453,34 +467,34 @@ export const ScrollVisualCinema: React.FC = () => {
 
                 {scene.isHeroTitle ? (
                   <h1
-                    className="mt-4 font-serif text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-[-0.025em] leading-[1.08]"
+                    className="mt-2.5 sm:mt-4 font-serif text-2xl sm:text-4xl lg:text-[3.5rem] font-bold tracking-[-0.025em] leading-[1.08]"
                     style={{ color: scene.accentHex }}
                   >
                     {scene.title}
                   </h1>
                 ) : (
                   <h2
-                    className="mt-4 font-serif text-2xl sm:text-4xl lg:text-[2.85rem] font-bold tracking-[-0.025em] leading-[1.1]"
+                    className="mt-2.5 sm:mt-4 font-serif text-xl sm:text-3xl lg:text-[2.85rem] font-bold tracking-[-0.025em] leading-[1.12]"
                     style={{ color: scene.accentHex }}
                   >
                     {scene.title}
                   </h2>
                 )}
 
-                <p className="mt-3.5 font-serif text-lg sm:text-xl lg:text-2xl italic font-medium text-heritage-woodDark leading-snug">
+                <p className="mt-2 sm:mt-3.5 font-serif text-sm sm:text-lg lg:text-2xl italic font-medium text-heritage-woodDark leading-snug">
                   &ldquo;{scene.slogan}&rdquo;
                 </p>
 
-                <p className="mt-4 text-sm sm:text-base text-heritage-ink/90 leading-relaxed max-w-md">
+                <p className="mt-2 sm:mt-4 text-xs sm:text-sm lg:text-base text-heritage-ink/90 leading-relaxed max-w-md line-clamp-3 sm:line-clamp-none">
                   {scene.description}
                 </p>
 
-                <div className="mt-7">
+                <div className="mt-4 sm:mt-7">
                   <a
                     href={scene.ctaHref}
                     onClick={(e) => handleAnchorScroll(e, scene.ctaHref)}
                     style={{ backgroundColor: scene.accentHex }}
-                    className="inline-flex w-fit items-center gap-2.5 rounded-xl px-6 py-3.5 text-sm font-semibold text-white shadow-museum hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
+                    className="inline-flex w-full sm:w-fit items-center justify-center gap-2.5 rounded-xl px-5 py-3 sm:px-6 sm:py-3.5 text-xs sm:text-sm font-semibold text-white shadow-museum hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
                   >
                     <span>{scene.ctaLabel}</span>
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />

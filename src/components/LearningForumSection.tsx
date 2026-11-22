@@ -36,7 +36,7 @@ export const LearningForumSection: React.FC = () => {
     <section
       id="dien-dan-hoc-tap"
       aria-labelledby="forum-section-heading"
-      className="py-16 sm:py-20 bg-heritage-ivoryLight border-b border-heritage-goldAntique/30"
+      className="py-12 sm:py-16 lg:py-20 bg-heritage-ivoryLight border-b border-heritage-goldAntique/30"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Tiêu đề Khu vực 5: DIỄN ĐÀN HỌC TẬP */}
@@ -44,20 +44,20 @@ export const LearningForumSection: React.FC = () => {
           <div className="max-w-3xl">
             <h2
               id="forum-section-heading"
-              className="font-serif text-3xl sm:text-4xl font-bold text-heritage-crimson tracking-tight"
+              className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-heritage-crimson tracking-tight"
             >
               {LEARNING_FORUM_META.title}
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-heritage-ink leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base lg:text-lg text-heritage-ink leading-relaxed">
               {LEARNING_FORUM_META.description}
             </p>
           </div>
         </div>
 
         {/* Ba khu chức năng: A. GÓC THẢO LUẬN, B. NÓI VÀ NGHE, C. PHẢN HỒI VÀ CHIA SẺ */}
-        <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-12">
+        <div className="mt-8 sm:mt-10 grid grid-cols-1 gap-6 lg:gap-8 lg:grid-cols-12">
           {/* KHU A: GÓC THẢO LUẬN (Chiếm 12 cột ở hàng trên hoặc 6 cột) */}
-          <div className="lg:col-span-6 flex flex-col justify-between rounded-2xl bg-heritage-ivory p-6 sm:p-8 border border-heritage-goldAntique/50 shadow-museum">
+          <div className="lg:col-span-6 flex flex-col justify-between rounded-2xl bg-heritage-ivory p-4 sm:p-6 lg:p-8 border border-heritage-goldAntique/50 shadow-museum">
             <div>
               <div className="flex items-center gap-3 border-b border-heritage-goldAntique/40 pb-4">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-heritage-woodDark text-heritage-goldSoft">
@@ -169,7 +169,7 @@ export const LearningForumSection: React.FC = () => {
           </div>
 
           {/* KHU B: NÓI VÀ NGHE (Chiếm 6 cột) */}
-          <div className="lg:col-span-6 flex flex-col justify-between rounded-2xl bg-heritage-ivory p-6 sm:p-8 border border-heritage-goldAntique/50 shadow-museum">
+          <div className="lg:col-span-6 flex flex-col justify-between rounded-2xl bg-heritage-ivory p-4 sm:p-6 lg:p-8 border border-heritage-goldAntique/50 shadow-museum">
             <div>
               <div className="flex items-center gap-3 border-b border-heritage-goldAntique/40 pb-4">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-heritage-crimson text-heritage-ivory">
@@ -186,11 +186,11 @@ export const LearningForumSection: React.FC = () => {
               </div>
 
               {/* 3 Tab chuyển đổi trong khu Nói và Nghe */}
-              <div className="mt-4 grid grid-cols-3 gap-2">
+              <div className="mt-4 grid grid-cols-3 gap-1.5 sm:gap-2">
                 <button
                   type="button"
                   onClick={() => setActiveSpeakingTab("structure")}
-                  className={`rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold transition-colors ${
+                  className={`flex min-h-[44px] items-center justify-center rounded-xl px-2 py-2 sm:px-3 text-center text-[11px] sm:text-sm leading-tight font-semibold transition-colors ${
                     activeSpeakingTab === "structure"
                       ? "bg-heritage-crimson text-heritage-ivory"
                       : "bg-heritage-ivoryLight text-heritage-ink border border-heritage-goldAntique/30 hover:bg-heritage-ivoryDeep"
@@ -201,7 +201,7 @@ export const LearningForumSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setActiveSpeakingTab("listening")}
-                  className={`rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold transition-colors ${
+                  className={`flex min-h-[44px] items-center justify-center rounded-xl px-2 py-2 sm:px-3 text-center text-[11px] sm:text-sm leading-tight font-semibold transition-colors ${
                     activeSpeakingTab === "listening"
                       ? "bg-heritage-crimson text-heritage-ivory"
                       : "bg-heritage-ivoryLight text-heritage-ink border border-heritage-goldAntique/30 hover:bg-heritage-ivoryDeep"
@@ -212,7 +212,7 @@ export const LearningForumSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setActiveSpeakingTab("rubric")}
-                  className={`rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold transition-colors ${
+                  className={`flex min-h-[44px] items-center justify-center rounded-xl px-2 py-2 sm:px-3 text-center text-[11px] sm:text-sm leading-tight font-semibold transition-colors ${
                     activeSpeakingTab === "rubric"
                       ? "bg-heritage-crimson text-heritage-ivory"
                       : "bg-heritage-ivoryLight text-heritage-ink border border-heritage-goldAntique/30 hover:bg-heritage-ivoryDeep"
@@ -296,9 +296,9 @@ export const LearningForumSection: React.FC = () => {
                       key={idx}
                       className="rounded-xl bg-heritage-ivoryLight p-3.5 border border-heritage-goldAntique/40"
                     >
-                      <div className="flex items-center justify-between font-bold text-heritage-woodDark">
+                      <div className="flex flex-wrap items-center justify-between gap-2 font-bold text-heritage-woodDark">
                         <span>{rb.criterion}</span>
-                        <span className="rounded bg-heritage-woodDark px-2 py-0.5 text-xs text-heritage-goldSoft">
+                        <span className="shrink-0 rounded bg-heritage-woodDark px-2 py-0.5 text-xs text-heritage-goldSoft">
                           Trọng số: {rb.weight}
                         </span>
                       </div>
@@ -317,19 +317,19 @@ export const LearningForumSection: React.FC = () => {
           </div>
 
           {/* KHU C: PHẢN HỒI VÀ CHIA SẺ (Nền Trắng - Viền Đỏ Son) */}
-          <div className="lg:col-span-12 rounded-2xl bg-white text-heritage-ink p-6 sm:p-8 border-2 border-heritage-crimson/40 shadow-museum">
+          <div className="lg:col-span-12 rounded-2xl bg-white text-heritage-ink p-4 sm:p-6 lg:p-8 border-2 border-heritage-crimson/40 shadow-museum">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-heritage-crimson/20 pb-5">
-              <div className="flex items-center gap-3.5">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-heritage-crimson text-white">
+              <div className="flex items-start sm:items-center gap-3.5">
+                <span className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-heritage-crimson text-white">
                   <Share2 className="h-5 w-5" aria-hidden="true" />
                 </span>
-                <div>
-                  <h3 className="font-serif text-2xl font-bold text-heritage-crimson">
+                <div className="min-w-0">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-heritage-crimson">
                     C. PHẢN HỒI VÀ CHIA SẺ
                   </h3>
                   <p className="text-xs sm:text-sm text-heritage-ink/80">
                     Kết nối Padlet, Google Forms, Khu vực đặt câu hỏi và Nhận xét sản phẩm (Quản lý tại{" "}
-                    <code className="bg-heritage-ivoryDeep px-1.5 py-0.5 rounded text-heritage-crimson font-semibold">
+                    <code className="break-all sm:break-normal bg-heritage-ivoryDeep px-1.5 py-0.5 rounded text-heritage-crimson font-semibold">
                       src/config/externalLinks.ts
                     </code>
                     )
@@ -337,8 +337,8 @@ export const LearningForumSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="inline-flex items-center gap-2 rounded-lg bg-heritage-ivoryLight px-3.5 py-2 text-xs font-semibold text-heritage-crimson border border-heritage-crimson/30">
-                <ShieldCheck className="h-4 w-4 text-heritage-crimson shrink-0" />
+              <div className="inline-flex items-start sm:items-center gap-2 rounded-lg bg-heritage-ivoryLight px-3.5 py-2 text-xs font-semibold text-heritage-crimson border border-heritage-crimson/30">
+                <ShieldCheck className="mt-0.5 sm:mt-0 h-4 w-4 text-heritage-crimson shrink-0" />
                 <span>Bảo mật học đường: Không thu thập dữ liệu cá nhân công khai</span>
               </div>
             </div>

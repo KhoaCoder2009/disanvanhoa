@@ -15,6 +15,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 76px;
     background-color: #FFFFFF;
     color: #2B1816;
     caret-color: #B91C1C;
@@ -28,6 +29,18 @@
     letter-spacing: -0.005em;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  a {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(185, 28, 28, 0.14);
+  }
+
+  @media (pointer: coarse) {
+    input[type="range"] {
+      min-height: 28px;
+    }
   }
 
   ::selection {
@@ -114,4 +127,14 @@
     #B91C1C 70%,
     #7A1C18 100%
   );
+}
+
+/* Ẩn thanh cuộn cho dải nút lọc vuốt ngang trên di động */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

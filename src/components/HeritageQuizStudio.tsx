@@ -233,18 +233,18 @@ export const HeritageQuizStudio: React.FC = () => {
   return (
     <section
       aria-label="Không gian Trắc nghiệm Di sản Văn học và STEAM"
-      className="py-12 sm:py-16 bg-heritage-ivoryLight min-h-[65vh]"
+      className="py-8 sm:py-12 lg:py-16 bg-heritage-ivoryLight min-h-[65vh]"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* ============================================================ */}
         {/* PHA 1: LOBBY THIẾT LẬP BỘ ĐỀ (SETUP) */}
         {/* ============================================================ */}
         {phase === "setup" && (
-          <div className="space-y-10">
+          <div className="space-y-8 sm:space-y-10">
             {/* Chọn phạm vi kiến thức */}
             <div>
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-heritage-crimson">
+                <h2 className="font-serif text-xl sm:text-3xl font-bold text-heritage-crimson">
                   1. Chọn bộ đề theo chuyên đề học tập
                 </h2>
                 <span className="font-mono text-xs font-semibold text-heritage-woodDark">
@@ -256,11 +256,11 @@ export const HeritageQuizStudio: React.FC = () => {
               </p>
 
               {/* Hai gói đề tổng hợp */}
-              <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div className="mt-5 sm:mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
                 <button
                   type="button"
                   onClick={() => setScope("all")}
-                  className={`text-left rounded-2xl p-6 border-2 transition-colors ${
+                  className={`text-left rounded-2xl p-4 sm:p-6 border-2 transition-colors ${
                     scope === "all"
                       ? "bg-heritage-crimson text-white border-heritage-crimson shadow-museum"
                       : "bg-white text-heritage-ink border-heritage-crimson/25 hover:border-heritage-crimson"
@@ -282,7 +282,7 @@ export const HeritageQuizStudio: React.FC = () => {
                     </span>
                   </div>
                   <h3
-                    className={`mt-2.5 font-serif text-xl font-bold ${
+                    className={`mt-2.5 font-serif text-lg sm:text-xl font-bold ${
                       scope === "all" ? "text-white" : "text-heritage-woodDark"
                     }`}
                   >
@@ -303,7 +303,7 @@ export const HeritageQuizStudio: React.FC = () => {
                     setScope("quick-10");
                     setShuffleQuestions(true);
                   }}
-                  className={`text-left rounded-2xl p-6 border-2 transition-colors ${
+                  className={`text-left rounded-2xl p-4 sm:p-6 border-2 transition-colors ${
                     scope === "quick-10"
                       ? "bg-heritage-crimson text-white border-heritage-crimson shadow-museum"
                       : "bg-white text-heritage-ink border-heritage-crimson/25 hover:border-heritage-crimson"
@@ -325,7 +325,7 @@ export const HeritageQuizStudio: React.FC = () => {
                     </span>
                   </div>
                   <h3
-                    className={`mt-2.5 font-serif text-xl font-bold ${
+                    className={`mt-2.5 font-serif text-lg sm:text-xl font-bold ${
                       scope === "quick-10"
                         ? "text-white"
                         : "text-heritage-woodDark"
@@ -417,8 +417,8 @@ export const HeritageQuizStudio: React.FC = () => {
 
             {/* Chọn chế độ làm bài & Tùy chọn */}
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-              <div className="lg:col-span-7 rounded-2xl bg-white p-6 border border-heritage-crimson/25 shadow-museum">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold text-heritage-crimson">
+              <div className="lg:col-span-7 rounded-2xl bg-white p-4 sm:p-6 border border-heritage-crimson/25 shadow-museum">
+                <h2 className="font-serif text-lg sm:text-2xl font-bold text-heritage-crimson">
                   2. Chế độ làm bài
                 </h2>
                 <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -460,13 +460,13 @@ export const HeritageQuizStudio: React.FC = () => {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 rounded-2xl bg-white p-6 border border-heritage-crimson/25 shadow-museum flex flex-col justify-between">
+              <div className="lg:col-span-5 rounded-2xl bg-white p-4 sm:p-6 border border-heritage-crimson/25 shadow-museum flex flex-col justify-between">
                 <div>
-                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-heritage-crimson">
+                  <h2 className="font-serif text-lg sm:text-2xl font-bold text-heritage-crimson">
                     3. Tùy chỉnh &amp; Khởi động
                   </h2>
                   <div className="mt-4 space-y-3 text-sm">
-                    <label className="flex items-center justify-between gap-3 rounded-xl bg-heritage-ivoryLight px-4 py-2.5 border border-heritage-crimson/15 cursor-pointer">
+                    <label className="flex min-h-[48px] items-center justify-between gap-3 rounded-xl bg-heritage-ivoryLight px-4 py-2.5 border border-heritage-crimson/15 cursor-pointer">
                       <span className="flex items-center gap-2 font-medium text-heritage-ink">
                         <Shuffle
                           className="h-4 w-4 text-heritage-crimson"
@@ -478,11 +478,11 @@ export const HeritageQuizStudio: React.FC = () => {
                         type="checkbox"
                         checked={shuffleQuestions}
                         onChange={(e) => setShuffleQuestions(e.target.checked)}
-                        className="h-4 w-4 accent-heritage-crimson"
+                        className="h-5 w-5 accent-heritage-crimson"
                       />
                     </label>
 
-                    <label className="flex items-center justify-between gap-3 rounded-xl bg-heritage-ivoryLight px-4 py-2.5 border border-heritage-crimson/15 cursor-pointer">
+                    <label className="flex min-h-[48px] items-center justify-between gap-3 rounded-xl bg-heritage-ivoryLight px-4 py-2.5 border border-heritage-crimson/15 cursor-pointer">
                       <span className="flex items-center gap-2 font-medium text-heritage-ink">
                         <Clock
                           className="h-4 w-4 text-heritage-crimson"
@@ -494,7 +494,7 @@ export const HeritageQuizStudio: React.FC = () => {
                         type="checkbox"
                         checked={showTimer}
                         onChange={(e) => setShowTimer(e.target.checked)}
-                        className="h-4 w-4 accent-heritage-crimson"
+                        className="h-5 w-5 accent-heritage-crimson"
                       />
                     </label>
                   </div>
@@ -519,9 +519,9 @@ export const HeritageQuizStudio: React.FC = () => {
         {phase === "playing" && currentQuestion && (
           <div className="space-y-6">
             {/* Thanh tiến độ phía trên */}
-            <div className="rounded-2xl bg-white p-4 sm:p-5 border border-heritage-crimson/25 shadow-museum">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="flex flex-wrap items-center gap-2.5">
+            <div className="rounded-2xl bg-white p-3.5 sm:p-5 border border-heritage-crimson/25 shadow-museum">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-lg bg-heritage-crimson px-3 py-1 font-mono text-xs font-bold text-white">
                     Câu {String(currentIdx + 1).padStart(2, "0")} /{" "}
                     {String(activeQuestions.length).padStart(2, "0")}
@@ -534,7 +534,7 @@ export const HeritageQuizStudio: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex w-full sm:w-auto items-center justify-between sm:justify-end gap-3">
                   {showTimer && (
                     <span className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-heritage-woodDark bg-heritage-ivoryLight px-3 py-1.5 rounded-lg border border-heritage-crimson/20">
                       <Clock className="h-3.5 w-3.5 text-heritage-crimson" />
@@ -544,14 +544,14 @@ export const HeritageQuizStudio: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setPhase("setup")}
-                    className="rounded-lg border border-heritage-crimson/30 px-3 py-1.5 text-xs font-semibold text-heritage-crimson hover:bg-heritage-ivoryDeep transition-colors"
+                    className="min-h-[36px] rounded-lg border border-heritage-crimson/30 px-3 py-1.5 text-xs font-semibold text-heritage-crimson hover:bg-heritage-ivoryDeep transition-colors"
                   >
                     Đổi bộ đề
                   </button>
                 </div>
               </div>
 
-              <div className="mt-3.5 h-2 w-full overflow-hidden rounded-full bg-heritage-ivoryDeep">
+              <div className="mt-3 sm:mt-3.5 h-2 w-full overflow-hidden rounded-full bg-heritage-ivoryDeep">
                 <div
                   className="h-full rounded-full bg-heritage-crimson transition-[width] duration-300 ease-out"
                   style={{
@@ -564,11 +564,11 @@ export const HeritageQuizStudio: React.FC = () => {
             </div>
 
             {/* Lưới 2 cột: Thẻ câu hỏi + Bảng điều hướng câu */}
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+            <div className="grid grid-cols-1 gap-6 lg:gap-8 lg:grid-cols-12">
               {/* Cột chính: Câu hỏi & Đáp án */}
-              <div className="lg:col-span-8 rounded-2xl bg-white p-6 sm:p-8 border border-heritage-crimson/25 shadow-museum flex flex-col justify-between">
+              <div className="lg:col-span-8 rounded-2xl bg-white p-4 sm:p-6 lg:p-8 border border-heritage-crimson/25 shadow-museum flex flex-col justify-between">
                 <div>
-                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-heritage-woodDark leading-snug">
+                  <h2 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-heritage-woodDark leading-snug">
                     {currentQuestion.question}
                   </h2>
 
@@ -613,7 +613,7 @@ export const HeritageQuizStudio: React.FC = () => {
                           type="button"
                           onClick={() => handleSelectOption(optIdx)}
                           disabled={mode === "practice" && hasAnswered}
-                          className={`w-full flex items-start gap-3.5 rounded-xl border-2 p-4 text-left transition-colors ${btnStyle}`}
+                          className={`w-full min-h-[52px] flex items-start gap-3 sm:gap-3.5 rounded-xl border-2 p-3.5 sm:p-4 text-left transition-colors ${btnStyle}`}
                         >
                           <span
                             className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border font-mono text-xs font-bold ${badgeStyle}`}
@@ -679,16 +679,16 @@ export const HeritageQuizStudio: React.FC = () => {
                 </div>
 
                 {/* Nút chuyển câu / Nộp bài */}
-                <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-heritage-crimson/15 pt-5">
+                <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-between border-t border-heritage-crimson/15 pt-4 sm:pt-5">
                   <button
                     type="button"
                     onClick={() =>
                       setCurrentIdx((idx) => Math.max(0, idx - 1))
                     }
                     disabled={currentIdx === 0}
-                    className="inline-flex items-center gap-2 rounded-xl border border-heritage-crimson/30 bg-white px-4 py-2.5 text-sm font-semibold text-heritage-crimson hover:bg-heritage-ivoryDeep disabled:opacity-40 disabled:pointer-events-none transition-colors"
+                    className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-heritage-crimson/30 bg-white px-3.5 sm:px-4 py-2.5 text-sm font-semibold text-heritage-crimson hover:bg-heritage-ivoryDeep disabled:opacity-40 disabled:pointer-events-none transition-colors"
                   >
-                    <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                    <ArrowLeft className="h-4 w-4 shrink-0" aria-hidden="true" />
                     <span>Câu trước</span>
                   </button>
 
@@ -700,26 +700,26 @@ export const HeritageQuizStudio: React.FC = () => {
                           Math.min(activeQuestions.length - 1, idx + 1)
                         )
                       }
-                      className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-5 py-2.5 text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
+                      className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-heritage-crimson px-4 sm:px-5 py-2.5 text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
                     >
                       <span>Câu tiếp theo</span>
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
                     </button>
                   ) : (
                     <button
                       type="button"
                       onClick={handleSubmitQuiz}
-                      className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-6 py-2.5 text-sm font-bold text-white shadow-museum hover:bg-heritage-woodDark transition-colors"
+                      className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-heritage-crimson px-4 sm:px-6 py-2.5 text-sm font-bold text-white shadow-museum hover:bg-heritage-woodDark transition-colors"
                     >
-                      <Award className="h-4 w-4" aria-hidden="true" />
+                      <Award className="h-4 w-4 shrink-0" aria-hidden="true" />
                       <span>Nộp bài &amp; Chấm điểm</span>
                     </button>
                   )}
                 </div>
               </div>
 
-              {/* Cột phụ: Ảnh minh họa Diorama & Bảng câu hỏi */}
-              <aside className="lg:col-span-4 space-y-6">
+              {/* Cột phụ: Ảnh minh họa Diorama & Bảng câu hỏi (2 cột trên iPad Portrait) */}
+              <aside className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6 items-start">
                 <div className="overflow-hidden rounded-2xl bg-white border border-heritage-crimson/25 shadow-museum">
                   <div className="aspect-[16/10] w-full overflow-hidden bg-white">
                     <img
@@ -738,7 +738,7 @@ export const HeritageQuizStudio: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="rounded-2xl bg-white p-5 border border-heritage-crimson/25 shadow-museum">
+                <div className="rounded-2xl bg-white p-4 sm:p-5 border border-heritage-crimson/25 shadow-museum">
                   <div className="flex items-center justify-between gap-2 pb-3 border-b border-heritage-crimson/15">
                     <h3 className="font-serif text-base font-bold text-heritage-woodDark">
                       Bảng câu hỏi
@@ -748,7 +748,7 @@ export const HeritageQuizStudio: React.FC = () => {
                     </span>
                   </div>
 
-                  <div className="mt-4 grid grid-cols-5 gap-2">
+                  <div className="mt-4 grid grid-cols-5 sm:grid-cols-10 md:grid-cols-5 gap-2">
                     {activeQuestions.map((q, idx) => {
                       const picked = answers[q.id];
                       const isCurrent = idx === currentIdx;
@@ -773,7 +773,7 @@ export const HeritageQuizStudio: React.FC = () => {
                           type="button"
                           onClick={() => setCurrentIdx(idx)}
                           aria-label={`Chuyển đến câu ${idx + 1}`}
-                          className={`rounded-lg border py-2 font-mono text-xs font-bold transition-all ${pillClass} ${
+                          className={`min-h-[40px] rounded-lg border py-2 font-mono text-xs font-bold transition-all ${pillClass} ${
                             isCurrent
                               ? "ring-2 ring-heritage-goldAntique ring-offset-2"
                               : ""
@@ -788,7 +788,7 @@ export const HeritageQuizStudio: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleSubmitQuiz}
-                    className="mt-5 w-full rounded-xl bg-heritage-woodDark px-4 py-3 text-sm font-bold text-white hover:bg-heritage-crimson transition-colors"
+                    className="mt-5 w-full min-h-[44px] rounded-xl bg-heritage-woodDark px-4 py-3 text-sm font-bold text-white hover:bg-heritage-crimson transition-colors"
                   >
                     Nộp bài &amp; Xem kết quả
                   </button>
@@ -804,15 +804,15 @@ export const HeritageQuizStudio: React.FC = () => {
         {phase === "result" && (
           <div className="space-y-8">
             {/* Phiếu điểm tổng hợp */}
-            <div className="rounded-2xl bg-white p-6 sm:p-8 border-2 border-heritage-crimson/30 shadow-museum">
-              <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 items-center">
+            <div className="rounded-2xl bg-white p-4 sm:p-6 lg:p-8 border-2 border-heritage-crimson/30 shadow-museum">
+              <div className="grid grid-cols-1 gap-6 lg:gap-8 lg:grid-cols-12 items-center">
                 <div className="lg:col-span-7 space-y-3">
                   <span className="inline-flex items-center gap-2 rounded-full bg-heritage-crimson px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
                     <Award className="h-3.5 w-3.5" aria-hidden="true" />
                     <span>{resultStats.badge.title}</span>
                   </span>
 
-                  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-heritage-crimson">
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-heritage-crimson">
                     Kết quả: {resultStats.correct} / {resultStats.total} câu đúng ({resultStats.percent}%)
                   </h2>
 
@@ -826,13 +826,13 @@ export const HeritageQuizStudio: React.FC = () => {
                     </p>
                   )}
 
-                  <div className="pt-3 flex flex-wrap gap-3">
+                  <div className="pt-3 grid grid-cols-1 sm:flex sm:flex-wrap gap-2.5 sm:gap-3">
                     <button
                       type="button"
                       onClick={() =>
                         startSessionWithQuestions(activeQuestions, mode)
                       }
-                      className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-5 py-2.5 text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
+                      className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-heritage-crimson px-5 py-2.5 text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
                     >
                       <RotateCcw className="h-4 w-4" aria-hidden="true" />
                       <span>Làm lại bộ đề này</span>
@@ -847,7 +847,7 @@ export const HeritageQuizStudio: React.FC = () => {
                             "practice"
                           )
                         }
-                        className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-heritage-crimson border-2 border-heritage-crimson hover:bg-heritage-ivoryDeep transition-colors"
+                        className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-heritage-crimson border-2 border-heritage-crimson hover:bg-heritage-ivoryDeep transition-colors"
                       >
                         <BookOpen className="h-4 w-4" aria-hidden="true" />
                         <span>
@@ -859,14 +859,14 @@ export const HeritageQuizStudio: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setPhase("setup")}
-                      className="inline-flex items-center gap-2 rounded-xl bg-heritage-ivoryLight px-5 py-2.5 text-sm font-semibold text-heritage-woodDark border border-heritage-crimson/25 hover:bg-heritage-ivoryDeep transition-colors"
+                      className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-heritage-ivoryLight px-5 py-2.5 text-sm font-semibold text-heritage-woodDark border border-heritage-crimson/25 hover:bg-heritage-ivoryDeep transition-colors"
                     >
                       <span>Chọn chủ đề khác</span>
                     </button>
 
                     <Link
                       href="/#bao-tang-so"
-                      className="inline-flex items-center gap-2 rounded-xl bg-heritage-ivoryLight px-5 py-2.5 text-sm font-semibold text-heritage-ink border border-heritage-crimson/20 hover:text-heritage-crimson transition-colors"
+                      className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-heritage-ivoryLight px-5 py-2.5 text-sm font-semibold text-heritage-ink border border-heritage-crimson/20 hover:text-heritage-crimson transition-colors"
                     >
                       <Compass className="h-4 w-4" aria-hidden="true" />
                       <span>Về Bảo tàng số</span>
@@ -908,14 +908,14 @@ export const HeritageQuizStudio: React.FC = () => {
             {/* Danh sách xem lại đáp án & giải thích chi tiết */}
             <div className="space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <h3 className="font-serif text-2xl font-bold text-heritage-crimson">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-heritage-crimson">
                   Xem lại đáp án &amp; Giải mã học thuật
                 </h3>
-                <div className="inline-flex rounded-xl bg-white p-1 border border-heritage-crimson/25">
+                <div className="w-full sm:w-auto grid grid-cols-2 sm:inline-flex rounded-xl bg-white p-1 border border-heritage-crimson/25">
                   <button
                     type="button"
                     onClick={() => setReviewFilter("all")}
-                    className={`rounded-lg px-3.5 py-1.5 text-xs font-bold transition-colors ${
+                    className={`rounded-lg px-3.5 py-2 sm:py-1.5 text-xs font-bold transition-colors ${
                       reviewFilter === "all"
                         ? "bg-heritage-crimson text-white"
                         : "text-heritage-ink hover:text-heritage-crimson"
@@ -926,7 +926,7 @@ export const HeritageQuizStudio: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setReviewFilter("wrong")}
-                    className={`rounded-lg px-3.5 py-1.5 text-xs font-bold transition-colors ${
+                    className={`rounded-lg px-3.5 py-2 sm:py-1.5 text-xs font-bold transition-colors ${
                       reviewFilter === "wrong"
                         ? "bg-heritage-crimson text-white"
                         : "text-heritage-ink hover:text-heritage-crimson"
@@ -947,7 +947,7 @@ export const HeritageQuizStudio: React.FC = () => {
                   return (
                     <article
                       key={q.id}
-                      className={`rounded-2xl bg-white p-6 border shadow-sm ${
+                      className={`rounded-2xl bg-white p-4 sm:p-6 border shadow-sm ${
                         isCorrect
                           ? "border-heritage-moss/40"
                           : "border-heritage-crimson/40"

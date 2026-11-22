@@ -71,11 +71,11 @@ export default async function LearningTopicDetailPage({
           }
         />
 
-        <section className="py-14 sm:py-18 bg-heritage-ivory border-b border-heritage-goldAntique/30">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
+        <section className="py-10 sm:py-14 lg:py-16 bg-heritage-ivory border-b border-heritage-goldAntique/30">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 items-center">
               <div className="lg:col-span-6">
-                <div className="rounded-2xl bg-heritage-woodDark p-3 border border-heritage-goldAntique shadow-cabinet">
+                <div className="rounded-2xl bg-heritage-woodDark p-2.5 sm:p-3 border border-heritage-goldAntique shadow-cabinet">
                   <HeritageArtwork
                     subject={topic.artSubject}
                     expectedFile={topic.expectedAssetFile}
@@ -270,18 +270,18 @@ export default async function LearningTopicDetailPage({
               </div>
             </div>
 
-            <div className="rounded-2xl bg-heritage-woodDark p-6 text-heritage-ivory border border-heritage-goldAntique flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div>
+            <div className="rounded-2xl bg-heritage-woodDark p-5 sm:p-6 text-heritage-ivory border border-heritage-goldAntique flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="text-center sm:text-left">
                 <span className="text-xs font-semibold uppercase tracking-wider text-heritage-goldSoft">
                   Khám phá chủ đề tiếp theo
                 </span>
-                <h3 className="font-serif text-xl font-bold text-heritage-ivory">
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-heritage-ivory">
                   {otherTopic.topicNumber}: {otherTopic.title} ({otherTopic.status})
                 </h3>
               </div>
               <Link
                 href={`/chu-de-hoc-tap/${otherTopic.id}`}
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-5 py-3 text-sm font-semibold text-heritage-ivory border border-heritage-goldSoft/60 hover:bg-heritage-goldAntique hover:text-heritage-woodDark transition-colors shrink-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-crimson px-5 py-3 text-sm font-semibold text-heritage-ivory border border-heritage-goldSoft/60 hover:bg-heritage-goldAntique hover:text-heritage-woodDark transition-colors shrink-0"
               >
                 <span>Xem {otherTopic.topicNumber}</span>
                 <ArrowRight className="h-4 w-4" />

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, X, Film, BookMarked, Sparkles, MessageSquare, ExternalLink } from "lucide-react";
 import { MUSEUM_SECTION_META, MUSEUM_WINGS } from "@/data/museumData";
@@ -11,28 +11,37 @@ import { TiltSpotlightCard } from "./effects/TiltSpotlightCard";
 export const DigitalMuseumSection: React.FC = () => {
   const [selectedWing, setSelectedWing] = useState<MuseumWing | null>(null);
 
+  useEffect(() => {
+    if (!selectedWing) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedWing(null);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selectedWing]);
+
   return (
     <section
       id="bao-tang-so"
       aria-labelledby="museum-section-heading"
-      className="py-16 sm:py-20 bg-heritage-ivory border-b border-heritage-goldAntique/30"
+      className="py-12 sm:py-16 lg:py-20 bg-heritage-ivory border-b border-heritage-goldAntique/30"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Tiêu đề Khu vực 1: BẢO TÀNG SỐ */}
         <div className="max-w-3xl">
           <h2
             id="museum-section-heading"
-            className="font-serif text-3xl sm:text-4xl font-bold text-heritage-crimson tracking-tight"
+            className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-heritage-crimson tracking-tight"
           >
             {MUSEUM_SECTION_META.title}
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-heritage-ink leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base lg:text-lg text-heritage-ink leading-relaxed">
             {MUSEUM_SECTION_META.description}
           </p>
         </div>
 
         {/* 4 Thẻ trưng bày (2×2 Grid): 2 phòng Dự án Huyện đường (Đỏ Son/Vàng) & 2 phòng Sử thi Đăm Săn (Xanh Đại Ngàn/Hổ Phách) */}
-        <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mt-8 sm:mt-10 grid grid-cols-1 gap-6 lg:gap-8 md:grid-cols-2">
           {MUSEUM_WINGS.map((wing) => {
             const accent = wing.themeAccent || "crimson";
             const themeStyles =
@@ -88,7 +97,7 @@ export const DigitalMuseumSection: React.FC = () => {
                   </div>
 
                   {/* Nội dung phòng trưng bày */}
-                  <div className="p-6">
+                  <div className="p-4 sm:p-6">
                     <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-medium text-heritage-woodLight">
                       <span
                         className={`rounded-md px-2.5 py-1 font-semibold ${themeStyles.badge}`}
@@ -100,7 +109,7 @@ export const DigitalMuseumSection: React.FC = () => {
                       </span>
                     </div>
 
-                    <h3 className="mt-3.5 font-serif text-2xl font-bold text-heritage-woodDark">
+                    <h3 className="mt-3.5 font-serif text-xl sm:text-2xl font-bold text-heritage-woodDark">
                       {wing.title}
                     </h3>
                     <p className={`mt-1 text-sm font-semibold ${themeStyles.subtitle}`}>
@@ -125,7 +134,7 @@ export const DigitalMuseumSection: React.FC = () => {
                 </div>
 
                 {/* Nút hành động thực tế mở ngay trên Scrolling Landing Page */}
-                <div className="px-6 pb-6 pt-2">
+                <div className="px-4 pb-4 sm:px-6 sm:pb-6 pt-2">
                   <button
                     type="button"
                     onClick={() => setSelectedWing(wing)}
@@ -144,20 +153,23 @@ export const DigitalMuseumSection: React.FC = () => {
       {/* Cửa sổ xem chi tiết Phòng trưng bày Bảo tàng số */}
       {selectedWing && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-heritage-woodDark/80 p-4 overflow-y-auto"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setSelectedWing(null);
+          }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-heritage-woodDark/80 p-3 sm:p-4 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-labelledby="museum-modal-title"
         >
-          <div className="relative my-8 w-full max-w-3xl rounded-2xl bg-heritage-ivory border-2 border-heritage-goldAntique p-6 sm:p-8 text-heritage-ink shadow-cabinet max-h-[90vh] overflow-y-auto">
-            <div className="flex items-start justify-between gap-4 border-b border-heritage-goldAntique/40 pb-4">
-              <div>
+          <div className="relative my-2 sm:my-8 w-full max-w-3xl rounded-2xl bg-heritage-ivory border-2 border-heritage-goldAntique p-4 sm:p-8 text-heritage-ink shadow-cabinet max-h-[92dvh] overflow-y-auto">
+            <div className="flex items-start justify-between gap-3 sm:gap-4 border-b border-heritage-goldAntique/40 pb-4">
+              <div className="min-w-0">
                 <span className="inline-block rounded-md bg-heritage-woodDark px-3 py-1 text-xs font-semibold text-heritage-goldSoft">
                   Không gian Bảo tàng số • {selectedWing.gradeReference}
                 </span>
                 <h3
                   id="museum-modal-title"
-                  className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-heritage-woodDark"
+                  className="mt-2 font-serif text-xl sm:text-3xl font-bold text-heritage-woodDark"
                 >
                   {selectedWing.title} — {selectedWing.subtitle}
                 </h3>
@@ -169,13 +181,13 @@ export const DigitalMuseumSection: React.FC = () => {
                 type="button"
                 onClick={() => setSelectedWing(null)}
                 aria-label="Đóng không gian trưng bày"
-                className="rounded-lg bg-heritage-woodDark p-2 text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-heritage-woodDark text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
 
-            <div className="mt-6 space-y-6">
+            <div className="mt-5 sm:mt-6 space-y-5 sm:space-y-6">
               <HeritageArtwork
                 subject={selectedWing.artSubject}
                 expectedFile={selectedWing.expectedAssetFile}
@@ -205,7 +217,7 @@ export const DigitalMuseumSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="rounded-xl bg-heritage-ivoryLight p-5 border border-heritage-goldAntique/40">
+              <div className="rounded-xl bg-heritage-ivoryLight p-4 sm:p-5 border border-heritage-goldAntique/40">
                 <h4 className="font-serif text-lg font-bold text-heritage-woodDark">
                   Đặc trưng nghệ thuật biểu diễn &amp; Ước lệ
                 </h4>
@@ -219,22 +231,23 @@ export const DigitalMuseumSection: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="rounded-xl bg-heritage-woodDark p-5 text-heritage-ivory border border-heritage-goldAntique/50">
+              <div className="rounded-xl bg-heritage-woodDark p-4 sm:p-5 text-heritage-ivory border border-heritage-goldAntique/50">
                 <div className="flex items-center gap-2.5 text-heritage-goldSoft font-serif font-bold">
-                  <Film className="h-5 w-5" />
+                  <Film className="h-5 w-5 shrink-0" />
                   <h4>Tư liệu Video Trích đoạn &amp; Kết nối STEAM</h4>
                 </div>
                 <p className="mt-2 text-sm text-heritage-ivory/90 leading-relaxed">
                   {selectedWing.detailContent.steamConnection}
                 </p>
                 <div className="mt-3 rounded-lg bg-heritage-woodLight/80 px-3.5 py-2.5 text-xs text-heritage-goldSoft border border-heritage-goldAntique/30">
-                  Vị trí tích hợp video tư liệu của giáo viên: <code>/public/videos/museum/{selectedWing.id}.mp4</code>
+                  Vị trí tích hợp video tư liệu của giáo viên:{" "}
+                  <code className="break-all">/public/videos/museum/{selectedWing.id}.mp4</code>
                 </div>
               </div>
 
               <div className="rounded-xl bg-heritage-ivoryDeep/70 p-4 border border-heritage-goldAntique/40">
                 <div className="flex items-center gap-2 font-serif font-bold text-heritage-woodDark">
-                  <MessageSquare className="h-4 w-4 text-heritage-moss" />
+                  <MessageSquare className="h-4 w-4 text-heritage-moss shrink-0" />
                   <h4>Câu hỏi gợi mở khám phá</h4>
                 </div>
                 <p className="mt-1.5 text-sm italic text-heritage-ink">
@@ -243,19 +256,19 @@ export const DigitalMuseumSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-heritage-goldAntique/40 pt-4">
+            <div className="mt-6 flex flex-col sm:flex-row sm:flex-wrap items-center justify-between gap-3 border-t border-heritage-goldAntique/40 pt-4 [&>*]:w-full sm:[&>*]:w-auto [&>*]:justify-center">
               <Link
                 href={`/bao-tang-so/${selectedWing.id}`}
                 onClick={() => setSelectedWing(null)}
                 className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-5 py-2.5 text-sm font-semibold text-heritage-ivory hover:bg-heritage-woodDark transition-colors"
               >
                 <span>Mở toàn trang phòng {selectedWing.title}</span>
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 shrink-0" />
               </Link>
               <button
                 type="button"
                 onClick={() => setSelectedWing(null)}
-                className="rounded-xl bg-heritage-woodLight px-5 py-2.5 text-sm font-semibold text-heritage-goldSoft hover:bg-heritage-woodDark transition-colors"
+                className="inline-flex rounded-xl bg-heritage-woodLight px-5 py-2.5 text-sm font-semibold text-heritage-goldSoft hover:bg-heritage-woodDark transition-colors"
               >
                 Đóng cửa sổ
               </button>

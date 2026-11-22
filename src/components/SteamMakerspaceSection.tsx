@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Wrench,
@@ -28,6 +28,15 @@ export const SteamMakerspaceSection: React.FC = () => {
   const [activeLetter, setActiveLetter] = useState<SteamElement["letter"]>("S");
   const [workshopModalOpen, setWorkshopModalOpen] = useState<boolean>(false);
 
+  useEffect(() => {
+    if (!workshopModalOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setWorkshopModalOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [workshopModalOpen]);
+
   const selectedElement =
     STEAM_ELEMENTS.find((el) => el.letter === activeLetter) || STEAM_ELEMENTS[0];
   const selectedStep =
@@ -52,30 +61,30 @@ export const SteamMakerspaceSection: React.FC = () => {
     <section
       id="xuong-steam"
       aria-labelledby="steam-section-heading"
-      className="relative py-16 sm:py-20 bg-white text-heritage-ink border-b-2 border-heritage-crimson/20 overflow-hidden"
+      className="relative py-12 sm:py-16 lg:py-20 bg-white text-heritage-ink border-b-2 border-heritage-crimson/20 overflow-hidden"
     >
       <AuroraParticlesCanvas variant="makerspace" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Tiêu đề Khu vực 3: XƯỞNG SÁNG TẠO STEAM (Nền Trắng - Chữ Đỏ Son) */}
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+        <div className="flex flex-col justify-between gap-5 sm:gap-6 lg:flex-row lg:items-end">
           <div className="max-w-3xl">
             <h2
               id="steam-section-heading"
-              className="font-serif text-3xl sm:text-4xl font-bold text-heritage-crimson tracking-tight"
+              className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-heritage-crimson tracking-tight"
             >
               {STEAM_MAKERSPACE_META.title}
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-heritage-ink leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base lg:text-lg text-heritage-ink leading-relaxed">
               {STEAM_MAKERSPACE_META.description}
             </p>
           </div>
 
-          <div>
+          <div className="w-full sm:w-auto">
             <button
               type="button"
               onClick={() => setWorkshopModalOpen(true)}
-              className="inline-flex items-center gap-2.5 rounded-xl bg-heritage-crimson px-6 py-3.5 text-sm sm:text-base font-semibold text-white border border-heritage-crimson shadow-museum transition-colors duration-200 hover:bg-heritage-woodDark focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-heritage-crimson px-6 py-3.5 text-sm sm:text-base font-semibold text-white border border-heritage-crimson shadow-museum transition-colors duration-200 hover:bg-heritage-woodDark focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
             >
               <Wrench className="h-4 w-4" aria-hidden="true" />
               <span>{STEAM_MAKERSPACE_META.buttonLabel}</span>
@@ -129,14 +138,16 @@ export const SteamMakerspaceSection: React.FC = () => {
         </div>
 
         {/* Sơ đồ trực quan 5 BƯỚC quy trình thiết kế STEAM (Tông Trắng & Đỏ Son) */}
-        <div className="mt-12">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-5">
+        <div className="mt-10 sm:mt-12">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {STEAM_STEPS.map((step, index) => {
               const isCurrent = step.stepNumber === activeStepNum;
               return (
                 <TiltSpotlightCard
                   key={step.stepNumber}
                   className={`group rounded-2xl cursor-pointer transition-colors duration-200 ${
+                    index === 4 ? "sm:col-span-2 lg:col-span-1" : ""
+                  } ${
                     isCurrent
                       ? "bg-heritage-crimson text-white border-2 border-heritage-crimson shadow-museum"
                       : "bg-heritage-ivoryLight text-heritage-ink border border-heritage-crimson/25 hover:border-heritage-crimson"
@@ -152,7 +163,7 @@ export const SteamMakerspaceSection: React.FC = () => {
                         setActiveStepNum(step.stepNumber);
                       }
                     }}
-                    className="p-5 h-full flex flex-col justify-between focus:outline-none"
+                    className="p-4 sm:p-5 h-full flex flex-col justify-between focus:outline-none"
                   >
                     <div>
                       <div className="flex items-center justify-between">
@@ -167,7 +178,7 @@ export const SteamMakerspaceSection: React.FC = () => {
                         </span>
                         {index < STEAM_STEPS.length - 1 && (
                           <ArrowRight
-                            className={`hidden md:block h-4 w-4 ${
+                            className={`hidden lg:block h-4 w-4 ${
                               isCurrent ? "text-white/80" : "text-heritage-crimson"
                             }`}
                             aria-hidden="true"
@@ -247,7 +258,7 @@ export const SteamMakerspaceSection: React.FC = () => {
           <div
             role="tablist"
             aria-label="Năm thành tố STEAM"
-            className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-5"
+            className="mt-5 grid grid-cols-2 gap-2.5 md:grid-cols-5 lg:gap-3"
           >
             {STEAM_ELEMENTS.map((el) => {
               const isSelected = el.letter === activeLetter;
@@ -289,7 +300,9 @@ export const SteamMakerspaceSection: React.FC = () => {
                   role="tab"
                   aria-selected={isSelected}
                   onClick={() => setActiveLetter(el.letter)}
-                  className={`flex flex-col items-start rounded-2xl p-4 text-left transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson ${
+                  className={`flex flex-col items-start rounded-2xl p-3 sm:p-3.5 lg:p-4 text-left transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson ${
+                    el.letter === "M" ? "col-span-2 md:col-span-1" : ""
+                  } ${
                     isSelected
                       ? `${c.activeBg} text-white border-2 shadow-museum`
                       : `bg-white text-heritage-ink border-2 ${c.border}`
@@ -307,7 +320,7 @@ export const SteamMakerspaceSection: React.FC = () => {
                       {getElementIcon(el.letter)}
                     </span>
                   </div>
-                  <span className="mt-2 text-xs font-bold tracking-wider uppercase">
+                  <span className="mt-2 text-[11px] lg:text-xs font-bold tracking-wider uppercase">
                     {el.letter} – {el.englishName}
                   </span>
                   <span
@@ -325,12 +338,12 @@ export const SteamMakerspaceSection: React.FC = () => {
           {/* Bảng giải thích chi tiết và ví dụ liên hệ với chủ đề đang học */}
           <div
             role="tabpanel"
-            className="mt-5 rounded-2xl bg-white text-heritage-ink p-6 sm:p-8 border-2 border-heritage-crimson/35 shadow-museum"
+            className="mt-5 rounded-2xl bg-white text-heritage-ink p-4 sm:p-6 lg:p-8 border-2 border-heritage-crimson/35 shadow-museum"
           >
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-heritage-crimson/20 pb-4">
               <div className="flex items-center gap-3.5">
                 <span
-                  className={`flex h-12 w-12 items-center justify-center rounded-xl font-serif text-2xl font-bold text-white ${
+                  className={`flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl font-serif text-xl sm:text-2xl font-bold text-white ${
                     selectedElement.letter === "S"
                       ? "bg-heritage-emerald"
                       : selectedElement.letter === "T"
@@ -345,7 +358,7 @@ export const SteamMakerspaceSection: React.FC = () => {
                   {selectedElement.letter}
                 </span>
                 <div>
-                  <h4 className="font-serif text-xl sm:text-2xl font-bold text-heritage-woodDark">
+                  <h4 className="font-serif text-lg sm:text-2xl font-bold text-heritage-woodDark">
                     {selectedElement.letter} – {selectedElement.englishName}:{" "}
                     {selectedElement.vietnameseName}
                   </h4>
@@ -356,11 +369,11 @@ export const SteamMakerspaceSection: React.FC = () => {
               </div>
             </div>
 
-            <p className="mt-4 text-base text-heritage-ink leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base text-heritage-ink leading-relaxed">
               {selectedElement.shortExplanation}
             </p>
 
-            <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-3">
+            <div className="mt-5 sm:mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
               <div className="rounded-xl bg-heritage-ivoryLight p-4 border border-heritage-crimson/25">
                 <span className="text-xs font-bold uppercase tracking-wider text-heritage-crimson block">
                   Liên hệ Dự án 01: Huyện đường (Tuồng)
@@ -379,7 +392,7 @@ export const SteamMakerspaceSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="rounded-xl bg-heritage-indigoSoft/45 p-4 border border-heritage-indigo/25">
+              <div className="md:col-span-2 lg:col-span-1 rounded-xl bg-heritage-indigoSoft/45 p-4 border border-heritage-indigo/25">
                 <span className="text-xs font-bold uppercase tracking-wider text-heritage-indigo block">
                   Học liệu &amp; Vật liệu thực hành
                 </span>
@@ -403,20 +416,23 @@ export const SteamMakerspaceSection: React.FC = () => {
       {/* Modal Khám phá Xưởng STEAM */}
       {workshopModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 overflow-y-auto"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setWorkshopModalOpen(false);
+          }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-3 sm:p-4 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-labelledby="steam-workshop-modal-title"
         >
-          <div className="relative my-8 w-full max-w-3xl rounded-2xl bg-white border-2 border-heritage-crimson p-6 sm:p-8 text-heritage-ink shadow-cabinet max-h-[90vh] overflow-y-auto">
-            <div className="flex items-start justify-between gap-4 border-b border-heritage-crimson/20 pb-4">
-              <div>
+          <div className="relative my-2 sm:my-8 w-full max-w-3xl rounded-2xl bg-white border-2 border-heritage-crimson p-4 sm:p-8 text-heritage-ink shadow-cabinet max-h-[92dvh] overflow-y-auto">
+            <div className="flex items-start justify-between gap-3 sm:gap-4 border-b border-heritage-crimson/20 pb-4">
+              <div className="min-w-0">
                 <span className="rounded-md bg-heritage-crimson px-3 py-1 text-xs font-semibold text-white">
                   Sổ tay Xưởng sáng tạo STEAM Ngữ văn
                 </span>
                 <h3
                   id="steam-workshop-modal-title"
-                  className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-heritage-crimson"
+                  className="mt-2 font-serif text-xl sm:text-3xl font-bold text-heritage-crimson"
                 >
                   HƯỚNG DẪN TỔ CHỨC XƯỞNG &amp; NHẬT KÝ DỰ ÁN
                 </h3>
@@ -425,7 +441,7 @@ export const SteamMakerspaceSection: React.FC = () => {
                 type="button"
                 onClick={() => setWorkshopModalOpen(false)}
                 aria-label="Đóng sổ tay xưởng STEAM"
-                className="rounded-lg bg-heritage-crimson p-2 text-white hover:bg-heritage-woodDark"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-heritage-crimson text-white hover:bg-heritage-woodDark"
               >
                 <X className="h-5 w-5" />
               </button>
