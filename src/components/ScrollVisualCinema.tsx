@@ -431,13 +431,13 @@ export const ScrollVisualCinema: React.FC = () => {
         <a
           href="#gioi-thieu-khong-gian"
           onClick={(e) => handleAnchorScroll(e, "#gioi-thieu-khong-gian")}
-          className="absolute top-3 right-3 sm:top-4 sm:right-6 z-30 inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur-sm px-3 py-1.5 text-[11px] sm:text-xs font-semibold text-heritage-crimson border border-heritage-crimson/30 shadow-sm hover:bg-heritage-crimson hover:text-white transition-colors"
+          className="absolute top-3 right-3 sm:top-4 sm:right-6 z-40 inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur-sm px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold text-heritage-crimson border border-heritage-crimson/30 shadow-sm hover:bg-heritage-crimson hover:text-white transition-colors"
         >
           <span>Bỏ qua trình chiếu</span>
           <ArrowDown className="h-3.5 w-3.5" aria-hidden="true" />
         </a>
 
-        <div className="relative z-30 mx-auto h-full max-w-7xl px-4 sm:px-6 lg:px-8 flex items-end lg:items-center pb-6 sm:pb-10 lg:pb-0">
+        <div className="pointer-events-none relative z-30 mx-auto h-full max-w-7xl px-4 sm:px-6 lg:px-8 flex items-end lg:items-center pb-6 sm:pb-10 lg:pb-0">
           <div className="relative w-full max-w-xl min-h-[290px] sm:min-h-[330px] lg:h-[400px]">
             {CINEMA_SCENES.map((scene, idx) => (
               <div

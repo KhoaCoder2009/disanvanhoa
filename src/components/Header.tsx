@@ -169,7 +169,7 @@ export const Header: React.FC = () => {
   return (
     <>
       <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md text-heritage-ink border-b-2 border-heritage-crimson/20 shadow-museum">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4 px-3 py-2.5 sm:px-6 sm:py-3 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 lg:gap-3 xl:gap-4 px-3 py-2.5 sm:px-6 sm:py-3 xl:px-8">
           {/* Logo và tên website (Trắng & Đỏ Son) */}
           <Link
             href="/"
@@ -181,7 +181,7 @@ export const Header: React.FC = () => {
                 setActiveSectionId("trang-chu");
               }
             }}
-            className="group flex min-w-0 shrink items-center gap-2.5 sm:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson rounded-lg"
+            className="group flex min-w-0 shrink items-center gap-2 sm:gap-2.5 xl:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson rounded-lg"
           >
             <span className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-xl bg-heritage-crimson text-white border border-heritage-goldAntique transition-transform duration-200 group-hover:scale-105 shadow-sm">
               <Landmark className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
@@ -190,7 +190,7 @@ export const Header: React.FC = () => {
               <span className="block font-serif text-[15px] sm:text-lg xl:text-xl font-bold tracking-[-0.015em] leading-tight text-heritage-crimson truncate">
                 DI SẢN VĂN HỌC VIỆT
               </span>
-              <span className="block text-[10px] sm:text-[11px] font-medium tracking-[0.02em] text-heritage-ink/75 truncate">
+              <span className="block text-[10px] sm:text-[11px] font-medium tracking-[0.01em] xl:tracking-[0.02em] text-heritage-ink/75 truncate">
                 Digital Literature &amp; STEAM Heritage
               </span>
             </div>
@@ -200,7 +200,7 @@ export const Header: React.FC = () => {
           <nav aria-label="Điều hướng chính" className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             {NAV_ITEMS.map((item) => {
               const isActive = isNavItemActive(item);
-              const navClass = `whitespace-nowrap rounded-lg px-2 py-1.5 xl:px-2.5 text-[12px] xl:text-[13px] font-medium tracking-[-0.005em] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson ${
+              const navClass = `whitespace-nowrap rounded-lg px-1.5 py-1.5 xl:px-2.5 text-[12px] xl:text-[13px] font-medium tracking-[-0.005em] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson ${
                 isActive
                   ? "bg-heritage-crimson text-white shadow-sm"
                   : "text-heritage-ink hover:bg-heritage-ivoryDeep hover:text-heritage-crimson"
