@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   Camera,
   FileText,
@@ -9,6 +10,9 @@ import {
   Download,
   Clapperboard,
   CheckCircle2,
+  Link2,
+  ArrowRight,
+  X,
 } from "lucide-react";
 import {
   HUYEN_DUONG_ACTIVITY_PHOTOS,
@@ -67,9 +71,13 @@ const ARCHIVE_TABS: {
 
 export const HuyenDuongStudentArchive: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ArchiveTab>("activity-photos");
+  const [revealedSlotId, setRevealedSlotId] = useState<string | null>(null);
 
   return (
-    <div className="mt-8 sm:mt-10 rounded-2xl bg-heritage-ivoryLight p-4 sm:p-6 lg:p-8 border border-heritage-goldAntique/50 shadow-museum">
+    <div
+      id="kho-san-pham-hoc-sinh"
+      className="mt-8 sm:mt-10 rounded-2xl bg-heritage-ivoryLight p-4 sm:p-6 lg:p-8 border border-heritage-goldAntique/50 shadow-museum"
+    >
       {/* Tiêu đề & Thanh chọn danh mục đồng bộ hoàn toàn với phong cách Bảo tàng Giấy Ngà - Đỏ Son */}
       <div className="border-b border-heritage-goldAntique/35 pb-5">
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -144,13 +152,27 @@ export const HuyenDuongStudentArchive: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {HUYEN_DUONG_ACTIVITY_PHOTOS.map((slot) => (
+              {HUYEN_DUONG_ACTIVITY_PHOTOS.map((slot) => {
+                const isOpen = revealedSlotId === slot.id;
+                const slotHref = `/trien-lam-so#kho-san-pham-hoc-sinh`;
+                return (
                 <TiltSpotlightCard
                   key={slot.id}
                   className="rounded-2xl bg-heritage-ivory border border-heritage-goldAntique/50 overflow-hidden"
                 >
-                  <div>
-                    <div className="aspect-[4/3] w-full overflow-hidden bg-heritage-woodDark/95 flex items-center justify-center border-b border-heritage-goldAntique/40">
+                  <div id={`nhom-${slot.id}`}>
+                    <div
+                      onClick={() => setRevealedSlotId(isOpen ? null : slot.id)}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setRevealedSlotId(isOpen ? null : slot.id);
+                        }
+                      }}
+                      className="relative aspect-[4/3] w-full overflow-hidden bg-heritage-woodDark/95 flex items-center justify-center border-b border-heritage-goldAntique/40 cursor-pointer"
+                    >
                       {slot.imageUrl ? (
                         <img
                           src={slot.imageUrl}
@@ -172,6 +194,37 @@ export const HuyenDuongStudentArchive: React.FC = () => {
                           </p>
                         </div>
                       )}
+                      {isOpen && (
+                        <div
+                          onClick={(e) => e.stopPropagation()}
+                          className="absolute inset-0 z-20 flex flex-col justify-between bg-[#1F110E]/95 p-3 text-white"
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-heritage-crimson px-2 py-0.5 text-[10px] font-bold">
+                              <Link2 className="h-3 w-3" />
+                              Link phần này
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => setRevealedSlotId(null)}
+                              className="h-6 w-6 rounded-full bg-white/15 hover:bg-heritage-crimson inline-flex items-center justify-center"
+                              aria-label="Đóng link"
+                            >
+                              <X className="h-3 w-3" />
+                            </button>
+                          </div>
+                          <code className="block truncate rounded bg-black/50 px-2 py-1 text-[10px] text-[#FDE68A]">
+                            {slotHref}
+                          </code>
+                          <Link
+                            href="/chu-de-hoc-tap/chu-de-01-huyen-duong"
+                            className="inline-flex items-center justify-center gap-1 rounded-lg bg-heritage-crimson hover:bg-[#991B1B] px-2.5 py-1.5 text-[11px] font-bold text-white"
+                          >
+                            <span>Vào Dự án Huyện đường</span>
+                            <ArrowRight className="h-3 w-3" />
+                          </Link>
+                        </div>
+                      )}
                     </div>
                     <div className="p-4 sm:p-5">
                       <span className="inline-block rounded-md bg-heritage-woodDark px-2.5 py-0.5 text-[11px] font-semibold text-heritage-goldSoft">
@@ -186,7 +239,8 @@ export const HuyenDuongStudentArchive: React.FC = () => {
                     </div>
                   </div>
                 </TiltSpotlightCard>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
@@ -204,13 +258,27 @@ export const HuyenDuongStudentArchive: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {HUYEN_DUONG_MASK_SKETCHES.map((sketch) => (
+              {HUYEN_DUONG_MASK_SKETCHES.map((sketch) => {
+                const isOpen = revealedSlotId === sketch.id;
+                const sketchHref = `/xuong-steam#noi-dung-xuong-steam`;
+                return (
                 <TiltSpotlightCard
                   key={sketch.id}
                   className="rounded-2xl bg-heritage-ivory border border-heritage-goldAntique/50 overflow-hidden"
                 >
                   <div>
-                    <div className="aspect-[4/3] w-full overflow-hidden bg-heritage-woodDark/95 flex items-center justify-center border-b border-heritage-goldAntique/40">
+                    <div
+                      onClick={() => setRevealedSlotId(isOpen ? null : sketch.id)}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setRevealedSlotId(isOpen ? null : sketch.id);
+                        }
+                      }}
+                      className="relative aspect-[4/3] w-full overflow-hidden bg-heritage-woodDark/95 flex items-center justify-center border-b border-heritage-goldAntique/40 cursor-pointer"
+                    >
                       {sketch.imageUrl ? (
                         <img
                           src={sketch.imageUrl}
@@ -232,6 +300,37 @@ export const HuyenDuongStudentArchive: React.FC = () => {
                           </p>
                         </div>
                       )}
+                      {isOpen && (
+                        <div
+                          onClick={(e) => e.stopPropagation()}
+                          className="absolute inset-0 z-20 flex flex-col justify-between bg-[#1F110E]/95 p-3 text-white"
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-heritage-crimson px-2 py-0.5 text-[10px] font-bold">
+                              <Link2 className="h-3 w-3" />
+                              Link phần này
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => setRevealedSlotId(null)}
+                              className="h-6 w-6 rounded-full bg-white/15 hover:bg-heritage-crimson inline-flex items-center justify-center"
+                              aria-label="Đóng link"
+                            >
+                              <X className="h-3 w-3" />
+                            </button>
+                          </div>
+                          <code className="block truncate rounded bg-black/50 px-2 py-1 text-[10px] text-[#FDE68A]">
+                            {sketchHref}
+                          </code>
+                          <Link
+                            href="/bao-tang-so/tu-dai-nhan-vat"
+                            className="inline-flex items-center justify-center gap-1 rounded-lg bg-heritage-crimson hover:bg-[#991B1B] px-2.5 py-1.5 text-[11px] font-bold text-white"
+                          >
+                            <span>Xem Tứ đại Nhân vật</span>
+                            <ArrowRight className="h-3 w-3" />
+                          </Link>
+                        </div>
+                      )}
                     </div>
                     <div className="p-4 sm:p-5">
                       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -248,7 +347,8 @@ export const HuyenDuongStudentArchive: React.FC = () => {
                     </div>
                   </div>
                 </TiltSpotlightCard>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}

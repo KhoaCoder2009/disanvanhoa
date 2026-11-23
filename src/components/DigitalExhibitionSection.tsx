@@ -161,23 +161,30 @@ export const DigitalExhibitionSection: React.FC = () => {
           </div>
         ) : (
           <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {filteredItems.map((item) => (
+            {filteredItems.map((item) => {
+              const targetHref =
+                item.topicId === "chu-de-01"
+                  ? "/chu-de-hoc-tap/chu-de-01-huyen-duong"
+                  : item.topicId === "chu-de-02"
+                    ? "/chu-de-hoc-tap/chu-de-02-dam-san"
+                    : "/xuong-steam";
+              return (
               <TiltSpotlightCard
                 key={item.id}
                 className="group rounded-2xl bg-heritage-ivoryLight border border-heritage-goldAntique/50"
               >
-                <div>
-                  <div
-                    onClick={() => setActiveExhibit(item)}
-                    className="relative cursor-pointer"
-                  >
+                <div id={`exhibit-${item.id}`}>
+                  <div className="relative">
                     <HeritageArtwork
                       subject={item.artSubject}
                       expectedFile={item.expectedAssetFile}
                       caption={item.title}
+                      linkHref={targetHref}
+                      linkLabel={item.title}
+                      onQuickPreview={() => setActiveExhibit(item)}
                       className="aspect-[16/10] w-full"
                     />
-                    <div className="absolute top-3 left-3 right-3 flex flex-wrap items-center justify-between gap-1.5">
+                    <div className="pointer-events-none absolute top-3 left-3 right-3 flex flex-wrap items-center justify-between gap-1.5">
                       <span className="rounded-md bg-heritage-woodDark/90 px-2.5 py-1 text-[11px] font-semibold text-heritage-goldSoft border border-heritage-goldAntique/50">
                         {item.category}
                       </span>
@@ -238,7 +245,8 @@ export const DigitalExhibitionSection: React.FC = () => {
                   </button>
                 </div>
               </TiltSpotlightCard>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>

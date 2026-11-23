@@ -64,6 +64,9 @@ export const LearningTopicsSection: React.FC = () => {
                   subject={topic01.artSubject}
                   expectedFile={topic01.expectedAssetFile}
                   caption={topic01.title}
+                  linkHref={`/chu-de-hoc-tap/${topic01.id}`}
+                  linkLabel={`${topic01.topicNumber}: ${topic01.title}`}
+                  onQuickPreview={() => setSelectedTopic(topic01)}
                   className="aspect-[16/9] w-full"
                 />
                 <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-4 sm:left-4 sm:right-4 flex flex-wrap items-center justify-between gap-2">
@@ -195,6 +198,9 @@ export const LearningTopicsSection: React.FC = () => {
                   subject={topic02.artSubject}
                   expectedFile={topic02.expectedAssetFile}
                   caption={topic02.title}
+                  linkHref={`/chu-de-hoc-tap/${topic02.id}`}
+                  linkLabel={`${topic02.topicNumber}: ${topic02.title}`}
+                  onQuickPreview={() => setSelectedTopic(topic02)}
                   className="aspect-[16/10] w-full"
                 />
                 <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-4 sm:left-4 sm:right-4 flex flex-wrap items-center justify-between gap-2">

@@ -366,11 +366,6 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
       tuongGroup.add(m);
     });
 
-    void loadAsset(HERITAGE_3D_MODELS.courtCrown.url, 0.34, (m) => {
-      m.position.set(0, 0.56, -0.02);
-      maskPivot.add(m);
-    });
-
     void loadAsset(HERITAGE_3D_MODELS.courtBook.url, 0.44, (m) => {
       m.position.set(-0.56, 0.16, 0.42);
       m.rotation.y = 0.45;

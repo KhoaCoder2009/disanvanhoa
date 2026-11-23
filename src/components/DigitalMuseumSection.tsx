@@ -48,15 +48,15 @@ export const DigitalMuseumSection: React.FC = () => {
               className="group rounded-2xl bg-heritage-ivoryLight border border-heritage-crimson/30"
             >
               <div>
-                {/* Hình ảnh lớn của phòng trưng bày */}
-                <div
-                  onClick={() => setSelectedWing(wing)}
-                  className="block cursor-pointer"
-                >
+                {/* Hình ảnh lớn của phòng trưng bày — nhấp để hiện link dẫn tới phòng */}
+                <div>
                   <HeritageArtwork
                     subject={wing.artSubject}
                     expectedFile={wing.expectedAssetFile}
                     caption={wing.title}
+                    linkHref={`/bao-tang-so/${wing.id}`}
+                    linkLabel={`${wing.code}: ${wing.title}`}
+                    onQuickPreview={() => setSelectedWing(wing)}
                     className="aspect-[16/10] w-full"
                   />
                 </div>

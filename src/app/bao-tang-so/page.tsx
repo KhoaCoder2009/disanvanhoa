@@ -62,14 +62,14 @@ export default function BaoTangSoPage() {
                         isEven ? "lg:order-1" : "lg:order-2"
                       }`}
                     >
-                      <Link href={`/bao-tang-so/${wing.id}`} className="block h-full">
-                        <HeritageArtwork
-                          subject={wing.artSubject}
-                          expectedFile={wing.expectedAssetFile}
-                          caption={wing.title}
-                          className="h-full min-h-[220px] sm:min-h-[280px] w-full"
-                        />
-                      </Link>
+                      <HeritageArtwork
+                        subject={wing.artSubject}
+                        expectedFile={wing.expectedAssetFile}
+                        caption={wing.title}
+                        linkHref={`/bao-tang-so/${wing.id}`}
+                        linkLabel={`${wing.code}: ${wing.title}`}
+                        className="h-full min-h-[220px] sm:min-h-[280px] w-full"
+                      />
                     </div>
 
                     {/* Cột Nội dung chi tiết */}

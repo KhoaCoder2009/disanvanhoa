@@ -1,8 +1,17 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, ChevronRight, Home } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowRight,
+  Check,
+  ChevronRight,
+  Copy,
+  Home,
+  Link2,
+  X,
+} from "lucide-react";
 
 export type TransitionType =
   | "base"
@@ -21,6 +30,8 @@ export interface CinemaScene {
   description: string;
   ctaLabel: string;
   ctaHref: string;
+  detailHref?: string;
+  detailLabel?: string;
   image: string;
   transitionType: TransitionType;
 }
@@ -49,6 +60,8 @@ const DEFAULT_CINEMA_SCENES: CinemaScene[] = [
       "Không gian học tập số kết nối hai kiệt tác văn học dân gian: tiếng cười trào phúng chốn công đường Huyện đường và khát vọng kỳ vĩ của sử thi Đăm Săn.",
     ctaLabel: "Khám phá Bảo tàng số",
     ctaHref: "#bao-tang-so",
+    detailHref: "/bao-tang-so",
+    detailLabel: "Bảo tàng số Di sản Văn học",
     image: "/images/cinema/scene-01-di-san.png",
     transitionType: "base",
   },
@@ -60,6 +73,8 @@ const DEFAULT_CINEMA_SCENES: CinemaScene[] = [
       "Đọc vị bản chất trung – nịnh qua từng đường nét vẽ mặt và tỷ lệ hình khối đối xứng đặc trưng của nghệ thuật tuồng hài dân gian.",
     ctaLabel: "Xem Sắc Tuồng Huyện đường",
     ctaHref: "#bao-tang-so",
+    detailHref: "/bao-tang-so/sac-tuong-huyen-duong",
+    detailLabel: "Phòng 01: Sắc Tuồng Huyện đường",
     image: "/images/cinema/scene-03-sac-tuong.png",
     transitionType: "iris-right",
   },
@@ -71,6 +86,8 @@ const DEFAULT_CINEMA_SCENES: CinemaScene[] = [
       "Khảo sát không gian án thư nơi công lý bị mua chuộc bằng lễ vật, mở màn tấn hài kịch phê phán bộ máy quan lại phong kiến xưa.",
     ctaLabel: "Vào Dự án 01: Huyện đường",
     ctaHref: "#chu-de-hoc-tap",
+    detailHref: "/chu-de-hoc-tap/chu-de-01-huyen-duong",
+    detailLabel: "Chủ đề 01: Dự án Tuồng đồ Huyện đường",
     image: "/images/cinema/scene-07-huyen-duong.png",
     transitionType: "curtain-up",
   },
@@ -82,6 +99,8 @@ const DEFAULT_CINEMA_SCENES: CinemaScene[] = [
       "Chuyển hóa lời thoại tự xưng và bản tính tham lam, lươn lẹo, keo kiệt thành bộ chân dung mặt nạ 3D bằng bìa cứng và vi diễn sân khấu hóa.",
     ctaLabel: "Giải mã 4 nhân vật Huyện đường",
     ctaHref: "#chu-de-hoc-tap",
+    detailHref: "/bao-tang-so/tu-dai-nhan-vat",
+    detailLabel: "Phòng 02: Tứ đại nhân vật công đường",
     image: "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
     transitionType: "screen-sweep",
   },
@@ -93,6 +112,8 @@ const DEFAULT_CINEMA_SCENES: CinemaScene[] = [
       "Tái hiện kiến trúc nhà dài cổ truyền, tiếng cồng chiêng Hlong và nhịp hát kể khan vang vọng bên bếp lửa buôn làng Tây Nguyên.",
     ctaLabel: "Khám phá Sử thi Đăm Săn",
     ctaHref: "#bao-tang-so",
+    detailHref: "/bao-tang-so/khong-gian-dam-san",
+    detailLabel: "Phòng 03: Không gian văn hóa Ê-đê & Đăm Săn",
     image: "/images/cinema/scene-dam-san-nha-dai.png",
     transitionType: "solar-iris",
   },
@@ -104,6 +125,8 @@ const DEFAULT_CINEMA_SCENES: CinemaScene[] = [
       "Vượt rừng Sáp Đen tiến tới ánh dương chói lòa: kết hợp quang học LED vàng ấm, giấy can mờ và thanh trượt cơ học kể chuyện tương tác.",
     ctaLabel: "Xem Chủ đề 02: Đăm Săn",
     ctaHref: "#chu-de-hoc-tap",
+    detailHref: "/chu-de-hoc-tap/chu-de-02-dam-san",
+    detailLabel: "Chủ đề 02: Hộp kể chuyện Sử thi Đăm Săn",
     image: "/images/cinema/scene-05-dam-san-steam.png",
     transitionType: "curtain-down",
   },
@@ -115,6 +138,8 @@ const DEFAULT_CINEMA_SCENES: CinemaScene[] = [
       "Từ bản vẽ hình học tỉ lệ chuẩn, pha màu mặt nạ Huyện đường đến thử nghiệm mạch LED cho hộp sử thi Đăm Săn.",
     ctaLabel: "Vào Xưởng sáng tạo STEAM",
     ctaHref: "#xuong-steam",
+    detailHref: "/xuong-steam",
+    detailLabel: "Xưởng Sáng tạo Ngữ văn STEAM (Mô hình 3D)",
     image: "/images/cinema/scene-09-xuong-steam.png",
     transitionType: "screen-right",
   },
@@ -126,6 +151,8 @@ const DEFAULT_CINEMA_SCENES: CinemaScene[] = [
       "Lưu trữ và tôn vinh các sản phẩm sáng tạo học sinh, sẵn sàng cho hoạt động Nói – Nghe và củng cố kiến thức qua trắc nghiệm trực tuyến.",
     ctaLabel: "Tham quan Triển lãm số",
     ctaHref: "#trien-lam-so",
+    detailHref: "/trien-lam-so",
+    detailLabel: "Triển lãm số & Hồ sơ Dự án Huyện đường",
     image: "/images/cinema/scene-10-trien-lam.png",
     transitionType: "solar-iris",
   },
@@ -162,6 +189,18 @@ export const ScrollVisualCinema: React.FC<ScrollVisualCinemaProps> = ({
   const currentProgressRef = useRef(0);
   const targetPointerRef = useRef({ x: 0, y: 0 });
   const currentPointerRef = useRef({ x: 0, y: 0 });
+  const lastSceneIdxRef = useRef(0);
+
+  const [activeSceneIdx, setActiveSceneIdx] = useState(0);
+  const [showSceneLink, setShowSceneLink] = useState(false);
+  const [copiedLink, setCopiedLink] = useState(false);
+  const [siteOrigin, setSiteOrigin] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSiteOrigin(window.location.origin);
+    }
+  }, []);
 
   useEffect(() => {
     const sceneCount = scenes.length;
@@ -354,6 +393,12 @@ export const ScrollVisualCinema: React.FC<ScrollVisualCinemaProps> = ({
         copyEl.style.pointerEvents = dist < 0.45 ? "auto" : "none";
         copyEl.style.visibility = alpha > 0.02 ? "visible" : "hidden";
       }
+
+      const nearestIdx = clamp(Math.round(cur), 0, Math.max(0, scenes.length - 1));
+      if (nearestIdx !== lastSceneIdxRef.current) {
+        lastSceneIdxRef.current = nearestIdx;
+        setActiveSceneIdx(nearestIdx);
+      }
     };
 
     rafId = requestAnimationFrame(tick);
@@ -387,6 +432,37 @@ export const ScrollVisualCinema: React.FC<ScrollVisualCinemaProps> = ({
     }
   };
 
+  const currentScene = scenes[activeSceneIdx] || scenes[0];
+  const resolvedLinkHref = currentScene.detailHref || currentScene.ctaHref;
+  const resolvedLinkLabel = currentScene.detailLabel || currentScene.title;
+  const displayLinkUrl = siteOrigin
+    ? `${siteOrigin}${resolvedLinkHref}`
+    : resolvedLinkHref;
+
+  const handleStageImageClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    if (
+      target.closest("a") ||
+      target.closest("button") ||
+      target.closest("nav") ||
+      target.closest("[data-cinema-link-panel]")
+    ) {
+      return;
+    }
+    setShowSceneLink((prev) => !prev);
+  };
+
+  const handleCopySceneLink = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    try {
+      await navigator.clipboard.writeText(displayLinkUrl);
+      setCopiedLink(true);
+      setTimeout(() => setCopiedLink(false), 1800);
+    } catch {
+      // Clipboard may be blocked in restricted browser contexts
+    }
+  };
+
   return (
     <section
       id={id}
@@ -396,7 +472,9 @@ export const ScrollVisualCinema: React.FC<ScrollVisualCinemaProps> = ({
     >
       <div
         ref={stageRef}
-        className="sticky top-[60px] sm:top-[68px] lg:top-16 h-[calc(100dvh-60px)] sm:h-[calc(100dvh-68px)] lg:h-[calc(100vh-4rem)] w-full overflow-hidden bg-white border-b border-heritage-crimson/15"
+        onClick={handleStageImageClick}
+        className="sticky top-[60px] sm:top-[68px] lg:top-16 h-[calc(100dvh-60px)] sm:h-[calc(100dvh-68px)] lg:h-[calc(100vh-4rem)] w-full overflow-hidden bg-white border-b border-heritage-crimson/15 cursor-pointer"
+        title="Nhấp vào hình ảnh để hiện đường link dẫn đến phần tương ứng"
       >
         {scenes.map((scene, idx) => (
           <div
@@ -539,6 +617,110 @@ export const ScrollVisualCinema: React.FC<ScrollVisualCinemaProps> = ({
             ))}
           </div>
         </div>
+        {/* Gợi ý nhấp vào hình & Thẻ hiện đường link dẫn trực tiếp vào phần đó */}
+        {!showSceneLink ? (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowSceneLink(true);
+            }}
+            className="absolute bottom-3 right-3 sm:bottom-5 sm:right-6 z-40 inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur-sm px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold text-heritage-crimson border border-heritage-crimson/30 shadow-sm hover:bg-heritage-crimson hover:text-white transition-colors"
+          >
+            <Link2 className="h-3.5 w-3.5" aria-hidden="true" />
+            <span>Nhấp hình để hiện link phần này</span>
+          </button>
+        ) : (
+          <div
+            data-cinema-link-panel
+            onClick={(e) => e.stopPropagation()}
+            className="absolute bottom-3 left-3 right-3 sm:left-auto sm:bottom-5 sm:right-6 sm:w-[370px] z-40 rounded-2xl bg-[#1F110E]/95 backdrop-blur-md p-4 text-white border border-heritage-goldAntique/70 shadow-[0_18px_42px_rgba(31,17,14,0.45)] cursor-default"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-heritage-crimson px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white border border-heritage-goldAntique/50">
+                <Link2 className="h-3 w-3" aria-hidden="true" />
+                <span>Link phần {String(activeSceneIdx + 1).padStart(2, "0")}</span>
+              </span>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowSceneLink(false);
+                }}
+                className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/15 hover:bg-heritage-crimson text-white transition-colors"
+                aria-label="Đóng thẻ đường dẫn"
+              >
+                <X className="h-3.5 w-3.5" />
+              </button>
+            </div>
+
+            <p className="mt-2 font-serif text-sm sm:text-base font-bold text-[#FDE68A] leading-snug">
+              {resolvedLinkLabel}
+            </p>
+
+            <div className="mt-2 flex items-center gap-1.5 rounded-lg bg-black/45 px-2.5 py-1.5 border border-heritage-goldAntique/45">
+              {resolvedLinkHref.startsWith("#") ? (
+                <a
+                  href={resolvedLinkHref}
+                  onClick={(e) => handleAnchorScroll(e, resolvedLinkHref)}
+                  className="min-w-0 flex-1 truncate font-mono text-xs text-white hover:text-[#FDE68A] underline underline-offset-2"
+                >
+                  {resolvedLinkHref}
+                </a>
+              ) : (
+                <Link
+                  href={resolvedLinkHref}
+                  className="min-w-0 flex-1 truncate font-mono text-xs text-white hover:text-[#FDE68A] underline underline-offset-2"
+                >
+                  {resolvedLinkHref}
+                </Link>
+              )}
+              <button
+                type="button"
+                onClick={handleCopySceneLink}
+                className="inline-flex shrink-0 items-center gap-1 rounded bg-white/15 hover:bg-white/25 px-2 py-1 text-[10px] font-semibold text-[#FDE68A] transition-colors"
+                title={`Sao chép ${displayLinkUrl}`}
+              >
+                {copiedLink ? (
+                  <>
+                    <Check className="h-3 w-3 text-emerald-300" />
+                    <span>Đã chép</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="h-3 w-3" />
+                    <span>Chép</span>
+                  </>
+                )}
+              </button>
+            </div>
+
+            <div className="mt-3">
+              {resolvedLinkHref.startsWith("#") ? (
+                <a
+                  href={resolvedLinkHref}
+                  onClick={(e) => {
+                    setShowSceneLink(false);
+                    handleAnchorScroll(e, resolvedLinkHref);
+                  }}
+                  className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-heritage-crimson hover:bg-[#991B1B] px-4 py-2 text-xs font-bold text-white border border-heritage-goldAntique/60 transition-colors"
+                >
+                  <span>Đi tới phần này</span>
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </a>
+              ) : (
+                <Link
+                  href={resolvedLinkHref}
+                  onClick={() => setShowSceneLink(false)}
+                  className="inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-heritage-crimson hover:bg-[#991B1B] px-4 py-2 text-xs font-bold text-white border border-heritage-goldAntique/60 transition-colors"
+                >
+                  <span>Đi tới phần này</span>
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
