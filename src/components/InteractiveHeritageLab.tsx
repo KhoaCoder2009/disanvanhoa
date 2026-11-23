@@ -11,6 +11,11 @@ import {
   Sparkles,
   BookOpen,
 } from "lucide-react";
+import {
+  MaskStudio3DCanvas,
+  type MaskPresetId,
+} from "./effects/MaskStudio3DCanvas";
+import { Storybox3DCanvas } from "./effects/Storybox3DCanvas";
 
 type LabTab = "mask-studio" | "storybox-light";
 
@@ -143,7 +148,7 @@ export const InteractiveHeritageLab: React.FC = () => {
               BÀN MÔ PHỎNG THIẾT KẾ KỸ THUẬT STEAM TRỰC TUYẾN
             </h3>
             <p className="text-xs text-heritage-goldSoft leading-snug">
-              Thử nghiệm mã màu mặt nạ Tuồng &amp; Quang học hộp kể chuyện sử thi trước khi chế tác thủ công
+              Mô phỏng 3D WebGL (Three.js GLB/GLTF): Phối màu mặt nạ Tuồng &amp; Quang học hộp kể chuyện sử thi
             </p>
           </div>
         </div>
@@ -388,170 +393,16 @@ export const InteractiveHeritageLab: React.FC = () => {
                 </button>
               </div>
 
-              {/* Khung SVG đối chiếu 2 lớp bằng clip-path: inset() theo kỹ thuật Emil Kowalski */}
-              <div className="relative mt-4 aspect-[4/3] w-full rounded-xl bg-[#1D1410] border border-heritage-goldAntique/50 overflow-hidden">
-                {/* Lớp dưới: Bản phác thảo khung lưới nhân trắc học trên bìa carton */}
-                <svg
-                  viewBox="0 0 360 270"
-                  className="absolute inset-0 h-full w-full"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="360" height="270" fill="#231813" />
-                  {/* Lưới tọa độ Toán học (M - Mathematics) */}
-                  {[45, 90, 135, 180, 225, 270, 315].map((x) => (
-                    <line
-                      key={x}
-                      x1={x}
-                      y1="0"
-                      x2={x}
-                      y2="270"
-                      stroke="#A77B3D"
-                      strokeWidth="0.6"
-                      strokeDasharray="3 3"
-                      strokeOpacity="0.4"
-                    />
-                  ))}
-                  {[45, 90, 135, 180, 225].map((y) => (
-                    <line
-                      key={y}
-                      x1="0"
-                      y1={y}
-                      x2="360"
-                      y2={y}
-                      stroke="#A77B3D"
-                      strokeWidth="0.6"
-                      strokeDasharray="3 3"
-                      strokeOpacity="0.4"
-                    />
-                  ))}
-                  <line x1="180" y1="15" x2="180" y2="255" stroke="#D6B77E" strokeWidth="1.2" strokeDasharray="5 3" />
-                  <line x1="60" y1="135" x2="300" y2="135" stroke="#D6B77E" strokeWidth="1.2" strokeDasharray="5 3" />
-                  <path
-                    d="M 118 82 C 114 156, 134 212, 180 228 C 226 212, 246 156, 242 82 Z"
-                    fill="none"
-                    stroke="#D6B77E"
-                    strokeWidth="1.8"
-                    strokeDasharray="4 4"
-                  />
-                  <text x="18" y="252" fill="#D6B77E" fontSize="10" fontFamily="monospace">
-                    LỚP BÌA CỨNG &amp; TRỤC TỈ LỆ ĐỐI XỨNG (BƯỚC 2)
-                  </text>
-                </svg>
-
-                {/* Lớp trên: Bản hoàn thiện màu hóa trang ước lệ được cắt bằng clip-path */}
-                <div
-                  className="absolute inset-0 transition-[clip-path] duration-150"
-                  style={{
-                    clipPath: `inset(0 ${100 - comparePercent}% 0 0)`,
-                  }}
-                >
-                  <svg
-                    viewBox="0 0 360 270"
-                    className="h-full w-full"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="360" height="270" fill="#1D1410" />
-                    {/* Mão đội đầu */}
-                    <path
-                      d="M 122 82 L 180 28 L 238 82 Z"
-                      fill={accentColor}
-                      stroke="#D6B77E"
-                      strokeWidth="2"
-                    />
-                    <line x1="102" y1="82" x2="258" y2="82" stroke="#D6B77E" strokeWidth="3.5" />
-
-                    {/* Gương mặt bìa cứng bồi màu */}
-                    <path
-                      d="M 118 84 C 114 156, 134 212, 180 228 C 226 212, 246 156, 242 84 Z"
-                      fill={baseColor}
-                      stroke={accentColor}
-                      strokeWidth="3.5"
-                    />
-
-                    {/* Chân mày theo lựa chọn */}
-                    {browStyle === "quyen-uy" && (
-                      <path
-                        d="M 134 118 C 146 102, 164 104, 170 118 M 190 118 C 196 104, 214 102, 226 118"
-                        fill="none"
-                        stroke="#2D211B"
-                        strokeWidth="4"
-                      />
-                    )}
-                    {browStyle === "gian-xao" && (
-                      <path
-                        d="M 134 122 L 168 108 M 192 114 L 226 102"
-                        fill="none"
-                        stroke="#2D211B"
-                        strokeWidth="3.8"
-                      />
-                    )}
-                    {browStyle === "he-tuong" && (
-                      <path
-                        d="M 136 114 Q 152 96 168 114 M 192 114 Q 208 96 224 114"
-                        fill="none"
-                        stroke="#2D211B"
-                        strokeWidth="4"
-                      />
-                    )}
-                    {browStyle === "keo-kiet" && (
-                      <g>
-                        <path
-                          d="M 136 108 Q 152 124 168 112 M 192 112 Q 208 124 224 108"
-                          fill="none"
-                          stroke="#2D211B"
-                          strokeWidth="3.5"
-                        />
-                        <path
-                          d="M 155 96 Q 180 102 205 96"
-                          fill="none"
-                          stroke={accentColor}
-                          strokeWidth="2"
-                        />
-                      </g>
-                    )}
-
-                    {/* Đôi mắt ước lệ */}
-                    <polygon points="142,128 166,128 154,136" fill="#2D211B" />
-                    <polygon points="194,128 218,128 206,136" fill="#2D211B" />
-
-                    {/* Mảng màu gò má */}
-                    <circle cx="142" cy="154" r="14" fill={accentColor} fillOpacity="0.55" />
-                    <circle cx="218" cy="154" r="14" fill={accentColor} fillOpacity="0.55" />
-
-                    {/* Râu & Nét đặc trưng */}
-                    {beardStyle === "ba-chom" && (
-                      <path
-                        d="M 156 184 Q 180 174 204 184 M 162 192 L 154 220 M 180 190 L 180 224 M 198 192 L 206 220"
-                        fill="none"
-                        stroke="#2D211B"
-                        strokeWidth="2.8"
-                      />
-                    )}
-                    {beardStyle === "ria-mep" && (
-                      <path
-                        d="M 152 186 Q 180 176 212 180"
-                        fill="none"
-                        stroke="#2D211B"
-                        strokeWidth="3"
-                      />
-                    )}
-                    {beardStyle === "khong-rau" && (
-                      <g>
-                        <ellipse cx="180" cy="148" rx="11" ry="15" fill="#FFFFFF" stroke="#2D211B" strokeWidth="1.5" />
-                        <path d="M 158 188 Q 180 198 202 188" fill="none" stroke="#7A2925" strokeWidth="3.2" />
-                      </g>
-                    )}
-                    {beardStyle === "rau-ngan" && (
-                      <path
-                        d="M 162 190 Q 180 180 198 190 M 168 202 Q 180 196 192 202"
-                        fill="none"
-                        stroke="#50372A"
-                        strokeWidth="2.8"
-                      />
-                    )}
-                  </svg>
-                </div>
-              </div>
+              {/* Khung mô hình 3D Three.js đối chiếu phôi CAD bìa cứng & Mặt nạ Tuồng */}
+              <MaskStudio3DCanvas
+                presetId={currentPreset.id as MaskPresetId}
+                roleTitle={currentPreset.name}
+                baseColor={baseColor}
+                accentColor={accentColor}
+                browStyle={browStyle}
+                beardStyle={beardStyle}
+                comparePercent={comparePercent}
+              />
 
               {/* Thẻ Giải Mã Học Thuật Tự Động */}
               <div className="mt-4 rounded-xl bg-heritage-woodLight/80 p-4 border border-heritage-goldAntique/40 space-y-2 text-xs sm:text-sm">
@@ -681,129 +532,12 @@ export const InteractiveHeritageLab: React.FC = () => {
               </span>
             </div>
 
-            <div className="relative mt-4 aspect-[16/10] w-full rounded-xl bg-[#160F0C] border-2 border-heritage-goldAntique overflow-hidden">
-              <svg
-                viewBox="0 0 500 310"
-                className="h-full w-full"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <radialGradient
-                    id="storybox-led-glow"
-                    cx="72%"
-                    cy={`${100 - sunElevation}%`}
-                    r="65%"
-                  >
-                    <stop
-                      offset="0%"
-                      stopColor="#F2E8D5"
-                      stopOpacity={(ledIntensity / 100) * 0.95}
-                    />
-                    <stop
-                      offset="40%"
-                      stopColor="#D6B77E"
-                      stopOpacity={(ledIntensity / 100) * 0.65}
-                    />
-                    <stop
-                      offset="75%"
-                      stopColor="#7A2925"
-                      stopOpacity={(ledIntensity / 100) * 0.35}
-                    />
-                    <stop offset="100%" stopColor="#160F0C" stopOpacity="0" />
-                  </radialGradient>
-                </defs>
-
-                {/* Ánh sáng đèn LED xuyên qua lớp giấy can */}
-                <rect width="500" height="310" fill="#160F0C" />
-                <rect width="500" height="310" fill="url(#storybox-led-glow)" />
-
-                {/* LỚP 03: Vầng Mặt Trời & Ngôi nhà Nữ thần Mặt Trời */}
-                <g
-                  transform={`translate(0, ${
-                    showLayerExplode ? -12 : 0
-                  })`}
-                >
-                  <circle
-                    cx="360"
-                    cy={275 - sunElevation * 1.9}
-                    r={38 + (ledIntensity / 100) * 18}
-                    fill="#D6B77E"
-                    fillOpacity={0.35 + (ledIntensity / 100) * 0.5}
-                    stroke="#F2E8D5"
-                    strokeWidth="1.5"
-                  />
-                  {/* Ngôi nhà Nữ thần Mặt Trời phía chân trời */}
-                  <path
-                    d="M 335 215 L 360 172 L 385 215 Z"
-                    fill="#A77B3D"
-                    stroke="#F2E8D5"
-                    strokeWidth="1.5"
-                  />
-                  {showLayerExplode && (
-                    <text x="16" y="32" fill="#D6B77E" fontSize="10" fontWeight="700">
-                      [LỚP 03 - HẬU CẢNH &amp; GIẤY CAN TÁN SÁNG]
-                    </text>
-                  )}
-                </g>
-
-                {/* LỚP 02: Dãy núi Rừng Sáp Đen & Nhân vật Đăm Săn trên thanh trượt */}
-                <g>
-                  <path
-                    d="M 0 265 L 95 168 L 175 225 L 265 148 L 365 232 L 445 178 L 500 220 L 500 310 L 0 310 Z"
-                    fill="#38251C"
-                    stroke="#A77B3D"
-                    strokeWidth="1.5"
-                  />
-
-                  {/* Nhân vật giấy Đăm Săn di chuyển theo thanh trượt heroProgress */}
-                  <g
-                    transform={`translate(${40 + heroProgress * 3.2}, ${
-                      232 - heroProgress * 0.45
-                    })`}
-                  >
-                    {/* Thanh cài giấy bên dưới */}
-                    <rect x="-4" y="18" width="8" height="45" fill="#D6B77E" fillOpacity="0.6" />
-                    {/* Bóng nhân vật Đăm Săn cầm khiên & đao */}
-                    <circle cx="0" cy="-14" r="8" fill="#F2E8D5" stroke="#7A2925" strokeWidth="2" />
-                    <path d="M -8 -18 L 10 -26" stroke="#D6B77E" strokeWidth="2.5" />
-                    <path d="M -10 -4 L 10 -4 L 6 18 L -6 18 Z" fill="#7A2925" stroke="#D6B77E" strokeWidth="1.5" />
-                    <ellipse cx="12" cy="4" rx="5" ry="12" fill="#D6B77E" stroke="#2D211B" strokeWidth="1.2" />
-                  </g>
-
-                  {showLayerExplode && (
-                    <text x="16" y="160" fill="#F2E8D5" fontSize="10" fontWeight="700">
-                      [LỚP 02 - TRUNG CẢNH RỪNG SÁP ĐEN &amp; RÃNH TRƯỢT NHÂN VẬT]
-                    </text>
-                  )}
-                </g>
-
-                {/* LỚP 01: Tiền cảnh Nhà dài Ê-đê & Khung viền Thổ cẩm */}
-                <g
-                  transform={`translate(0, ${
-                    showLayerExplode ? 10 : 0
-                  })`}
-                >
-                  <path
-                    d="M 22 272 L 78 192 L 134 272 Z"
-                    fill="#241712"
-                    stroke="#D6B77E"
-                    strokeWidth="1.8"
-                  />
-                  <rect x="0" y="272" width="500" height="38" fill="#7A2925" stroke="#D6B77E" strokeWidth="1.5" />
-                  <path
-                    d="M 10 291 L 26 280 L 42 291 L 58 280 L 74 291 L 90 280 L 106 291 L 122 280 L 138 291 L 154 280 L 170 291 L 186 280 L 202 291 L 218 280 L 234 291 L 250 280 L 266 291 L 282 280 L 298 291 L 314 280 L 330 291 L 346 280 L 362 291 L 378 280 L 394 291 L 410 280 L 426 291 L 442 280 L 458 291 L 474 280 L 490 291"
-                    fill="none"
-                    stroke="#D6B77E"
-                    strokeWidth="1.8"
-                  />
-                  {showLayerExplode && (
-                    <text x="16" y="264" fill="#D6B77E" fontSize="10" fontWeight="700">
-                      [LỚP 01 - TIỀN CẢNH NHÀ DÀI &amp; KHUNG HỘP THỔ CẨM]
-                    </text>
-                  )}
-                </g>
-              </svg>
-            </div>
+            <Storybox3DCanvas
+              sunElevation={sunElevation}
+              ledIntensity={ledIntensity}
+              heroProgress={heroProgress}
+              showLayerExplode={showLayerExplode}
+            />
 
             <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-heritage-goldSoft">
               <span>
@@ -814,6 +548,18 @@ export const InteractiveHeritageLab: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Nguồn cấp phép mở các phôi mô hình 3D GLB/GLTF */}
+      <div className="bg-heritage-ivoryDeep/60 px-4 py-2.5 sm:px-6 border-t border-heritage-goldAntique/30 flex flex-wrap items-center justify-between gap-2 text-[11px] text-heritage-woodLight">
+        <span>
+          Tài nguyên 3D WebGL bản địa (<code className="font-mono">/models/*.glb</code>):{" "}
+          <strong>Three.js Official Examples</strong> (MIT) &bull;{" "}
+          <strong>Quaternius</strong> &amp; <strong>Poly Haven</strong> (CC0 1.0 Public Domain)
+        </span>
+        <span className="font-mono text-heritage-crimson">
+          Draco + glTF 2.0 • 100% Open License
+        </span>
+      </div>
     </div>
   );
 };

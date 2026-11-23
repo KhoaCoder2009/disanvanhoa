@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { PageBanner } from "@/components/PageBanner";
+import { ScrollVisualCinema } from "@/components/ScrollVisualCinema";
+import { TRAC_NGHIEM_CINEMA } from "@/data/pageCinemaData";
 import { HeritageQuizStudio } from "@/components/HeritageQuizStudio";
 import { CallToActionAndFooter } from "@/components/CallToActionAndFooter";
 import { BookOpen, Compass } from "lucide-react";
@@ -18,33 +19,36 @@ export default function TracNghiemPage() {
       <Header />
 
       <main className="flex-1">
-        <PageBanner
-          badge="KIỂM TRA & CỦNG CỐ TRI THỨC"
-          title="TRẮC NGHIỆM DI SẢN VĂN HỌC & STEAM"
-          subtitle="Ôn luyện, giải mã và kiểm tra mức độ thông hiểu các trích đoạn sân khấu dân gian, sử thi Tây Nguyên và phương pháp thiết kế kỹ thuật 5 bước STEAM."
+        <ScrollVisualCinema
+          id="trinh-chieu-trac-nghiem"
+          scenes={TRAC_NGHIEM_CINEMA}
+          skipHref="#noi-dung-trac-nghiem"
           breadcrumbs={[{ label: "Trắc nghiệm Di sản" }]}
-          accentVariant="hero"
-          actions={
-            <>
+          ariaLabel="Trình chiếu Trắc nghiệm Di sản Văn học và STEAM"
+        />
+
+        <div id="noi-dung-trac-nghiem">
+          <div className="bg-heritage-ivoryLight border-b border-heritage-crimson/15 py-5">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-3">
               <Link
-                href="/#bao-tang-so"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-5 py-2.5 text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
+                href="/bao-tang-so"
+                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2 text-xs sm:text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
               >
                 <Compass className="h-4 w-4" aria-hidden="true" />
                 <span>Ôn lại tại Bảo tàng số</span>
               </Link>
               <Link
-                href="/#chu-de-hoc-tap"
-                className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-heritage-crimson border-2 border-heritage-crimson hover:bg-heritage-ivoryDeep transition-colors"
+                href="/chu-de-hoc-tap"
+                className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-xs sm:text-sm font-semibold text-heritage-crimson border border-heritage-crimson/35 hover:bg-heritage-crimson hover:text-white transition-colors"
               >
                 <BookOpen className="h-4 w-4" aria-hidden="true" />
                 <span>Xem Chủ đề học tập</span>
               </Link>
-            </>
-          }
-        />
+            </div>
+          </div>
 
-        <HeritageQuizStudio />
+          <HeritageQuizStudio />
+        </div>
       </main>
 
       <CallToActionAndFooter />

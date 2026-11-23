@@ -2,7 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
-import { PageBanner } from "@/components/PageBanner";
+import { ScrollVisualCinema } from "@/components/ScrollVisualCinema";
+import { buildTopicDetailCinema } from "@/data/pageCinemaData";
 import { CallToActionAndFooter } from "@/components/CallToActionAndFooter";
 import { TiltSpotlightCard } from "@/components/effects/TiltSpotlightCard";
 import { HeritageArtwork } from "@/components/HeritageArtwork";
@@ -36,43 +37,45 @@ export default async function LearningTopicDetailPage({
 
   const topic = LEARNING_TOPICS[topicIndex];
   const otherTopic = LEARNING_TOPICS[(topicIndex + 1) % LEARNING_TOPICS.length];
+  const topicScenes = buildTopicDetailCinema(topic);
 
   return (
     <div className="min-h-screen flex flex-col bg-heritage-ivory text-heritage-ink">
       <Header />
 
       <main className="flex-1">
-        <PageBanner
-          badge={`${topic.topicNumber} • ${topic.subjectInfo} • ${topic.status}`}
-          title={topic.title}
-          subtitle={`${topic.lessonInfo} — ${topic.summary}`}
+        <ScrollVisualCinema
+          id={`trinh-chieu-du-an-${topic.id}`}
+          scenes={topicScenes}
+          skipHref="#noi-dung-du-an-chi-tiet"
           breadcrumbs={[
             { label: "Chủ đề học tập", href: "/chu-de-hoc-tap" },
             { label: topic.title },
           ]}
-          accentVariant="hero"
-          actions={
-            <>
+          ariaLabel={`Trình chiếu dự án ${topic.title}`}
+        />
+
+        <section
+          id="noi-dung-du-an-chi-tiet"
+          className="py-10 sm:py-14 lg:py-16 bg-heritage-ivory border-b border-heritage-goldAntique/30"
+        >
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
+            <div className="flex flex-wrap items-center gap-3">
               <Link
                 href="/chu-de-hoc-tap"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-woodLight px-5 py-3 text-sm font-semibold text-heritage-goldSoft border border-heritage-goldAntique hover:bg-heritage-goldSoft hover:text-heritage-woodDark transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-heritage-crimson border border-heritage-crimson/35 hover:bg-heritage-crimson hover:text-white transition-colors"
               >
                 <ArrowLeft className="h-4 w-4" />
                 <span>Tất cả Chủ đề học tập</span>
               </Link>
               <Link
                 href="/xuong-steam"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-5 py-3 text-sm font-semibold text-heritage-ivory border border-heritage-goldSoft/60 hover:bg-heritage-goldAntique hover:text-heritage-woodDark transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2.5 text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
               >
                 <Wrench className="h-4 w-4" />
                 <span>Quy trình Xưởng STEAM</span>
               </Link>
-            </>
-          }
-        />
-
-        <section className="py-10 sm:py-14 lg:py-16 bg-heritage-ivory border-b border-heritage-goldAntique/30">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
+            </div>
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 items-center">
               <div className="lg:col-span-6">
                 <div className="rounded-2xl bg-heritage-woodDark p-2.5 sm:p-3 border border-heritage-goldAntique shadow-cabinet">

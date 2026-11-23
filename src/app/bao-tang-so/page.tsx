@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { PageBanner } from "@/components/PageBanner";
+import { ScrollVisualCinema } from "@/components/ScrollVisualCinema";
+import { BAO_TANG_SO_CINEMA } from "@/data/pageCinemaData";
 import { CallToActionAndFooter } from "@/components/CallToActionAndFooter";
 import { TiltSpotlightCard } from "@/components/effects/TiltSpotlightCard";
 import { HeritageArtwork } from "@/components/HeritageArtwork";
-import { MUSEUM_SECTION_META, MUSEUM_WINGS } from "@/data/museumData";
+import { MUSEUM_WINGS } from "@/data/museumData";
 import { ArrowRight, BookMarked, Sparkles } from "lucide-react";
 
 export default function BaoTangSoPage() {
@@ -14,49 +15,39 @@ export default function BaoTangSoPage() {
       <Header />
 
       <main className="flex-1">
-        <PageBanner
-          badge="KHU VỰC 01 • DIGITAL MUSEUM"
-          title="BẢO TÀNG SỐ DI SẢN VĂN HỌC"
-          subtitle={MUSEUM_SECTION_META.description}
+        <ScrollVisualCinema
+          id="trinh-chieu-bao-tang"
+          scenes={BAO_TANG_SO_CINEMA}
+          skipHref="#noi-dung-bao-tang"
           breadcrumbs={[{ label: "Bảo tàng số" }]}
-          accentVariant="hero"
-          actions={
-            <>
-              <Link
-                href="/bao-tang-so/sac-tuong-huyen-duong"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2.5 text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
-              >
-                <span>Phòng 01: Sắc Tuồng Huyện đường</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/bao-tang-so/tu-dai-nhan-vat"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-woodDark px-4 py-2.5 text-sm font-semibold text-heritage-goldSoft hover:bg-heritage-crimson transition-colors"
-              >
-                <span>Phòng 02: Bốn nhân vật</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/bao-tang-so/khong-gian-dam-san"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-woodLight px-4 py-2.5 text-sm font-semibold text-heritage-goldSoft hover:bg-heritage-crimson hover:text-white transition-colors"
-              >
-                <span>Phòng 03: Sử thi Đăm Săn</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/bao-tang-so/hanh-trinh-mat-troi"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2.5 text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
-              >
-                <span>Phòng 04: Nữ thần Mặt Trời</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </>
-          }
+          ariaLabel="Trình chiếu Bảo tàng số Di sản Văn học"
         />
 
         {/* Danh sách Không gian Phòng trưng bày chuyên sâu */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-heritage-ivory border-b border-heritage-goldAntique/30">
+        <section
+          id="noi-dung-bao-tang"
+          className="py-12 sm:py-16 lg:py-20 bg-heritage-ivory border-b border-heritage-goldAntique/30"
+        >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
+            {/* Thanh chọn nhanh 4 phòng trưng bày */}
+            <div className="flex flex-wrap items-center gap-2.5">
+              {MUSEUM_WINGS.map((w, i) => (
+                <Link
+                  key={w.id}
+                  href={`/bao-tang-so/${w.id}`}
+                  className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-xs sm:text-sm font-semibold transition-colors ${
+                    i % 2 === 0
+                      ? "bg-heritage-crimson text-white hover:bg-heritage-woodDark"
+                      : "bg-white text-heritage-crimson border border-heritage-crimson/35 hover:bg-heritage-crimson hover:text-white"
+                  }`}
+                >
+                  <span>
+                    {w.code}: {w.title}
+                  </span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              ))}
+            </div>
             {MUSEUM_WINGS.map((wing, idx) => {
               const isEven = idx % 2 === 0;
               return (

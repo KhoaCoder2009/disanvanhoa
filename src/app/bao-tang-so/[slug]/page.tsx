@@ -2,7 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
-import { PageBanner } from "@/components/PageBanner";
+import { ScrollVisualCinema } from "@/components/ScrollVisualCinema";
+import { buildWingDetailCinema } from "@/data/pageCinemaData";
 import { CallToActionAndFooter } from "@/components/CallToActionAndFooter";
 import { HeritageArtwork } from "@/components/HeritageArtwork";
 import { MUSEUM_WINGS } from "@/data/museumData";
@@ -33,43 +34,45 @@ export default async function MuseumWingDetailPage({
 
   const wing = MUSEUM_WINGS[wingIndex];
   const nextWing = MUSEUM_WINGS[(wingIndex + 1) % MUSEUM_WINGS.length];
+  const wingScenes = buildWingDetailCinema(wing);
 
   return (
     <div className="min-h-screen flex flex-col bg-heritage-ivory text-heritage-ink">
       <Header />
 
       <main className="flex-1">
-        <PageBanner
-          badge={`${wing.code} • ${wing.gradeReference}`}
-          title={`${wing.title} — ${wing.subtitle}`}
-          subtitle={wing.shortDescription}
+        <ScrollVisualCinema
+          id={`trinh-chieu-phong-${wing.id}`}
+          scenes={wingScenes}
+          skipHref="#noi-dung-phong-trung-bay"
           breadcrumbs={[
             { label: "Bảo tàng số", href: "/bao-tang-so" },
             { label: wing.title },
           ]}
-          accentVariant="hero"
-          actions={
-            <>
+          ariaLabel={`Trình chiếu phòng trưng bày ${wing.title}`}
+        />
+
+        <section
+          id="noi-dung-phong-trung-bay"
+          className="py-10 sm:py-14 lg:py-16 bg-heritage-ivory"
+        >
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-8 flex flex-wrap items-center gap-3">
               <Link
                 href="/bao-tang-so"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-woodLight px-5 py-3 text-sm font-semibold text-heritage-goldSoft border border-heritage-goldAntique hover:bg-heritage-goldSoft hover:text-heritage-woodDark transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-heritage-crimson border border-heritage-crimson/35 hover:bg-heritage-crimson hover:text-white transition-colors"
               >
                 <ArrowLeft className="h-4 w-4" />
                 <span>Quay lại sảnh Bảo tàng số</span>
               </Link>
               <Link
                 href="/chu-de-hoc-tap"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-5 py-3 text-sm font-semibold text-heritage-ivory border border-heritage-goldSoft/60 hover:bg-heritage-goldAntique hover:text-heritage-woodDark transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2.5 text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
               >
                 <span>Thực hành dự án STEAM</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
-            </>
-          }
-        />
-
-        <section className="py-10 sm:py-14 lg:py-16 bg-heritage-ivory">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            </div>
             <div className="grid grid-cols-1 gap-8 lg:gap-10 lg:grid-cols-12">
               {/* Cột trái: Tranh lớn & Khung Video tư liệu */}
               <div className="lg:col-span-6 space-y-6">

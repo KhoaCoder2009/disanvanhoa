@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { PageBanner } from "@/components/PageBanner";
+import { ScrollVisualCinema } from "@/components/ScrollVisualCinema";
+import { CHU_DE_HOC_TAP_CINEMA } from "@/data/pageCinemaData";
 import { CallToActionAndFooter } from "@/components/CallToActionAndFooter";
 import { LearningTopicsSection } from "@/components/LearningTopicsSection";
-import { LEARNING_TOPICS, LEARNING_TOPICS_META } from "@/data/learningTopicsData";
+import { LEARNING_TOPICS } from "@/data/learningTopicsData";
 import { ArrowRight, CheckCircle2, Clock } from "lucide-react";
 
 export default function ChuDeHocTapPage() {
@@ -13,23 +14,22 @@ export default function ChuDeHocTapPage() {
       <Header />
 
       <main className="flex-1">
-        <PageBanner
-          badge="KHU VỰC 02 • LEARNING JOURNEYS"
-          title="HÀNH TRÌNH KHÁM PHÁ TRI THỨC & DỰ ÁN HỌC TẬP"
-          subtitle={LEARNING_TOPICS_META.description}
+        <ScrollVisualCinema
+          id="trinh-chieu-chu-de"
+          scenes={CHU_DE_HOC_TAP_CINEMA}
+          skipHref="#noi-dung-chu-de"
           breadcrumbs={[{ label: "Chủ đề học tập" }]}
-          accentVariant="hero"
-          actions={
-            <>
+          ariaLabel="Trình chiếu Chủ đề học tập và Dự án STEAM"
+        />
+
+        <div id="noi-dung-chu-de">
+          <div className="bg-heritage-ivoryLight border-b border-heritage-crimson/15 py-5">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-3">
               {LEARNING_TOPICS.map((tp) => (
                 <Link
                   key={tp.id}
                   href={`/chu-de-hoc-tap/${tp.id}`}
-                  className={`inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-heritage-ivory border border-heritage-goldSoft/60 transition-colors ${
-                    tp.status === "Đang triển khai"
-                      ? "bg-heritage-crimson hover:bg-heritage-goldAntique hover:text-heritage-woodDark"
-                      : "bg-heritage-moss hover:bg-heritage-goldAntique hover:text-heritage-woodDark"
-                  }`}
+                  className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2 text-xs sm:text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
                 >
                   {tp.status === "Đang triển khai" ? (
                     <CheckCircle2 className="h-4 w-4" />
@@ -42,11 +42,11 @@ export default function ChuDeHocTapPage() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               ))}
-            </>
-          }
-        />
+            </div>
+          </div>
 
-        <LearningTopicsSection />
+          <LearningTopicsSection />
+        </div>
       </main>
 
       <CallToActionAndFooter />

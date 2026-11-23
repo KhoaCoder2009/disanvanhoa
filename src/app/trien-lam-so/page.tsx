@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { PageBanner } from "@/components/PageBanner";
+import { ScrollVisualCinema } from "@/components/ScrollVisualCinema";
+import { TRIEN_LAM_SO_CINEMA } from "@/data/pageCinemaData";
 import { CallToActionAndFooter } from "@/components/CallToActionAndFooter";
 import { DigitalExhibitionSection } from "@/components/DigitalExhibitionSection";
-import { EXHIBITION_SECTION_META } from "@/data/exhibitionData";
 import { ArrowRight, Camera, FileCheck, UploadCloud } from "lucide-react";
 
 export default function TrienLamSoPage() {
@@ -13,33 +13,36 @@ export default function TrienLamSoPage() {
       <Header />
 
       <main className="flex-1">
-        <PageBanner
-          badge="KHU VỰC 04 • DIGITAL EXHIBITION"
-          title="KHÔNG GIAN TRIỂN LÃM SỐ SẢN PHẨM HỌC TẬP"
-          subtitle={EXHIBITION_SECTION_META.description}
+        <ScrollVisualCinema
+          id="trinh-chieu-trien-lam"
+          scenes={TRIEN_LAM_SO_CINEMA}
+          skipHref="#noi-dung-trien-lam"
           breadcrumbs={[{ label: "Triển lãm số" }]}
-          accentVariant="hero"
-          actions={
-            <>
+          ariaLabel="Trình chiếu Không gian Triển lãm số"
+        />
+
+        <div id="noi-dung-trien-lam">
+          <div className="bg-heritage-ivoryLight border-b border-heritage-crimson/15 py-5">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-3">
               <Link
                 href="/xuong-steam"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-5 py-3 text-sm font-semibold text-heritage-ivory border border-heritage-goldSoft/60 hover:bg-heritage-goldAntique hover:text-heritage-woodDark transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2 text-xs sm:text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
               >
                 <span>Xem quy trình chế tạo</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/dien-dan-hoc-tap"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-woodLight px-5 py-3 text-sm font-semibold text-heritage-goldSoft border border-heritage-goldAntique hover:bg-heritage-goldSoft hover:text-heritage-woodDark transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-xs sm:text-sm font-semibold text-heritage-crimson border border-heritage-crimson/35 hover:bg-heritage-crimson hover:text-white transition-colors"
               >
                 <span>Nộp hồ sơ &amp; Phản biện</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
-            </>
-          }
-        />
+            </div>
+          </div>
 
-        <DigitalExhibitionSection />
+          <DigitalExhibitionSection />
+        </div>
 
         <section className="py-12 sm:py-16 bg-heritage-ivoryLight border-b border-heritage-goldAntique/30">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowDown, ArrowRight, ChevronRight, Home } from "lucide-react";
 
-type TransitionType =
+export type TransitionType =
   | "base"
   | "iris-right"
   | "curtain-up"
@@ -12,7 +13,7 @@ type TransitionType =
   | "screen-right"
   | "solar-iris";
 
-interface CinemaScene {
+export interface CinemaScene {
   id: string;
   title: string;
   isHeroTitle?: boolean;
@@ -24,7 +25,21 @@ interface CinemaScene {
   transitionType: TransitionType;
 }
 
-const CINEMA_SCENES: CinemaScene[] = [
+export interface CinemaBreadcrumb {
+  label: string;
+  href?: string;
+}
+
+export interface ScrollVisualCinemaProps {
+  id?: string;
+  scenes?: CinemaScene[];
+  skipHref?: string;
+  skipLabel?: string;
+  breadcrumbs?: CinemaBreadcrumb[];
+  ariaLabel?: string;
+}
+
+const DEFAULT_CINEMA_SCENES: CinemaScene[] = [
   {
     id: "scene-01",
     title: "DI SẢN VĂN HỌC VIỆT",
@@ -126,7 +141,14 @@ const smoothstep = (edge0: number, edge1: number, x: number) => {
   return u * u * (3 - 2 * u);
 };
 
-export const ScrollVisualCinema: React.FC = () => {
+export const ScrollVisualCinema: React.FC<ScrollVisualCinemaProps> = ({
+  id = "trang-chu",
+  scenes = DEFAULT_CINEMA_SCENES,
+  skipHref = "#gioi-thieu-khong-gian",
+  skipLabel = "Bỏ qua trình chiếu",
+  breadcrumbs,
+  ariaLabel = "Hành trình thị giác Dự án Huyện đường và Sử thi Đăm Săn",
+}) => {
   const runwayRef = useRef<HTMLElement | null>(null);
   const stageRef = useRef<HTMLDivElement | null>(null);
 
@@ -142,6 +164,7 @@ export const ScrollVisualCinema: React.FC = () => {
   const currentPointerRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
+    const sceneCount = scenes.length;
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
@@ -165,7 +188,7 @@ export const ScrollVisualCinema: React.FC = () => {
         runway.offsetHeight - (window.innerHeight - headerOffset)
       );
       const ratio = clamp((headerOffset - rect.top) / scrollable, 0, 1);
-      targetProgressRef.current = ratio * (CINEMA_SCENES.length - 1);
+      targetProgressRef.current = ratio * Math.max(1, sceneCount - 1);
     };
 
     const handlePointerMove = (e: PointerEvent) => {
@@ -232,8 +255,8 @@ export const ScrollVisualCinema: React.FC = () => {
       let verticalSeamPos: number | null = null;
       let verticalSeamAlpha = 0;
 
-      for (let i = 0; i < CINEMA_SCENES.length; i++) {
-        const scene = CINEMA_SCENES[i];
+      for (let i = 0; i < scenes.length; i++) {
+        const scene = scenes[i];
         const layer = layerRefs.current[i];
         const img = imgRefs.current[i];
         if (!layer || !img) continue;
@@ -320,7 +343,7 @@ export const ScrollVisualCinema: React.FC = () => {
         }
       }
 
-      for (let i = 0; i < CINEMA_SCENES.length; i++) {
+      for (let i = 0; i < scenes.length; i++) {
         const copyEl = copyRefs.current[i];
         if (!copyEl) continue;
         const dist = Math.abs(cur - i);
@@ -342,14 +365,22 @@ export const ScrollVisualCinema: React.FC = () => {
       stageEl?.removeEventListener("pointermove", handlePointerMove);
       stageEl?.removeEventListener("pointerleave", handlePointerLeave);
     };
-  }, []);
+  }, [scenes]);
+
+  const runwayHeightClass =
+    scenes.length <= 3
+      ? "h-[230vh] md:h-[270vh] lg:h-[310vh]"
+      : scenes.length <= 5
+        ? "h-[290vh] md:h-[350vh] lg:h-[410vh]"
+        : "h-[440vh] md:h-[580vh] lg:h-[720vh]";
 
   const handleAnchorScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    const id = href.replace("#", "");
-    const el = document.getElementById(id);
+    if (!href.startsWith("#")) return;
+    const idTarget = href.replace("#", "");
+    const el = document.getElementById(idTarget);
     if (el) {
       e.preventDefault();
       el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -358,16 +389,16 @@ export const ScrollVisualCinema: React.FC = () => {
 
   return (
     <section
-      id="trang-chu"
+      id={id}
       ref={runwayRef}
-      aria-label="Hành trình thị giác Dự án Huyện đường và Sử thi Đăm Săn"
-      className="relative h-[440vh] md:h-[580vh] lg:h-[720vh] bg-white"
+      aria-label={ariaLabel}
+      className={`relative ${runwayHeightClass} bg-white`}
     >
       <div
         ref={stageRef}
         className="sticky top-[60px] sm:top-[68px] lg:top-16 h-[calc(100dvh-60px)] sm:h-[calc(100dvh-68px)] lg:h-[calc(100vh-4rem)] w-full overflow-hidden bg-white border-b border-heritage-crimson/15"
       >
-        {CINEMA_SCENES.map((scene, idx) => (
+        {scenes.map((scene, idx) => (
           <div
             key={scene.id}
             ref={(el) => {
@@ -409,19 +440,53 @@ export const ScrollVisualCinema: React.FC = () => {
           className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-white via-white/95 via-45% to-white/10 lg:bg-gradient-to-r lg:from-white/95 lg:via-white/80 lg:to-transparent"
         />
 
+        {/* Breadcrumb định vị trang con (nếu có) */}
+        {breadcrumbs && breadcrumbs.length > 0 && (
+          <nav
+            aria-label="Breadcrumb"
+            className="absolute top-3 left-3 sm:top-4 sm:left-6 z-40 hidden sm:inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur-sm px-3.5 py-1.5 text-xs border border-heritage-crimson/20 shadow-sm"
+          >
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1 text-heritage-crimson hover:underline font-semibold"
+            >
+              <Home className="h-3.5 w-3.5" aria-hidden="true" />
+              <span>Trang chủ</span>
+            </Link>
+            {breadcrumbs.map((bc, idx) => (
+              <React.Fragment key={idx}>
+                <ChevronRight
+                  className="h-3.5 w-3.5 text-heritage-crimson/45"
+                  aria-hidden="true"
+                />
+                {bc.href ? (
+                  <Link
+                    href={bc.href}
+                    className="text-heritage-crimson hover:underline font-semibold"
+                  >
+                    {bc.label}
+                  </Link>
+                ) : (
+                  <span className="text-heritage-ink font-bold">{bc.label}</span>
+                )}
+              </React.Fragment>
+            ))}
+          </nav>
+        )}
+
         {/* Nút cuộn nhanh bỏ qua phần trình chiếu trên màn hình chạm */}
         <a
-          href="#gioi-thieu-khong-gian"
-          onClick={(e) => handleAnchorScroll(e, "#gioi-thieu-khong-gian")}
+          href={skipHref}
+          onClick={(e) => handleAnchorScroll(e, skipHref)}
           className="absolute top-3 right-3 sm:top-4 sm:right-6 z-40 inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur-sm px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold text-heritage-crimson border border-heritage-crimson/30 shadow-sm hover:bg-heritage-crimson hover:text-white transition-colors"
         >
-          <span>Bỏ qua trình chiếu</span>
+          <span>{skipLabel}</span>
           <ArrowDown className="h-3.5 w-3.5" aria-hidden="true" />
         </a>
 
         <div className="pointer-events-none relative z-30 mx-auto h-full max-w-7xl px-4 sm:px-6 lg:px-8 flex items-end lg:items-center pb-6 sm:pb-10 lg:pb-0">
           <div className="relative w-full max-w-xl min-h-[290px] sm:min-h-[330px] lg:h-[400px]">
-            {CINEMA_SCENES.map((scene, idx) => (
+            {scenes.map((scene, idx) => (
               <div
                 key={scene.id}
                 ref={(el) => {
@@ -436,7 +501,8 @@ export const ScrollVisualCinema: React.FC = () => {
               >
                 <div className="flex items-center gap-2.5 sm:gap-3 text-[11px] sm:text-xs font-mono font-medium tracking-[0.22em] sm:tracking-[0.26em] text-heritage-crimson/80">
                   <span>
-                    {String(idx + 1).padStart(2, "0")} / 0{CINEMA_SCENES.length}
+                    {String(idx + 1).padStart(2, "0")} /{" "}
+                    {String(scenes.length).padStart(2, "0")}
                   </span>
                   <span className="h-px w-8 bg-heritage-crimson/40" />
                 </div>
