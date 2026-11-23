@@ -22,8 +22,6 @@ interface CinemaScene {
   ctaHref: string;
   image: string;
   transitionType: TransitionType;
-  accentHex: string;
-  hoverHex: string;
 }
 
 const CINEMA_SCENES: CinemaScene[] = [
@@ -38,8 +36,6 @@ const CINEMA_SCENES: CinemaScene[] = [
     ctaHref: "#bao-tang-so",
     image: "/images/cinema/scene-01-di-san.png",
     transitionType: "base",
-    accentHex: "#B91C1C",
-    hoverHex: "#7A1C18",
   },
   {
     id: "scene-02",
@@ -51,8 +47,6 @@ const CINEMA_SCENES: CinemaScene[] = [
     ctaHref: "#bao-tang-so",
     image: "/images/cinema/scene-03-sac-tuong.png",
     transitionType: "iris-right",
-    accentHex: "#B91C1C",
-    hoverHex: "#7A1C18",
   },
   {
     id: "scene-03",
@@ -64,8 +58,6 @@ const CINEMA_SCENES: CinemaScene[] = [
     ctaHref: "#chu-de-hoc-tap",
     image: "/images/cinema/scene-07-huyen-duong.png",
     transitionType: "curtain-up",
-    accentHex: "#96241F",
-    hoverHex: "#7A1C18",
   },
   {
     id: "scene-04",
@@ -77,8 +69,6 @@ const CINEMA_SCENES: CinemaScene[] = [
     ctaHref: "#chu-de-hoc-tap",
     image: "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
     transitionType: "screen-sweep",
-    accentHex: "#B91C1C",
-    hoverHex: "#7A1C18",
   },
   {
     id: "scene-05",
@@ -90,8 +80,6 @@ const CINEMA_SCENES: CinemaScene[] = [
     ctaHref: "#bao-tang-so",
     image: "/images/cinema/scene-dam-san-nha-dai.png",
     transitionType: "solar-iris",
-    accentHex: "#1F5E3B",
-    hoverHex: "#16442A",
   },
   {
     id: "scene-06",
@@ -103,8 +91,6 @@ const CINEMA_SCENES: CinemaScene[] = [
     ctaHref: "#chu-de-hoc-tap",
     image: "/images/cinema/scene-05-dam-san-steam.png",
     transitionType: "curtain-down",
-    accentHex: "#B45309",
-    hoverHex: "#854D0E",
   },
   {
     id: "scene-07",
@@ -116,8 +102,6 @@ const CINEMA_SCENES: CinemaScene[] = [
     ctaHref: "#xuong-steam",
     image: "/images/cinema/scene-09-xuong-steam.png",
     transitionType: "screen-right",
-    accentHex: "#1E3A5F",
-    hoverHex: "#152943",
   },
   {
     id: "scene-08",
@@ -129,8 +113,6 @@ const CINEMA_SCENES: CinemaScene[] = [
     ctaHref: "#trien-lam-so",
     image: "/images/cinema/scene-10-trien-lam.png",
     transitionType: "solar-iris",
-    accentHex: "#B91C1C",
-    hoverHex: "#7A1C18",
   },
 ];
 
@@ -452,31 +434,19 @@ export const ScrollVisualCinema: React.FC = () => {
                   visibility: idx === 0 ? "visible" : "hidden",
                 }}
               >
-                <div
-                  className="flex items-center gap-2.5 sm:gap-3 text-[11px] sm:text-xs font-mono font-medium tracking-[0.22em] sm:tracking-[0.26em]"
-                  style={{ color: scene.accentHex }}
-                >
+                <div className="flex items-center gap-2.5 sm:gap-3 text-[11px] sm:text-xs font-mono font-medium tracking-[0.22em] sm:tracking-[0.26em] text-heritage-crimson/80">
                   <span>
                     {String(idx + 1).padStart(2, "0")} / 0{CINEMA_SCENES.length}
                   </span>
-                  <span
-                    className="h-px w-8 opacity-50"
-                    style={{ backgroundColor: scene.accentHex }}
-                  />
+                  <span className="h-px w-8 bg-heritage-crimson/40" />
                 </div>
 
                 {scene.isHeroTitle ? (
-                  <h1
-                    className="mt-2.5 sm:mt-4 font-serif text-2xl sm:text-4xl lg:text-[3.5rem] font-bold tracking-[-0.025em] leading-[1.08]"
-                    style={{ color: scene.accentHex }}
-                  >
+                  <h1 className="mt-2.5 sm:mt-4 font-serif text-2xl sm:text-4xl lg:text-[3.5rem] font-bold tracking-[-0.025em] text-heritage-crimson leading-[1.08]">
                     {scene.title}
                   </h1>
                 ) : (
-                  <h2
-                    className="mt-2.5 sm:mt-4 font-serif text-xl sm:text-3xl lg:text-[2.85rem] font-bold tracking-[-0.025em] leading-[1.12]"
-                    style={{ color: scene.accentHex }}
-                  >
+                  <h2 className="mt-2.5 sm:mt-4 font-serif text-xl sm:text-3xl lg:text-[2.85rem] font-bold tracking-[-0.025em] text-heritage-crimson leading-[1.12]">
                     {scene.title}
                   </h2>
                 )}
@@ -493,8 +463,7 @@ export const ScrollVisualCinema: React.FC = () => {
                   <a
                     href={scene.ctaHref}
                     onClick={(e) => handleAnchorScroll(e, scene.ctaHref)}
-                    style={{ backgroundColor: scene.accentHex }}
-                    className="inline-flex w-full sm:w-fit items-center justify-center gap-2.5 rounded-xl px-5 py-3 sm:px-6 sm:py-3.5 text-xs sm:text-sm font-semibold text-white shadow-museum hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
+                    className="inline-flex w-full sm:w-fit items-center justify-center gap-2.5 rounded-xl bg-heritage-crimson px-5 py-3 sm:px-6 sm:py-3.5 text-xs sm:text-sm font-semibold text-white shadow-museum hover:bg-heritage-woodDark transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
                   >
                     <span>{scene.ctaLabel}</span>
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />

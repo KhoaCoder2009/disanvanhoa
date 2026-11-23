@@ -352,21 +352,13 @@ export const HeritageQuizStudio: React.FC = () => {
                     (q) => q.category === cat.id
                   ).length;
                   const isSelected = scope === cat.id;
-                  const topBarClass =
-                    cat.accentColor === "emerald"
-                      ? "border-t-4 border-t-heritage-emerald"
-                      : cat.accentColor === "indigo"
-                      ? "border-t-4 border-t-heritage-indigo"
-                      : cat.accentColor === "bronze"
-                      ? "border-t-4 border-t-heritage-bronze"
-                      : "border-t-4 border-t-heritage-crimson";
 
                   return (
                     <button
                       key={cat.id}
                       type="button"
                       onClick={() => setScope(cat.id)}
-                      className={`group flex flex-col overflow-hidden rounded-2xl border-2 text-left transition-colors ${topBarClass} ${
+                      className={`group flex flex-col overflow-hidden rounded-2xl border-2 text-left transition-colors ${
                         isSelected
                           ? "bg-heritage-crimson text-white border-heritage-crimson shadow-museum"
                           : "bg-white text-heritage-ink border-heritage-crimson/20 hover:border-heritage-crimson"

@@ -141,7 +141,7 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
 
       ctx.clearRect(0, 0, width, height);
 
-      // 1. Nền chiều sâu: Đỏ son Công đường vs. Ánh vàng Rừng đại ngàn Sử thi
+      // 1. Nền sơn mài Đỏ Son & Nâu Gỗ đồng nhất chuẩn bảo tàng
       const bgGrad = ctx.createRadialGradient(
         width * 0.5 + ry * 70,
         height * 0.42 + rx * 50,
@@ -150,10 +150,10 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
         height * 0.5,
         Math.max(width, height) * 0.72
       );
-      if (light === "storybox-backlight" || mode === "dam-san") {
-        bgGrad.addColorStop(0, "#854D0E");
-        bgGrad.addColorStop(0.45, "#4E1D15");
-        bgGrad.addColorStop(1, "#1D3B2A");
+      if (light === "storybox-backlight") {
+        bgGrad.addColorStop(0, "#96241F");
+        bgGrad.addColorStop(0.5, "#6E1714");
+        bgGrad.addColorStop(1, "#3A0B09");
       } else {
         bgGrad.addColorStop(0, "#7A1C18");
         bgGrad.addColorStop(0.55, "#4E100E");
@@ -164,10 +164,7 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
 
       // 2. Lưới phối cảnh bản vẽ kỹ thuật
       ctx.save();
-      ctx.strokeStyle =
-        mode === "dam-san"
-          ? "rgba(245, 225, 164, 0.25)"
-          : "rgba(197, 155, 39, 0.25)";
+      ctx.strokeStyle = "rgba(197, 155, 39, 0.25)";
       ctx.lineWidth = 1;
       for (let gx = -180; gx <= 180; gx += 30) {
         const p1 = project3D(gx, 88, -120, rx, ry);
@@ -244,8 +241,8 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
       ctx.scale(midCenter.scale, midCenter.scale);
 
       if (mode === "dam-san" || mode === "all") {
-        // Dãy núi rừng đại ngàn xanh rêu đậm & Nhà dài Ê-đê bên trái/trung tâm
-        ctx.fillStyle = "#1F5E3B";
+        // Dãy núi rừng đại ngàn & Nhà dài Ê-đê phối sắc gỗ gụ – vàng kim đồng nhất
+        ctx.fillStyle = "#5A1310";
         ctx.strokeStyle = "#F5E1A4";
         ctx.lineWidth = 1.4;
         ctx.beginPath();
@@ -260,7 +257,7 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
         ctx.stroke();
 
         // Mái nhà dài Ê-đê
-        ctx.fillStyle = "#854D0E";
+        ctx.fillStyle = "#A77B3D";
         ctx.strokeStyle = "#F5E1A4";
         ctx.beginPath();
         ctx.moveTo(-125, 76);

@@ -34,8 +34,8 @@ export const HeroSection: React.FC = () => {
               </div>
 
               <div className="space-y-4">
-                {/* Trụ cột 1: Đỏ Son (Huyện đường & Đăm Săn) */}
-                <TiltSpotlightCard className="rounded-2xl bg-white p-4 sm:p-5 border-l-4 border-heritage-crimson border border-heritage-crimson/20 shadow-museum">
+                {/* Trụ cột 1 */}
+                <TiltSpotlightCard className="rounded-2xl bg-white p-4 sm:p-5 border border-heritage-crimson/25 shadow-museum">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-heritage-crimson text-white">
                       <BookOpen className="h-5 w-5" aria-hidden="true" />
@@ -51,10 +51,10 @@ export const HeroSection: React.FC = () => {
                   </div>
                 </TiltSpotlightCard>
 
-                {/* Trụ cột 2: Vàng Hổ Phách (Thực hành STEAM) */}
-                <TiltSpotlightCard className="rounded-2xl bg-white p-4 sm:p-5 border-l-4 border-heritage-amber border border-heritage-amber/25 shadow-museum">
+                {/* Trụ cột 2 */}
+                <TiltSpotlightCard className="rounded-2xl bg-white p-4 sm:p-5 border border-heritage-crimson/25 shadow-museum">
                   <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-heritage-amber text-white">
+                    <div className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-heritage-crimson text-white">
                       <Palette className="h-5 w-5" aria-hidden="true" />
                     </div>
                     <div>
@@ -68,10 +68,10 @@ export const HeroSection: React.FC = () => {
                   </div>
                 </TiltSpotlightCard>
 
-                {/* Trụ cột 3: Xanh Đại Ngàn (Triển lãm & Trắc nghiệm) */}
-                <TiltSpotlightCard className="rounded-2xl bg-white p-4 sm:p-5 border-l-4 border-heritage-emerald border border-heritage-emerald/25 shadow-museum">
+                {/* Trụ cột 3 */}
+                <TiltSpotlightCard className="rounded-2xl bg-white p-4 sm:p-5 border border-heritage-crimson/25 shadow-museum">
                   <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-heritage-emerald text-white">
+                    <div className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-heritage-crimson text-white">
                       <Layers className="h-5 w-5" aria-hidden="true" />
                     </div>
                     <div>
@@ -79,7 +79,7 @@ export const HeroSection: React.FC = () => {
                         Triển lãm số, Đối thoại &amp; Củng cố tri thức
                       </h3>
                       <p className="mt-1.5 text-sm text-heritage-ink leading-relaxed">
-                        Đưa sản phẩm học tập bước ra khỏi trang sách thông qua Triển lãm số, Infographic, Podcast văn hóa Tây Nguyên, diễn đàn phản biện và ngân hàng Trắc nghiệm chuyên sâu.
+                        Đưa sản phẩm học tập bước ra khỏi trang sách thông qua Triển lãm số, sản phẩm học sinh Dự án Huyện đường, diễn đàn thảo luận và ngân hàng Trắc nghiệm chuyên sâu.
                       </p>
                     </div>
                   </div>

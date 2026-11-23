@@ -38,14 +38,14 @@ export default function BaoTangSoPage() {
               </Link>
               <Link
                 href="/bao-tang-so/khong-gian-dam-san"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-emerald px-4 py-2.5 text-sm font-semibold text-white hover:bg-heritage-amber transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-heritage-woodLight px-4 py-2.5 text-sm font-semibold text-heritage-goldSoft hover:bg-heritage-crimson hover:text-white transition-colors"
               >
                 <span>Phòng 03: Sử thi Đăm Săn</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/bao-tang-so/hanh-trinh-mat-troi"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-amber px-4 py-2.5 text-sm font-semibold text-white hover:bg-heritage-bronze transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2.5 text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
               >
                 <span>Phòng 04: Nữ thần Mặt Trời</span>
                 <ArrowRight className="h-4 w-4" />
@@ -208,8 +208,8 @@ export default function BaoTangSoPage() {
                       {row.huyenDuong}
                     </p>
                   </div>
-                  <div className="rounded-xl bg-heritage-emeraldSoft/45 p-3 border-l-4 border-heritage-emerald">
-                    <span className="block text-[11px] font-bold uppercase tracking-wider text-heritage-emerald">
+                  <div className="rounded-xl bg-heritage-ivoryLight p-3 border-l-4 border-heritage-goldAntique">
+                    <span className="block text-[11px] font-bold uppercase tracking-wider text-heritage-woodDark">
                       Dự án 02: Sử thi Đăm Săn
                     </span>
                     <p className="mt-1 text-xs sm:text-sm text-heritage-ink leading-relaxed">
@@ -228,7 +228,7 @@ export default function BaoTangSoPage() {
                     <th className="p-4 border-b border-heritage-goldAntique/40 bg-heritage-crimson text-white">
                       Dự án 01: Tuồng đồ Huyện đường
                     </th>
-                    <th className="p-4 border-b border-heritage-goldAntique/40 bg-heritage-emerald text-white">
+                    <th className="p-4 border-b border-heritage-goldAntique/40 bg-heritage-woodLight text-heritage-goldSoft">
                       Dự án 02: Sử thi Đăm Săn
                     </th>
                   </tr>

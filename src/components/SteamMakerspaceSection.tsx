@@ -92,51 +92,6 @@ export const SteamMakerspaceSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Cặp Hình ảnh Trực quan Song hành Hai Dự án Chế tác tại Xưởng STEAM */}
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="group overflow-hidden rounded-2xl bg-heritage-ivoryLight border-2 border-heritage-crimson/25 shadow-museum">
-            <div className="aspect-[16/9] w-full overflow-hidden bg-white">
-              <img
-                src="/images/cinema/scene-09-xuong-steam.png"
-                alt="Xưởng chế tác Mặt nạ Huyện đường – Đo đạc tỉ lệ và bồi bìa 3D"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                loading="lazy"
-              />
-            </div>
-            <div className="p-4 sm:p-5 flex items-center justify-between gap-3 border-t border-heritage-crimson/15">
-              <div>
-                <span className="inline-block rounded-md bg-heritage-crimson px-2.5 py-0.5 text-[11px] font-bold uppercase text-white">
-                  Bàn Chế Tác 01 • Huyện đường
-                </span>
-                <p className="mt-1.5 font-serif text-base sm:text-lg font-bold text-heritage-woodDark">
-                  Thiết kế Mặt nạ Ước lệ &amp; Đo đạc Nhân trắc
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="group overflow-hidden rounded-2xl bg-heritage-emeraldSoft/40 border-2 border-heritage-emerald/30 shadow-museum">
-            <div className="aspect-[16/9] w-full overflow-hidden bg-white">
-              <img
-                src="/images/cinema/scene-dam-san-mat-troi.png"
-                alt="Mô hình Hộp kể chuyện 3 lớp Sử thi Đăm Săn với ánh sáng LED"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                loading="lazy"
-              />
-            </div>
-            <div className="p-4 sm:p-5 flex items-center justify-between gap-3 border-t border-heritage-emerald/20">
-              <div>
-                <span className="inline-block rounded-md bg-heritage-emerald px-2.5 py-0.5 text-[11px] font-bold uppercase text-white">
-                  Bàn Chế Tác 02 • Sử thi Đăm Săn
-                </span>
-                <p className="mt-1.5 font-serif text-base sm:text-lg font-bold text-heritage-woodDark">
-                  Hộp Kể Chuyện 3 Lớp &amp; Quang Học Ánh Sáng LED
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Sơ đồ trực quan 5 BƯỚC quy trình thiết kế STEAM (Tông Trắng & Đỏ Son) */}
         <div className="mt-10 sm:mt-12">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -262,37 +217,6 @@ export const SteamMakerspaceSection: React.FC = () => {
           >
             {STEAM_ELEMENTS.map((el) => {
               const isSelected = el.letter === activeLetter;
-              const tabColorMap: Record<
-                SteamElement["letter"],
-                { activeBg: string; border: string; text: string }
-              > = {
-                S: {
-                  activeBg: "bg-heritage-emerald border-heritage-emerald",
-                  border: "border-heritage-emerald/30 hover:bg-heritage-emeraldSoft",
-                  text: "text-heritage-emerald",
-                },
-                T: {
-                  activeBg: "bg-heritage-indigo border-heritage-indigo",
-                  border: "border-heritage-indigo/30 hover:bg-heritage-indigoSoft",
-                  text: "text-heritage-indigo",
-                },
-                E: {
-                  activeBg: "bg-heritage-amber border-heritage-amber",
-                  border: "border-heritage-amber/30 hover:bg-heritage-amberSoft",
-                  text: "text-heritage-amber",
-                },
-                A: {
-                  activeBg: "bg-heritage-crimson border-heritage-crimson",
-                  border: "border-heritage-crimson/30 hover:bg-heritage-ivoryDeep",
-                  text: "text-heritage-crimson",
-                },
-                M: {
-                  activeBg: "bg-heritage-bronze border-heritage-bronze",
-                  border: "border-heritage-bronze/30 hover:bg-amber-50",
-                  text: "text-heritage-bronze",
-                },
-              };
-              const c = tabColorMap[el.letter];
               return (
                 <button
                   key={el.letter}
@@ -304,19 +228,23 @@ export const SteamMakerspaceSection: React.FC = () => {
                     el.letter === "M" ? "col-span-2 md:col-span-1" : ""
                   } ${
                     isSelected
-                      ? `${c.activeBg} text-white border-2 shadow-museum`
-                      : `bg-white text-heritage-ink border-2 ${c.border}`
+                      ? "bg-heritage-crimson text-white border-2 border-heritage-crimson shadow-museum"
+                      : "bg-heritage-ivoryLight text-heritage-ink border border-heritage-crimson/25 hover:bg-heritage-ivoryDeep"
                   }`}
                 >
                   <div className="flex w-full items-center justify-between">
                     <span
                       className={`font-serif text-2xl sm:text-3xl font-bold ${
-                        isSelected ? "text-white" : c.text
+                        isSelected ? "text-white" : "text-heritage-crimson"
                       }`}
                     >
                       {el.letter}
                     </span>
-                    <span className={isSelected ? "text-white/90" : c.text}>
+                    <span
+                      className={
+                        isSelected ? "text-heritage-goldSoft" : "text-heritage-crimson"
+                      }
+                    >
                       {getElementIcon(el.letter)}
                     </span>
                   </div>
@@ -325,7 +253,7 @@ export const SteamMakerspaceSection: React.FC = () => {
                   </span>
                   <span
                     className={`text-sm font-serif font-semibold ${
-                      isSelected ? "text-white/95" : "text-heritage-woodDark"
+                      isSelected ? "text-heritage-goldSoft" : "text-heritage-woodDark"
                     }`}
                   >
                     {el.vietnameseName}
@@ -342,27 +270,15 @@ export const SteamMakerspaceSection: React.FC = () => {
           >
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-heritage-crimson/20 pb-4">
               <div className="flex items-center gap-3.5">
-                <span
-                  className={`flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl font-serif text-xl sm:text-2xl font-bold text-white ${
-                    selectedElement.letter === "S"
-                      ? "bg-heritage-emerald"
-                      : selectedElement.letter === "T"
-                      ? "bg-heritage-indigo"
-                      : selectedElement.letter === "E"
-                      ? "bg-heritage-amber"
-                      : selectedElement.letter === "M"
-                      ? "bg-heritage-bronze"
-                      : "bg-heritage-crimson"
-                  }`}
-                >
+                <span className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-heritage-crimson font-serif text-xl sm:text-2xl font-bold text-white">
                   {selectedElement.letter}
                 </span>
                 <div>
-                  <h4 className="font-serif text-lg sm:text-2xl font-bold text-heritage-woodDark">
+                  <h4 className="font-serif text-lg sm:text-2xl font-bold text-heritage-crimson">
                     {selectedElement.letter} – {selectedElement.englishName}:{" "}
                     {selectedElement.vietnameseName}
                   </h4>
-                  <p className="text-xs sm:text-sm text-heritage-crimson font-medium">
+                  <p className="text-xs sm:text-sm text-heritage-woodDark">
                     Giải thích vai trò liên môn &amp; Ví dụ liên hệ trực tiếp với Huyện đường &amp; Sử thi Đăm Săn
                   </p>
                 </div>
@@ -383,8 +299,8 @@ export const SteamMakerspaceSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="rounded-xl bg-heritage-emeraldSoft/45 p-4 border border-heritage-emerald/25">
-                <span className="text-xs font-bold uppercase tracking-wider text-heritage-emerald block">
+              <div className="rounded-xl bg-heritage-ivoryLight p-4 border border-heritage-crimson/25">
+                <span className="text-xs font-bold uppercase tracking-wider text-heritage-woodDark block">
                   Liên hệ Dự án 02: Sử thi Đăm Săn
                 </span>
                 <p className="mt-2 text-sm leading-relaxed">
@@ -392,8 +308,8 @@ export const SteamMakerspaceSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="md:col-span-2 lg:col-span-1 rounded-xl bg-heritage-indigoSoft/45 p-4 border border-heritage-indigo/25">
-                <span className="text-xs font-bold uppercase tracking-wider text-heritage-indigo block">
+              <div className="md:col-span-2 lg:col-span-1 rounded-xl bg-heritage-ivoryDeep/70 p-4 border border-heritage-crimson/25">
+                <span className="text-xs font-bold uppercase tracking-wider text-heritage-crimson block">
                   Học liệu &amp; Vật liệu thực hành
                 </span>
                 <ul className="mt-2 space-y-1.5 text-sm">
