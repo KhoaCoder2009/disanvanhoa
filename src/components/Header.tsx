@@ -73,8 +73,8 @@ const HERITAGE_SEARCH_INDEX: QuickIndexEntry[] = [
     href: "/#trien-lam-so",
   },
   {
-    title: "Chặng 05: Diễn đàn học tập & Bảng Rubric Nói và Nghe",
-    subtitle: "Cuộn tới câu hỏi thảo luận Huyện đường & Đăm Săn, cấu trúc thuyết trình & Rubric",
+    title: "Chặng 05: Diễn đàn học tập & Hướng dẫn Nói và Nghe",
+    subtitle: "Cuộn tới câu hỏi thảo luận Huyện đường & Đăm Săn, cấu trúc thuyết trình",
     category: "Diễn đàn",
     href: "/#dien-dan-hoc-tap",
   },

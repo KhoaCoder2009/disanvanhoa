@@ -42,7 +42,7 @@ const DIARY_FORMS = [
     fields: [
       "Bài giới thiệu sản phẩm 3 phút theo cấu trúc Nói và Nghe.",
       "Kịch bản phân cảnh vi diễn hoặc trình diễn kể chuyện sử thi kết hợp ánh sáng.",
-      "Tổng hợp câu hỏi phản biện và tự đánh giá nhóm theo Rubric.",
+      "Tổng hợp câu hỏi phản biện và chia sẻ kinh nghiệm chế tác của nhóm.",
     ],
   },
 ];

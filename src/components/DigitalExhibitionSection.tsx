@@ -22,6 +22,7 @@ import {
 import { ExhibitionCategory, ExhibitionItem } from "@/types/heritage";
 import { HeritageArtwork } from "./HeritageArtwork";
 import { TiltSpotlightCard } from "./effects/TiltSpotlightCard";
+import { HuyenDuongStudentArchive } from "./HuyenDuongStudentArchive";
 
 export const DigitalExhibitionSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] =
@@ -80,6 +81,9 @@ export const DigitalExhibitionSection: React.FC = () => {
             {EXHIBITION_SECTION_META.sampleNotice}
           </p>
         </div>
+
+        {/* Hồ sơ Sản phẩm Học sinh Dự án Huyện đường (5 đầu mục lớp & 4 nhóm) */}
+        <HuyenDuongStudentArchive />
 
         {/* Bộ lọc theo loại sản phẩm và chủ đề */}
         <div className="mt-7 sm:mt-8 space-y-4 rounded-2xl bg-heritage-ivoryLight p-4 sm:p-5 border border-heritage-goldAntique/40">

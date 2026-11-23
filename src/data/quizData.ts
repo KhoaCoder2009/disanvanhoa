@@ -464,6 +464,6 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     explanation:
       "Điểm đặc trưng của học liệu STEAM Ngữ văn là sợi dây nối tri thức văn bản với tạo hình kỹ thuật: học sinh phải giải trình rõ chi tiết màu sắc hay bố cục bắt nguồn từ lời thoại hoặc câu văn nào.",
     artworkImage: "/images/cinema/scene-so-tay-the-giai-ma.png",
-    sourceRef: "Sổ tay Xưởng STEAM & Rubric đánh giá Nói và Nghe",
+    sourceRef: "Sổ tay Xưởng STEAM & Hướng dẫn Nói và Nghe",
   },
 ];

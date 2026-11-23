@@ -1,4 +1,4 @@
-import { DiscussionTopicGroup, RubricCriterion } from "@/types/heritage";
+import { DiscussionTopicGroup } from "@/types/heritage";
 
 export const LEARNING_FORUM_META = {
   vietnameseName: "DIỄN ĐÀN HỌC TẬP",
@@ -86,50 +86,7 @@ export const SPEAKING_LISTENING_GUIDES = {
   ],
   questioningAndFeedbackRules: [
     "Áp dụng quy tắc phản hồi tích cực (Khen ngợi điểm sáng tạo -> Đặt câu hỏi làm rõ -> Đề xuất hướng cải tiến cụ thể).",
-    "Mọi nhận xét cần bám sát tiêu chí trong Rubric và liên hệ trực tiếp với văn bản Ngữ văn đang học.",
+    "Mọi nhận xét cần liên hệ trực tiếp với văn bản Ngữ văn đang học và sản phẩm thực tế của nhóm.",
     "Đặt câu hỏi mở gợi suy ngẫm về mối liên hệ giữa nghệ thuật truyền thống và giải pháp kỹ thuật STEAM.",
   ],
 };
-
-export const PRESENTATION_RUBRIC: RubricCriterion[] = [
-  {
-    criterion: "1. Chiều sâu đọc hiểu & Giải mã văn bản Ngữ văn",
-    weight: "30%",
-    excellentDescription:
-      "Phân tích sắc sảo lời thoại, chi tiết văn bản; giải thích thuyết phục sự chuyển hóa từ tính cách/không gian văn học sang ngôn ngữ tạo hình.",
-    goodDescription:
-      "Nêu đúng đặc điểm nhân vật và nội dung văn bản; có liên hệ rõ ràng giữa văn bản và sản phẩm thiết kế.",
-    needsImprovementDescription:
-      "Mô tả sản phẩm còn tách rời khỏi văn bản Ngữ văn; thiếu dẫn chứng từ tác phẩm.",
-  },
-  {
-    criterion: "2. Thiết kế thẩm mỹ & Kỹ thuật chế tạo STEAM",
-    weight: "30%",
-    excellentDescription:
-      "Sản phẩm hoàn thiện tỉ mỉ, đúng quy ước mã màu/cấu trúc lớp cảnh; kết cấu chắc chắn, vận hành tốt trong vi diễn hoặc thử nghiệm ánh sáng.",
-    goodDescription:
-      "Sản phẩm đúng yêu cầu chủ đề, màu sắc và bố cục hài hòa, sử dụng được trong phần trình bày.",
-    needsImprovementDescription:
-      "Kết cấu còn lỏng lẻo hoặc chưa thể hiện rõ đặc trưng hóa trang ước lệ / không gian sử thi.",
-  },
-  {
-    criterion: "3. Kỹ năng thuyết trình & Vi diễn (Nói)",
-    weight: "20%",
-    excellentDescription:
-      "Trình bày mạch lạc, làm chủ giọng điệu và ngôn ngữ cơ thể; phối hợp nhóm nhịp nhàng giữa thuyết minh và biểu diễn trực quan.",
-    goodDescription:
-      "Trình bày rõ ràng, đúng cấu trúc và thời lượng; các thành viên có sự phân công hợp lý.",
-    needsImprovementDescription:
-      "Còn phụ thuộc nhiều vào văn bản giấy, thiếu sự tương tác với người nghe và sản phẩm.",
-  },
-  {
-    criterion: "4. Lắng nghe, Đặt câu hỏi & Phản biện (Nghe)",
-    weight: "20%",
-    excellentDescription:
-      "Ghi chép nghiêm túc; đặt câu hỏi sâu sắc và trả lời phản biện thuyết phục dựa trên dẫn chứng văn học và kỹ thuật.",
-    goodDescription:
-      "Chú ý lắng nghe, có tham gia đặt câu hỏi hoặc trả lời đúng trọng tâm các thắc mắc của lớp.",
-    needsImprovementDescription:
-      "Ít tham gia trao đổi hoặc nhận xét còn chung chung, chưa bám sát tiêu chí học tập.",
-  },
-];

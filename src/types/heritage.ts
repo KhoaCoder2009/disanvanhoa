@@ -125,21 +125,3 @@ export interface DiscussionTopicGroup {
   exchangeIssues: string[];
   openResearchQuestions: string[];
 }
-
-export interface RubricCriterion {
-  criterion: string;
-  weight: string;
-  excellentDescription: string;
-  goodDescription: string;
-  needsImprovementDescription: string;
-}
-
-export interface ExternalLinkItem {
-  id: string;
-  title: string;
-  toolName: string;
-  purpose: string;
-  url: string; // Empty string means teacher hasn't provided URL yet
-  placeholderStatus: string;
-  configKeyName: string;
-}
