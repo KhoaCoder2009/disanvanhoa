@@ -56,7 +56,7 @@ const ARCHIVE_TABS: {
   {
     id: "activity-photos",
     label: "Ảnh & Video hoạt động",
-    countBadge: "14 ảnh • 3 clip",
+    countBadge: "19 ảnh • 3 clip",
     icon: <Camera className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
   },
   {
@@ -68,13 +68,13 @@ const ARCHIVE_TABS: {
   {
     id: "word-script",
     label: "Bản Word & Phân công",
-    countBadge: "2 file .docx",
+    countBadge: "3 file .docx",
     icon: <FileText className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
   },
   {
     id: "mask-videos",
     label: "Video thuyết minh mặt nạ",
-    countBadge: "2/4 đã nộp",
+    countBadge: "3/4 đã nộp",
     icon: <Film className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
   },
   {
@@ -91,6 +91,7 @@ export const HuyenDuongStudentArchive: React.FC = () => {
   const [sketchViewMode, setSketchViewMode] = useState<
     Record<string, "sketch" | "finished">
   >({
+    "hd-sketch-to-2": "finished",
     "hd-sketch-to-3": "finished",
     "hd-sketch-to-4": "finished",
   });
@@ -415,7 +416,7 @@ export const HuyenDuongStudentArchive: React.FC = () => {
             <div className="pt-4 border-t border-heritage-goldAntique/35">
               <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
                 <h4 className="font-serif text-lg sm:text-xl font-bold text-heritage-woodDark">
-                  1C. Nhật ký ảnh thực hành tại lớp của Tổ 3 &amp; Tổ 4 ({HUYEN_DUONG_CLASSROOM_GALLERY.length} ảnh)
+                  1C. Nhật ký ảnh thực hành tại lớp của Tổ 2, Tổ 3 &amp; Tổ 4 ({HUYEN_DUONG_CLASSROOM_GALLERY.length} ảnh)
                 </h4>
                 <span className="text-xs text-heritage-woodLight">
                   Nhấn vào từng ảnh để phóng to chi tiết vở ghi, bản vẽ và sân khấu lớp học
@@ -669,6 +670,14 @@ export const HuyenDuongStudentArchive: React.FC = () => {
               </div>
               <div className="flex flex-wrap items-center gap-2.5 shrink-0">
                 <a
+                  href={HUYEN_DUONG_WORD_SCRIPT.to2DocxUrl}
+                  download
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2.5 text-xs font-semibold text-white hover:bg-heritage-woodDark transition-colors"
+                >
+                  <Download className="h-4 w-4" aria-hidden="true" />
+                  <span>Tải Thuyết minh Tổ 2 (.docx)</span>
+                </a>
+                <a
                   href={HUYEN_DUONG_WORD_SCRIPT.docxUrl}
                   download
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2.5 text-xs font-semibold text-white hover:bg-heritage-woodDark transition-colors"
@@ -682,7 +691,7 @@ export const HuyenDuongStudentArchive: React.FC = () => {
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-woodDark px-4 py-2.5 text-xs font-semibold text-heritage-goldSoft hover:bg-heritage-crimson hover:text-white transition-colors"
                 >
                   <Download className="h-4 w-4" aria-hidden="true" />
-                  <span>Tải Bảng Phân công 10.3 (.docx)</span>
+                  <span>Tải Phân công 10.3 (.docx)</span>
                 </a>
                 <a
                   href={HUYEN_DUONG_WORD_SCRIPT.to3ExternalDocUrl}
@@ -780,7 +789,7 @@ export const HuyenDuongStudentArchive: React.FC = () => {
                 4. Video thuyết minh mặt nạ trực tiếp trên lớp (4 Tổ)
               </h4>
               <span className="text-xs font-medium text-heritage-crimson">
-                Đã tích hợp video thực tế của Tổ 3 (01:50) &amp; Tổ 4 (00:47)
+                Đã tích hợp video thực tế của Tổ 2 (03:13), Tổ 3 (01:50) &amp; Tổ 4 (00:47)
               </span>
             </div>
 

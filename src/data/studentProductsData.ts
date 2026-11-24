@@ -113,10 +113,10 @@ export interface StudentGroupPortfolio {
 }
 
 export const HUYEN_DUONG_STUDENT_ARCHIVE_META = {
-  badge: "HỒ SƠ SẢN PHẨM THỰC TẾ • LỚP 10.3 – THPT BÌNH PHÚ",
+  badge: "HỒ SƠ SẢN PHẨM THỰC TẾ • LỚP 10.3 – THPT BÌNH PHÚ (SĨ SỐ: 48)",
   title: "SẢN PHẨM HỌC SINH DỰ ÁN HUYỆN ĐƯỜNG (LỚP 10.3)",
   subtitle:
-    "Tổng hợp tư liệu thực tế từ thư mục Google Drive Dự án Huyện đường của 4 Tổ (Lớp 10.3 – Trường THPT Bình Phú): 18 hình ảnh thảo luận & mặt nạ hoàn thiện, bản vẽ phác thảo tỷ lệ kỹ thuật, bảng phân công & bản Word thuyết minh, cùng các video thuyết minh trên bục giảng và video công đoạn chế tác.",
+    "Tổng hợp trọn bộ tư liệu thực tế từ thư mục Google Drive Dự án Huyện đường của 4 Tổ (Lớp 10.3 – Trường THPT Bình Phú): 25 hình ảnh mặt nạ hoàn thiện & hoạt động trên lớp, 3 bộ bản vẽ phác thảo tỷ lệ kỹ thuật (Tổ 2, Tổ 3, Tổ 4), 3 tệp Word thuyết minh & phân công, cùng 6 video thuyết minh trên bục giảng và công đoạn chế tác.",
   driveFolderUrl:
     "https://drive.google.com/drive/folders/1jwz0Xs3VkY-SJIP0UvCaWTmogiDJhaHd",
   boardArtists: "Trang trí bảng sân khấu Công đường: Khôi Nguyên, Ngọc Diệp",
@@ -191,12 +191,12 @@ export const HUYEN_DUONG_ACTIVITY_PHOTOS: GroupPhotoSlot[] = [
     id: "hd-activity-to-2",
     groupName: "Tổ 2",
     characterRole: "Đề lại",
-    title: "Chế tác & hoàn thiện mặt nạ bìa cứng nhân vật Đề lại",
+    title: "Xẻ tai gấp khối 3D & sơn màu mặt nạ bìa cứng nhân vật Đề lại",
     caption:
-      "Sản phẩm mặt nạ Đề lại của Tổ 2 sử dụng bìa carton gấp sống mũi nổi 3D, phối màu acrylic đen – đỏ son – trắng ngà sắc nét.",
-    imageUrl: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
-    expectedPath: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
-    membersSummary: "Chế tác: Vũ Thiên, Diệp, Kiều Oanh, Quỳnh Anh",
+      "Tổ 2 dựng dưỡng giấy tỷ lệ 1:1, xẻ rãnh viền bìa carton để uốn cong 3D ôm gương mặt và sơn phối màu đen nâu – đỏ sẫm – vàng đồng cũ ngay tại lớp.",
+    imageUrl: "/student-products/huyen-duong/hoat-dong-to-2-son-nen-3d.jpg",
+    expectedPath: "/student-products/huyen-duong/hoat-dong-to-2-son-nen-3d.jpg",
+    membersSummary: "Vẽ: Thanh Hải, Trúc • Chế tác: Vũ Thiên, Diệp, Kiều Oanh, Quỳnh Anh",
   },
   {
     id: "hd-activity-to-3",
@@ -223,9 +223,49 @@ export const HUYEN_DUONG_ACTIVITY_PHOTOS: GroupPhotoSlot[] = [
 ];
 
 /**
- * 1B. BỘ SƯU TẬP ẢNH HOẠT ĐỘNG & SẢN PHẨM TRÊN LỚP (TỔ 3 & TỔ 4)
+ * 1B. BỘ SƯU TẬP ẢNH HOẠT ĐỘNG & SẢN PHẨM TRÊN LỚP (TỔ 2, TỔ 3 & TỔ 4)
  */
 export const HUYEN_DUONG_CLASSROOM_GALLERY: ExtraClassroomPhoto[] = [
+  {
+    id: "gal-to2-stages",
+    groupName: "Tổ 2 • Đề lại",
+    title: "Ba giai đoạn tiến hóa thiết kế mặt nạ Đề lại (Tổ 2)",
+    caption:
+      "Đặt cạnh nhau trên bàn học: (1) Bản nháp trục đối xứng 'Mặt Nạ Của Đề Lại', (2) Dưỡng giấy tỷ lệ 1:1 khoét hốc mắt xếch, và (3) Mặt nạ bìa cứng 3D hoàn thiện có viền mũ vàng đồng cũ.",
+    imageUrl: "/student-products/huyen-duong/phac-thao-to-2-de-lai.jpg",
+  },
+  {
+    id: "gal-to2-stage",
+    groupName: "Tổ 2 • Đề lại",
+    title: "Đại diện Tổ 2 thuyết minh mặt nạ Đề lại trước bảng Công đường",
+    caption:
+      "Hai đại diện Tổ 2 trình bày bài thuyết minh (03:13) trước bức hoành phi phấn 'Công minh chính trực – Huyện đường' (Sĩ số 48/48).",
+    imageUrl: "/student-products/huyen-duong/ra-mat-to-2-de-lai.jpg",
+  },
+  {
+    id: "gal-to2-template",
+    groupName: "Tổ 2 • Đề lại",
+    title: "Cắt dưỡng giấy tỷ lệ 1:1 & ướm phôi bìa carton (Tổ 2)",
+    caption:
+      "Học sinh Tổ 2 tinh chỉnh nét chì trên dưỡng giấy khoét mắt và đối chiếu với mảnh phôi bìa cứng.",
+    imageUrl: "/student-products/huyen-duong/hoat-dong-to-2-cat-duong-giay.jpg",
+  },
+  {
+    id: "gal-to2-prep",
+    groupName: "Tổ 2 • Đề lại",
+    title: "Chuẩn bị tấm bìa carton nguyên khổ, bản phác & khay màu (Tổ 2)",
+    caption:
+      "Góc bàn thực hành của Tổ 2 (THPT Bình Phú – Lớp 10.3) với tấm carton sóng phẳng, cọ vẽ và lọ màu lót nền.",
+    imageUrl: "/student-products/huyen-duong/hoat-dong-to-2-chuan-bi-bia.jpg",
+  },
+  {
+    id: "gal-to2-brush",
+    groupName: "Tổ 2 • Đề lại",
+    title: "Vệ sinh & vuốt nhọn đầu cọ tỉa nét mày xếch, ria vểnh (Tổ 2)",
+    caption:
+      "Thành viên Tổ 2 (Đăng Thành) chuẩn bị đầu cọ mảnh để đi nét đen nâu sắc sảo trên mặt nạ Đề lại.",
+    imageUrl: "/student-products/huyen-duong/hoat-dong-to-2-pha-mau-co.jpg",
+  },
   {
     id: "gal-to3-wear",
     groupName: "Tổ 3 • Lính lệ",
@@ -376,13 +416,13 @@ export const HUYEN_DUONG_MASK_SKETCHES: GroupMaskSketchSlot[] = [
     characterName: "Mặt nạ Đề lại",
     designers: "Bản vẽ: Thanh Hải, Trúc • Chế tác: Vũ Thiên, Diệp, Kiều Oanh, Quỳnh Anh",
     sketchNote:
-      "Mặt nạ bìa carton gấp nếp sống mũi 3D, mão đen, đôi mày đen xếch ngược trên hốc mắt tán đỏ son và ria mép vểnh nhọn hai bên.",
+      "Quy trình 3 bước từ bản nháp trục hình học 'Mặt Nạ Của Đề Lại' → dưỡng giấy cắt mắt tỷ lệ 1:1 → mặt nạ bìa carton gấp sống mũi 3D hoàn chỉnh.",
     analysisNote:
-      "Phân tích tạo hình: Đường gấp dọc trục giữa giúp mặt nạ ôm khối khuôn mặt; cặp chân mày xếch sắc lẹm kết hợp hàng ria vểnh và chòm râu cằm nhọn khắc họa thần thái khôn lỏi, luồn cúi và mưu mô của viên Đề lại.",
-    sketchImageUrl: "",
+      "Phân tích tạo hình: Xẻ tai bìa và gấp trục dọc tạo độ cong ôm mặt; mũ đen nâu viền vàng đồng cũ, vùng mắt đỏ sẫm, mày xếch sắc lẹm và ria vểnh nhếch mép khắc họa trọn vẹn kẻ phụ quan gian xảo, nịnh trên nạt dưới.",
+    sketchImageUrl: "/student-products/huyen-duong/phac-thao-to-2-de-lai.jpg",
     finishedMaskUrl: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
     imageUrl: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
-    expectedPath: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
+    expectedPath: "/student-products/huyen-duong/phac-thao-to-2-de-lai.jpg",
   },
   {
     id: "hd-sketch-to-3",
@@ -418,27 +458,28 @@ export const HUYEN_DUONG_MASK_SKETCHES: GroupMaskSketchSlot[] = [
  * 3. BẢN WORD THUYẾT MINH (PHẦN LỜI THỰC TẾ TỪ DRIVE) & FILE PHÂN CÔNG
  */
 export const HUYEN_DUONG_WORD_SCRIPT = {
-  title: "Bản Word Thuyết minh Mặt nạ & Hồ sơ Phân công Lớp 10.3",
-  fileName: "bai-thuyet-minh-to-4-trum-so.docx",
+  title: "Bản Word Thuyết minh Mặt nạ (Tổ 2, Tổ 3, Tổ 4) & Hồ sơ Phân công Lớp 10.3",
+  fileName: "bai-thuyet-minh-to-2-de-lai.docx",
+  to2DocxUrl: "/student-products/huyen-duong/bai-thuyet-minh-to-2-de-lai.docx",
   docxUrl: "/student-products/huyen-duong/bai-thuyet-minh-to-4-trum-so.docx",
   rosterDocxUrl: "/student-products/huyen-duong/phan-cong-du-an-lop-10-3.docx",
   to3ExternalDocUrl:
     "https://ap.wps.com/cms/docs/d/cbTaqaBJOWVeiEL6?platform=pc&refer=copylink",
-  expectedPath: "/student-products/huyen-duong/bai-thuyet-minh-to-4-trum-so.docx",
+  expectedPath: "/student-products/huyen-duong/bai-thuyet-minh-to-2-de-lai.docx",
   summaryNote:
-    "Nguyên văn bài thuyết minh sản phẩm mặt nạ nhân vật Trùm Sò của Tổ 4 (Minh Luân trình bày) trích từ tệp BÀI THUYẾT MINH.docx trên Google Drive, kèm liên kết tài liệu thuyết minh Tổ 3 và bảng phân công nhiệm vụ cả 4 tổ Lớp 10.3.",
+    "Tổng hợp nguyên văn các tệp Word thuyết minh từ Google Drive của Lớp 10.3: bài thuyết minh mặt nạ Đề lại của Tổ 2 (.docx), liên kết bản Word Lính lệ của Tổ 3 (WPS), bài thuyết minh mặt nạ Trùm Sò của Tổ 4 (.docx) và tệp phân công nhiệm vụ cả 4 tổ.",
   scriptSections: [
     {
-      heading: "Mở đầu — Đối sánh vị thế nhân vật chốn Huyện đường (Bài thuyết minh Tổ 4)",
-      text: "“Kính thưa cô và các bạn! Nếu Tri huyện là kẻ ‘sâu mọt’ đội lốt thanh liêm, Đề lại và Lính lệ là lũ tay sai nham hiểm, thì Trùm Sò lại hiện lên như một bức biếm họa chua chát về thân phận kẻ có của nhưng ‘thấp cổ bé họng’ chốn công đường.”",
+      heading: "Bài thuyết minh Tổ 2 — Mặt nạ Đề lại (Ý tưởng, Lời thoại & Mã màu)",
+      text: "“Thông qua chiếc mặt nạ Đề lại, Tổ 2 muốn thể hiện hình ảnh một phụ quan gian xảo, nịnh nọt, khéo luồn cúi và luôn mưu lợi riêng qua câu thoại: ‘Vâng, hôm nay chả thấy ai kiện cáo gì cả. Còn vụ Thị Hến, Nguyễn Sò quan đã định dứt khoát như thế nào chưa?’. Đôi lông mày vẽ xếch, mắt hẹp sắc viền đỏ sẫm, da vàng nhợt, mũ tròn đen nâu viền vàng đồng cũ bạc màu kết hợp nụ cười nhếch mép và ria cong lột tả kẻ bề ngoài cung kính nhưng bên trong đầy toan tính.”",
     },
     {
-      heading: "Giải mã ngôn ngữ màu sắc & đường nét mặt nạ Trùm Sò",
-      text: "“Nhìn vào chiếc mặt nạ của Tổ 4, các bạn có thể thấy rõ tâm lý ấy qua nền màu vàng nghệ sạm tối – biểu trưng cho sự căng thẳng, lo âu. Đôi lông mày nhíu chặt tạo nếp nhăn trên trán, đôi mắt mở to ngơ ngác, sợ sệt trước uy quyền của lính lệ, cùng khóe môi trễ xuống mếu máo lột tả trọn vẹn tình thế ‘nắm kẻ có tóc’ – vừa xót của vừa phải nhún nhường.”",
+      heading: "Bài thuyết minh Tổ 4 — Mặt nạ Trùm Sò (Giải mã sắc diện & Tỷ lệ)",
+      text: "“Trùm Sò là một trọc phú giàu có nhưng keo kiệt, bủn xỉn, tham của và dễ bị quan lại lợi dụng. Khuôn mặt tròn đầy nền trắng kem pha vàng nhạt nhợt nhạt gợi sự lo lắng bất an; đôi mắt mở to ngơ ngác cùng hàng lông mày nhíu lại, vệt nhăn trán và cái miệng cam đất hơi trề méo xệch khắc họa tâm trạng hoang mang, tiếc tiền nhưng vẫn phải cam chịu đút lót trước quyền lực quan huyện.”",
     },
     {
-      heading: "Kết nối lời thoại SGK & Thông điệp châm biếm hiện thực",
-      text: "“Qua lời thoại đắt giá ‘Vâng, tôi xin hậu tạ, anh cứ giúp đỡ cho’ cùng dáng vẻ ôm khư khư bọc bạc khúm núm dâng tiền, nhân vật Trùm Sò đã phơi bày một sự thật trớ trêu: ở chốn ‘công minh chính trực’ giả tạo này, người đi kiện muốn được việc thì trước hết phải tự biến mình thành kẻ đút lót. Phần thuyết minh của Tổ 4 xin được khép lại, mời cô và các bạn cùng theo dõi trích đoạn vi diễn ngay sau đây!”",
+      heading: "Thông điệp Nghệ thuật Tuồng truyền thống (Đúc kết từ các Tổ Lớp 10.3)",
+      text: "“Mỗi sản phẩm mặt nạ bìa carton tái chế không chỉ giúp người xem nhận diện ngay tính cách nhân vật từ cái nhìn đầu tiên trên sân khấu, mà còn giúp chúng em hiểu sâu sắc rằng nghệ thuật tuồng truyền thống kể chuyện và châm biếm hiện thực thối nát chốn quan trường ngay qua từng hình dáng, mã màu và đường cọ ước lệ.”",
     },
   ],
 };
@@ -447,6 +488,19 @@ export const HUYEN_DUONG_WORD_SCRIPT = {
  * 4. VIDEO THUYẾT MINH MẶT NẠ TRÊN LỚP (4 TỔ)
  */
 export const HUYEN_DUONG_MASK_VIDEOS: GroupVideoSlot[] = [
+  {
+    id: "hd-video-to-2",
+    groupName: "Tổ 2",
+    characterFocus: "Đề lại",
+    presenterInfo: "Thuyết minh: Tấn Tài & đại diện Tổ 2 • Quay dựng: Đăng Thành, Trần Gia Huy",
+    durationBadge: "03:13",
+    title: "Video thuyết minh mặt nạ Đề lại – Tổ 2 (Trực tiếp trên lớp)",
+    description:
+      "Hai đại diện Tổ 2 đứng trước bảng lớp 'Công minh chính trực – Huyện đường' thuyết minh chi tiết 4 phần: ý tưởng thiết kế, trích dẫn lời thoại mớm cung Thị Hến – Nguyễn Sò, ý nghĩa 4 gam màu trầm tối và thiết kế mũ phụ quan viền vàng đồng cũ.",
+    videoUrl: "/student-products/huyen-duong/video-thuyet-minh-to-2.mp4",
+    posterUrl: "/student-products/huyen-duong/ra-mat-to-2-de-lai.jpg",
+    expectedPath: "/student-products/huyen-duong/video-thuyet-minh-to-2.mp4",
+  },
   {
     id: "hd-video-to-3",
     groupName: "Tổ 3",
@@ -483,18 +537,6 @@ export const HUYEN_DUONG_MASK_VIDEOS: GroupVideoSlot[] = [
       "Khung lưu trữ bài thuyết minh mặt nạ Tri huyện của Tổ 1 (sẽ tự động hiển thị ngay khi Tổ 1 bổ sung tệp video lên thư mục Google Drive).",
     videoUrl: "",
     expectedPath: "Tổ 1 / Video thuyết minh (Đang chờ cập nhật)",
-  },
-  {
-    id: "hd-video-to-2",
-    groupName: "Tổ 2",
-    characterFocus: "Đề lại",
-    presenterInfo: "Thuyết minh: Tấn Tài • Quay dựng: Đăng Thành, Trần Gia Huy",
-    title: "Video thuyết minh mặt nạ Đề lại – Tổ 2",
-    description:
-      "Khung lưu trữ bài thuyết minh mặt nạ Đề lại của Tổ 2 kèm hình ảnh sản phẩm mặt nạ đã hoàn thiện.",
-    videoUrl: "",
-    posterUrl: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
-    expectedPath: "Tổ 2 / Video thuyết minh (Đang chờ cập nhật)",
   },
 ];
 
@@ -606,7 +648,7 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
         },
       ],
     },
-    presentationVideo: HUYEN_DUONG_MASK_VIDEOS[2],
+    presentationVideo: HUYEN_DUONG_MASK_VIDEOS[3],
     processVideos: [],
     activityPhotos: [],
   },
@@ -615,86 +657,139 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
     groupName: "Tổ 2",
     groupNumber: "02",
     characterName: "Đề lại",
-    roleSubtitle: "Viên lại già mưu mô • Môi giới hối lộ & bẻ cong hồ sơ",
+    roleSubtitle: "Phụ quan hầu cận gian xảo • Khéo luồn cúi & mưu lợi riêng",
     classLabel: "Lớp 10.3 — Trường THPT Bình Phú",
-    statusBadge: "Đã cập nhật Mặt nạ hoàn thiện",
+    statusBadge: "Đầy đủ Mặt nạ, Bản vẽ, Word & Video (03:13)",
     hasRealMedia: true,
-    statsSummary: "12 thành viên • 1 Mặt nạ 3D hoàn thiện • Đã nghiệm thu ảnh",
+    statsSummary: "7 hình ảnh • 1 file Word (.docx) • 1 video thuyết minh (03:13)",
     heroImage: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
     cinemaScenesImages: [
       "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
-      "/images/cinema/scene-03-sac-tuong.png",
-      "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
+      "/student-products/huyen-duong/phac-thao-to-2-de-lai.jpg",
+      "/student-products/huyen-duong/ra-mat-to-2-de-lai.jpg",
     ],
     summary:
-      "Chuyên trang trưng bày sản phẩm thực tế của Tổ 2 (Lớp 10.3 — THPT Bình Phú) với chiếc mặt nạ Đề lại hoàn thiện nổi bật nhờ kỹ thuật gập sống mũi bìa carton tạo khối 3D, đôi mày đen xếch ngược sắc lẹm và hàng ria mép vểnh nhọn đặc trưng lối ước lệ Tuồng đồ.",
+      "Chuyên trang đầy đủ tất cả hạng mục của Tổ 2 (Lớp 10.3 — THPT Bình Phú) phụ trách nhân vật Đề lại: quy trình 3 bước từ bản vẽ trục hình học → dưỡng giấy 1:1 → mặt nạ bìa carton xẻ tai uốn khối 3D viền mũ vàng đồng cũ, nguyên văn tệp Word thuyết minh (.docx), video thuyết trình 03 phút 13 giây trên bục giảng và bộ 6 ảnh thực hành tại lớp.",
     classicQuote:
-      "“Việc quan có lệ thường tình / Tiền vào cửa trước, án rình đổi thay.”",
+      "“Vâng, hôm nay chả thấy ai kiện cáo gì cả. Còn vụ Thị Hến, Nguyễn Sò quan đã định dứt khoát như thế nào chưa?”",
     literaryContext:
-      "Đề lại là kẻ nắm giữ giấy tờ, luật lệ tại công đường, chuyên bày mưu tính kế gợi ý đút lót và mớm cung cho quan Tri huyện, tạo nên cặp bài trùng tham nhũng từ trên xuống dưới.",
+      "Là phụ quan hầu cận bên cạnh Tri huyện, Đề lại bề ngoài cung kính nịnh nọt cấp trên qua từng lời nhắc khéo nhưng đằng sau là sự tính toán, mớm cung nhằm kiếm chác lợi ích cho bản thân.",
     colorSwatches: [
       {
-        hex: "#1A1615",
-        label: "Đen tuyền",
-        meaning: "Mão nha lại, cặp mày xếch sắc lẹm và ria vểnh mưu mô",
+        hex: "#2B211E",
+        label: "Đen nâu (Mũ & ria)",
+        meaning: "Thể hiện sự kín đáo, khó đoán và tâm địa gian xảo của phụ quan",
       },
       {
-        hex: "#B91C1C",
-        label: "Đỏ son hốc mắt",
-        meaning: "Tán bầu mắt đỏ sâu cùng đôi môi mím đỏ chót đầy toan tính",
+        hex: "#991B1B",
+        label: "Đỏ sẫm (Mắt & môi)",
+        meaning: "Khắc họa vẻ sắc sảo, mưu mô và tính cách không thật thà",
       },
       {
-        hex: "#EAD6C2",
-        label: "Ngà da pha nâu",
-        meaning: "Làn da từng trải kết hợp nếp nhăn trán của kẻ lão luyện chốn nha môn",
+        hex: "#B59449",
+        label: "Vàng đồng cũ (Viền mũ)",
+        meaning: "Điểm nhấn bạc màu gợi thói ham danh lợi, thích địa vị của viên lại",
+      },
+      {
+        hex: "#E8D3B9",
+        label: "Da vàng nhợt",
+        meaning: "Tạo sắc mặt thiếu tự nhiên, tô đậm nét xảo trá luồn cúi",
       },
     ],
     roster: HUYEN_DUONG_GROUP_ROSTER[1],
     maskProduct: {
       finishedMaskUrl: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
-      sketchImageUrl: "",
-      wearingOrStageUrl: "",
+      sketchImageUrl: "/student-products/huyen-duong/phac-thao-to-2-de-lai.jpg",
+      wearingOrStageUrl: "/student-products/huyen-duong/ra-mat-to-2-de-lai.jpg",
+      wearingCaption:
+        "Hai đại diện Tổ 2 cầm mặt nạ Đề lại hoàn chỉnh (đã gắn dải viền mũ màu vàng đồng cũ và dây đeo) thuyết minh trực tiếp trước bảng lớp 'Công minh chính trực – Huyện đường'.",
       dimensionsAndSpecs: [
-        "Kỹ thuật tạo khối: Gấp nếp dọc chính giữa tấm bìa carton sóng tạo sống mũi 3D tự đứng vững",
-        "Phần trán & mão: Mão nha lại sơn đen tuyền ôm gọn phần trán có vạch nếp nhăn mảnh",
-        "Đôi mắt & chân mày: Hốc mắt khoét xếch hình thoi nhọn, bầu mắt tán đỏ son chuyển sắc, mày đen xếch ngược hai tầng",
-        "Ria mép & cằm: Ria đen uốn vểnh nhọn hai bên má, môi đỏ mím cười khẩy và chòm râu cằm nhọn",
+        "Quy trình thiết kế 3 giai đoạn rõ nét: (1) Bản nháp hình học 'Mặt Nạ Của Đề Lại' → (2) Dưỡng giấy cắt khoét hốc mắt tỷ lệ 1:1 → (3) Phôi bìa carton hoàn chỉnh",
+        "Kỹ thuật kết cấu 3D STEAM: Xẻ các tai bìa quanh viền kết hợp gấp nếp sống mũi dọc trục giữa để uốn tấm carton phẳng thành mặt nạ ôm sát khuôn mặt",
+        "Chiếc mũ phụ quan: Dáng tròn đơn giản màu đen nâu cũ không cầu kỳ hoa văn, điểm dải viền màu vàng đồng bạc màu đúng thân phận nha lại",
+        "Ngôn ngữ đường nét: Lông mày xếch cao, hốc mắt hẹp sắc tán đỏ sẫm, nụ cười nhếch mép, ria cong và chòm râu cằm nhọn hình tam giác",
       ],
       artisticAnalysis:
-        "Chiếc mặt nạ Đề lại của Tổ 2 đạt hiệu quả thị giác sân khấu rất cao: học sinh tận dụng chính các sọc gân dọc của bìa carton kết hợp đường gấp sống mũi sắc nét để bắt ánh đèn sân khấu. Cặp chân mày đen nhọn vút lên thái dương đối xứng với hàng ria mép cong vểnh tạo nên nụ cười vừa khúm núm nịnh trên, vừa ranh mãnh bắt chẹt kẻ dưới.",
+        "Bộ ảnh quá trình của Tổ 2 cho thấy tư duy chế tạo rất thông minh: thay vì vẽ thẳng lên bìa cứng, nhóm dựng bản trục đối xứng trên giấy đôi, chuyển sang dưỡng giấy tỷ lệ 1:1 để ướm thử độ cân xứng của hai hốc mắt xếch, rồi xẻ các rãnh tai gấp quanh mép bìa carton trước khi sơn lót nền vàng nhợt và tỉa nét đen nâu – đỏ sẫm.",
       materialsUsed: [
-        "Bìa carton sóng cứng gấp nếp khối 3D",
-        "Màu acrylic đen mực tàu, đỏ son, trắng ngà và nâu đất",
-        "Cọ đầu nhọn tỉa ria mép, chân mày và nếp nhăn trán",
+        "Bìa carton sóng tái chế xẻ tai gấp tạo khối 3D & dây đeo co giãn",
+        "Giấy vở kẻ ngang dựng bản vẽ trục & dưỡng giấy cắt mẫu tỷ lệ 1:1",
+        "Màu acrylic đen nâu, đỏ sẫm, vàng đồng cũ, da vàng nhợt & bộ cọ tỉa nét",
       ],
       expectedDrivePath: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
     },
     writtenScript: {
-      title: "Hồ sơ Giải mã Mặt nạ Đề lại & Phân công Tổ 2",
+      title: "Nguyên văn BÀI THUYẾT MINH VỀ MẶT NẠ NHÂN VẬT ĐỀ LẠI.docx (Tổ 2)",
       authorCredit:
-        "Nội dung: Yến Nhi, Hằng • Chế tác: Vũ Thiên, Diệp, Kiều Oanh, Bùi Võ Quỳnh Anh • Thuyết trình: Tấn Tài",
-      isVerbatimFromDrive: false,
+        "Nội dung: Yến Nhi, Hằng • Bản vẽ: Thanh Hải, Trúc • Thuyết trình: Tấn Tài & đại diện Tổ 2",
+      isVerbatimFromDrive: true,
+      docxDownloadUrl:
+        "/student-products/huyen-duong/bai-thuyet-minh-to-2-de-lai.docx",
       rosterDocxUrl: "/student-products/huyen-duong/phan-cong-du-an-lop-10-3.docx",
       sections: [
         {
-          heading: "1. Ý nghĩa đường gấp khối 3D và sắc diện Đề lại",
-          text: "Khác với gương mặt bệ vệ của Tri huyện hay vẻ ngơ ngác của Trùm Sò, mặt nạ Đề lại của Tổ 2 thuôn nhọn dần về phía cằm với đường sống mũi gấp góc rõ rệt, gợi liên tưởng ngay tới sự sắc sảo, luồn lách tinh ranh nơi cửa quan.",
+          heading: "1. Mở đầu & Ý tưởng thiết kế (Nguyên văn từ tệp Word Tổ 2)",
+          text: "“Kính thưa thầy cô và các bạn! Hôm nay, Tổ 2 chúng em xin giới thiệu sản phẩm mặt nạ nhân vật Đề lại trong vở tuồng Quan huyện. Đây là một nhân vật phụ quan, người hầu cận bên cạnh Tri huyện. Thông qua chiếc mặt nạ, Tổ 2 chúng em muốn thể hiện hình ảnh một người có tính cách gian xảo, nịnh nọt, khéo luồn cúi và luôn tìm cách mưu lợi cho bản thân. Đôi lông mày được vẽ xếch lên, đôi mắt hẹp và sắc, kết hợp với nụ cười nhếch mép và bộ ria mép cong tạo cảm giác nhân vật đang che giấu suy nghĩ thật: bên ngoài tỏ ra thân thiện nhưng bên trong lại đầy toan tính, gắn với lời thoại: ‘Vâng, hôm nay chả thấy ai kiện cáo gì cả. Còn vụ Thị Hến, Nguyễn Sò quan đã định dứt khoát như thế nào chưa?’.”",
         },
         {
-          heading: "2. Ngôn ngữ đường cọ: Mày xếch – Mắt đỏ – Ria vểnh",
-          text: "Tổ 2 sử dụng ba điểm nhấn đen tuyền (mão đen, mày xếch kép và ria vểnh có ngạnh dưới) bao quanh vùng mắt tán đỏ son và đôi môi đỏ mím chặt, lột tả trọn vẹn kẻ chuyên 'đổi trắng thay đen' trên từng trang hồ sơ xử kiện.",
+          heading: "2. Ý nghĩa màu sắc & Thiết kế chiếc mũ phụ quan (Nguyên văn từ tệp Word Tổ 2)",
+          text: "“Màu sắc được lựa chọn theo hướng trầm, cũ và có phần u tối để phù hợp với hình ảnh người hầu, phụ quan trong huyện đường: Màu đen nâu sử dụng cho chiếc mũ và ria mép thể hiện sự kín đáo, khó đoán và gian xảo; Màu đỏ sẫm quanh mắt và môi thể hiện sự sắc sảo, mưu mô và không thật thà; Màu vàng đồng cũ tạo điểm nhấn ở viền mũ gợi sự ham danh lợi và thích địa vị; Màu da vàng nhợt làm khuôn mặt có vẻ thiếu tự nhiên, góp phần tạo nên nét xảo trá. Chiếc mũ có dạng tròn đơn giản, màu đen nâu cũ không hoa văn cầu kỳ, viền nâu đồng bạc màu phù hợp với thân phận phụ quan.”",
+        },
+        {
+          heading: "3. Thông điệp nghệ thuật & Kết luận (Nguyên văn từ tệp Word Tổ 2)",
+          text: "“Thông qua chiếc mặt nạ, Tổ 2 muốn làm nổi bật tính cách gian xảo, nịnh nọt và ham danh lợi của nhân vật Đề lại, đồng thời thể hiện đặc trưng nghệ thuật tuồng truyền thống: sử dụng hình dáng, màu sắc và nét vẽ trên khuôn mặt để khắc họa tính cách nhân vật ngay từ cái nhìn đầu tiên, góp phần giữ gìn và phát huy nét đẹp của nghệ thuật tuồng truyền thống Việt Nam. Tổ 2 chúng em xin cảm ơn thầy cô và các bạn đã lắng nghe!”",
         },
       ],
     },
-    presentationVideo: HUYEN_DUONG_MASK_VIDEOS[3],
+    presentationVideo: HUYEN_DUONG_MASK_VIDEOS[0],
     processVideos: [],
     activityPhotos: [
       {
+        id: "to2-act-3stages",
+        groupName: "Tổ 2 • Đề lại",
+        title: "Đối chiếu 3 bước: Bản vẽ trục – Dưỡng giấy 1:1 – Mặt nạ hoàn chỉnh",
+        caption:
+          "Toàn bộ hành trình thiết kế kỹ thuật của Tổ 2 từ trang giấy nháp có chữ 'Mặt Nạ Của Đề Lại' đến sản phẩm hoàn thiện có viền mũ vàng đồng.",
+        imageUrl: "/student-products/huyen-duong/phac-thao-to-2-de-lai.jpg",
+      },
+      {
+        id: "to2-act-painting3d",
+        groupName: "Tổ 2 • Đề lại",
+        title: "Sơn lót nền da vàng nhợt & tán hốc mắt đỏ sẫm trên phôi bìa xẻ tai 3D",
+        caption:
+          "Kỹ thuật xẻ rãnh các tai bìa xung quanh viền giúp uốn cong tấm carton phẳng thành khối 3 chiều ôm khuôn mặt.",
+        imageUrl: "/student-products/huyen-duong/hoat-dong-to-2-son-nen-3d.jpg",
+      },
+      {
+        id: "to2-act-stencil",
+        groupName: "Tổ 2 • Đề lại",
+        title: "Tinh chỉnh dưỡng giấy tỷ lệ 1:1 và cắt phôi bìa carton",
+        caption:
+          "Các thành viên Tổ 2 vẽ thử đường nét chân mày xếch, ria cong trên dưỡng giấy trước khi chuyển sang bìa cứng.",
+        imageUrl: "/student-products/huyen-duong/hoat-dong-to-2-cat-duong-giay.jpg",
+      },
+      {
+        id: "to2-act-prep",
+        groupName: "Tổ 2 • Đề lại",
+        title: "Chuẩn bị vật liệu bìa carton tái chế & dụng cụ pha màu tại lớp",
+        caption:
+          "Bàn làm việc nhóm của học sinh Tổ 2 (Lớp 10.3 – THPT Bình Phú) trong tiết thực hành chế tác mặt nạ STEAM.",
+        imageUrl: "/student-products/huyen-duong/hoat-dong-to-2-chuan-bi-bia.jpg",
+      },
+      {
+        id: "to2-act-brush",
+        groupName: "Tổ 2 • Đề lại",
+        title: "Chuẩn bị đầu cọ mảnh tỉa đường nét sắc sảo của nhân vật Đề lại",
+        caption:
+          "Thành viên Đăng Thành (Tổ 2) chỉnh cọ vẽ trước khi đi nét đen nâu cho chân mày và bộ ria mép.",
+        imageUrl: "/student-products/huyen-duong/hoat-dong-to-2-pha-mau-co.jpg",
+      },
+      {
         id: "to2-mask-closeup",
         groupName: "Tổ 2 • Đề lại",
-        title: "Cận cảnh mặt nạ Đề lại hoàn thiện của Tổ 2",
+        title: "Cận cảnh thần thái mặt nạ Đề lại gấp sống mũi nổi 3D",
         caption:
-          "Sản phẩm mặt nạ bìa cứng gấp nếp 3D hoàn thiện của Tổ 2 chụp trực diện dưới ánh sáng thực tế.",
+          "Góc chụp trực diện làm nổi bật trục gấp sống mũi, hốc mắt tán đỏ sẫm và nụ cười nhếch mép đầy toan tính.",
         imageUrl: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
       },
     ],
@@ -779,7 +874,7 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
         },
       ],
     },
-    presentationVideo: HUYEN_DUONG_MASK_VIDEOS[0],
+    presentationVideo: HUYEN_DUONG_MASK_VIDEOS[1],
     processVideos: [
       HUYEN_DUONG_PROCESS_VIDEOS[1],
       HUYEN_DUONG_PROCESS_VIDEOS[2],
@@ -882,7 +977,7 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
         },
       ],
     },
-    presentationVideo: HUYEN_DUONG_MASK_VIDEOS[1],
+    presentationVideo: HUYEN_DUONG_MASK_VIDEOS[2],
     processVideos: [HUYEN_DUONG_PROCESS_VIDEOS[0]],
     activityPhotos: [
       {

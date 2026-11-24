@@ -36,8 +36,8 @@ const HERITAGE_SEARCH_INDEX: QuickIndexEntry[] = [
     href: "/trien-lam-so/to-1",
   },
   {
-    title: "Chuyên trang Tổ 2 — Mặt nạ Đề lại (Lớp 10.3 THPT Bình Phú)",
-    subtitle: "Xem ảnh mặt nạ bìa cứng 3D Đề lại, bảng mã màu & phân công Tổ 2",
+    title: "Chuyên trang Tổ 2 — Mặt nạ Đề lại, Word & Video 03:13 (Lớp 10.3 THPT Bình Phú)",
+    subtitle: "Xem mặt nạ 3D, bản vẽ 3 bước, nguyên văn bài thuyết minh .docx, video 03:13 & 6 ảnh hoạt động Tổ 2",
     category: "Chuyên trang Tổ 2",
     href: "/trien-lam-so/to-2",
   },

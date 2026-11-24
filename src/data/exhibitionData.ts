@@ -7,7 +7,7 @@ export const EXHIBITION_SECTION_META = {
   description:
     "Không gian trưng bày số chuyên sâu kết hợp sản phẩm thực tế của học sinh Lớp 10.3 — Trường THPT Bình Phú (Dự án Tuồng đồ Huyện đường) cùng hệ thống mẫu học liệu định hướng cho Dự án Sử thi Đăm Săn.",
   sampleNotice:
-    "Cập nhật thực tế từ Google Drive dự án: Toàn bộ 19 hình ảnh mặt nạ, bản vẽ tỷ lệ, ảnh hoạt động nhóm, 5 video thuyết minh & chế tác và 2 tài liệu Word của Lớp 10.3 — Trường THPT Bình Phú đã được tích hợp trực tiếp vào Kho Sản phẩm Học sinh bên dưới. Các sản phẩm thuộc Dự án 02 (Đăm Săn) giữ nhãn Mẫu minh họa định hướng.",
+    "Cập nhật thực tế từ Google Drive dự án: Toàn bộ 25 hình ảnh mặt nạ, 3 bộ bản vẽ tỷ lệ, ảnh hoạt động nhóm, 6 video thuyết minh & chế tác và 3 tài liệu Word của Lớp 10.3 — Trường THPT Bình Phú đã được tích hợp trực tiếp vào Kho Sản phẩm Học sinh bên dưới. Các sản phẩm thuộc Dự án 02 (Đăm Săn) giữ nhãn Mẫu minh họa định hướng.",
 };
 
 export const EXHIBITION_CATEGORIES: ExhibitionCategory[] = [
@@ -30,26 +30,29 @@ export const EXHIBITION_TOPICS_FILTER = [
 export const EXHIBITION_ITEMS: ExhibitionItem[] = [
   {
     id: "exhibit-10-3-to-2-de-lai",
-    title: "Mặt nạ Đề lại (Tổ 2 — Lớp 10.3, THPT Bình Phú)",
+    title: "Mặt nạ Đề lại, Bản vẽ 3 bước & Video Thuyết minh (Tổ 2 — Lớp 10.3)",
     category: "Mặt nạ và tạo hình nhân vật",
     topicTitle: "Dự án Huyện đường — Lớp 10.3",
     topicId: "chu-de-01-huyen-duong",
-    authorNote: "Sản phẩm thực tế Tổ 2 — Lớp 10.3, Trường THPT Bình Phú",
+    authorNote: "Sản phẩm thực tế Tổ 2 — Lớp 10.3, Trường THPT Bình Phú (Thuyết minh: Tấn Tài & đại diện tổ)",
     isIllustrativeSample: false,
     ideaDescription:
-      "Mặt nạ Đề lại chế tác trên bìa carton gập sống mũi nổi 3D: mão nha lại đen tuyền, cặp chân mày đen xếch ngược sắc lẹm, bọng mắt tán đỏ son sâu, ria mép vểnh hai bên cùng nụ cười mím đỏ chót và chòm râu cằm nhọn lột tả vẻ khôn lỏi, mánh khóe nơi công đường.",
+      "Mặt nạ Đề lại chế tác qua 3 bước từ bản nháp trục đối xứng → dưỡng giấy tỷ lệ 1:1 → bìa carton xẻ tai uốn khối 3D: mũ tròn đen nâu viền vàng đồng cũ bạc màu, đôi mắt hẹp sắc tán đỏ sẫm, mày xếch cao, nụ cười nhếch mép và ria cong lột tả phụ quan gian xảo, nịnh trên nạt dưới.",
     makingProcess: [
-      "Bước 1: Phân tích tính cách mưu mô của viên Đề lại trong trích đoạn Huyện đường (SGK Ngữ văn 10).",
-      "Bước 2: Tạo gân gấp trục giữa trên bìa carton sóng để gương mặt bắt sáng khối nổi 3 chiều.",
-      "Bước 3: Khoét hốc mắt xếch sắc và lên màu acrylic đỏ son, đen mực tàu, nền da ngà có nếp nhăn trán.",
+      "Bước 1: Phân tích tính cách và lời thoại mớm cung của Đề lại trong trích đoạn Huyện đường; dựng bản vẽ trục hình học.",
+      "Bước 2: Cắt dưỡng giấy tỷ lệ 1:1 khoét hốc mắt xếch, ướm lên bìa carton và xẻ các rãnh tai gấp để uốn cong khối 3D.",
+      "Bước 3: Sơn phối 4 tông trầm cũ (đen nâu, đỏ sẫm, vàng đồng cũ, da vàng nhợt), biên soạn file Word và quay video thuyết minh 03:13.",
     ],
     materialsUsed: [
-      "Bìa carton sóng tạo nếp gấp khối 3D",
-      "Màu acrylic đen, đỏ son, trắng ngà, nâu đất",
-      "Bút lông tỉa nét mày xếch, ria vểnh và nếp nhăn",
+      "Bìa carton sóng tái chế xẻ tai gấp khối 3D & dưỡng giấy 1:1",
+      "Màu acrylic đen nâu, đỏ sẫm, vàng đồng cũ, da vàng nhợt",
+      "Bài thuyết minh Word (.docx) & Video báo cáo trên lớp (03:13)",
     ],
     videoStatusNote:
-      "Đã nghiệm thu ảnh sản phẩm hoàn thiện; chờ bổ sung video thuyết minh của Tổ 2",
+      "Video thuyết minh thực tế tại lớp (03:13) kèm tệp Word (.docx) và 6 ảnh quá trình chế tác",
+    videoUrl: "/student-products/huyen-duong/video-thuyet-minh-to-2.mp4",
+    videoPoster: "/student-products/huyen-duong/ra-mat-to-2-de-lai.jpg",
+    documentUrl: "/student-products/huyen-duong/bai-thuyet-minh-to-2-de-lai.docx",
     artSubject: "exhibit-mask-set",
     expectedAssetFile: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
   },
