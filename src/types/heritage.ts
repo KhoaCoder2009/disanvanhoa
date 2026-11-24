@@ -114,6 +114,9 @@ export interface ExhibitionItem {
   makingProcess: string[];
   materialsUsed: string[];
   videoStatusNote: string;
+  videoUrl?: string;
+  videoPoster?: string;
+  documentUrl?: string;
   artSubject: ArtSubject;
   expectedAssetFile: string;
 }

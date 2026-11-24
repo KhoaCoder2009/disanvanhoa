@@ -108,7 +108,9 @@ export const HeritageArtwork: React.FC<HeritageArtworkProps> = ({
     }
   }, []);
 
-  const highResImage = MUSEUM_IMAGE_MAP[subject];
+  const highResImage = expectedFile?.startsWith("/student-products/")
+    ? expectedFile
+    : MUSEUM_IMAGE_MAP[subject];
   const fallback = DEFAULT_SUBJECT_LINKS[subject];
   const targetHref = linkHref || fallback.href;
   const targetLabel = linkLabel || caption || fallback.label;

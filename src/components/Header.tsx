@@ -30,6 +30,30 @@ interface QuickIndexEntry {
 
 const HERITAGE_SEARCH_INDEX: QuickIndexEntry[] = [
   {
+    title: "Chuyên trang Tổ 1 — Mặt nạ Tri huyện (Lớp 10.3 THPT Bình Phú)",
+    subtitle: "Xem phân công thành viên, hồ sơ nhân vật Tri huyện & tiến độ nộp sản phẩm Tổ 1",
+    category: "Chuyên trang Tổ 1",
+    href: "/trien-lam-so/to-1",
+  },
+  {
+    title: "Chuyên trang Tổ 2 — Mặt nạ Đề lại (Lớp 10.3 THPT Bình Phú)",
+    subtitle: "Xem ảnh mặt nạ bìa cứng 3D Đề lại, bảng mã màu & phân công Tổ 2",
+    category: "Chuyên trang Tổ 2",
+    href: "/trien-lam-so/to-2",
+  },
+  {
+    title: "Chuyên trang Tổ 3 — Mặt nạ Lính lệ & 3 Video (Lớp 10.3 THPT Bình Phú)",
+    subtitle: "Xem mặt nạ đắp nổi, bản vẽ 18×24cm, video thuyết minh 01:50 & 6 ảnh hoạt động Tổ 3",
+    category: "Chuyên trang Tổ 3",
+    href: "/trien-lam-so/to-3",
+  },
+  {
+    title: "Chuyên trang Tổ 4 — Mặt nạ Trùm Sò, Word & 2 Video (Lớp 10.3 THPT Bình Phú)",
+    subtitle: "Xem mặt nạ Trùm Sò, bản vẽ mm/cm, nguyên văn BÀI THUYẾT MINH.docx & 2 video Tổ 4",
+    category: "Chuyên trang Tổ 4",
+    href: "/trien-lam-so/to-4",
+  },
+  {
     title: "Trắc nghiệm Di sản Văn học & STEAM (20 câu hỏi)",
     subtitle:
       "Chuyên trang ôn luyện Tuồng đồ Huyện đường, Sử thi Đăm Săn & Quy trình STEAM",

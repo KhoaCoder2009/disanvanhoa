@@ -23,21 +23,53 @@ export default function TrienLamSoPage() {
 
         <div id="noi-dung-trien-lam">
           <div className="bg-heritage-ivoryLight border-b border-heritage-crimson/15 py-5">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-3">
-              <Link
-                href="/xuong-steam"
-                className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2 text-xs sm:text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
-              >
-                <span>Xem quy trình chế tạo</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/dien-dan-hoc-tap"
-                className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-xs sm:text-sm font-semibold text-heritage-crimson border border-heritage-crimson/35 hover:bg-heritage-crimson hover:text-white transition-colors"
-              >
-                <span>Nộp hồ sơ &amp; Phản biện</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-heritage-woodDark mr-1">
+                  Chuyên trang 4 Tổ (Lớp 10.3):
+                </span>
+                <Link
+                  href="/trien-lam-so/to-1"
+                  className="inline-flex items-center gap-1 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold text-heritage-woodDark border border-heritage-goldAntique/50 hover:bg-heritage-crimson hover:text-white transition-colors"
+                >
+                  <span>Tổ 1 • Tri huyện</span>
+                </Link>
+                <Link
+                  href="/trien-lam-so/to-2"
+                  className="inline-flex items-center gap-1 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold text-heritage-woodDark border border-heritage-goldAntique/50 hover:bg-heritage-crimson hover:text-white transition-colors"
+                >
+                  <span>Tổ 2 • Đề lại</span>
+                </Link>
+                <Link
+                  href="/trien-lam-so/to-3"
+                  className="inline-flex items-center gap-1 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold text-heritage-woodDark border border-heritage-goldAntique/50 hover:bg-heritage-crimson hover:text-white transition-colors"
+                >
+                  <span>Tổ 3 • Lính lệ</span>
+                </Link>
+                <Link
+                  href="/trien-lam-so/to-4"
+                  className="inline-flex items-center gap-1 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold text-heritage-woodDark border border-heritage-goldAntique/50 hover:bg-heritage-crimson hover:text-white transition-colors"
+                >
+                  <span>Tổ 4 • Trùm Sò</span>
+                </Link>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2.5">
+                <Link
+                  href="/xuong-steam"
+                  className="inline-flex items-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2 text-xs sm:text-sm font-semibold text-white hover:bg-heritage-woodDark transition-colors"
+                >
+                  <span>Xem quy trình chế tạo</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/dien-dan-hoc-tap"
+                  className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-xs sm:text-sm font-semibold text-heritage-crimson border border-heritage-crimson/35 hover:bg-heritage-crimson hover:text-white transition-colors"
+                >
+                  <span>Nộp hồ sơ &amp; Phản biện</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </div>
 

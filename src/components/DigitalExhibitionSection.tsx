@@ -12,6 +12,7 @@ import {
   Sparkles,
   Filter,
   ExternalLink,
+  ArrowRight,
 } from "lucide-react";
 import {
   EXHIBITION_CATEGORIES,
@@ -162,12 +163,20 @@ export const DigitalExhibitionSection: React.FC = () => {
         ) : (
           <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {filteredItems.map((item) => {
+              const groupDedicatedHref = item.id.includes("to-2")
+                ? "/trien-lam-so/to-2"
+                : item.id.includes("to-3")
+                  ? "/trien-lam-so/to-3"
+                  : item.id.includes("to-4")
+                    ? "/trien-lam-so/to-4"
+                    : null;
               const targetHref =
-                item.topicId === "chu-de-01"
+                groupDedicatedHref ||
+                (item.topicId.includes("huyen-duong")
                   ? "/chu-de-hoc-tap/chu-de-01-huyen-duong"
-                  : item.topicId === "chu-de-02"
+                  : item.topicId.includes("dam-san")
                     ? "/chu-de-hoc-tap/chu-de-02-dam-san"
-                    : "/xuong-steam";
+                    : "/xuong-steam");
               return (
               <TiltSpotlightCard
                 key={item.id}
@@ -188,9 +197,13 @@ export const DigitalExhibitionSection: React.FC = () => {
                       <span className="rounded-md bg-heritage-woodDark/90 px-2.5 py-1 text-[11px] font-semibold text-heritage-goldSoft border border-heritage-goldAntique/50">
                         {item.category}
                       </span>
-                      {item.isIllustrativeSample && (
+                      {item.isIllustrativeSample ? (
                         <span className="rounded-md bg-heritage-moss/95 px-2.5 py-1 text-[11px] font-semibold text-heritage-ivory">
                           Mẫu minh họa
+                        </span>
+                      ) : (
+                        <span className="rounded-md bg-heritage-crimson px-2.5 py-1 text-[11px] font-bold text-white shadow-sm">
+                          Sản phẩm thật Lớp 10.3
                         </span>
                       )}
                     </div>
@@ -234,15 +247,24 @@ export const DigitalExhibitionSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="px-4 pb-4 sm:px-6 sm:pb-6 pt-2">
+                <div className="px-4 pb-4 sm:px-6 sm:pb-6 pt-2 flex flex-col sm:flex-row gap-2">
                   <button
                     type="button"
                     onClick={() => setActiveExhibit(item)}
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-woodDark px-5 py-3 text-sm font-semibold text-heritage-goldSoft border border-heritage-goldAntique/50 transition-colors duration-200 hover:bg-heritage-crimson hover:text-heritage-ivory focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
+                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-woodDark px-4 py-3 text-xs sm:text-sm font-semibold text-heritage-goldSoft border border-heritage-goldAntique/50 transition-colors duration-200 hover:bg-heritage-crimson hover:text-heritage-ivory focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
                   >
                     <Eye className="h-4 w-4" aria-hidden="true" />
-                    <span>XEM SẢN PHẨM</span>
+                    <span>XEM NHANH</span>
                   </button>
+                  {groupDedicatedHref && (
+                    <Link
+                      href={groupDedicatedHref}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-heritage-crimson px-4 py-3 text-xs sm:text-sm font-bold text-white transition-colors duration-200 hover:bg-heritage-woodDark focus:outline-none focus-visible:ring-2 focus-visible:ring-heritage-crimson"
+                    >
+                      <span>TRANG RIÊNG TỔ</span>
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  )}
                 </div>
               </TiltSpotlightCard>
               );
@@ -269,9 +291,13 @@ export const DigitalExhibitionSection: React.FC = () => {
                   <span className="rounded-md bg-heritage-woodDark px-3 py-1 text-xs font-semibold text-heritage-goldSoft">
                     {activeExhibit.category}
                   </span>
-                  {activeExhibit.isIllustrativeSample && (
+                  {activeExhibit.isIllustrativeSample ? (
                     <span className="rounded-md bg-heritage-moss px-3 py-1 text-xs font-semibold text-heritage-ivory">
                       Mẫu minh họa cấu trúc trưng bày
+                    </span>
+                  ) : (
+                    <span className="rounded-md bg-heritage-crimson px-3 py-1 text-xs font-bold text-white">
+                      Sản phẩm học sinh Lớp 10.3 — THPT Bình Phú
                     </span>
                   )}
                 </div>
@@ -347,15 +373,39 @@ export const DigitalExhibitionSection: React.FC = () => {
                 <div className="rounded-xl bg-heritage-woodDark p-4 text-heritage-ivory border border-heritage-goldAntique/50">
                   <div className="flex items-center gap-2 font-serif font-bold text-heritage-goldSoft">
                     <Film className="h-4 w-4" />
-                    <h4>Video giới thiệu sản phẩm</h4>
+                    <h4>Video &amp; Tài liệu sản phẩm</h4>
                   </div>
                   <p className="mt-2 text-xs sm:text-sm text-heritage-ivory/90 leading-relaxed">
                     {activeExhibit.videoStatusNote}
                   </p>
-                  <p className="mt-2 text-[11px] text-heritage-goldSoft/90">
-                    Giáo viên cập nhật đường dẫn video tại{" "}
-                    <code className="break-all">src/data/exhibitionData.ts</code>
-                  </p>
+                  {activeExhibit.videoUrl ? (
+                    <div className="mt-3 overflow-hidden rounded-lg border border-heritage-goldAntique/40 bg-black">
+                      <video
+                        controls
+                        preload="metadata"
+                        playsInline
+                        poster={activeExhibit.videoPoster}
+                        className="aspect-video w-full object-contain"
+                      >
+                        <source src={activeExhibit.videoUrl} type="video/mp4" />
+                      </video>
+                    </div>
+                  ) : (
+                    <p className="mt-2 text-[11px] text-heritage-goldSoft/90">
+                      Giáo viên cập nhật đường dẫn video tại{" "}
+                      <code className="break-all">src/data/exhibitionData.ts</code>
+                    </p>
+                  )}
+                  {activeExhibit.documentUrl && (
+                    <a
+                      href={activeExhibit.documentUrl}
+                      download
+                      className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-heritage-crimson px-3 py-1.5 text-xs font-semibold text-white hover:bg-white hover:text-heritage-woodDark transition-colors"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" />
+                      <span>Tải bản Word thuyết minh (.docx)</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

@@ -5,9 +5,9 @@ export const EXHIBITION_SECTION_META = {
   englishName: "DIGITAL EXHIBITION",
   title: "NHỮNG SÁNG TẠO TỪ TRANG SÁCH",
   description:
-    "Không gian trưng bày số chuyên sâu cho hai dự án Ngữ văn 10 trọng tâm: Tuồng đồ Huyện đường và Sử thi Đăm Săn.",
+    "Không gian trưng bày số chuyên sâu kết hợp sản phẩm thực tế của học sinh Lớp 10.3 — Trường THPT Bình Phú (Dự án Tuồng đồ Huyện đường) cùng hệ thống mẫu học liệu định hướng cho Dự án Sử thi Đăm Săn.",
   sampleNotice:
-    "Lưu ý minh bạch học liệu: Các thẻ dưới đây hiện là MẪU MINH HỌA định hướng cấu trúc trưng bày. Giáo viên sẽ cập nhật hình ảnh, video và thông tin nhóm học sinh thực tế sau khi kết thúc từng chặng dự án.",
+    "Cập nhật thực tế từ Google Drive dự án: Toàn bộ 19 hình ảnh mặt nạ, bản vẽ tỷ lệ, ảnh hoạt động nhóm, 5 video thuyết minh & chế tác và 2 tài liệu Word của Lớp 10.3 — Trường THPT Bình Phú đã được tích hợp trực tiếp vào Kho Sản phẩm Học sinh bên dưới. Các sản phẩm thuộc Dự án 02 (Đăm Săn) giữ nhãn Mẫu minh họa định hướng.",
 };
 
 export const EXHIBITION_CATEGORIES: ExhibitionCategory[] = [
@@ -28,6 +28,86 @@ export const EXHIBITION_TOPICS_FILTER = [
 ];
 
 export const EXHIBITION_ITEMS: ExhibitionItem[] = [
+  {
+    id: "exhibit-10-3-to-2-de-lai",
+    title: "Mặt nạ Đề lại (Tổ 2 — Lớp 10.3, THPT Bình Phú)",
+    category: "Mặt nạ và tạo hình nhân vật",
+    topicTitle: "Dự án Huyện đường — Lớp 10.3",
+    topicId: "chu-de-01-huyen-duong",
+    authorNote: "Sản phẩm thực tế Tổ 2 — Lớp 10.3, Trường THPT Bình Phú",
+    isIllustrativeSample: false,
+    ideaDescription:
+      "Mặt nạ Đề lại chế tác trên bìa carton gập sống mũi nổi 3D: mão nha lại đen tuyền, cặp chân mày đen xếch ngược sắc lẹm, bọng mắt tán đỏ son sâu, ria mép vểnh hai bên cùng nụ cười mím đỏ chót và chòm râu cằm nhọn lột tả vẻ khôn lỏi, mánh khóe nơi công đường.",
+    makingProcess: [
+      "Bước 1: Phân tích tính cách mưu mô của viên Đề lại trong trích đoạn Huyện đường (SGK Ngữ văn 10).",
+      "Bước 2: Tạo gân gấp trục giữa trên bìa carton sóng để gương mặt bắt sáng khối nổi 3 chiều.",
+      "Bước 3: Khoét hốc mắt xếch sắc và lên màu acrylic đỏ son, đen mực tàu, nền da ngà có nếp nhăn trán.",
+    ],
+    materialsUsed: [
+      "Bìa carton sóng tạo nếp gấp khối 3D",
+      "Màu acrylic đen, đỏ son, trắng ngà, nâu đất",
+      "Bút lông tỉa nét mày xếch, ria vểnh và nếp nhăn",
+    ],
+    videoStatusNote:
+      "Đã nghiệm thu ảnh sản phẩm hoàn thiện; chờ bổ sung video thuyết minh của Tổ 2",
+    artSubject: "exhibit-mask-set",
+    expectedAssetFile: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
+  },
+  {
+    id: "exhibit-10-3-to-3-linh-le",
+    title: "Mặt nạ Lính lệ đắp nổi & Video Thuyết minh (Tổ 3 — Lớp 10.3)",
+    category: "Mặt nạ và tạo hình nhân vật",
+    topicTitle: "Dự án Huyện đường — Lớp 10.3",
+    topicId: "chu-de-01-huyen-duong",
+    authorNote: "Sản phẩm thực tế Tổ 3 — Lớp 10.3, Trường THPT Bình Phú (Thuyết trình: Thu An & đại diện tổ)",
+    isIllustrativeSample: false,
+    ideaDescription:
+      "Từ bản vẽ kỹ thuật 18 × 24 cm có ghi chú chi tiết, Tổ 3 đắp đất sét tự khô tạo khối chóp mũi đỏ tròn kiểu hề tuồng, viền trắng quanh hốc mắt trợn hách dịch, ria vểnh 3 nhánh và mão lính lệ đen viền vàng – tua đỏ đặc trưng.",
+    makingProcess: [
+      "Bước 1: Thảo luận phân tích vai Lính lệ tại lớp và lập bản vẽ tỷ lệ 18 × 24 cm.",
+      "Bước 2: Cắt phôi bìa carton cứng, khoét mắt và đắp nổi sống mũi, gò má bằng đất sét trắng.",
+      "Bước 3: Phối màu acrylic tương phản mạnh, đeo thử kiểm tra tầm nhìn và quay video thuyết minh 01:50 trên bục giảng.",
+    ],
+    materialsUsed: [
+      "Bìa carton cứng khổ 18 × 24 cm",
+      "Đất sét trắng tự khô đắp nổi khối 3D",
+      "Màu acrylic đỏ tươi, đen, vàng kim, trắng",
+    ],
+    videoStatusNote:
+      "Video thuyết minh thực tế tại lớp (01:50) kèm 3 clip công đoạn chế tác",
+    videoUrl: "/student-products/huyen-duong/video-thuyet-minh-to-3.mp4",
+    videoPoster: "/student-products/huyen-duong/poster-thuyet-minh-to-3.jpg",
+    artSubject: "exhibit-mask-set",
+    expectedAssetFile: "/student-products/huyen-duong/mat-na-to-3-linh-le.jpg",
+  },
+  {
+    id: "exhibit-10-3-to-4-trum-so",
+    title: "Mặt nạ Trùm Sò, Bản vẽ mm/cm & Bài Thuyết minh (Tổ 4 — Lớp 10.3)",
+    category: "Mặt nạ và tạo hình nhân vật",
+    topicTitle: "Dự án Huyện đường — Lớp 10.3",
+    topicId: "chu-de-01-huyen-duong",
+    authorNote: "Sản phẩm thực tế Tổ 4 — Lớp 10.3, Trường THPT Bình Phú (Thuyết minh: Minh Luân)",
+    isIllustrativeSample: false,
+    ideaDescription:
+      "Tổ 4 thiết kế bản vẽ nhân trắc học chi tiết (hai mắt cách nhau 2 cm, cao 3–4 cm, nếp nhăn trán cách nhau 1 cm, lỗ thở bán kính 0,5 mm, môi trề xệch 4–5 cm) để khắc họa lão nhà giàu keo kiệt Trùm Sò vừa hoang mang sợ mất của vừa cố giữ vẻ giàu sang trước quan huyện.",
+    makingProcess: [
+      "Bước 1: Đối chiếu SGK Ngữ văn 10 tại lớp và thiết lập thông số kỹ thuật chuẩn xác cho từng bộ phận trên mặt nạ.",
+      "Bước 2: Cắt phôi bìa carton lớn, sơn nền trắng kem pha vàng nhạt, vẽ lông mày nhăn nhó và khuôn miệng trề cam đất.",
+      "Bước 3: Biên soạn BÀI THUYẾT MINH.docx hoàn chỉnh và quay video trình bày trước bảng lớp trang trí 'Huyện đường'.",
+    ],
+    materialsUsed: [
+      "Bìa carton tái chế thân thiện môi trường, dây thun cố định",
+      "Màu nước & acrylic trắng kem, vàng nhạt, cam đất, đen",
+      "Bản vẽ kỹ thuật giấy A4 & Bài thuyết minh Word (.docx)",
+    ],
+    videoStatusNote:
+      "Video thuyết minh thực tế tại lớp (00:47) kèm video hoạt động nhóm (01:08) và tệp Word",
+    videoUrl: "/student-products/huyen-duong/video-thuyet-minh-to-4.mp4",
+    videoPoster: "/student-products/huyen-duong/ra-mat-to-4-trum-so.jpg",
+    documentUrl: "/student-products/huyen-duong/bai-thuyet-minh-to-4-trum-so.docx",
+    artSubject: "exhibit-mask-set",
+    expectedAssetFile: "/student-products/huyen-duong/mat-na-to-4-trum-so.jpg",
+  },
   {
     id: "exhibit-01-bo-chan-dung-huyen-duong",
     title: "Bộ chân dung 4 nhân vật Huyện đường & Thẻ giải mã",

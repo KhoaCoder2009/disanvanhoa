@@ -428,3 +428,59 @@ export function buildTopicDetailCinema(topic: {
     },
   ];
 }
+
+/**
+ * Tạo kịch bản trình chiếu cuộn 3 cảnh riêng cho từng chuyên trang Tổ (Tổ 1, Tổ 2, Tổ 3, Tổ 4).
+ */
+export function buildStudentGroupCinema(group: {
+  slug: string;
+  groupName: string;
+  characterName: string;
+  roleSubtitle: string;
+  classLabel: string;
+  summary: string;
+  statsSummary: string;
+  cinemaScenesImages: [string, string, string];
+}): CinemaScene[] {
+  return [
+    {
+      id: `${group.slug}-01`,
+      title: `${group.groupName.toUpperCase()} — MẶT NẠ ${group.characterName.toUpperCase()}`,
+      isHeroTitle: true,
+      slogan: `${group.classLabel} • ${group.roleSubtitle}`,
+      description: group.summary,
+      ctaLabel: `Khám phá Hồ sơ ${group.groupName}`,
+      ctaHref: "#noi-dung-chuyen-trang-to",
+      detailHref: "#phan-mat-na-phac-thao",
+      detailLabel: `Mặt nạ & Bản vẽ của ${group.groupName}`,
+      image: group.cinemaScenesImages[0],
+      transitionType: "base",
+    },
+    {
+      id: `${group.slug}-02`,
+      title: `PHÁC THẢO KỸ THUẬT & THUYẾT MINH (${group.groupName.toUpperCase()})`,
+      slogan: group.statsSummary,
+      description:
+        "Đối chiếu bản vẽ tỷ lệ, mã màu ước lệ sân khấu Tuồng đồ với hồ sơ phân công nhiệm vụ và bài thuyết minh văn học của tổ.",
+      ctaLabel: "Xem Bản vẽ & Thuyết minh",
+      ctaHref: "#phan-thuyet-minh-word",
+      detailHref: "#phan-thuyet-minh-word",
+      detailLabel: `Bản Word & Lời thuyết minh ${group.groupName}`,
+      image: group.cinemaScenesImages[1],
+      transitionType: "iris-right",
+    },
+    {
+      id: `${group.slug}-03`,
+      title: `VIDEO THUYẾT TRÌNH & HOẠT ĐỘNG NHÓM (${group.groupName.toUpperCase()})`,
+      slogan: "Từ bàn học STEAM bước lên sân khấu Công đường Huyện đường",
+      description:
+        "Trình chiếu trực tiếp các video thuyết minh trên bục giảng, clip công đoạn chế tác thủ công và bộ ảnh làm việc nhóm tại lớp 10.3.",
+      ctaLabel: "Xem Video & Album Ảnh",
+      ctaHref: "#phan-video-hoat-dong",
+      detailHref: "#phan-video-hoat-dong",
+      detailLabel: `Video & Ảnh hoạt động ${group.groupName}`,
+      image: group.cinemaScenesImages[2],
+      transitionType: "curtain-up",
+    },
+  ];
+}
