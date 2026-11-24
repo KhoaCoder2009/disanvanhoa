@@ -3,39 +3,39 @@ import { LearningTopic } from "@/types/heritage";
 export const LEARNING_TOPICS_META = {
   vietnameseName: "CHỦ ĐỀ HỌC TẬP",
   englishName: "LEARNING JOURNEYS",
-  title: "HÀNH TRÌNH KHÁM PHÁ TRI THỨC",
+  title: "HÀNH TRÌNH DỰ ÁN TUỒNG ĐỒ HUYỆN ĐƯỜNG",
   description:
-    "Từ những văn bản trong sách giáo khoa, học sinh bước vào các hành trình khám phá, nghiên cứu và sáng tạo.",
+    "Từ kịch bản trích đoạn Huyện đường trong sách giáo khoa Ngữ văn 10, học sinh Lớp 10.3 bước vào hai chặng trải nghiệm liên hoàn: Giải mã tạo hình mặt nạ STEAM và Sân khấu hóa trên lớp.",
 };
 
 export const LEARNING_TOPICS: LearningTopic[] = [
   {
     id: "chu-de-01-huyen-duong",
-    topicNumber: "CHỦ ĐỀ 01",
+    topicNumber: "CHẶNG DỰ ÁN 01",
     title: "MÃ MÀU VÀ NÉT MẶT ƯỚC LỆ",
     status: "Đang triển khai",
     summary:
-      "Thiết kế mặt nạ và diễn xướng ước lệ qua trích đoạn tuồng hài Huyện đường.",
+      "Giải mã tính cách tứ đại nhân vật và chế tạo bộ mặt nạ bìa cứng 3D qua trích đoạn tuồng hài Huyện đường.",
     subjectInfo: "Ngữ văn 10",
-    lessonInfo: "Bài 5: Tích trò sân khấu dân gian",
+    lessonInfo: "Bài 5: Tích trò sân khấu dân gian (Nghêu, Sò, Ốc, Hến)",
     coreContent:
-      "Đọc hiểu kịch bản tuồng đồ Huyện đường, giải mã tính cách nhân vật qua ngôn từ trào phúng và chuyển hóa thành ngôn ngữ tạo hình hóa trang sân khấu tuồng.",
+      "Đọc hiểu kịch bản tuồng đồ Huyện đường, giải mã tính cách nhân vật qua ngôn từ trào phúng và chuyển hóa thành ngôn ngữ tạo hình hóa trang mặt nạ sân khấu tuồng.",
     activities: [
-      "Giải mã nhân vật qua lời thoại, cử chỉ và mâu thuẫn tại công đường.",
-      "Thiết kế chân dung mô phỏng hóa trang tuồng theo nguyên tắc mã màu và đường nét ước lệ.",
-      "Chế tạo bộ chân dung nhân vật bằng bìa cứng và biên soạn thẻ giải mã học thuật.",
-      "Tổ chức vi diễn (diễn xướng trích đoạn ngắn) kết hợp sản phẩm tạo hình.",
+      "Giải mã 4 nhân vật (Tri huyện, Đề lại, Lính lệ, Trùm Sò) qua lời thoại, cử chỉ và mâu thuẫn tại công đường.",
+      "Thiết kế bản vẽ kỹ thuật tỷ lệ 1:1 / cm theo nguyên tắc mã màu và đường nét ước lệ.",
+      "Chế tạo mặt nạ 3D bằng bìa carton tái chế, đất sét nhẹ và màu acrylic tại 4 Tổ.",
+      "Biên soạn bài thuyết minh Word (.docx) lý giải ý nghĩa từng vùng màu và nét cọ.",
     ],
     expectedProducts:
-      "Bộ chân dung nhân vật bằng bìa cứng, thẻ giải mã và video trình diễn.",
-    buttonLabel: "KHÁM PHÁ CHỦ ĐỀ",
+      "4 bộ bản vẽ kỹ thuật, 4 sản phẩm mặt nạ 3D hoàn thiện và hồ sơ Word thuyết minh của 4 Tổ.",
+    buttonLabel: "KHÁM PHÁ CHẶNG 01",
     artSubject: "tuong-huyen-duong",
-    expectedAssetFile: "/images/topics/chu-de-01-huyen-duong.jpg",
+    expectedAssetFile: "/images/cinema/scene-03-sac-tuong.png",
     characters: [
       {
         id: "tri-huyen",
         name: "Tri huyện",
-        roleTitle: "Quan đầu huyện cầm cân nảy mực",
+        roleTitle: "Quan đầu huyện cầm cân nảy mực (Tổ 1)",
         faceColorMeaning:
           "Nền mặt trắng mốc pha sắc xám bệch, điểm vệt đỏ sẫm nơi gò má – biểu trưng cho kẻ đội lốt quan trường đạo mạo nhưng thực chất tham của đút, xử kiện theo đồng tiền và sắc đẹp.",
         paletteHex: ["#E8DEC8", "#7A2925", "#2D211B", "#A77B3D"],
@@ -49,128 +49,134 @@ export const LEARNING_TOPICS: LearningTopic[] = [
       {
         id: "de-lai",
         name: "Đề lại",
-        roleTitle: "Viên thư lại thân cận nơi huyện đường",
+        roleTitle: "Phụ quan thư lại mưu mô (Tổ 2)",
         faceColorMeaning:
-          "Nền trắng bệch điểm mảng xanh xám quanh hốc mắt và sống mũi trắng – mã màu của hạng mọt sách gian ngoan, chuyên bày mưu tính kế ăn của đút hai mang.",
-        paletteHex: ["#DCD6C8", "#435647", "#2D211B", "#D6B77E"],
+          "Da vàng nhợt phối mũ tròn đen nâu viền vàng đồng cũ bạc màu và vùng mắt – môi đỏ sẫm: khắc họa kẻ phụ quan kín đáo, gian xảo, ham danh lợi và khéo luồn cúi.",
+        paletteHex: ["#2B211E", "#991B1B", "#B59449", "#E8D3B9"],
         strokeFeatures:
-          "Nét vẽ mảnh, sắc, khóe miệng nhếch lệch sang một bên, ánh mắt sắc lẻm luôn nhìn nghiêng.",
+          "Đôi lông mày đen vẽ xếch ngược sắc lẹm, mắt hẹp sắc, ria mép cong vểnh kết hợp nụ cười nhếch mép đầy toan tính.",
         personalityDecoding:
-          "Thông thuộc luật lệ giấy tờ nhưng dùng chữ nghĩa để xoay chuyển trắng đen, cấu kết chặt chẽ với Tri huyện để vắt kiệt dân lành và kẻ kiện cáo.",
+          "Thông thuộc luật lệ giấy tờ nhưng dùng chữ nghĩa mớm cung cho quan huyện để xoay chuyển trắng đen và ăn đút lót.",
         propsAndGesture:
-          "Tay cầm sổ sách hoặc bút lông, dáng đứng hơi khom về phía quan huyện để rỉ tai hiến kế.",
+          "Tay cầm sổ án, dáng đứng khom về phía Tri huyện để rỉ tai hiến kế.",
       },
       {
         id: "linh-le",
         name: "Lính lệ",
-        roleTitle: "Tay sai hầu hạ và canh gác công đường",
+        roleTitle: "Tay sai hầu hạ công đường (Tổ 3)",
         faceColorMeaning:
-          "Sắc mặt nâu đất pha vệt chàm hoặc vệt trắng ở chóp mũi (hề tuồng) – vừa mang nét dân dã bộc trực, vừa hách dịch bắt nạt kẻ dưới và kiếm chác tiền trà nước.",
-        paletteHex: ["#B88B5A", "#7A2925", "#F2E8D5", "#2D211B"],
+          "Mũ lính đen viền vàng – tua đỏ kết hợp chóp mũi tròn đắp nổi đỏ tươi (hề tuồng) và viền mắt trắng trợn ngược – vừa hách dịch quát tháo dân đen, vừa khúm núm trước đồng tiền.",
+        paletteHex: ["#DC2626", "#18181B", "#FACC15", "#FFFFFF"],
         strokeFeatures:
-          "Nét cọ tròn, khỏe, đôi mắt mở to linh hoạt, vệt phấn trắng ngang sống mũi tạo hiệu ứng hài hước.",
+          "Chân mày đen dày xếch cao, sống mũi đắp nổi chóp đỏ tròn Ø 1,5 cm, bộ ria vểnh ba nhánh ngạo nghễ.",
         personalityDecoding:
-          "Hiểu rõ thói tham nhũng của quan trên, vừa phục tùng vừa nói toạc sự thật nơi cửa quan bằng giọng điệu vừa nịnh vừa giễu.",
+          "Hiểu rõ lệ ăn hối lộ nơi cửa quan, nạt nộ người tay không đi kiện nhưng lập tức đổi giọng khi được lót tay.",
         propsAndGesture:
-          "Cầm roi hoặc gậy lệ, bước đi dậm chân dọa nạt nhưng lập tức tươi cười khi thấy tiền lót tay.",
+          "Cầm gậy lệ canh cổng quan, bước đi dậm chân dọa nạt và xòe tay đòi tiền lễ.",
       },
       {
         id: "trum-so",
         name: "Trùm Sò",
-        roleTitle: "Trọc phú keo kiệt bị mất trộm kiện quan",
+        roleTitle: "Trọc phú keo kiệt đi kiện (Tổ 4)",
         faceColorMeaning:
-          "Nền mặt vàng sậm pha sắc nâu bủn xỉn, trán nhăn nhiều nếp – biểu hiện của kẻ giàu có nhưng keo kiệt, khúm núm trước cửa quan song vẫn cố giữ chặt hầu bao.",
-        paletteHex: ["#C99E52", "#50372A", "#7A2925", "#F2E8D5"],
+          "Nền trắng kem pha vàng nhạt nhợt nhạt cùng vùng má và môi cam đất trầm – thể hiện vẻ giàu có quê mùa nhưng hoang mang, tái mặt vì sợ mất của nơi cửa quan.",
+        paletteHex: ["#F3E5AB", "#D97742", "#27272A", "#854D0E"],
         strokeFeatures:
-          "Lông mày rủ xoắn, nhiều nếp nhăn ở trán và khóe miệng, gương mặt co rúm vì tiếc của.",
+          "Khuôn mặt tròn đầy, đôi mắt mở to ngơ ngác (cách 2 cm), lông mày nhíu sát tạo 5 vệt nhăn trán và miệng trề méo xệch.",
         personalityDecoding:
-          "Nạn nhân của vụ trộm nhưng bản tính hà tiện, tính toán từng đồng lễ vật khiến cảnh đối đáp tại công đường càng thêm bi hài.",
+          "Nạn nhân bị mất trộm nhưng bản tính bủn xỉn, vừa tiếc đứt ruột từng đồng đút lót vừa phải cam chịu trước uy quyền quan huyện.",
         propsAndGesture:
-          "Dáng đi lật đật, hai tay ôm khư khư túi tiền hoặc vạt áo, liên tục vái lạy và than vãn.",
+          "Dáng đi lật đật, hai tay ôm khư khư túi bạc, liên tục vái lạy và than vãn.",
       },
     ],
     projectSteps: [
       {
-        phase: "Chặng 1: Giải mã văn bản",
-        task: "Đọc phân vai trích đoạn Huyện đường, lập bảng đối chiếu lời thoại – hành động – tính cách của 4 nhân vật: Tri huyện, Đề lại, Lính lệ, Trùm Sò.",
-        output: "Phiếu hồ sơ giải mã 4 nhân vật.",
+        phase: "Bước 1: Giải mã văn bản",
+        task: "Đọc phân vai trích đoạn Huyện đường, lập bảng đối chiếu lời thoại – hành động – tính cách của 4 nhân vật theo 4 Tổ.",
+        output: "Phiếu hồ sơ giải mã nhân vật của từng Tổ.",
       },
       {
-        phase: "Chặng 2: Thiết kế mã màu & nét vẽ",
-        task: "Tra cứu quy ước màu sắc mặt nạ tuồng truyền thống, phác thảo bản thiết kế tỉ lệ 1:1 kèm chú thích ý nghĩa từng vùng màu.",
-        output: "Bản vẽ thiết kế và Thẻ giải mã (Decoding Card).",
+        phase: "Bước 2: Bản vẽ kỹ thuật tỷ lệ",
+        task: "Tra cứu quy ước màu sắc mặt nạ tuồng, dựng bản vẽ trục đối xứng có chú thích kích thước (cm/mm) và cắt dưỡng giấy 1:1.",
+        output: "Bản phác thảo kỹ thuật & dưỡng giấy.",
       },
       {
-        phase: "Chặng 3: Chế tạo tại Xưởng STEAM",
-        task: "Cắt ghép bìa cứng nhiều lớp tạo độ nổi khối (mày, râu, mão), phối màu acrylic/màu bột và xử lý kết cấu tay cầm hoặc dây đeo.",
-        output: "Bộ chân dung 4 nhân vật bằng bìa cứng hoàn chỉnh.",
+        phase: "Bước 3: Chế tạo mặt nạ 3D",
+        task: "Xẻ tai gấp khối bìa carton sóng hoặc đắp đất sét tự khô tạo độ nổi khối (mũi, mão, râu), phối màu acrylic và gắn dây đeo.",
+        output: "Sản phẩm mặt nạ 3D hoàn thiện của 4 Tổ.",
       },
       {
-        phase: "Chặng 4: Vi diễn & Thuyết minh",
-        task: "Biểu diễn trích đoạn ngắn 3–5 phút sử dụng bộ chân dung đã chế tạo, quay video tư liệu và thuyết trình trước lớp.",
-        output: "Video trình diễn và hồ sơ trưng bày tại Triển lãm số.",
+        phase: "Bước 4: Biên soạn thuyết minh",
+        task: "Hoàn thiện tệp Word thuyết minh giải trình mối liên hệ giữa tạo hình mặt nạ với nghệ thuật châm biếm của văn bản.",
+        output: "Bản Word thuyết minh (.docx) lưu trữ trên Triển lãm số.",
       },
     ],
   },
   {
-    id: "chu-de-02-dam-san",
-    topicNumber: "CHỦ ĐỀ 02",
-    title: "ĐÁNH THỨC THẾ GIỚI SỬ THI",
-    status: "Dự kiến phát triển",
+    id: "chu-de-02-san-khau-hoa",
+    topicNumber: "CHẶNG DỰ ÁN 02",
+    title: "THUYẾT MINH & DIỄN KỊCH HUYỆN ĐƯỜNG",
+    status: "Hoàn thiện sân khấu hóa",
     summary:
-      "Thiết kế hộp kể chuyện sử thi qua văn bản Đăm Săn đi bắt Nữ thần Mặt Trời.",
+      "Thuyết trình Nói & Nghe bảo vệ ý tưởng thiết kế mặt nạ của 4 Tổ và biểu diễn sân khấu hóa trích đoạn Huyện đường toàn Lớp 10.3.",
     subjectInfo: "Ngữ văn 10",
-    lessonInfo: "Sử thi Tây Nguyên – Đăm Săn đi bắt Nữ thần Mặt Trời",
+    lessonInfo: "Thực hành Nói & Nghe – Sân khấu hóa tác phẩm văn học dân gian",
     coreContent:
-      "Hình tượng người anh hùng, không gian sử thi và văn hóa Ê-đê.",
+      "Đưa sản phẩm mặt nạ thủ công bước lên không gian sân khấu lớp học 'Công minh chính trực – Huyện đường' thông qua hoạt động thuyết trình nhóm và diễn kịch nhập vai.",
     activities: [
-      "Tìm hiểu văn bản Đăm Săn đi bắt Nữ thần Mặt Trời và không gian văn hóa nhà dài, rừng thiêng Tây Nguyên.",
-      "Thiết kế các lớp cảnh xa – trung – gần tái hiện hành trình vượt rừng Sáp Đen và ngôi nhà Nữ thần Mặt Trời.",
-      "Chế tạo hộp kể chuyện (Storybox / Diorama) với các lớp giấy cắt và khung gỗ/bìa cứng.",
-      "Thử nghiệm hiệu ứng ánh sáng xuyên lớp và cơ cấu chuyển động nhân vật giấy.",
+      "Thiết kế bối cảnh bảng phấn Công đường với hoành phi và câu đối đăng đối.",
+      "Đại diện 4 Tổ lần lượt thuyết minh trực tiếp trước lớp về ý tưởng, mã màu và chất liệu mặt nạ.",
+      "Phân vai diễn viên đại diện các Tổ tập luyện đài từ, cử chỉ ước lệ và tung hứng lời thoại.",
+      "Ghi hình trọn vẹn buổi thuyết minh của các Tổ và vở diễn kịch chung của Lớp 10.3.",
     ],
     expectedProducts:
-      "Hộp kể chuyện sử thi có các lớp cảnh, nhân vật giấy và hiệu ứng ánh sáng đơn giản.",
-    buttonLabel: "KHÁM PHÁ CHỦ ĐỀ",
-    artSubject: "epic-dam-san",
-    expectedAssetFile: "/images/topics/chu-de-02-su-thi-dam-san.jpg",
-    storyboxLayers: [
+      "Bối cảnh sân khấu lớp học, bộ video thuyết minh mặt nạ của các Tổ và 01 Video diễn kịch chung toàn lớp.",
+    buttonLabel: "KHÁM PHÁ CHẶNG 02",
+    artSubject: "exhibit-micro-acting",
+    expectedAssetFile: "/student-products/huyen-duong/boi-canh-chung-lop-hoc.jpg",
+    stagePlanSteps: [
       {
-        layerName: "Lớp tiền cảnh (Layer 01)",
-        description: "Cầu thang nhà dài Ê-đê, hoa văn thổ cẩm viền khung sân khấu và bóng dáng tù trưởng Đăm Săn cưỡi ngựa.",
-        materialSuggestion: "Bìa cứng định lượng 350gsm cắt trổ chi tiết, bồi giấy màu nâu gỗ và đỏ son.",
+        stageName: "Hạng mục 01: Bối cảnh Công đường Lớp 10.3",
+        description:
+          "Trang trí bảng chính bằng bức hoành phi 'Công minh chính trực – Huyện đường' và đôi câu đối 'Chí vị quốc sự ý vô tư / Trung hiếu nhân nghĩa giữ thủy chung' tạo thế đối lập châm biếm.",
+        materialSuggestion:
+          "Phấn màu vàng – trắng trên bảng xanh lớp học, bàn ghế gỗ bố trí làm án thư quan huyện.",
       },
       {
-        layerName: "Lớp trung cảnh (Layer 02 – Cơ cấu trượt)",
-        description: "Rừng Sáp Đen hiểm trở, cỏ tranh sắc như lưỡi dao và con đường dẫn tới miền đất của Nữ thần Mặt Trời.",
-        materialSuggestion: "Giấy mỹ thuật đục lỗ xuyên sáng, thanh trượt giấy dẫn hướng nhân vật di chuyển.",
+        stageName: "Hạng mục 02: Báo cáo Thuyết minh Mặt nạ (Nói & Nghe)",
+        description:
+          "Đại diện từng Tổ cầm mặt nạ hoàn thiện đứng trước lớp phân tích căn cứ lời thoại SGK, ý nghĩa từng gam màu và quy trình chế tác bìa carton tái chế.",
+        materialSuggestion:
+          "Mặt nạ 3D của Tổ, văn bản thuyết minh và máy quay ghi hình trực tiếp.",
       },
       {
-        layerName: "Lớp hậu cảnh & Nguồn sáng (Layer 03)",
-        description: "Ngôi nhà Nữ thần Mặt Trời rực rỡ ánh vàng và vầng mặt trời tỏa sáng khi Nữ thần bước ra.",
-        materialSuggestion: "Giấy can mờ (tracing paper) tán sáng kết hợp đèn LED vàng ấm đặt phía sau hộp.",
+        stageName: "Hạng mục 03: Vở Diễn kịch Sân khấu hóa Toàn lớp",
+        description:
+          "Kết nối các vai Tri huyện, Đề lại, Lính lệ, Trùm Sò và các nhân vật trong vụ kiện thành vở diễn hoàn chỉnh giàu tiếng cười phê phán.",
+        materialSuggestion:
+          "Bộ mặt nạ 4 Tổ, đạo cụ quạt giấy, sổ án, túi tiền và trang phục biểu diễn.",
       },
     ],
     projectSteps: [
       {
-        phase: "Chặng 1: Khảo cứu văn bản & Văn hóa Ê-đê",
-        task: "Phân tích vẻ đẹp bi tráng của Đăm Săn, biểu tượng Mặt Trời và hệ thống chi tiết không gian kỳ vĩ trong sử thi.",
-        output: "Sơ đồ phân cảnh hành trình sử thi.",
+        phase: "Chặng 1: Biên tập kịch bản & Phân vai",
+        task: "Chắt lọc các lớp thoại đắt giá trong trích đoạn Huyện đường, thống nhất danh sách diễn viên đại diện từ cả 4 Tổ.",
+        output: "Bảng phân công diễn xuất Lớp 10.3 (.docx).",
       },
       {
-        phase: "Chặng 2: Thiết kế cấu trúc Hộp kể chuyện",
-        task: "Tính toán kích thước hộp, khoảng cách giữa các lớp cảnh để tạo chiều sâu thị giác và vị trí đặt nguồn sáng.",
-        output: "Bản vẽ kỹ thuật 3 lớp cảnh và nhân vật giấy.",
+        phase: "Chặng 2: Dựng bối cảnh Công đường",
+        task: "Thiết kế mỹ thuật bảng sân khấu và sắp đặt vị trí án thư, lối ra vào của quan huyện, nha lại và người đi kiện.",
+        output: "Không gian sân khấu lớp học hoàn chỉnh.",
       },
       {
-        phase: "Chặng 3: Chế tạo & Thử nghiệm ánh sáng",
-        task: "Cắt lắp các lớp cảnh vào khung hộp, lắp rãnh trượt cho nhân vật Đăm Săn và thử nghiệm góc chiếu sáng khi Mặt Trời lên.",
-        output: "Mô hình Hộp kể chuyện sử thi hoạt động hoàn chỉnh.",
+        phase: "Chặng 3: Thuyết trình bảo vệ sản phẩm",
+        task: "Các Tổ trình bày bài thuyết minh mặt nạ trong 1–4 phút, lắng nghe nhận xét từ giáo viên và các tổ bạn.",
+        output: "Hệ thống video thuyết minh mặt nạ trên lớp.",
       },
       {
-        phase: "Chặng 4: Kể chuyện sử thi (Klei Khan)",
-        task: "Trình diễn kể chuyện kết hợp điều khiển ánh sáng, chuyển động nhân vật trong hộp và thuyết minh giá trị văn hóa.",
-        output: "Bài thuyết minh và sản phẩm trưng bày.",
+        phase: "Chặng 4: Công diễn & Lưu trữ số",
+        task: "Biểu diễn chính thức trích đoạn kịch Huyện đường, ghi hình tư liệu và xuất bản lên chuyên trang Triển lãm số.",
+        output: "Video diễn kịch chung của Lớp 10.3.",
       },
     ],
   },

@@ -18,7 +18,6 @@ import {
   EXHIBITION_CATEGORIES,
   EXHIBITION_ITEMS,
   EXHIBITION_SECTION_META,
-  EXHIBITION_TOPICS_FILTER,
 } from "@/data/exhibitionData";
 import { ExhibitionCategory, ExhibitionItem } from "@/types/heritage";
 import { HeritageArtwork } from "./HeritageArtwork";
@@ -28,7 +27,6 @@ import { HuyenDuongStudentArchive } from "./HuyenDuongStudentArchive";
 export const DigitalExhibitionSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] =
     useState<ExhibitionCategory>("Tất cả");
-  const [selectedTopicFilter, setSelectedTopicFilter] = useState<string>("all");
   const [activeExhibit, setActiveExhibit] = useState<ExhibitionItem | null>(
     null
   );
@@ -44,13 +42,11 @@ export const DigitalExhibitionSection: React.FC = () => {
 
   const filteredItems = useMemo(() => {
     return EXHIBITION_ITEMS.filter((item) => {
-      const matchCategory =
-        selectedCategory === "Tất cả" || item.category === selectedCategory;
-      const matchTopic =
-        selectedTopicFilter === "all" || item.topicId === selectedTopicFilter;
-      return matchCategory && matchTopic;
+      return (
+        selectedCategory === "Tất cả" || item.category === selectedCategory
+      );
     });
-  }, [selectedCategory, selectedTopicFilter]);
+  }, [selectedCategory]);
 
   return (
     <section
@@ -86,57 +82,30 @@ export const DigitalExhibitionSection: React.FC = () => {
         {/* Hồ sơ Sản phẩm Học sinh Dự án Huyện đường (5 đầu mục lớp & 4 nhóm) */}
         <HuyenDuongStudentArchive />
 
-        {/* Bộ lọc theo loại sản phẩm và chủ đề */}
-        <div className="mt-7 sm:mt-8 space-y-4 rounded-2xl bg-heritage-ivoryLight p-4 sm:p-5 border border-heritage-goldAntique/40">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-heritage-goldAntique/30 pb-4">
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-heritage-woodDark">
-              <Filter className="h-4 w-4 text-heritage-crimson" />
-              <span>Lọc theo Chủ đề học tập:</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {EXHIBITION_TOPICS_FILTER.map((tp) => {
-                const active = selectedTopicFilter === tp.id;
-                return (
-                  <button
-                    key={tp.id}
-                    type="button"
-                    onClick={() => setSelectedTopicFilter(tp.id)}
-                    className={`rounded-lg px-3.5 py-2 sm:py-1.5 text-xs sm:text-sm font-medium transition-colors ${
-                      active
-                        ? "bg-heritage-woodDark text-heritage-goldSoft border border-heritage-goldAntique"
-                        : "bg-heritage-ivory text-heritage-ink border border-heritage-goldAntique/30 hover:bg-heritage-ivoryDeep"
-                    }`}
-                  >
-                    {tp.label}
-                  </button>
-                );
-              })}
-            </div>
+        {/* Bộ lọc theo loại sản phẩm */}
+        <div className="mt-7 sm:mt-8 rounded-2xl bg-heritage-ivoryLight p-4 sm:p-5 border border-heritage-goldAntique/40">
+          <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-heritage-woodDark mb-3">
+            <Filter className="h-4 w-4 text-heritage-crimson" />
+            <span>Danh mục trưng bày Dự án Huyện đường:</span>
           </div>
-
-          <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-heritage-woodLight block mb-2.5">
-              Danh mục trưng bày bảo tàng:
-            </span>
-            <div className="no-scrollbar flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
-              {EXHIBITION_CATEGORIES.map((cat) => {
-                const isSelected = selectedCategory === cat;
-                return (
-                  <button
-                    key={cat}
-                    type="button"
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`shrink-0 whitespace-nowrap min-h-[38px] rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition-all ${
-                      isSelected
-                        ? "bg-heritage-crimson text-heritage-ivory border border-heritage-goldSoft shadow-sm"
-                        : "bg-heritage-ivory text-heritage-ink border border-heritage-goldAntique/40 hover:bg-heritage-ivoryDeep"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                );
-              })}
-            </div>
+          <div className="no-scrollbar flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
+            {EXHIBITION_CATEGORIES.map((cat) => {
+              const isSelected = selectedCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`shrink-0 whitespace-nowrap min-h-[38px] rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition-all ${
+                    isSelected
+                      ? "bg-heritage-crimson text-heritage-ivory border border-heritage-goldSoft shadow-sm"
+                      : "bg-heritage-ivory text-heritage-ink border border-heritage-goldAntique/40 hover:bg-heritage-ivoryDeep"
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -144,16 +113,15 @@ export const DigitalExhibitionSection: React.FC = () => {
         {filteredItems.length === 0 ? (
           <div className="mt-10 rounded-2xl bg-heritage-ivoryLight p-10 text-center border border-heritage-goldAntique/40">
             <p className="font-serif text-xl font-bold text-heritage-woodDark">
-              Chưa có mẫu trưng bày nào khớp với bộ lọc hiện tại
+              Chưa có sản phẩm nào khớp với danh mục hiện tại
             </p>
             <p className="mt-2 text-sm text-heritage-ink">
-              Hãy chọn &ldquo;Tất cả&rdquo; danh mục hoặc chủ đề khác để xem các hồ sơ mẫu minh họa.
+              Hãy chọn &ldquo;Tất cả&rdquo; danh mục để xem đầy đủ các hồ sơ sản phẩm Dự án Huyện đường.
             </p>
             <button
               type="button"
               onClick={() => {
                 setSelectedCategory("Tất cả");
-                setSelectedTopicFilter("all");
               }}
               className="mt-4 rounded-xl bg-heritage-woodDark px-5 py-2.5 text-sm font-semibold text-heritage-goldSoft hover:bg-heritage-crimson hover:text-heritage-ivory transition-colors"
             >
@@ -172,11 +140,9 @@ export const DigitalExhibitionSection: React.FC = () => {
                     : null;
               const targetHref =
                 groupDedicatedHref ||
-                (item.topicId.includes("huyen-duong")
-                  ? "/chu-de-hoc-tap/chu-de-01-huyen-duong"
-                  : item.topicId.includes("dam-san")
-                    ? "/chu-de-hoc-tap/chu-de-02-dam-san"
-                    : "/xuong-steam");
+                (item.topicId.includes("san-khau")
+                  ? "/chu-de-hoc-tap/chu-de-02-san-khau-hoa"
+                  : "/chu-de-hoc-tap/chu-de-01-huyen-duong");
               return (
               <TiltSpotlightCard
                 key={item.id}

@@ -5,6 +5,7 @@ import { ScrollVisualCinema } from "@/components/ScrollVisualCinema";
 import { DIEN_DAN_CINEMA } from "@/data/pageCinemaData";
 import { CallToActionAndFooter } from "@/components/CallToActionAndFooter";
 import { LearningForumSection } from "@/components/LearningForumSection";
+import { RubricAssessmentSection } from "@/components/RubricAssessmentSection";
 import { ArrowRight } from "lucide-react";
 
 export default function DienDanHocTapPage() {
@@ -42,6 +43,7 @@ export default function DienDanHocTapPage() {
           </div>
 
           <LearningForumSection />
+          <RubricAssessmentSection />
         </div>
       </main>
 

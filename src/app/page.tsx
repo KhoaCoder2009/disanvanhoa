@@ -8,6 +8,8 @@ import { DigitalExhibitionSection } from "@/components/DigitalExhibitionSection"
 import { LearningForumSection } from "@/components/LearningForumSection";
 import { CallToActionAndFooter } from "@/components/CallToActionAndFooter";
 import { ScrollChapterReveal } from "@/components/ScrollChapterReveal";
+import { WarmupChatGptSection } from "@/components/WarmupChatGptSection";
+import { RubricAssessmentSection } from "@/components/RubricAssessmentSection";
 
 export default function HomePage() {
   return (
@@ -17,8 +19,9 @@ export default function HomePage() {
 
       {/* Nội dung Scrolling Landing Page liền mạch */}
       <main className="flex-1">
-        {/* CHẶNG 00: KHỞI HÀNH — Hero Banner Sân khấu 3D & Giới thiệu 3 giá trị */}
+        {/* CHẶNG 00: KHỞI HÀNH — Hero Banner Sân khấu 3D & Khởi động ChatGPT */}
         <HeroSection />
+        <WarmupChatGptSection />
 
         {/* CHẶNG 01: BẢO TÀNG SỐ – DIGITAL MUSEUM */}
         <ScrollChapterReveal
@@ -52,12 +55,13 @@ export default function HomePage() {
           <DigitalExhibitionSection />
         </ScrollChapterReveal>
 
-        {/* CHẶNG 05: DIỄN ĐÀN HỌC TẬP – LEARNING FORUM */}
+        {/* CHẶNG 05: DIỄN ĐÀN HỌC TẬP & RUBRIC CHẤM ĐIỂM TRỰC TUYẾN */}
         <ScrollChapterReveal
           chapterNumber="CHẶNG 05 / 05"
-          chapterName="DIỄN ĐÀN HỌC TẬP • LẮNG NGHE – ĐỐI THOẠI – LAN TỎA"
+          chapterName="DIỄN ĐÀN HỌC TẬP & RUBRIC • ĐỐI THOẠI – ĐÁNH GIÁ"
         >
           <LearningForumSection />
+          <RubricAssessmentSection />
         </ScrollChapterReveal>
       </main>
 

@@ -2,15 +2,9 @@ export type ArtSubject =
   | "hero-stage"
   | "tuong-huyen-duong"
   | "huyen-duong-court"
-  | "epic-dam-san"
-  | "dam-san-longhouse"
-  | "dam-san-sun-goddess"
   | "exhibit-mask-set"
-  | "exhibit-storybox"
-  | "exhibit-longhouse"
   | "exhibit-infographic"
   | "exhibit-micro-acting"
-  | "exhibit-podcast"
   | "exhibit-handbook";
 
 export interface MuseumWing {
@@ -51,7 +45,7 @@ export interface LearningTopic {
   id: string;
   topicNumber: string;
   title: string;
-  status: "Đang triển khai" | "Dự kiến phát triển";
+  status: "Đang triển khai" | "Hoàn thiện sân khấu hóa";
   summary: string;
   subjectInfo: string;
   lessonInfo: string;
@@ -62,8 +56,8 @@ export interface LearningTopic {
   artSubject: ArtSubject;
   expectedAssetFile: string;
   characters?: CharacterProfile[];
-  storyboxLayers?: {
-    layerName: string;
+  stagePlanSteps?: {
+    stageName: string;
     description: string;
     materialSuggestion: string;
   }[];
@@ -88,19 +82,17 @@ export interface SteamElement {
   vietnameseName: string;
   shortExplanation: string;
   huyenDuongExample: string;
-  damSanExample: string;
+  classroomApplication: string;
   toolsAndMaterials: string[];
 }
 
 export type ExhibitionCategory =
   | "Tất cả"
-  | "Sản phẩm thủ công"
-  | "Mô hình sân khấu"
   | "Mặt nạ và tạo hình nhân vật"
-  | "Hộp kể chuyện"
   | "Video vi diễn"
-  | "Podcast và thuyết minh"
-  | "Infographic và học liệu số";
+  | "Thuyết minh mặt nạ"
+  | "Infographic và học liệu số"
+  | "Sản phẩm thủ công";
 
 export interface ExhibitionItem {
   id: string;

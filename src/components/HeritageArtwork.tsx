@@ -20,15 +20,9 @@ const MUSEUM_IMAGE_MAP: Partial<Record<ArtSubject, string>> = {
   "hero-stage": "/images/cinema/scene-01-di-san.png",
   "tuong-huyen-duong": "/images/cinema/scene-03-sac-tuong.png",
   "huyen-duong-court": "/images/cinema/scene-07-huyen-duong.png",
-  "epic-dam-san": "/images/cinema/scene-05-dam-san-steam.png",
-  "dam-san-longhouse": "/images/cinema/scene-dam-san-nha-dai.png",
-  "dam-san-sun-goddess": "/images/cinema/scene-dam-san-mat-troi.png",
   "exhibit-mask-set": "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
-  "exhibit-storybox": "/images/cinema/scene-05-dam-san-steam.png",
-  "exhibit-longhouse": "/images/cinema/scene-dam-san-nha-dai.png",
   "exhibit-infographic": "/images/cinema/scene-infographic-tu-giac.png",
   "exhibit-micro-acting": "/images/cinema/scene-vi-dien-huyen-duong.png",
-  "exhibit-podcast": "/images/cinema/scene-podcast-klei-khan.png",
   "exhibit-handbook": "/images/cinema/scene-so-tay-the-giai-ma.png",
 };
 
@@ -40,43 +34,19 @@ const DEFAULT_SUBJECT_LINKS: Record<ArtSubject, { href: string; label: string }>
   },
   "huyen-duong-court": {
     href: "/chu-de-hoc-tap/chu-de-01-huyen-duong",
-    label: "Chủ đề 01: Dự án Mặt nạ Huyện đường",
-  },
-  "epic-dam-san": {
-    href: "/chu-de-hoc-tap/chu-de-02-dam-san",
-    label: "Chủ đề 02: Hộp kể chuyện Sử thi Đăm Săn",
-  },
-  "dam-san-longhouse": {
-    href: "/bao-tang-so/khong-gian-dam-san",
-    label: "Phòng 03: Không gian văn hóa Ê-đê & Đăm Săn",
-  },
-  "dam-san-sun-goddess": {
-    href: "/bao-tang-so/hanh-trinh-mat-troi",
-    label: "Phòng 04: Hành trình bắt Nữ thần Mặt Trời",
+    label: "Chặng 01: Dự án Mặt nạ Huyện đường",
   },
   "exhibit-mask-set": {
     href: "/bao-tang-so/tu-dai-nhan-vat",
     label: "Phòng 02: Tứ đại nhân vật Huyện đường",
-  },
-  "exhibit-storybox": {
-    href: "/chu-de-hoc-tap/chu-de-02-dam-san",
-    label: "Chủ đề 02: Hộp kể chuyện Đăm Săn",
-  },
-  "exhibit-longhouse": {
-    href: "/bao-tang-so/khong-gian-dam-san",
-    label: "Phòng 03: Mô hình Nhà dài Ê-đê",
   },
   "exhibit-infographic": {
     href: "/trien-lam-so#noi-dung-trien-lam",
     label: "Triển lãm số: Infographic Tứ giác Huyện đường",
   },
   "exhibit-micro-acting": {
-    href: "/trien-lam-so#noi-dung-trien-lam",
-    label: "Triển lãm số: Vi diễn sân khấu Huyện đường",
-  },
-  "exhibit-podcast": {
-    href: "/trien-lam-so#noi-dung-trien-lam",
-    label: "Triển lãm số: Podcast sử thi Đăm Săn",
+    href: "/trien-lam-so#kho-san-pham-hoc-sinh",
+    label: "Triển lãm số: Sân khấu hóa & Diễn kịch Lớp 10.3",
   },
   "exhibit-handbook": {
     href: "/xuong-steam",

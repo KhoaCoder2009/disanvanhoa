@@ -5,6 +5,7 @@ import { ScrollVisualCinema } from "@/components/ScrollVisualCinema";
 import { TRIEN_LAM_SO_CINEMA } from "@/data/pageCinemaData";
 import { CallToActionAndFooter } from "@/components/CallToActionAndFooter";
 import { DigitalExhibitionSection } from "@/components/DigitalExhibitionSection";
+import { RubricAssessmentSection } from "@/components/RubricAssessmentSection";
 import { ArrowRight, Camera, FileCheck, UploadCloud } from "lucide-react";
 
 export default function TrienLamSoPage() {
@@ -74,6 +75,7 @@ export default function TrienLamSoPage() {
           </div>
 
           <DigitalExhibitionSection />
+          <RubricAssessmentSection />
         </div>
 
         <section className="py-12 sm:py-16 bg-heritage-ivoryLight border-b border-heritage-goldAntique/30">

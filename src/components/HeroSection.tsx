@@ -24,12 +24,11 @@ export const HeroSection: React.FC = () => {
                   Kiến trúc học tập liên môn • Ngữ văn 10
                 </span>
                 <h2 className="mt-3 font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-heritage-crimson tracking-tight">
-                  MỘT KHÔNG GIAN – HAI DỰ ÁN TRỌNG TÂM
+                  KHÔNG GIAN DI SẢN TUỒNG ĐỒ HUYỆN ĐƯỜNG
                 </h2>
                 <p className="mt-3 text-sm sm:text-base text-heritage-ink leading-relaxed">
-                  Kết nối hai tác phẩm tiêu biểu trong chương trình Ngữ văn 10 — Tuồng đồ{" "}
-                  <strong>Huyện đường</strong> và Sử thi{" "}
-                  <strong>Đăm Săn</strong> — với phương pháp học tập trải nghiệm, nghiên cứu liên môn và thực hành chế tác STEAM.
+                  Kết nối tác phẩm tiêu biểu trong chương trình Ngữ văn 10 — Tuồng đồ{" "}
+                  <strong>Huyện đường</strong> (trích đoạn <em>Nghêu, Sò, Ốc, Hến</em>) — với phương pháp học tập trải nghiệm, nghiên cứu liên môn và thực hành chế tác mặt nạ STEAM của Lớp 10.3.
                 </p>
               </div>
 
@@ -42,10 +41,10 @@ export const HeroSection: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="font-serif text-base sm:text-xl font-bold text-heritage-woodDark">
-                        Giải mã Tuồng Huyện đường &amp; Sử thi Đăm Săn
+                        Giải mã Tuồng đồ Huyện đường &amp; Tứ đại Nhân vật
                       </h3>
                       <p className="mt-1.5 text-sm text-heritage-ink leading-relaxed">
-                        Tiếp cận nghệ thuật hóa trang ước lệ của tứ đại nhân vật (Tri huyện, Đề lại, Lính lệ, Trùm Sò) và không gian nhà dài – Mặt Trời của người anh hùng Đăm Săn.
+                        Tiếp cận nghệ thuật hóa trang ước lệ của bốn nhân vật chốn công đường: Tri huyện (Tổ 1), Đề lại (Tổ 2), Lính lệ (Tổ 3) và Trùm Sò (Tổ 4).
                       </p>
                     </div>
                   </div>
@@ -59,10 +58,10 @@ export const HeroSection: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="font-serif text-base sm:text-xl font-bold text-heritage-woodDark">
-                        Học tập qua nghiên cứu và chế tác STEAM
+                        Học tập qua nghiên cứu và chế tác Mặt nạ STEAM
                       </h3>
                       <p className="mt-1.5 text-sm text-heritage-ink leading-relaxed">
-                        Vận dụng quy trình 5 bước để chế tạo mặt nạ bìa cứng nhiều lớp (Huyện đường), sa bàn Hộp kể chuyện 3 lớp ánh sáng (Đăm Săn), vi diễn và thuyết minh học thuật.
+                        Vận dụng quy trình 5 bước để lập bản vẽ kỹ thuật tỷ lệ, chế tạo mặt nạ bìa cứng 3D, viết bài thuyết minh Word và tổ chức diễn kịch sân khấu hóa tại lớp.
                       </p>
                     </div>
                   </div>

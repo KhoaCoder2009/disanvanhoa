@@ -23,7 +23,7 @@ export const CallToActionAndFooter: React.FC = () => {
             DI SẢN KHÔNG CHỈ ĐỂ LƯU GIỮ, MÀ CÒN ĐỂ TIẾP NỐI
           </h2>
           <p className="mx-auto mt-3 sm:mt-4 max-w-2xl text-sm sm:text-lg text-white/95 leading-relaxed">
-            Mỗi trang văn dân gian và sử thi đều ẩn chứa nguồn cảm hứng bất tận. Hãy bắt đầu hành trình giải mã văn hóa, thiết kế và chế tác sản phẩm sáng tạo của riêng bạn ngay hôm nay.
+            Mỗi trang kịch bản văn học dân gian đều ẩn chứa nguồn cảm hứng bất tận. Hãy bắt đầu hành trình giải mã văn hóa Tuồng đồ Huyện đường, thiết kế và chế tác sản phẩm sáng tạo của riêng bạn ngay hôm nay.
           </p>
           <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Link
@@ -85,12 +85,12 @@ export const CallToActionAndFooter: React.FC = () => {
               <ul className="space-y-2 text-xs sm:text-sm text-white/90">
                 <li>
                   <Link href="/#bao-tang-so" className="hover:text-heritage-goldSoft transition-colors">
-                    1. Bảo tàng số (Tuồng Huyện đường &amp; Sử thi Đăm Săn)
+                    1. Bảo tàng số (Tuồng đồ Huyện đường)
                   </Link>
                 </li>
                 <li>
                   <Link href="/#chu-de-hoc-tap" className="hover:text-heritage-goldSoft transition-colors">
-                    2. Chủ đề học tập (Huyện đường &amp; Sử thi Đăm Săn)
+                    2. Chủ đề học tập (Mặt nạ &amp; Sân khấu hóa)
                   </Link>
                 </li>
                 <li>

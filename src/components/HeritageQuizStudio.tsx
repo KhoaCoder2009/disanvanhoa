@@ -64,12 +64,12 @@ function getMasteryBadge(percent: number): {
   if (percent >= 50) {
     return {
       title: "Người Khám phá Tri thức",
-      note: "Bạn đã nắm được các nét chính; nên ôn thêm mã màu Tuồng Huyện đường và bối cảnh Sử thi Đăm Săn.",
+      note: "Bạn đã nắm được các nét chính; nên ôn thêm mã màu Tuồng Huyện đường và quy trình chế tác mặt nạ STEAM.",
     };
   }
   return {
     title: "Hành trình Khởi đầu",
-    note: "Hãy ghé lại Bảo tàng số và Xưởng STEAM để củng cố ngữ liệu Huyện đường & Đăm Săn trước khi thử sức lại.",
+    note: "Hãy ghé lại Bảo tàng số và Xưởng STEAM để củng cố ngữ liệu Huyện đường trước khi thử sức lại.",
   };
 }
 
@@ -252,7 +252,7 @@ export const HeritageQuizStudio: React.FC = () => {
                 </span>
               </div>
               <p className="mt-2 text-sm sm:text-base text-heritage-ink/85">
-                Câu hỏi được biên soạn trực tiếp từ ngữ liệu Ngữ văn 10 (Dự án Tuồng đồ Huyện đường, Sử thi Đăm Săn) và Quy trình STEAM 5 bước.
+                Câu hỏi được biên soạn trực tiếp từ ngữ liệu Ngữ văn 10 (Dự án Tuồng đồ Huyện đường), tư liệu Lớp 10.3 và Quy trình STEAM 5 bước.
               </p>
 
               {/* Hai gói đề tổng hợp */}
@@ -293,7 +293,7 @@ export const HeritageQuizStudio: React.FC = () => {
                       scope === "all" ? "text-white/90" : "text-heritage-ink/80"
                     }`}
                   >
-                    Bao quát đủ 4 chuyên đề trọng tâm: Ngữ liệu Huyện đường, Mã màu 4 nhân vật, Sử thi Đăm Săn và Quy trình thiết kế STEAM.
+                    Bao quát đủ 4 chuyên đề trọng tâm: Ngữ liệu Huyện đường, Mã màu 4 nhân vật, Sân khấu hóa Lớp 10.3 và Quy trình thiết kế STEAM.
                   </p>
                 </button>
 

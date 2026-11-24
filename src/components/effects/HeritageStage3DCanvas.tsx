@@ -7,7 +7,6 @@ import {
   RotateCcw,
   Sun,
   Theater,
-  Trees,
   ZoomIn,
   ZoomOut,
   Box,
@@ -21,8 +20,8 @@ import {
 } from "@/lib/threeHeritageUtils";
 import { HERITAGE_3D_MODELS } from "@/data/models3dRegistry";
 
-export type StageSubject = "all" | "tuong" | "dam-san";
-export type StageLighting = "court-stage" | "storybox-backlight";
+export type StageSubject = "tuong";
+export type StageLighting = "court-stage" | "warm-lantern";
 
 interface HeritageStage3DCanvasProps {
   initialSubject?: StageSubject;
@@ -30,19 +29,15 @@ interface HeritageStage3DCanvasProps {
 }
 
 const DEFAULT_CAMERA_POS: Record<StageSubject, [number, number, number]> = {
-  all: [0.05, 2.55, 6.25],
   tuong: [0.15, 1.95, 4.15],
-  "dam-san": [-0.1, 2.05, 4.25],
 };
 
 const DEFAULT_TARGET: Record<StageSubject, [number, number, number]> = {
-  all: [0, 0.72, 0],
   tuong: [0, 0.78, 0],
-  "dam-san": [0, 0.72, 0],
 };
 
 export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
-  initialSubject = "all",
+  initialSubject = "tuong",
   className = "",
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -215,10 +210,10 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
     floorGroup.add(stageGrid);
 
     // =========================================================================
-    // DỰ ÁN 01: SÂN KHẤU TUỒNG ĐỒ "HUYỆN ĐƯỜNG" GROUP
+    // DỰ ÁN TUỒNG ĐỒ "HUYỆN ĐƯỜNG" GROUP
     // =========================================================================
     const tuongGroup = new THREE.Group();
-    tuongGroup.position.x = subjectRef.current === "all" ? -1.62 : 0;
+    tuongGroup.position.x = 0;
     stageRoot.add(tuongGroup);
 
     const tuongPlinth = new THREE.Mesh(
@@ -262,71 +257,6 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
     const maskPivot = new THREE.Group();
     maskPivot.position.set(0, 0.86, 0.14);
     tuongGroup.add(maskPivot);
-
-    // =========================================================================
-    // DỰ ÁN 02: HỘP CHUYỆN KỂ "SỬ THI ĐĂM SĂN" GROUP
-    // =========================================================================
-    const damSanGroup = new THREE.Group();
-    damSanGroup.position.x = subjectRef.current === "all" ? 1.54 : 0;
-    stageRoot.add(damSanGroup);
-
-    // Diorama Timber Crate Base
-    const dioramaBase = new THREE.Mesh(
-      new THREE.BoxGeometry(2.05, 0.2, 1.62),
-      new THREE.MeshStandardMaterial({
-        color: "#2E1A13",
-        roughness: 0.7,
-        metalness: 0.1,
-      })
-    );
-    dioramaBase.position.y = 0.1;
-    dioramaBase.castShadow = true;
-    dioramaBase.receiveShadow = true;
-    damSanGroup.add(dioramaBase);
-
-    const earthBed = new THREE.Mesh(
-      new THREE.BoxGeometry(1.9, 0.05, 1.46),
-      new THREE.MeshStandardMaterial({
-        color: "#52321E",
-        roughness: 0.88,
-      })
-    );
-    earthBed.position.y = 0.21;
-    earthBed.receiveShadow = true;
-    damSanGroup.add(earthBed);
-
-    // Golden Sun Goddess Backdrop Disc
-    const sunDisc = new THREE.Mesh(
-      new THREE.CircleGeometry(0.46, 36),
-      new THREE.MeshStandardMaterial({
-        color: "#FBBF24",
-        emissive: "#F59E0B",
-        emissiveIntensity: 1.15,
-        roughness: 0.3,
-        side: THREE.DoubleSide,
-      })
-    );
-    sunDisc.position.set(0.35, 1.32, -0.64);
-    damSanGroup.add(sunDisc);
-
-    const sunHalo = new THREE.Mesh(
-      new THREE.RingGeometry(0.5, 0.62, 36),
-      new THREE.MeshStandardMaterial({
-        color: "#FDE68A",
-        emissive: "#D97706",
-        emissiveIntensity: 0.7,
-        transparent: true,
-        opacity: 0.65,
-        side: THREE.DoubleSide,
-      })
-    );
-    sunHalo.position.set(0.35, 1.32, -0.645);
-    damSanGroup.add(sunHalo);
-
-    // Hero weapon rack mount for Đăm Săn shield + golden sword
-    const weaponStandGroup = new THREE.Group();
-    weaponStandGroup.position.set(0.56, 0.24, 0.44);
-    damSanGroup.add(weaponStandGroup);
 
     // Track loaded promises to report progress
     const loadAsset = async (
@@ -389,46 +319,6 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
       tuongGroup.add(m);
     });
 
-    // Load genuine open-license GLB assets for Sử thi Đăm Săn
-    void loadAsset(HERITAGE_3D_MODELS.damSanHouse.url, 1.15, (m) => {
-      m.position.set(-0.42, 0.23, 0.02);
-      m.rotation.y = 0.36;
-      damSanGroup.add(m);
-    });
-
-    void loadAsset(HERITAGE_3D_MODELS.mountainRange.url, 1.55, (m) => {
-      m.position.set(0.22, 0.23, -0.45);
-      damSanGroup.add(m);
-    });
-
-    void loadAsset(HERITAGE_3D_MODELS.pineTree.url, 0.85, (m) => {
-      m.position.set(0.76, 0.23, -0.15);
-      damSanGroup.add(m);
-    });
-
-    void loadAsset(HERITAGE_3D_MODELS.forestTree.url, 0.92, (m) => {
-      m.position.set(-0.82, 0.23, -0.36);
-      damSanGroup.add(m);
-    });
-
-    void loadAsset(HERITAGE_3D_MODELS.campfire.url, 0.36, (m) => {
-      m.position.set(0.25, 0.23, 0.42);
-      damSanGroup.add(m);
-    });
-
-    void loadAsset(HERITAGE_3D_MODELS.damSanShield.url, 0.42, (m) => {
-      m.position.set(0, 0.15, 0);
-      m.rotation.x = -0.3;
-      m.rotation.y = 0.2;
-      weaponStandGroup.add(m);
-    });
-
-    void loadAsset(HERITAGE_3D_MODELS.damSanSword.url, 0.56, (m) => {
-      m.position.set(0.16, 0.08, 0.02);
-      m.rotation.z = -0.38;
-      weaponStandGroup.add(m);
-    });
-
     // ResizeObserver for crisp adaptive DPI
     const resizeObserver = new ResizeObserver((entries) => {
       if (disposed) return;
@@ -465,30 +355,11 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
       const dt = Math.min(timer.getDelta(), 0.1);
       const elapsed = timer.getElapsed();
 
-      const activeSub = subjectRef.current;
       const activeLight = lightingRef.current;
 
-      // Layout positioning & smooth transitions
-      if (activeSub === "all") {
-        tuongGroup.visible = true;
-        damSanGroup.visible = true;
-        tuongGroup.position.x = THREE.MathUtils.lerp(tuongGroup.position.x, -1.62, 0.18);
-        damSanGroup.position.x = THREE.MathUtils.lerp(damSanGroup.position.x, 1.54, 0.18);
-      } else if (activeSub === "tuong") {
-        tuongGroup.visible = true;
-        damSanGroup.visible = false;
-        tuongGroup.position.x = THREE.MathUtils.lerp(tuongGroup.position.x, 0, 0.2);
-      } else {
-        tuongGroup.visible = false;
-        damSanGroup.visible = true;
-        damSanGroup.position.x = THREE.MathUtils.lerp(damSanGroup.position.x, 0, 0.2);
-      }
-
-      // Gentle theatrical breathing on Tuồng mask & glowing Sun halo
+      // Gentle theatrical breathing on Tuồng mask
       maskPivot.rotation.y = Math.sin(elapsed * 0.9) * 0.12;
       maskPivot.position.y = 0.86 + Math.sin(elapsed * 1.4) * 0.025;
-      sunDisc.scale.setScalar(1 + Math.sin(elapsed * 2.1) * 0.03);
-      sunHalo.rotation.z = elapsed * 0.25;
 
       // Dynamic Lighting modes
       if (activeLight === "court-stage") {
@@ -555,7 +426,7 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
             type="button"
             onClick={() =>
               setLightingMode((m) =>
-                m === "court-stage" ? "storybox-backlight" : "court-stage"
+                m === "court-stage" ? "warm-lantern" : "court-stage"
               )
             }
             className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-[#DFC7BE] hover:border-heritage-crimson text-xs font-semibold text-[#5C4942] transition-colors cursor-pointer"
@@ -564,7 +435,7 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
             <span>
               {lightingMode === "court-stage"
                 ? "Đèn sân khấu"
-                : "Ánh hắt sử thi"}
+                : "Ánh đèn lồng"}
             </span>
           </button>
           <button
@@ -593,7 +464,7 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
             {modelsLoadedCount < 6 && (
               <div className="pointer-events-none absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-[#261815]/85 border border-heritage-goldAntique/60 px-3 py-1 text-[11px] font-semibold text-[#FDE68A] backdrop-blur-sm">
                 <Box className="w-3.5 h-3.5 animate-pulse" />
-                <span>Đang nạp phôi 3D ({modelsLoadedCount}/14)...</span>
+                <span>Đang nạp phôi 3D ({modelsLoadedCount}/6)...</span>
               </div>
             )}
 
@@ -634,49 +505,18 @@ export const HeritageStage3DCanvas: React.FC<HeritageStage3DCanvasProps> = ({
               Trình duyệt chưa bật WebGL 3D
             </p>
             <p className="text-xs text-[#DFC7BE] max-w-sm">
-              Vui lòng mở bằng Chrome, Edge hoặc Safari phiên bản mới để xoay 360° các mô hình sân khấu Huyện đường và hộp Đăm Săn.
+              Vui lòng mở bằng Chrome, Edge hoặc Safari phiên bản mới để xoay 360° mô hình sân khấu Tuồng đồ Huyện đường.
             </p>
           </div>
         )}
       </div>
 
-      {/* Subject Switcher */}
+      {/* Stage Label Bar */}
       <div className="p-2.5 sm:p-3 bg-[#FDF8F6] border-t border-[#EFE3DD] flex flex-wrap items-center justify-center gap-2">
-        <button
-          type="button"
-          onClick={() => setSubject("all")}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-            subject === "all"
-              ? "bg-heritage-crimson text-white shadow-sm"
-              : "bg-white text-[#5C4942] border border-[#DFC7BE] hover:border-heritage-crimson"
-          }`}
-        >
-          <span>Song hành 2 Dự án</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => setSubject("tuong")}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-            subject === "tuong"
-              ? "bg-heritage-crimson text-white shadow-sm"
-              : "bg-white text-[#5C4942] border border-[#DFC7BE] hover:border-heritage-crimson"
-          }`}
-        >
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-heritage-crimson text-white shadow-sm">
           <Theater className="w-3.5 h-3.5" />
-          <span>Dự án Huyện đường</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => setSubject("dam-san")}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-            subject === "dam-san"
-              ? "bg-heritage-crimson text-white shadow-sm"
-              : "bg-white text-[#5C4942] border border-[#DFC7BE] hover:border-heritage-crimson"
-          }`}
-        >
-          <Trees className="w-3.5 h-3.5" />
-          <span>Sử thi Đăm Săn</span>
-        </button>
+          <span>Sân khấu 3D Dự án Tuồng đồ Huyện đường (Lớp 10.3)</span>
+        </span>
       </div>
     </div>
   );

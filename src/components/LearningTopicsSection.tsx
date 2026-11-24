@@ -225,19 +225,19 @@ export const LearningTopicsSection: React.FC = () => {
                   {topic02.summary}
                 </p>
 
-                {/* Cấu trúc 3 lớp cảnh Hộp kể chuyện sử thi */}
+                {/* Các hạng mục thực hành Sân khấu hóa */}
                 <div className="mt-5 rounded-xl bg-heritage-ivoryDeep/60 p-4 border border-heritage-goldAntique/40">
                   <span className="text-xs font-bold uppercase tracking-wider text-heritage-woodDark block">
-                    Cấu trúc Hộp kể chuyện sử thi (3 lớp cảnh)
+                    3 Hạng mục Sân khấu hóa Lớp 10.3
                   </span>
                   <div className="mt-2.5 space-y-2 text-xs sm:text-sm">
-                    {topic02.storyboxLayers?.map((layer, idx) => (
+                    {topic02.stagePlanSteps?.map((layer, idx) => (
                       <div
                         key={idx}
                         className="rounded-lg bg-heritage-ivoryLight p-2.5 border border-heritage-goldAntique/30"
                       >
                         <span className="font-semibold text-heritage-crimson">
-                          {layer.layerName}:
+                          {layer.stageName}:
                         </span>{" "}
                         <span className="text-heritage-ink">{layer.description}</span>
                       </div>
@@ -251,12 +251,12 @@ export const LearningTopicsSection: React.FC = () => {
                       Nội dung &amp; Hoạt động:
                     </span>
                     <p className="mt-1 text-heritage-ink leading-relaxed">
-                      Hình tượng người anh hùng, không gian sử thi và văn hóa Ê-đê. Tìm hiểu văn bản, thiết kế cảnh, chế tạo hộp kể chuyện, thử nghiệm ánh sáng và chuyển động nhân vật.
+                      {topic02.coreContent}
                     </p>
                   </div>
                   <div className="rounded-xl bg-heritage-ivoryLight p-3.5 border border-heritage-goldAntique/40">
                     <span className="font-serif font-bold text-heritage-woodDark">
-                      Sản phẩm dự kiến:
+                      Sản phẩm đầu ra:
                     </span>
                     <p className="mt-1 text-heritage-ink leading-relaxed">
                       {topic02.expectedProducts}
@@ -372,26 +372,26 @@ export const LearningTopicsSection: React.FC = () => {
                 </div>
               )}
 
-              {selectedTopic.storyboxLayers && (
+              {selectedTopic.stagePlanSteps && (
                 <div>
                   <h4 className="flex items-center gap-2 font-serif text-xl font-bold text-heritage-woodDark">
                     <Layers className="h-5 w-5 text-heritage-moss" />
-                    <span>Thiết kế kỹ thuật 3 lớp cảnh Hộp kể chuyện sử thi</span>
+                    <span>3 Hạng mục Sân khấu hóa &amp; Thuyết minh Lớp 10.3</span>
                   </h4>
                   <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                    {selectedTopic.storyboxLayers.map((layer, idx) => (
+                    {selectedTopic.stagePlanSteps.map((layer, idx) => (
                       <div
                         key={idx}
                         className="rounded-xl bg-heritage-ivoryLight p-4 border border-heritage-goldAntique/50"
                       >
                         <span className="font-serif font-bold text-heritage-crimson block">
-                          {layer.layerName}
+                          {layer.stageName}
                         </span>
                         <p className="mt-2 text-sm leading-relaxed">
                           {layer.description}
                         </p>
                         <p className="mt-2 text-xs text-heritage-woodLight bg-heritage-ivoryDeep/60 p-2 rounded">
-                          <strong>Vật liệu gợi ý:</strong> {layer.materialSuggestion}
+                          <strong>Đạo cụ &amp; Tư liệu:</strong> {layer.materialSuggestion}
                         </p>
                       </div>
                     ))}

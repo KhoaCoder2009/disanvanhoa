@@ -56,31 +56,31 @@ const ARCHIVE_TABS: {
   {
     id: "activity-photos",
     label: "Ảnh & Video hoạt động",
-    countBadge: "19 ảnh • 3 clip",
+    countBadge: "22 ảnh • 4 clip",
     icon: <Camera className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
   },
   {
     id: "mask-sketches",
     label: "Phác thảo & Mặt nạ",
-    countBadge: "4 tổ",
+    countBadge: "4/4 tổ",
     icon: <PenTool className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
   },
   {
     id: "word-script",
     label: "Bản Word & Phân công",
-    countBadge: "3 file .docx",
+    countBadge: "4 file .docx",
     icon: <FileText className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
   },
   {
     id: "mask-videos",
     label: "Video thuyết minh mặt nạ",
-    countBadge: "3/4 đã nộp",
+    countBadge: "4/4 đã nộp",
     icon: <Film className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
   },
   {
     id: "class-drama",
     label: "Video diễn kịch lớp",
-    countBadge: "1 chung",
+    countBadge: "02:32",
     icon: <Clapperboard className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
   },
 ];
@@ -91,6 +91,7 @@ export const HuyenDuongStudentArchive: React.FC = () => {
   const [sketchViewMode, setSketchViewMode] = useState<
     Record<string, "sketch" | "finished">
   >({
+    "hd-sketch-to-1": "finished",
     "hd-sketch-to-2": "finished",
     "hd-sketch-to-3": "finished",
     "hd-sketch-to-4": "finished",
@@ -670,6 +671,14 @@ export const HuyenDuongStudentArchive: React.FC = () => {
               </div>
               <div className="flex flex-wrap items-center gap-2.5 shrink-0">
                 <a
+                  href={HUYEN_DUONG_WORD_SCRIPT.to1DocxUrl}
+                  download
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2.5 text-xs font-semibold text-white hover:bg-heritage-woodDark transition-colors"
+                >
+                  <Download className="h-4 w-4" aria-hidden="true" />
+                  <span>Tải Thuyết minh Tổ 1 (.docx)</span>
+                </a>
+                <a
                   href={HUYEN_DUONG_WORD_SCRIPT.to2DocxUrl}
                   download
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-heritage-crimson px-4 py-2.5 text-xs font-semibold text-white hover:bg-heritage-woodDark transition-colors"
@@ -789,7 +798,7 @@ export const HuyenDuongStudentArchive: React.FC = () => {
                 4. Video thuyết minh mặt nạ trực tiếp trên lớp (4 Tổ)
               </h4>
               <span className="text-xs font-medium text-heritage-crimson">
-                Đã tích hợp video thực tế của Tổ 2 (03:13), Tổ 3 (01:50) &amp; Tổ 4 (00:47)
+                Đủ 4/4 Tổ: Tổ 1 (01:38), Tổ 2 (03:13), Tổ 3 (01:50) &amp; Tổ 4 (00:47)
               </span>
             </div>
 
@@ -873,7 +882,9 @@ export const HuyenDuongStudentArchive: React.FC = () => {
                   <video
                     controls
                     preload="metadata"
-                    className="h-full w-full object-cover"
+                    playsInline
+                    poster={HUYEN_DUONG_CLASS_DRAMA.stageBackdropImage}
+                    className="h-full w-full object-contain bg-black"
                   >
                     <source
                       src={HUYEN_DUONG_CLASS_DRAMA.videoUrl}

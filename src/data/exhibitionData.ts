@@ -3,38 +3,89 @@ import { ExhibitionCategory, ExhibitionItem } from "@/types/heritage";
 export const EXHIBITION_SECTION_META = {
   vietnameseName: "TRIỂN LÃM SỐ",
   englishName: "DIGITAL EXHIBITION",
-  title: "NHỮNG SÁNG TẠO TỪ TRANG SÁCH",
+  title: "NHỮNG SÁNG TẠO TỪ TRANG KỊCH BẢN HUYỆN ĐƯỜNG",
   description:
-    "Không gian trưng bày số chuyên sâu kết hợp sản phẩm thực tế của học sinh Lớp 10.3 — Trường THPT Bình Phú (Dự án Tuồng đồ Huyện đường) cùng hệ thống mẫu học liệu định hướng cho Dự án Sử thi Đăm Săn.",
+    "Không gian trưng bày và lưu trữ toàn bộ sản phẩm thực tế của học sinh Lớp 10.3 — Trường THPT Bình Phú trong Dự án Ngữ văn 10 – STEAM: Tuồng đồ Huyện đường (Nghêu, Sò, Ốc, Hến).",
   sampleNotice:
-    "Cập nhật thực tế từ Google Drive dự án: Toàn bộ 25 hình ảnh mặt nạ, 3 bộ bản vẽ tỷ lệ, ảnh hoạt động nhóm, 6 video thuyết minh & chế tác và 3 tài liệu Word của Lớp 10.3 — Trường THPT Bình Phú đã được tích hợp trực tiếp vào Kho Sản phẩm Học sinh bên dưới. Các sản phẩm thuộc Dự án 02 (Đăm Săn) giữ nhãn Mẫu minh họa định hướng.",
+    "Kho lưu trữ chính thức từ Google Drive Lớp 10.3 — THPT Bình Phú: tích hợp đầy đủ bối cảnh chung của lớp, vở diễn kịch sân khấu hóa (02:32), 3 bộ mặt nạ & bản vẽ kỹ thuật, 3 bài thuyết minh Word và hệ thống video thuyết trình trên lớp.",
 };
 
 export const EXHIBITION_CATEGORIES: ExhibitionCategory[] = [
   "Tất cả",
-  "Sản phẩm thủ công",
-  "Mô hình sân khấu",
   "Mặt nạ và tạo hình nhân vật",
-  "Hộp kể chuyện",
   "Video vi diễn",
-  "Podcast và thuyết minh",
+  "Thuyết minh mặt nạ",
   "Infographic và học liệu số",
-];
-
-export const EXHIBITION_TOPICS_FILTER = [
-  { id: "all", label: "Tất cả hai dự án" },
-  { id: "chu-de-01-huyen-duong", label: "Dự án 01: Huyện đường (Tuồng)" },
-  { id: "chu-de-02-dam-san", label: "Dự án 02: Sử thi Đăm Săn" },
+  "Sản phẩm thủ công",
 ];
 
 export const EXHIBITION_ITEMS: ExhibitionItem[] = [
+  {
+    id: "exhibit-10-3-dien-kich-lop",
+    title: "Vở Diễn kịch Sân khấu hóa: Trích đoạn Huyện đường (Tập thể Lớp 10.3)",
+    category: "Video vi diễn",
+    topicTitle: "Dự án Huyện đường — Lớp 10.3, THPT Bình Phú",
+    topicId: "chu-de-02-san-khau-hoa",
+    authorNote:
+      "Sản phẩm sân khấu hóa chung Lớp 10.3 — Diễn xuất: Tấn Lộc, Tiến, Đạt, Gia Khang • Bối cảnh bảng: Khôi Nguyên, Ngọc Diệp",
+    isIllustrativeSample: false,
+    ideaDescription:
+      "Tác phẩm biểu diễn sân khấu hóa chung toàn Lớp 10.3 (02 phút 32 giây) trên nền bức hoành phi phấn 'Công minh chính trực – Huyện đường', kết nối các nhân vật công đường với bộ mặt nạ thủ công, lời thoại châm biếm và diễn xuất sinh động.",
+    makingProcess: [
+      "Bước 1: Chắt lọc các lớp thoại trào phúng đắt giá trong trích đoạn Huyện đường (SGK Ngữ văn 10) và phân vai đại diện 4 Tổ.",
+      "Bước 2: Thiết kế bối cảnh bảng phấn Công đường đăng đối gồm hoành phi và đôi câu đối cổ truyền.",
+      "Bước 3: Phối hợp bộ mặt nạ bìa cứng, đạo cụ sân khấu và ghi hình 4K tại không gian lớp học 10.3.",
+    ],
+    materialsUsed: [
+      "Bối cảnh bảng phấn 'Công minh chính trực – Huyện đường'",
+      "Bộ mặt nạ 3D thủ công của các Tổ & đạo cụ biểu diễn",
+      "Video ghi hình thực tế tại lớp (02:32, chuẩn HD)",
+    ],
+    videoStatusNote:
+      "Video diễn kịch chính thức của Lớp 10.3 (02:32) quay trực tiếp tại bục giảng",
+    videoUrl: "/student-products/huyen-duong/video-dien-kich-lop-10-3.mp4",
+    videoPoster: "/student-products/huyen-duong/boi-canh-chung-lop-hoc.jpg",
+    documentUrl: "/student-products/huyen-duong/phan-cong-du-an-lop-10-3.docx",
+    artSubject: "exhibit-micro-acting",
+    expectedAssetFile: "/student-products/huyen-duong/boi-canh-chung-lop-hoc.jpg",
+  },
+  {
+    id: "exhibit-10-3-to-1-tri-huyen",
+    title: "Mặt nạ Tri huyện, Bản vẽ ô ly & Video Thuyết minh (Tổ 1 — Lớp 10.3)",
+    category: "Mặt nạ và tạo hình nhân vật",
+    topicTitle: "Dự án Huyện đường — Lớp 10.3",
+    topicId: "chu-de-01-huyen-duong",
+    authorNote:
+      "Sản phẩm thực tế Tổ 1 — Lớp 10.3, Trường THPT Bình Phú (Thuyết minh: Phước Sang & đại diện tổ)",
+    isIllustrativeSample: false,
+    ideaDescription:
+      "Mặt nạ Tri huyện nền đỏ son kết hợp mũ cánh chuồn đen viền vàng (15 × 5 cm, cánh 10,5 cm) có ấn tròn chính giữa và họa tiết mây vàng hai bên gò má: lớp vỏ bọc uy nghiêm, công minh giả tạo che đậy thói tham lam, nhũng nhiễu nơi công đường.",
+    makingProcess: [
+      "Bước 1: Đọc hiểu trích đoạn Huyện đường trong SGK Ngữ văn 10 và dựng 2 bản vẽ lưới ô ly chi tiết (khuôn mặt 14 × 16 cm & mũ cánh chuồn).",
+      "Bước 2: Cắt phôi bìa carton cứng, tạo hai cánh mũ chuồn đăng đối và gắn dây thun đeo chắc chắn.",
+      "Bước 3: Sơn phối 3 tông tương phản Đỏ son – Vàng kim – Đen tuyền, biên soạn BÀI THUYẾT MINH tổ 1.docx và quay video báo cáo 01:38.",
+    ],
+    materialsUsed: [
+      "Bìa carton cứng & vở ô ly dựng bản vẽ kỹ thuật",
+      "Màu acrylic đỏ son, vàng kim, đen tuyền & dây thun",
+      "Bài thuyết minh Word (.docx) & Video báo cáo trên lớp (01:38)",
+    ],
+    videoStatusNote:
+      "Video thuyết minh thực tế tại lớp (01:38), clip nhóm (00:24) kèm tệp Word (.docx)",
+    videoUrl: "/student-products/huyen-duong/video-thuyet-minh-to-1.mp4",
+    videoPoster: "/student-products/huyen-duong/ra-mat-to-1-tri-huyen.jpg",
+    documentUrl: "/student-products/huyen-duong/bai-thuyet-minh-to-1-tri-huyen.docx",
+    artSubject: "exhibit-mask-set",
+    expectedAssetFile: "/student-products/huyen-duong/mat-na-to-1-tri-huyen.jpg",
+  },
   {
     id: "exhibit-10-3-to-2-de-lai",
     title: "Mặt nạ Đề lại, Bản vẽ 3 bước & Video Thuyết minh (Tổ 2 — Lớp 10.3)",
     category: "Mặt nạ và tạo hình nhân vật",
     topicTitle: "Dự án Huyện đường — Lớp 10.3",
     topicId: "chu-de-01-huyen-duong",
-    authorNote: "Sản phẩm thực tế Tổ 2 — Lớp 10.3, Trường THPT Bình Phú (Thuyết minh: Tấn Tài & đại diện tổ)",
+    authorNote:
+      "Sản phẩm thực tế Tổ 2 — Lớp 10.3, Trường THPT Bình Phú (Thuyết minh: Tấn Tài & đại diện tổ)",
     isIllustrativeSample: false,
     ideaDescription:
       "Mặt nạ Đề lại chế tác qua 3 bước từ bản nháp trục đối xứng → dưỡng giấy tỷ lệ 1:1 → bìa carton xẻ tai uốn khối 3D: mũ tròn đen nâu viền vàng đồng cũ bạc màu, đôi mắt hẹp sắc tán đỏ sẫm, mày xếch cao, nụ cười nhếch mép và ria cong lột tả phụ quan gian xảo, nịnh trên nạt dưới.",
@@ -62,24 +113,25 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     category: "Mặt nạ và tạo hình nhân vật",
     topicTitle: "Dự án Huyện đường — Lớp 10.3",
     topicId: "chu-de-01-huyen-duong",
-    authorNote: "Sản phẩm thực tế Tổ 3 — Lớp 10.3, Trường THPT Bình Phú (Thuyết trình: Thu An & đại diện tổ)",
+    authorNote:
+      "Sản phẩm thực tế Tổ 3 — Lớp 10.3, Trường THPT Bình Phú (Thuyết trình: Thu An & đại diện tổ)",
     isIllustrativeSample: false,
     ideaDescription:
       "Từ bản vẽ kỹ thuật 18 × 24 cm có ghi chú chi tiết, Tổ 3 đắp đất sét tự khô tạo khối chóp mũi đỏ tròn kiểu hề tuồng, viền trắng quanh hốc mắt trợn hách dịch, ria vểnh 3 nhánh và mão lính lệ đen viền vàng – tua đỏ đặc trưng.",
     makingProcess: [
       "Bước 1: Thảo luận phân tích vai Lính lệ tại lớp và lập bản vẽ tỷ lệ 18 × 24 cm.",
-      "Bước 2: Cắt phôi bìa carton cứng, khoét mắt và đắp nổi sống mũi, gò má bằng đất sét trắng.",
-      "Bước 3: Phối màu acrylic tương phản mạnh, đeo thử kiểm tra tầm nhìn và quay video thuyết minh 01:50 trên bục giảng.",
+      "Bước 2: Cắt phôi bìa carton cứng, khoét mắt và đắp nổi sống mũi, hoa văn mão bằng đất sét nhẹ.",
+      "Bước 3: Phối màu acrylic tương phản mạnh và quay video thuyết minh 01:50 trên bục giảng.",
     ],
     materialsUsed: [
       "Bìa carton cứng khổ 18 × 24 cm",
-      "Đất sét trắng tự khô đắp nổi khối 3D",
+      "Đất sét tự khô đắp nổi khối 3D",
       "Màu acrylic đỏ tươi, đen, vàng kim, trắng",
     ],
     videoStatusNote:
-      "Video thuyết minh thực tế tại lớp (01:50) kèm 3 clip công đoạn chế tác",
+      "Video thuyết minh thực tế tại lớp (01:50) kèm 2 clip công đoạn đắp nổi & cắt phôi",
     videoUrl: "/student-products/huyen-duong/video-thuyet-minh-to-3.mp4",
-    videoPoster: "/student-products/huyen-duong/poster-thuyet-minh-to-3.jpg",
+    videoPoster: "/student-products/huyen-duong/ra-mat-to-3-linh-le.jpg",
     artSubject: "exhibit-mask-set",
     expectedAssetFile: "/student-products/huyen-duong/mat-na-to-3-linh-le.jpg",
   },
@@ -89,7 +141,8 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     category: "Mặt nạ và tạo hình nhân vật",
     topicTitle: "Dự án Huyện đường — Lớp 10.3",
     topicId: "chu-de-01-huyen-duong",
-    authorNote: "Sản phẩm thực tế Tổ 4 — Lớp 10.3, Trường THPT Bình Phú (Thuyết minh: Minh Luân)",
+    authorNote:
+      "Sản phẩm thực tế Tổ 4 — Lớp 10.3, Trường THPT Bình Phú (Thuyết minh: Minh Luân)",
     isIllustrativeSample: false,
     ideaDescription:
       "Tổ 4 thiết kế bản vẽ nhân trắc học chi tiết (hai mắt cách nhau 2 cm, cao 3–4 cm, nếp nhăn trán cách nhau 1 cm, lỗ thở bán kính 0,5 mm, môi trề xệch 4–5 cm) để khắc họa lão nhà giàu keo kiệt Trùm Sò vừa hoang mang sợ mất của vừa cố giữ vẻ giàu sang trước quan huyện.",
@@ -112,114 +165,12 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     expectedAssetFile: "/student-products/huyen-duong/mat-na-to-4-trum-so.jpg",
   },
   {
-    id: "exhibit-01-bo-chan-dung-huyen-duong",
-    title: "Bộ chân dung 4 nhân vật Huyện đường & Thẻ giải mã",
-    category: "Mặt nạ và tạo hình nhân vật",
-    topicTitle: "Mã màu và nét mặt ước lệ (Huyện đường)",
-    topicId: "chu-de-01-huyen-duong",
-    authorNote: "Mẫu minh họa học liệu – Giáo viên cập nhật tên nhóm/lớp sau khi nghiệm thu",
-    isIllustrativeSample: true,
-    ideaDescription:
-      "Bộ tứ chân dung mô phỏng hóa trang tuồng gồm Tri huyện, Đề lại, Lính lệ và Trùm Sò. Mỗi gương mặt được thiết kế dựa trên việc đối chiếu lời thoại tự bộc lộ trong văn bản với quy ước sắc diện sân khấu tuồng đồ.",
-    makingProcess: [
-      "Bước 1: Trích xuất từ khóa tính cách của 4 nhân vật từ văn bản SGK Ngữ văn 10.",
-      "Bước 2: Phác thảo lưới tỉ lệ khuôn mặt và xác định vùng mã màu (trắng mốc, xanh xám, nâu đất, vàng sậm).",
-      "Bước 3: Cắt ghép 3 lớp bìa cứng tạo độ nổi cho phần mày, râu, mão quan và tô màu acrylic.",
-      "Bước 4: Biên soạn 4 thẻ giải mã đính kèm giải thích ý nghĩa từng đường cọ.",
-    ],
-    materialsUsed: [
-      "Bìa cứng carton 3 lớp và giấy mỹ thuật định lượng cao",
-      "Màu acrylic, bút lông tỉa nét, keo sữa",
-      "Que cầm gỗ và thẻ thông tin in hai mặt",
-    ],
-    videoStatusNote:
-      "Khung video giới thiệu sản phẩm (Tệp chờ cập nhật: /public/videos/exhibition/bo-chan-dung-huyen-duong.mp4)",
-    artSubject: "exhibit-mask-set",
-    expectedAssetFile: "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
-  },
-  {
-    id: "exhibit-02-hop-ke-chuyen-dam-san",
-    title: "Hộp kể chuyện sử thi: Đăm Săn đi bắt Nữ thần Mặt Trời",
-    category: "Hộp kể chuyện",
-    topicTitle: "Đánh thức thế giới sử thi (Đăm Săn)",
-    topicId: "chu-de-02-dam-san",
-    authorNote: "Mẫu minh họa học liệu – Dự án 02: Sử thi Đăm Săn",
-    isIllustrativeSample: true,
-    ideaDescription:
-      "Mô hình hộp kể chuyện (Storybox) kết hợp 3 lớp cảnh giấy cắt xuyên sáng, tái hiện hành trình chàng Đăm Săn vượt rừng Sáp Đen đến ngôi nhà rực rỡ của Nữ thần Mặt Trời.",
-    makingProcess: [
-      "Bước 1: Phân tích không gian nghệ thuật trong văn bản sử thi để chia thành 3 lớp tiền cảnh, trung cảnh, hậu cảnh.",
-      "Bước 2: Thiết kế khung hộp có viền hoa văn thổ cẩm Ê-đê và khe cài các lớp cảnh.",
-      "Bước 3: Trổ giấy tạo hình nhà dài, rừng cỏ tranh, vầng mặt trời và nhân vật giấy có thanh trượt.",
-      "Bước 4: Lắp nguồn sáng ấm phía sau lớp giấy can để thử nghiệm hiệu ứng bình minh sử thi.",
-    ],
-    materialsUsed: [
-      "Bìa mô hình formex/carton cứng làm khung hộp",
-      "Giấy mỹ thuật đen, đỏ son, vàng cổ và giấy can tán sáng",
-      "Đèn LED dây dùng pin AA an toàn",
-    ],
-    videoStatusNote:
-      "Khung video thử nghiệm hiệu ứng ánh sáng hộp kể chuyện (Tệp chờ cập nhật: /public/videos/exhibition/hop-ke-chuyen-dam-san.mp4)",
-    artSubject: "exhibit-storybox",
-    expectedAssetFile: "/images/cinema/scene-05-dam-san-steam.png",
-  },
-  {
-    id: "exhibit-03-mo-hinh-nha-dai-dam-san",
-    title: "Sa bàn Nhà dài Ê-đê & Hoa văn thổ cẩm trong Sử thi Đăm Săn",
-    category: "Mô hình sân khấu",
-    topicTitle: "Đánh thức thế giới sử thi (Đăm Săn)",
-    topicId: "chu-de-02-dam-san",
-    authorNote: "Mẫu minh họa học liệu – Dự án 02: Sử thi Đăm Săn",
-    isIllustrativeSample: true,
-    ideaDescription:
-      "Sa bàn tái hiện kiến trúc nhà dài Ê-đê với cầu thang gỗ chạm khắc, dãy cồng chiêng đồng và dải hoa văn thổ cẩm đỏ – đen – vàng làm phông nền kể chuyện Klei Khan.",
-    makingProcess: [
-      "Bước 1: Khảo cứu tư liệu kiến trúc nhà dài Tây Nguyên và họa tiết thổ cẩm bản địa.",
-      "Bước 2: Tính toán tỉ lệ thu nhỏ sàn nhà, cầu thang đục bậc và độ dốc mái tranh.",
-      "Bước 3: Lắp ghép vật liệu tre gỗ tái chế và bổ sung bảng chú giải văn hóa Ê-đê.",
-    ],
-    materialsUsed: [
-      "Que tre, gỗ balsa mảnh và bìa kraft nâu",
-      "Vải thổ cẩm hoặc giấy vẽ hoa văn đỏ – đen – vàng",
-      "Bảng chú thích thuật ngữ văn hóa Tây Nguyên",
-    ],
-    videoStatusNote:
-      "Khung video giới thiệu sa bàn nhà dài Ê-đê (Tệp chờ cập nhật: /public/videos/exhibition/sa-ban-nha-dai-dam-san.mp4)",
-    artSubject: "exhibit-longhouse",
-    expectedAssetFile: "/images/cinema/scene-dam-san-nha-dai.png",
-  },
-  {
-    id: "exhibit-04-vi-dien-huyen-duong",
-    title: "Tư liệu Vi diễn: Cảnh xử kiện nơi Huyện đường",
-    category: "Video vi diễn",
-    topicTitle: "Mã màu và nét mặt ước lệ (Huyện đường)",
-    topicId: "chu-de-01-huyen-duong",
-    authorNote: "Mẫu minh họa học liệu – Khung lưu trữ video biểu diễn của học sinh",
-    isIllustrativeSample: true,
-    ideaDescription:
-      "Hoạt động sân khấu hóa ngắn (3–5 phút) nơi học sinh sử dụng chính bộ chân dung mặt nạ bìa cứng đã chế tạo để nhập vai Tri huyện, Đề lại, Lính lệ và Trùm Sò.",
-    makingProcess: [
-      "Bước 1: Biên tập kịch bản vi diễn giữ nguyên các lời thoại đắt giá trong SGK.",
-      "Bước 2: Tập luyện dáng đi, điệu bộ ước lệ (vuốt râu, khom lưng, xoa tay) khớp với nhịp trống.",
-      "Bước 3: Kết hợp đạo cụ, mặt nạ bìa cứng và ghi hình tại không gian lớp học.",
-    ],
-    materialsUsed: [
-      "Bộ chân dung 4 nhân vật Huyện đường bằng bìa cứng",
-      "Đạo cụ sân khấu đơn giản: quạt giấy, sổ án, tráp gỗ",
-      "Kịch bản phân vai và bảng phân cảnh ghi hình",
-    ],
-    videoStatusNote:
-      "Khung phát video vi diễn của nhóm học sinh (Giáo viên cập nhật tệp video sau buổi thực hành trên lớp)",
-    artSubject: "exhibit-micro-acting",
-    expectedAssetFile: "/images/cinema/scene-vi-dien-huyen-duong.png",
-  },
-  {
     id: "exhibit-05-infographic-huyen-duong",
     title: "Infographic giải mã Tứ giác nhân vật & Bút pháp châm biếm Huyện đường",
     category: "Infographic và học liệu số",
     topicTitle: "Mã màu và nét mặt ước lệ (Huyện đường)",
     topicId: "chu-de-01-huyen-duong",
-    authorNote: "Mẫu minh họa học liệu – Sản phẩm học liệu số Dự án 01",
+    authorNote: "Học liệu trực quan hóa hệ thống nhân vật Dự án Huyện đường",
     isIllustrativeSample: true,
     ideaDescription:
       "Infographic trực quan hóa mạng lưới quan hệ lợi ích giữa Tri huyện – Đề lại – Lính lệ – Trùm Sò, đối chiếu từng câu thoại trào phúng với mã màu sắc diện mặt tuồng.",
@@ -231,60 +182,35 @@ export const EXHIBITION_ITEMS: ExhibitionItem[] = [
     materialsUsed: [
       "Ngữ liệu trích đoạn Huyện đường (SGK Ngữ văn 10)",
       "Bảng mã hex màu sắc mặt nạ tuồng chuẩn hóa",
-      "Phần mềm thiết kế đồ họa và in ấn học tập",
+      "Tư liệu phục vụ ôn tập và thuyết trình nhóm",
     ],
     videoStatusNote:
-      "Tài liệu học liệu số đính kèm (Tệp chờ cập nhật: /public/docs/infographic-huyen-duong.pdf)",
+      "Tài liệu học liệu số phục vụ tra cứu nhanh 4 nhân vật Huyện đường",
     artSubject: "exhibit-infographic",
     expectedAssetFile: "/images/cinema/scene-infographic-tu-giac.png",
   },
   {
-    id: "exhibit-06-podcast-am-vang-su-thi",
-    title: "Podcast thuyết minh: Không gian văn hóa Ê-đê & Hành trình Đăm Săn",
-    category: "Podcast và thuyết minh",
-    topicTitle: "Đánh thức thế giới sử thi (Đăm Săn)",
-    topicId: "chu-de-02-dam-san",
-    authorNote: "Mẫu minh họa học liệu – Hồ sơ âm thanh thuyết minh Dự án 02",
-    isIllustrativeSample: true,
-    ideaDescription:
-      "Bản thu âm thuyết minh giới thiệu tục kể khan bên bếp lửa nhà dài, ý nghĩa chiếc cồng Hlong và khát vọng chinh phục Nữ thần Mặt Trời của cộng đồng Ê-đê qua hình tượng Đăm Săn.",
-    makingProcess: [
-      "Bước 1: Tổng hợp kiến thức ngữ văn và tư liệu văn hóa dân tộc Ê-đê ở Tây Nguyên.",
-      "Bước 2: Viết kịch bản lời bình ngắn gọn, giàu hình ảnh và cảm xúc.",
-      "Bước 3: Thu âm giọng đọc kết hợp thuyết minh trực tiếp cho mô hình Hộp kể chuyện.",
-    ],
-    materialsUsed: [
-      "Kịch bản thuyết minh học thuật 3 phút",
-      "Bản ghi âm giọng đọc của nhóm học sinh",
-      "Mã QR gắn trực tiếp lên Hộp kể chuyện sử thi",
-    ],
-    videoStatusNote:
-      "Khung nghe tệp âm thanh thuyết minh (Tệp chờ cập nhật: /public/audio/podcast-su-thi-dam-san.mp3)",
-    artSubject: "exhibit-podcast",
-    expectedAssetFile: "/images/cinema/scene-podcast-klei-khan.png",
-  },
-  {
     id: "exhibit-07-the-giai-ma-thu-cong",
-    title: "Bộ sổ tay & Thẻ gỗ giải mã quy ước hóa trang Tuồng Huyện đường",
+    title: "Sổ tay & Thẻ giải mã quy ước hóa trang Tuồng Huyện đường",
     category: "Sản phẩm thủ công",
     topicTitle: "Mã màu và nét mặt ước lệ (Huyện đường)",
     topicId: "chu-de-01-huyen-duong",
-    authorNote: "Mẫu minh họa học liệu – Sản phẩm thủ công nhóm",
+    authorNote: "Hồ sơ tra cứu thuật ngữ sân khấu Tuồng đồ",
     isIllustrativeSample: true,
     ideaDescription:
-      "Bộ thẻ tra cứu thủ công trình bày hệ thống thuật ngữ sân khấu Tuồng (ước lệ, cách điệu, nói lối, mặt nạ mã màu, râu ba chòm) dưới dạng thẻ xếp quạt tiện dụng khi học Huyện đường.",
+      "Bộ thẻ tra cứu trình bày hệ thống thuật ngữ sân khấu Tuồng (ước lệ, cách điệu, nói lối, mặt nạ mã màu, râu ba chòm) hỗ trợ học sinh khi phân tích và chế tác mặt nạ Huyện đường.",
     makingProcess: [
       "Bước 1: Hệ thống hóa các khái niệm và quy ước hóa trang từ kịch bản Huyện đường.",
-      "Bước 2: Vẽ minh họa thủ công từng sắc diện Tri huyện, Đề lại, Lính lệ, Trùm Sò trên thẻ bìa bồi giấy ngà.",
-      "Bước 3: Đóng quyển bằng dây gai truyền thống để lưu trữ tại góc học tập lớp.",
+      "Bước 2: Minh họa từng sắc diện Tri huyện, Đề lại, Lính lệ, Trùm Sò trên thẻ bìa bồi giấy ngà.",
+      "Bước 3: Đóng quyển lưu trữ tại góc học tập của lớp.",
     ],
     materialsUsed: [
-      "Bìa kraft định lượng 400gsm, giấy ngà",
-      "Dây gai, khoen đồng cố định thẻ",
+      "Bìa kraft định lượng cao, giấy ngà",
+      "Bảng chú thích thuật ngữ Tuồng hài dân gian",
       "Mực vẽ và bút lông tỉa nét",
     ],
     videoStatusNote:
-      "Khung video lật mở bộ thẻ thủ công (Tệp chờ cập nhật: /public/videos/exhibition/bo-the-thu-cong.mp4)",
+      "Tài liệu cẩm nang kèm theo bàn mô phỏng Xưởng STEAM",
     artSubject: "exhibit-handbook",
     expectedAssetFile: "/images/cinema/scene-so-tay-the-giai-ma.png",
   },

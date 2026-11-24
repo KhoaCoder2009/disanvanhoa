@@ -1,4 +1,4 @@
-export interface GroupPhotoSlot {
+﻿export interface GroupPhotoSlot {
   id: string;
   groupName: string;
   characterRole: string;
@@ -180,11 +180,11 @@ export const HUYEN_DUONG_ACTIVITY_PHOTOS: GroupPhotoSlot[] = [
     id: "hd-activity-to-1",
     groupName: "Tổ 1",
     characterRole: "Tri huyện",
-    title: "Phân tích vai Tri huyện & thiết kế mặt nạ quan huyện",
+    title: "Lập bản vẽ kẻ ô ly & hoàn thiện mặt nạ Tri huyện mũ cánh chuồn",
     caption:
-      "Phụ trách hình ảnh & video: Yến Vy, Quý • Chế tác: Gia Bảo, Băng Băng, Tấn Phúc, Băng Dương (Thư mục Hình ảnh t1 đang chờ cập nhật tệp).",
-    imageUrl: "",
-    expectedPath: "Tổ 1 / Hình ảnh t1 (Google Drive)",
+      "Tổ 1 đọc SGK Ngữ văn 10, thiết kế lưới kẻ ô ly (14 × 16 cm, mũ cánh chuồn 15 × 5 cm) và hoàn thiện mặt nạ Tri huyện đỏ son – viền vàng sắc nét.",
+    imageUrl: "/student-products/huyen-duong/hoat-dong-to-1-ve-phac-thao.jpg",
+    expectedPath: "/student-products/huyen-duong/hoat-dong-to-1-ve-phac-thao.jpg",
     membersSummary: "ND: Đức Duy, Anh Kiệt • Vẽ: Trà My, Khôi Nguyên",
   },
   {
@@ -226,6 +226,38 @@ export const HUYEN_DUONG_ACTIVITY_PHOTOS: GroupPhotoSlot[] = [
  * 1B. BỘ SƯU TẬP ẢNH HOẠT ĐỘNG & SẢN PHẨM TRÊN LỚP (TỔ 2, TỔ 3 & TỔ 4)
  */
 export const HUYEN_DUONG_CLASSROOM_GALLERY: ExtraClassroomPhoto[] = [
+  {
+    id: "gal-to1-stage",
+    groupName: "Tổ 1 • Tri huyện",
+    title: "Đại diện Tổ 1 ra mắt mặt nạ Tri huyện trước bảng Công đường",
+    caption:
+      "Hai đại diện Tổ 1 giới thiệu sản phẩm mặt nạ Tri huyện mũ cánh chuồn trước bức hoành phi phấn 'Công minh chính trực – Huyện đường'.",
+    imageUrl: "/student-products/huyen-duong/ra-mat-to-1-tri-huyen.jpg",
+  },
+  {
+    id: "gal-to1-sketch",
+    groupName: "Tổ 1 • Tri huyện",
+    title: "Phác thảo mặt nạ Tri huyện trên giấy ô ly (Tổ 1)",
+    caption:
+      "Thành viên Tổ 1 dựng hình khuôn mặt, cặp mày xếch và ria mép trên vở ô ly bên cạnh sách giáo khoa Ngữ văn 10.",
+    imageUrl: "/student-products/huyen-duong/hoat-dong-to-1-ve-phac-thao.jpg",
+  },
+  {
+    id: "gal-to1-sgk",
+    groupName: "Tổ 1 • Tri huyện",
+    title: "Đọc hiểu văn bản Huyện đường & phân tích lời thoại Tri huyện (Tổ 1)",
+    caption:
+      "Học sinh Tổ 1 tra cứu trực tiếp trích đoạn Huyện đường trong SGK Ngữ văn 10 để làm căn cứ giải mã tạo hình.",
+    imageUrl: "/student-products/huyen-duong/hoat-dong-to-1-doc-sgk.jpg",
+  },
+  {
+    id: "gal-to1-team",
+    groupName: "Tổ 1 • Tri huyện",
+    title: "Thảo luận nhóm & phân công chế tác tại lớp (Tổ 1)",
+    caption:
+      "Không khí làm việc nhóm sôi nổi của các thành viên Tổ 1 (Lớp 10.3 – THPT Bình Phú) quanh bàn thực hành STEAM.",
+    imageUrl: "/student-products/huyen-duong/hoat-dong-to-1-thao-luan-lop.jpg",
+  },
   {
     id: "gal-to2-stages",
     groupName: "Tổ 2 • Đề lại",
@@ -269,18 +301,18 @@ export const HUYEN_DUONG_CLASSROOM_GALLERY: ExtraClassroomPhoto[] = [
   {
     id: "gal-to3-wear",
     groupName: "Tổ 3 • Lính lệ",
-    title: "Thử nghiệm dây đeo mặt nạ Lính lệ trước bảng Công đường",
+    title: "Đại diện Tổ 3 thuyết minh mặt nạ Lính lệ trước bảng Công đường",
     caption:
-      "Kiểm tra quai đeo bìa cứng và tầm nhìn hai hốc mắt trước bảng phấn 'Công minh chính trực – Huyện đường'.",
-    imageUrl: "/student-products/huyen-duong/deo-thu-mat-na-to-3.jpg",
+      "Hai đại diện Tổ 3 cầm mặt nạ Lính lệ hoàn thiện trình bày bài thuyết minh (01:50) trước bảng phấn 'Công minh chính trực – Huyện đường'.",
+    imageUrl: "/student-products/huyen-duong/ra-mat-to-3-linh-le.jpg",
   },
   {
     id: "gal-to3-notes",
     groupName: "Tổ 3 • Lính lệ",
-    title: "Ghi chép phân tích tính cách nhân vật Lính lệ",
+    title: "Đắp nổi hoa văn đất sét vàng – đỏ trên mão Lính lệ",
     caption:
-      "Sổ tay học sinh ghi rõ: '1. Quát tháo, phân biệt đối xử – Chi tiết Lính lệ A nói to, hách dịch với người dưới, khúm núm với kẻ có tiền'.",
-    imageUrl: "/student-products/huyen-duong/hoat-dong-to-3-phan-tich-vai.jpg",
+      "Thành viên Tổ 3 miết đất sét tự khô tạo hoa văn vàng, đai đỏ trên phôi mão bìa carton ngay tại lớp.",
+    imageUrl: "/student-products/huyen-duong/hoat-dong-to-3-dap-hoa-van-mao.jpg",
   },
   {
     id: "gal-to3-measure",
@@ -361,6 +393,16 @@ export const HUYEN_DUONG_CLASSROOM_GALLERY: ExtraClassroomPhoto[] = [
  */
 export const HUYEN_DUONG_PROCESS_VIDEOS: ProcessVideoItem[] = [
   {
+    id: "proc-vid-to1",
+    groupName: "Tổ 1 • Tri huyện",
+    durationBadge: "00:24",
+    title: "Video thảo luận nhóm & cắt phôi bìa mặt nạ Tri huyện – Tổ 1",
+    caption:
+      "Ghi lại không khí Tổ 1 phân công công việc, đối chiếu bảng tiêu chí và cắt tạo hình phôi bìa carton trên lớp.",
+    videoUrl: "/student-products/huyen-duong/video-hoat-dong-to-1.mp4",
+    posterUrl: "/student-products/huyen-duong/hoat-dong-to-1-thao-luan-lop.jpg",
+  },
+  {
     id: "proc-vid-to4",
     groupName: "Tổ 4 • Trùm Sò",
     durationBadge: "01:08",
@@ -388,7 +430,7 @@ export const HUYEN_DUONG_PROCESS_VIDEOS: ProcessVideoItem[] = [
     caption:
       "Thao tác thủ công đắp nổi họa tiết đối xứng trên phần trán mặt nạ Lính lệ.",
     videoUrl: "/student-products/huyen-duong/video-cong-doan-to-3-dap-noi.mp4",
-    posterUrl: "/student-products/huyen-duong/deo-thu-mat-na-to-3.jpg",
+    posterUrl: "/student-products/huyen-duong/ra-mat-to-3-linh-le.jpg",
   },
 ];
 
@@ -402,13 +444,13 @@ export const HUYEN_DUONG_MASK_SKETCHES: GroupMaskSketchSlot[] = [
     characterName: "Mặt nạ Tri huyện",
     designers: "Bản vẽ: Trà My, Khôi Nguyên • Chế tác: Gia Bảo, Băng Băng, Tấn Phúc, Băng Dương",
     sketchNote:
-      "Nhân vật quan đầu huyện bề ngoài đạo mạo nhưng tham của đút lót (Đang chờ Tổ 1 tải ảnh bản vẽ & mặt nạ lên Drive).",
+      "Bản vẽ lưới ô ly tỷ lệ chi tiết (rộng 14 cm, cao 16 cm, mỗi mắt rộng 6 cm, mũ cánh chuồn 15 × 5 cm, cánh chuồn 10,5 × 3,5 cm) đối chiếu cùng mặt nạ hoàn thiện.",
     analysisNote:
-      "Định hướng tạo hình: Khuôn mặt trắng mốc pha sắc đỏ gò má, mão cánh chuồn và chòm râu dài biểu trưng quyền uy chốn quan trường.",
-    sketchImageUrl: "",
-    finishedMaskUrl: "",
-    imageUrl: "",
-    expectedPath: "Tổ 1 / Hình ảnh t1 (Google Drive)",
+      "Phân tích tạo hình: Nền đỏ son tượng trưng cho vẻ ngoài nhiệt huyết công minh nhưng ngầm phơi bày sự xảo trá; họa tiết mây vàng & ấn tròn giữa mũ biểu trưng cho lòng tham vật chất và sự sùng bái tiền bạc; viền mũ đen và ria mép tạo vẻ uy nghiêm che đậy thói nhũng nhiễu.",
+    sketchImageUrl: "/student-products/huyen-duong/phac-thao-to-1-tri-huyen.jpg",
+    finishedMaskUrl: "/student-products/huyen-duong/mat-na-to-1-tri-huyen.jpg",
+    imageUrl: "/student-products/huyen-duong/mat-na-to-1-tri-huyen.jpg",
+    expectedPath: "/student-products/huyen-duong/mat-na-to-1-tri-huyen.jpg",
   },
   {
     id: "hd-sketch-to-2",
@@ -458,8 +500,9 @@ export const HUYEN_DUONG_MASK_SKETCHES: GroupMaskSketchSlot[] = [
  * 3. BẢN WORD THUYẾT MINH (PHẦN LỜI THỰC TẾ TỪ DRIVE) & FILE PHÂN CÔNG
  */
 export const HUYEN_DUONG_WORD_SCRIPT = {
-  title: "Bản Word Thuyết minh Mặt nạ (Tổ 2, Tổ 3, Tổ 4) & Hồ sơ Phân công Lớp 10.3",
-  fileName: "bai-thuyet-minh-to-2-de-lai.docx",
+  title: "Bản Word Thuyết minh Mặt nạ (Cả 4 Tổ) & Hồ sơ Phân công Lớp 10.3",
+  fileName: "bai-thuyet-minh-to-1-tri-huyen.docx",
+  to1DocxUrl: "/student-products/huyen-duong/bai-thuyet-minh-to-1-tri-huyen.docx",
   to2DocxUrl: "/student-products/huyen-duong/bai-thuyet-minh-to-2-de-lai.docx",
   docxUrl: "/student-products/huyen-duong/bai-thuyet-minh-to-4-trum-so.docx",
   rosterDocxUrl: "/student-products/huyen-duong/phan-cong-du-an-lop-10-3.docx",
@@ -511,7 +554,7 @@ export const HUYEN_DUONG_MASK_VIDEOS: GroupVideoSlot[] = [
     description:
       "Đại diện Tổ 3 cầm sản phẩm mặt nạ Lính lệ đứng trước bảng lớp 'Công minh chính trực – Huyện đường' phân tích ý nghĩa mũ lính, chóp mũi đỏ hề tuồng và thái độ hách dịch của nhân vật.",
     videoUrl: "/student-products/huyen-duong/video-thuyet-minh-to-3.mp4",
-    posterUrl: "/student-products/huyen-duong/poster-thuyet-minh-to-3.jpg",
+    posterUrl: "/student-products/huyen-duong/ra-mat-to-3-linh-le.jpg",
     expectedPath: "/student-products/huyen-duong/video-thuyet-minh-to-3.mp4",
   },
   {
@@ -531,12 +574,14 @@ export const HUYEN_DUONG_MASK_VIDEOS: GroupVideoSlot[] = [
     id: "hd-video-to-1",
     groupName: "Tổ 1",
     characterFocus: "Tri huyện",
-    presenterInfo: "Thuyết minh: Phước Sang • Quay dựng: Yến Vy, Quý",
-    title: "Video thuyết minh mặt nạ Tri huyện – Tổ 1",
+    presenterInfo: "Thuyết minh: Phước Sang & đại diện Tổ 1 • Quay dựng: Yến Vy, Quý",
+    durationBadge: "01:38",
+    title: "Video thuyết minh mặt nạ Tri huyện – Tổ 1 (Trực tiếp trên lớp)",
     description:
-      "Khung lưu trữ bài thuyết minh mặt nạ Tri huyện của Tổ 1 (sẽ tự động hiển thị ngay khi Tổ 1 bổ sung tệp video lên thư mục Google Drive).",
-    videoUrl: "",
-    expectedPath: "Tổ 1 / Video thuyết minh (Đang chờ cập nhật)",
+      "Hai đại diện Tổ 1 giới thiệu mặt nạ Tri huyện trước bảng 'Công minh chính trực – Huyện đường', phân tích lớp vỏ đỏ son liêm chính giả tạo, họa tiết mây vàng sùng bái tiền bạc và biểu tượng ấn quan trên mũ cánh chuồn.",
+    videoUrl: "/student-products/huyen-duong/video-thuyet-minh-to-1.mp4",
+    posterUrl: "/student-products/huyen-duong/ra-mat-to-1-tri-huyen.jpg",
+    expectedPath: "/student-products/huyen-duong/video-thuyet-minh-to-1.mp4",
   },
 ];
 
@@ -548,9 +593,11 @@ export const HUYEN_DUONG_CLASS_DRAMA = {
   title: "Diễn kịch Sân khấu hóa: Trích đoạn Huyện đường (Lớp 10.3)",
   description:
     "Hoạt động biểu diễn tổng hợp kết nối 4 mảnh ghép nhân vật của 4 Tổ trên sân khấu lớp học 'Công minh chính trực – Huyện đường' với đội ngũ diễn viên đại diện từng tổ.",
-  videoUrl: "",
-  stageBackdropImage: "/student-products/huyen-duong/ra-mat-to-4-trum-so.jpg",
-  expectedPath: "Dự án Huyện đường / Video diễn kịch lớp 10.3 (Đang chờ cập nhật)",
+  videoUrl: "/student-products/huyen-duong/video-dien-kich-lop-10-3.mp4",
+  durationBadge: "02:32",
+  stageBackdropImage: "/student-products/huyen-duong/boi-canh-chung-lop-hoc.jpg",
+  posterUrl: "/student-products/huyen-duong/dien-kich-lop-10-3-canh-1.jpg",
+  expectedPath: "/student-products/huyen-duong/video-dien-kich-lop-10-3.mp4",
   castList: [
     "Vai Tri huyện (Tổ 1): Tấn Lộc",
     "Vai Đề lại (Tổ 2): Tiến",
@@ -575,82 +622,137 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
     groupName: "Tổ 1",
     groupNumber: "01",
     characterName: "Tri huyện",
-    roleSubtitle: "Quan đầu huyện đội lốt thanh liêm • Tham nhũng & háo sắc",
+    roleSubtitle: "Quan đầu huyện đội lốt thanh liêm • Tham nhũng & sùng bái tiền tài",
     classLabel: "Lớp 10.3 — Trường THPT Bình Phú",
-    statusBadge: "Đã có phân công • Chờ tải ảnh & video",
-    hasRealMedia: false,
-    statsSummary: "12 thành viên • Vai Tri huyện • Chờ cập nhật tệp Drive",
-    heroImage: "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
+    statusBadge: "Đầy đủ Mặt nạ, Bản vẽ, Word & 2 Video",
+    hasRealMedia: true,
+    statsSummary: "7 ảnh chọn lọc • 1 file Word (.docx) • 2 video (01:38 & 00:24)",
+    heroImage: "/student-products/huyen-duong/mat-na-to-1-tri-huyen.jpg",
     cinemaScenesImages: [
-      "/images/cinema/scene-huyen-duong-tu-nhan-vat.png",
-      "/images/cinema/scene-03-sac-tuong.png",
-      "/student-products/huyen-duong/ra-mat-to-4-trum-so.jpg",
+      "/student-products/huyen-duong/mat-na-to-1-tri-huyen.jpg",
+      "/student-products/huyen-duong/phac-thao-to-1-tri-huyen.jpg",
+      "/student-products/huyen-duong/ra-mat-to-1-tri-huyen.jpg",
     ],
     summary:
-      "Chuyên trang lưu trữ sản phẩm của Tổ 1 (Lớp 10.3 — THPT Bình Phú) phụ trách nhân vật Tri huyện trong trích đoạn Huyện đường (Nghêu, Sò, Ốc, Hến). Thành viên Khôi Nguyên của Tổ 1 cũng trực tiếp tham gia vẽ trang trí bức hoành phi phấn sân khấu Công đường cho cả lớp.",
+      "Chuyên trang đầy đủ tất cả hạng mục chọn lọc của Tổ 1 (Lớp 10.3 — THPT Bình Phú) phụ trách nhân vật Tri huyện: 2 bản vẽ kẻ ô ly chi tiết (khuôn mặt 14 × 16 cm và mũ cánh chuồn 15 × 5 cm), mặt nạ hoàn thiện nền đỏ son viền mây vàng, nguyên văn BÀI THUYẾT MINH tổ 1.docx, video thuyết minh 01:38, video hoạt động nhóm 00:24 và bộ ảnh thực hành tại lớp.",
     classicQuote:
       "“Làm quan như kiếp ăn buôn / Cốt sao vơ vét cho luôn đầy nhà.”",
     literaryContext:
-      "Trong trích đoạn Huyện đường, Tri huyện hiện ra là kẻ đứng đầu bộ máy công quyền địa phương nhưng xử án hoàn toàn dựa trên túi tiền đút lót và sắc đẹp của Thị Hến, biến chốn công đường thành sàn ngã giá trơ trẽn.",
+      "Trong trích đoạn Huyện đường, Tri huyện hiện ra là kẻ đứng đầu bộ máy công quyền địa phương nhưng xử án hoàn toàn dựa trên túi tiền đút lót và sắc đẹp của Thị Hến, dùng lớp vỏ uy nghiêm để che đậy sự tham nhũng.",
     colorSwatches: [
       {
-        hex: "#F5EFE6",
-        label: "Trắng mốc",
-        meaning: "Vẻ mặt quan lại đạo mạo giả tạo, che giấu tâm địa bất chính",
-      },
-      {
         hex: "#B91C1C",
-        label: "Đỏ son gò má",
-        meaning: "Dục vọng tham của, háo sắc ẩn dưới lớp vỏ uy quyền",
+        label: "Đỏ son (Nền khuôn mặt)",
+        meaning: "Vẻ ngoài tỏ ra nhiệt huyết, công minh nhưng ngầm biểu thị sự xảo trá bên trong",
       },
       {
-        hex: "#1F110E",
-        label: "Đen mực tàu",
-        meaning: "Mão cánh chuồn & chòm râu ba chòm biểu trưng quyền lực quan trường",
+        hex: "#EAB308",
+        label: "Vàng kim (Mây & ấn quan)",
+        meaning: "Tượng trưng cho sự cao quý và tiền tài, phơi bày lòng tham vật chất",
+      },
+      {
+        hex: "#18181B",
+        label: "Đen tuyền (Mũ & ria mép)",
+        meaning: "Tạo tương phản mạnh, tôn vẻ uy nghiêm vững chãi che đậy bản chất vụ lợi",
       },
     ],
     roster: HUYEN_DUONG_GROUP_ROSTER[0],
     maskProduct: {
-      finishedMaskUrl: "",
-      sketchImageUrl: "",
-      wearingOrStageUrl: "/student-products/huyen-duong/ra-mat-to-4-trum-so.jpg",
+      finishedMaskUrl: "/student-products/huyen-duong/mat-na-to-1-tri-huyen.jpg",
+      sketchImageUrl: "/student-products/huyen-duong/phac-thao-to-1-tri-huyen.jpg",
+      wearingOrStageUrl: "/student-products/huyen-duong/ra-mat-to-1-tri-huyen.jpg",
       wearingCaption:
-        "Không gian bảng phấn sân khấu 'Chí vị quốc sự ý vô tư – Công minh chính trực – Huyện đường' có sự đóng góp mỹ thuật của Khôi Nguyên (Tổ 1) và Ngọc Diệp.",
+        "Đại diện Tổ 1 cầm mặt nạ Tri huyện hoàn thiện trước bảng sân khấu 'Công minh chính trực – Huyện đường' (Lớp 10.3 – THPT Bình Phú).",
       dimensionsAndSpecs: [
-        "Nhân vật đảm nhận: Quan Tri huyện (đứng đầu phiên xử Huyện đường)",
-        "Phụ trách bản vẽ phác thảo: Trà My, Khôi Nguyên",
-        "Phụ trách chế tác mặt nạ: Gia Bảo, Băng Băng, Tấn Phúc, Băng Dương",
-        "Trạng thái thư mục Drive (Tổ 1 / Hình ảnh t1): Đang chờ Tổ 1 tải ảnh bản vẽ & mặt nạ hoàn thiện",
+        "Bản vẽ khuôn mặt (giấy ô ly): Rộng 14 cm × Cao 16 cm; mỗi hốc mắt rộng 6 cm; miệng rộng 4 cm; cằm cao 5 cm; họa tiết mây gò má cao 6 cm",
+        "Bản vẽ mũ cánh chuồn: Thân mũ rộng 15 cm × Cao 5 cm có ấn tròn chính giữa; hai cánh chuồn hai bên dài 10,5 cm × Cao 3,5 cm có vân mây",
+        "Đường nét tạo hình: Đôi mắt xếch sắc sảo viền vàng, sống mũi kẻ chỉ vàng nổi khối và bộ ria mép đen uốn cong uy nghiêm",
+        "Kết cấu đeo biểu diễn: Phôi bìa carton cứng kèm dây thun trắng cố định chắc chắn khi diễn xuất sân khấu",
       ],
       artisticAnalysis:
-        "Theo định hướng phân công của Lớp 10.3, mặt nạ Tri huyện tập trung làm nổi bật sự đối lập trào phúng giữa mũ quan cánh chuồn uy nghiêm, chòm râu dài đạo mạo với ánh mắt ti hí và sắc mặt trắng mốc gian xảo của viên quan tham nhũng.",
+        "Mặt nạ Tri huyện của Tổ 1 nổi bật nhờ sự tương phản giữa ba gam Đỏ son – Vàng kim – Đen tuyền trên cấu trúc mũ cánh chuồn đăng đối chuẩn xác. Như bài thuyết minh của nhóm giải mã: chiếc mặt nạ tạo vẻ ngoài nghiêm nghị, cao quý để làm 'lớp vỏ bọc hoàn hảo' che đậy lòng tham vật chất và thói nhũng nhiễu bên trong.",
       materialsUsed: [
-        "Bìa carton cứng định hình phôi mặt nạ & mão quan",
-        "Màu acrylic trắng ngà, đỏ son, đen và vàng kim",
-        "Bảng phân công nhiệm vụ Lớp 10.3 (.docx)",
+        "Bìa carton cứng định hình phôi mặt nạ & hai cánh mũ chuồn",
+        "Vở kẻ ô ly dựng bản vẽ thiết kế kỹ thuật (khuôn mặt & mũ quan)",
+        "Màu acrylic đỏ son, vàng kim, đen tuyền & dây thun cố định",
       ],
-      expectedDrivePath: "Dự án Huyện đường / Tổ 1 / Hình ảnh t1",
+      expectedDrivePath: "/student-products/huyen-duong/mat-na-to-1-tri-huyen.jpg",
     },
     writtenScript: {
-      title: "Hồ sơ Nội dung & Phân công Tổ 1 — Nhân vật Tri huyện",
+      title: "Nguyên văn BÀI THUYẾT MINH tổ 1.docx — Mặt nạ Tri huyện",
       authorCredit:
-        "Nội dung: Đức Duy, Anh Kiệt • Thuyết trình: Phước Sang • Diễn kịch: Tấn Lộc",
-      isVerbatimFromDrive: false,
+        "Nội dung: Đức Duy, Anh Kiệt • Bản vẽ: Trà My, Khôi Nguyên • Thuyết trình: Phước Sang",
+      isVerbatimFromDrive: true,
+      docxDownloadUrl:
+        "/student-products/huyen-duong/bai-thuyet-minh-to-1-tri-huyen.docx",
       rosterDocxUrl: "/student-products/huyen-duong/phan-cong-du-an-lop-10-3.docx",
       sections: [
         {
-          heading: "1. Vai trò của nhân vật Tri huyện trong tứ giác Huyện đường",
-          text: "Tri huyện nắm quyền phán quyết tối cao tại nha môn nhưng câu kết ngầm cùng Đề lại để vơ vét tiền của cả nguyên đơn lẫn bị đơn. Tiếng cười châm biếm bật ra ngay từ lời tự giới thiệu không chút giấu giếm bản chất tham quan của nhân vật.",
+          heading: "1. Cảm hứng thiết kế & Màu nền đỏ son (Nguyên văn tệp Word Tổ 1)",
+          text: "“Lấy cảm hứng từ hình tượng vị quan tri huyện thời xưa với tạo hình trang nghiêm, biểu thị sự liêm chính và công bằng ở bề ngoài. Tuy nhiên, sâu bên trong lớp vỏ bọc ấy lại ẩn chứa sự tham lam, xảo quyệt và tráo trở của kẻ nhũng nhiễu. Màu đỏ làm màu nền chủ đạo cho toàn bộ khuôn mặt: bề ngoài thể hiện sự nhiệt huyết, tấm lòng ngay thẳng và sự liêm chính, công minh; nhưng đồng thời cũng ngầm biểu thị sự xảo trá và tâm địa gian xảo bên trong.”",
         },
         {
-          heading: "2. Định hướng thuyết minh giải mã mặt nạ của Tổ 1",
-          text: "Bộ phận nội dung (Đức Duy, Anh Kiệt) và người thuyết trình (Phước Sang) đảm nhận việc liên kết từng chi tiết mão quan, nét mày, chòm râu trên mặt nạ với các lời thoại xử kiện thiên vị trong SGK Ngữ văn 10.",
+          heading: "2. Ý nghĩa sắc vàng, sắc đen & chi tiết mũ quan (Nguyên văn tệp Word Tổ 1)",
+          text: "“Màu vàng tô điểm cho các chi tiết hoa văn mây, viền mũ quan, biểu tượng tri huyện: tượng trưng cho sự cao quý và tiền tài, qua đó trực tiếp thể hiện lòng tham vật chất và sự sùng bái tiền bạc. Màu đen dùng cho phần mũ quan, viền mắt, chòm râu và cấu trúc khuôn mặt: tạo độ tương phản mạnh, tôn lên vẻ uy nghiêm, vững chãi, sự cẩn trọng và nét thâm trầm của nhân vật.”",
+        },
+        {
+          heading: "3. Biểu tượng Tri huyện & Đường nét tạo hình (Nguyên văn tệp Word Tổ 1)",
+          text: "“Biểu tượng tri huyện đặt ở trung tâm mũ quan, thoạt nhìn mang ý nghĩa bảo vệ công lý. Họa tiết mây thể hiện sự cao quý và vị thế tôn nghiêm của tầng lớp quan lại. Đường nét được trau chuốt sắc sảo, tạo vẻ mặt nghiêm nghị, đóng vai trò là chiếc mặt nạ hoàn hảo che đậy sự tham nhũng và vụ lợi bên trong.”",
         },
       ],
     },
     presentationVideo: HUYEN_DUONG_MASK_VIDEOS[3],
-    processVideos: [],
-    activityPhotos: [],
+    processVideos: [HUYEN_DUONG_PROCESS_VIDEOS[0]],
+    activityPhotos: [
+      {
+        id: "to1-act-sketch-hat",
+        groupName: "Tổ 1 • Tri huyện",
+        title: "Bản vẽ kỹ thuật mũ cánh chuồn Tri huyện (15 × 5 cm & cánh 10,5 cm)",
+        caption:
+          "Bản vẽ chi tiết trên giấy ô ly phần thân mũ quan có ấn tròn giữa trán và đôi cánh chuồn trang trí họa tiết mây.",
+        imageUrl: "/student-products/huyen-duong/phac-thao-to-1-mao-quan.jpg",
+      },
+      {
+        id: "to1-act-sketch-face",
+        groupName: "Tổ 1 • Tri huyện",
+        title: "Bản vẽ kỹ thuật khuôn mặt Tri huyện (14 × 16 cm)",
+        caption:
+          "Đo vẽ tỷ lệ từng bộ phận trên giấy ô ly: hai mắt 6 cm, miệng 4 cm, cằm 5 cm và hoa văn mây gò má.",
+        imageUrl: "/student-products/huyen-duong/phac-thao-to-1-tri-huyen.jpg",
+      },
+      {
+        id: "to1-act-drawing",
+        groupName: "Tổ 1 • Tri huyện",
+        title: "Thực hành phác thảo mặt nạ bên cạnh sách giáo khoa Ngữ văn 10",
+        caption:
+          "Thành viên Tổ 1 đối chiếu tài liệu hóa trang tuồng và vẽ phác thảo trực tiếp trên bàn học.",
+        imageUrl: "/student-products/huyen-duong/hoat-dong-to-1-ve-phac-thao.jpg",
+      },
+      {
+        id: "to1-act-sgk",
+        groupName: "Tổ 1 • Tri huyện",
+        title: "Đọc hiểu trích đoạn Huyện đường trong SGK Ngữ văn 10",
+        caption:
+          "Nhóm nội dung Tổ 1 tìm dẫn chứng lời thoại tự xưng và xử kiện của nhân vật Tri huyện.",
+        imageUrl: "/student-products/huyen-duong/hoat-dong-to-1-doc-sgk.jpg",
+      },
+      {
+        id: "to1-act-group",
+        groupName: "Tổ 1 • Tri huyện",
+        title: "Thảo luận nhóm & cắt phôi bìa cứng tại lớp học",
+        caption:
+          "Các thành viên Tổ 1 phối hợp đồng bộ giữa nhóm nội dung, nhóm vẽ và nhóm chế tác tại Lớp 10.3.",
+        imageUrl: "/student-products/huyen-duong/hoat-dong-to-1-thao-luan-lop.jpg",
+      },
+      {
+        id: "to1-act-closeup",
+        groupName: "Tổ 1 • Tri huyện",
+        title: "Cận cảnh mặt nạ Tri huyện hoàn thiện trước bảng 'Huyện đường'",
+        caption:
+          "Sản phẩm hoàn thiện nền đỏ son, mũ cánh chuồn đen viền vàng cùng hoa văn mây hai bên gò má.",
+        imageUrl: "/student-products/huyen-duong/mat-na-to-1-tri-huyen.jpg",
+      },
+    ],
   },
   {
     slug: "to-2",
@@ -808,7 +910,7 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
     cinemaScenesImages: [
       "/student-products/huyen-duong/mat-na-to-3-linh-le.jpg",
       "/student-products/huyen-duong/phac-thao-to-3-linh-le.jpg",
-      "/student-products/huyen-duong/deo-thu-mat-na-to-3.jpg",
+      "/student-products/huyen-duong/ra-mat-to-3-linh-le.jpg",
     ],
     summary:
       "Chuyên trang toàn diện của Tổ 3 (Lớp 10.3 — THPT Bình Phú) phụ trách nhân vật Lính lệ: từ ghi chép phân tích văn bản, bản vẽ kỹ thuật tỷ lệ 18 × 24 cm, quá trình đắp đất sét nổi trên bìa carton cho tới buổi đeo thử và quay video thuyết minh 01 phút 50 giây trước lớp.",
@@ -837,9 +939,9 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
     maskProduct: {
       finishedMaskUrl: "/student-products/huyen-duong/mat-na-to-3-linh-le.jpg",
       sketchImageUrl: "/student-products/huyen-duong/phac-thao-to-3-linh-le.jpg",
-      wearingOrStageUrl: "/student-products/huyen-duong/deo-thu-mat-na-to-3.jpg",
+      wearingOrStageUrl: "/student-products/huyen-duong/ra-mat-to-3-linh-le.jpg",
       wearingCaption:
-        "Học sinh Tổ 3 đeo thử mặt nạ Lính lệ kiểm tra dây co giãn và tầm nhìn trước bảng lớp 'Công minh chính trực – Huyện đường'.",
+        "Đại diện Tổ 3 giới thiệu mặt nạ Lính lệ hoàn thiện trước bảng lớp 'Công minh chính trực – Huyện đường'.",
       dimensionsAndSpecs: [
         "Kích thước tổng thể bản vẽ: Rộng 18 cm × Cao 24 cm (chia trục đối xứng dọc)",
         "Phần mũ lính lệ: Cao 7,5 cm, đắp nổi hoa văn vàng kim ở chính giữa và hai dải tua đỏ hai bên",
@@ -875,10 +977,7 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
       ],
     },
     presentationVideo: HUYEN_DUONG_MASK_VIDEOS[1],
-    processVideos: [
-      HUYEN_DUONG_PROCESS_VIDEOS[1],
-      HUYEN_DUONG_PROCESS_VIDEOS[2],
-    ],
+    processVideos: [HUYEN_DUONG_PROCESS_VIDEOS[2], HUYEN_DUONG_PROCESS_VIDEOS[3]],
     activityPhotos: [
       {
         id: "to3-act-sketching",
@@ -978,7 +1077,7 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
       ],
     },
     presentationVideo: HUYEN_DUONG_MASK_VIDEOS[2],
-    processVideos: [HUYEN_DUONG_PROCESS_VIDEOS[0]],
+    processVideos: [HUYEN_DUONG_PROCESS_VIDEOS[1]],
     activityPhotos: [
       {
         id: "to4-act-cutting",

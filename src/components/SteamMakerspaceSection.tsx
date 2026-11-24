@@ -279,7 +279,7 @@ export const SteamMakerspaceSection: React.FC = () => {
                     {selectedElement.vietnameseName}
                   </h4>
                   <p className="text-xs sm:text-sm text-heritage-woodDark">
-                    Giải thích vai trò liên môn &amp; Ví dụ liên hệ trực tiếp với Huyện đường &amp; Sử thi Đăm Săn
+                    Giải thích vai trò liên môn &amp; Ứng dụng thực tế trong Dự án Tuồng đồ Huyện đường
                   </p>
                 </div>
               </div>
@@ -292,7 +292,7 @@ export const SteamMakerspaceSection: React.FC = () => {
             <div className="mt-5 sm:mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
               <div className="rounded-xl bg-heritage-ivoryLight p-4 border border-heritage-crimson/25">
                 <span className="text-xs font-bold uppercase tracking-wider text-heritage-crimson block">
-                  Liên hệ Dự án 01: Huyện đường (Tuồng)
+                  Liên hệ Ngữ văn: Tuồng đồ Huyện đường
                 </span>
                 <p className="mt-2 text-sm leading-relaxed">
                   {selectedElement.huyenDuongExample}
@@ -301,10 +301,10 @@ export const SteamMakerspaceSection: React.FC = () => {
 
               <div className="rounded-xl bg-heritage-ivoryLight p-4 border border-heritage-crimson/25">
                 <span className="text-xs font-bold uppercase tracking-wider text-heritage-woodDark block">
-                  Liên hệ Dự án 02: Sử thi Đăm Săn
+                  Thực hành tại Lớp 10.3 (4 Tổ)
                 </span>
                 <p className="mt-2 text-sm leading-relaxed">
-                  {selectedElement.damSanExample}
+                  {selectedElement.classroomApplication}
                 </p>
               </div>
 

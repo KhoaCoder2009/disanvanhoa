@@ -54,9 +54,21 @@ const HERITAGE_SEARCH_INDEX: QuickIndexEntry[] = [
     href: "/trien-lam-so/to-4",
   },
   {
-    title: "Trắc nghiệm Di sản Văn học & STEAM (20 câu hỏi)",
+    title: "Hoạt động Khởi động cùng Trợ lý AI (ChatGPT)",
+    subtitle: "3 bước khởi động đoán mã màu & tính cách nhân vật Huyện đường trước khi vào dự án",
+    category: "Khởi động",
+    href: "/#khoi-dong-du-an",
+  },
+  {
+    title: "Rubric Đánh giá Sản phẩm & Chấm điểm Trực tuyến (4 Tiêu chí)",
+    subtitle: "Thang điểm 35% Văn học • 30% Kỹ thuật STEAM • 20% Diễn xuất & Thuyết minh • 15% Chuyển đổi số",
+    category: "Rubric đánh giá",
+    href: "/#rubric-danh-gia",
+  },
+  {
+    title: "Trắc nghiệm Dự án Huyện đường & STEAM (20 câu hỏi)",
     subtitle:
-      "Chuyên trang ôn luyện Tuồng đồ Huyện đường, Sử thi Đăm Săn & Quy trình STEAM",
+      "Chuyên trang ôn luyện Tuồng đồ Huyện đường, Mã màu 4 Nhân vật, Sân khấu hóa & Quy trình STEAM",
     category: "Trắc nghiệm",
     href: "/trac-nghiem",
   },
@@ -67,10 +79,10 @@ const HERITAGE_SEARCH_INDEX: QuickIndexEntry[] = [
     href: "/#bao-tang-so",
   },
   {
-    title: "Chặng 01: Bảo tàng số — Không gian Sử thi Đăm Săn (Ê-đê)",
-    subtitle: "Cuộn tới nhà dài Tây Nguyên, diễn xướng Klei Khan, Rừng Sáp Đen & Nữ thần Mặt Trời",
+    title: "Chặng 01: Bảo tàng số — Bối cảnh Lớp học & Sân khấu hóa 10.3",
+    subtitle: "Không gian bảng phấn 'Công minh chính trực – Huyện đường' tại Trường THPT Bình Phú",
     category: "Bảo tàng số",
-    href: "/#bao-tang-so",
+    href: "/bao-tang-so/san-khau-hoa-lop-hoc",
   },
   {
     title: "Chặng 02: Chủ đề 01 — Mã màu và nét mặt ước lệ (Huyện đường)",
@@ -79,10 +91,10 @@ const HERITAGE_SEARCH_INDEX: QuickIndexEntry[] = [
     href: "/#chu-de-hoc-tap",
   },
   {
-    title: "Chặng 02: Chủ đề 02 — Đánh thức thế giới sử thi (Đăm Săn)",
-    subtitle: "Cuộn tới thiết kế hộp kể chuyện 3 lớp cảnh Đăm Săn đi bắt Nữ thần Mặt Trời",
+    title: "Chặng 02: Thuyết minh & Diễn kịch Sân khấu hóa (Lớp 10.3)",
+    subtitle: "Quy trình chuẩn bị bối cảnh Công đường, thuyết trình Nói – Nghe và vở diễn kịch chung",
     category: "Chủ đề học tập",
-    href: "/#chu-de-hoc-tap",
+    href: "/chu-de-hoc-tap/chu-de-02-san-khau-hoa",
   },
   {
     title: "Chặng 03: Xưởng sáng tạo STEAM & Bàn mô phỏng trực tuyến",

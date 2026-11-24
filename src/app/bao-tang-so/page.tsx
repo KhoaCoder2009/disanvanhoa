@@ -142,111 +142,67 @@ export default function BaoTangSoPage() {
           </div>
         </section>
 
-        {/* Bảng đối chiếu Song hành Hai Dự Án Trọng Tâm (Huyện đường & Sử thi Đăm Săn) */}
+        {/* Bảng tổng hợp 4 Tổ & 4 Nhân vật Dự án Tuồng đồ Huyện đường */}
         <section className="py-12 sm:py-16 bg-heritage-ivoryLight border-b border-heritage-goldAntique/30">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <h2 className="font-serif text-xl sm:text-3xl font-bold text-heritage-woodDark">
-                BẢNG ĐỐI CHIẾU HAI DỰ ÁN: TUỒNG HUYỆN ĐƯỜNG &amp; SỬ THI ĐĂM SĂN
+                BẢNG HỆ THỐNG TỨ ĐẠI NHÂN VẬT DỰ ÁN HUYỆN ĐƯỜNG (LỚP 10.3)
               </h2>
               <p className="mt-2 text-sm sm:text-base text-heritage-ink">
-                Tư liệu hệ thống hóa giúp học sinh đối chiếu đặc trưng thể loại, không gian văn hóa, ngôn ngữ tạo hình và sản phẩm chế tác tại Xưởng STEAM.
+                Tổng hợp mã màu ước lệ, đặc trưng tạo hình và sản phẩm chế tác thực tế của 4 Tổ tại Trường THPT Bình Phú.
               </p>
             </div>
 
-            {/* Thẻ xếp dọc gọn gàng trên điện thoại */}
-            <div className="mt-6 space-y-4 md:hidden">
+            <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
               {[
                 {
-                  criterion: "Văn bản trọng tâm SGK",
-                  huyenDuong: "Huyện đường (Trích vở tuồng đồ Nghêu, Sò, Ốc, Hến)",
-                  damSan: "Đăm Săn đi bắt Nữ thần Mặt Trời (Sử thi Ê-đê Tây Nguyên)",
+                  group: "Tổ 1 • Tri huyện",
+                  href: "/trien-lam-so/to-1",
+                  palette: "Đỏ son – Mão cánh chuồn đen viền vàng – Ria đen",
+                  trait: "Đầu bảng công đường nhưng tham của đút lót và háo sắc.",
                 },
                 {
-                  criterion: "Không gian văn hóa & diễn xướng",
-                  huyenDuong:
-                    "Sân khấu công đường lấy diễn viên làm trung tâm với đối đáp trào phúng và nói lối.",
-                  damSan:
-                    "Không gian nhà dài Tây Nguyên, bếp lửa cộng đồng, tiếng cồng chiêng và nghệ thuật kể khan (Klei Khan).",
+                  group: "Tổ 2 • Đề lại",
+                  href: "/trien-lam-so/to-2",
+                  palette: "Đen nâu – Đỏ sẫm – Vàng đồng cũ – Da vàng nhợt",
+                  trait: "Phụ quan gian xảo, mớm cung và gập sống mũi bìa 3D.",
                 },
                 {
-                  criterion: "Đặc trưng tạo hình & Mã màu",
-                  huyenDuong:
-                    "Mặt nạ ước lệ bộ tứ Tri huyện, Đề lại, Lính lệ, Trùm Sò (trắng mốc, đỏ son, xanh xám, vàng sậm).",
-                  damSan:
-                    "Bóng cắt đa tầng (nhà dài Ê-đê, rừng Sáp Đen, vầng Mặt Trời rực sáng) phối hoa văn thổ cẩm đỏ – đen – vàng.",
+                  group: "Tổ 3 • Lính lệ",
+                  href: "/trien-lam-so/to-3",
+                  palette: "Mũ đen viền vàng tua đỏ – Chóp mũi đỏ tròn – Viền mắt trắng",
+                  trait: "Hách dịch nạt dân, khúm núm trước đồng tiền; đắp nổi đất sét.",
                 },
                 {
-                  criterion: "Sản phẩm thực hành STEAM",
-                  huyenDuong:
-                    "Bộ chân dung mặt nạ 3D bằng bìa cứng nhiều lớp, thẻ giải mã và video vi diễn 3–5 phút.",
-                  damSan:
-                    "Sa bàn Hộp kể chuyện 3 lớp (Storybox Diorama) dùng giấy can tán sáng LED ấm, thanh trượt cơ học và Podcast QR.",
+                  group: "Tổ 4 • Trùm Sò",
+                  href: "/trien-lam-so/to-4",
+                  palette: "Trắng kem pha vàng nhạt – Cam đất trầm – Nét nhăn đen",
+                  trait: "Trọc phú keo kiệt, mắt ngơ ngác & miệng trề xót của.",
                 },
-              ].map((row, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl bg-white p-4 border border-heritage-crimson/25 shadow-museum space-y-3"
+              ].map((item) => (
+                <Link
+                  key={item.group}
+                  href={item.href}
+                  className="rounded-2xl bg-white p-5 border border-heritage-crimson/25 shadow-museum hover:border-heritage-crimson transition-all flex flex-col justify-between"
                 >
-                  <h3 className="font-serif text-base font-bold text-heritage-woodDark border-b border-heritage-crimson/15 pb-2">
-                    {row.criterion}
-                  </h3>
-                  <div className="rounded-xl bg-heritage-ivoryLight p-3 border-l-4 border-heritage-crimson">
-                    <span className="block text-[11px] font-bold uppercase tracking-wider text-heritage-crimson">
-                      Dự án 01: Tuồng đồ Huyện đường
+                  <div>
+                    <span className="inline-block rounded-md bg-heritage-crimson px-2.5 py-1 text-xs font-bold text-white">
+                      {item.group}
                     </span>
-                    <p className="mt-1 text-xs sm:text-sm text-heritage-ink leading-relaxed">
-                      {row.huyenDuong}
+                    <p className="mt-3 text-xs font-semibold text-heritage-woodDark">
+                      Mã màu: {item.palette}
+                    </p>
+                    <p className="mt-1.5 text-xs sm:text-sm text-heritage-ink leading-relaxed">
+                      {item.trait}
                     </p>
                   </div>
-                  <div className="rounded-xl bg-heritage-ivoryLight p-3 border-l-4 border-heritage-goldAntique">
-                    <span className="block text-[11px] font-bold uppercase tracking-wider text-heritage-woodDark">
-                      Dự án 02: Sử thi Đăm Săn
-                    </span>
-                    <p className="mt-1 text-xs sm:text-sm text-heritage-ink leading-relaxed">
-                      {row.damSan}
-                    </p>
-                  </div>
-                </div>
+                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-heritage-crimson">
+                    <span>Mở chuyên trang {item.group.split(" • ")[0]}</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </span>
+                </Link>
               ))}
-            </div>
-
-            <div className="mt-8 hidden md:block overflow-x-auto rounded-2xl border border-heritage-crimson/30 shadow-museum">
-              <table className="w-full text-left border-collapse bg-white text-xs sm:text-sm">
-                <thead>
-                  <tr className="bg-heritage-woodDark text-heritage-goldSoft font-serif text-sm sm:text-base">
-                    <th className="p-4 border-b border-heritage-goldAntique/40">Tiêu chí đối chiếu</th>
-                    <th className="p-4 border-b border-heritage-goldAntique/40 bg-heritage-crimson text-white">
-                      Dự án 01: Tuồng đồ Huyện đường
-                    </th>
-                    <th className="p-4 border-b border-heritage-goldAntique/40 bg-heritage-woodLight text-heritage-goldSoft">
-                      Dự án 02: Sử thi Đăm Săn
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-heritage-crimson/15">
-                  <tr>
-                    <td className="p-4 font-bold text-heritage-woodDark bg-heritage-ivoryLight">Văn bản trọng tâm SGK</td>
-                    <td className="p-4">Huyện đường (Trích vở tuồng đồ Nghêu, Sò, Ốc, Hến)</td>
-                    <td className="p-4">Đăm Săn đi bắt Nữ thần Mặt Trời (Sử thi Ê-đê Tây Nguyên)</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-bold text-heritage-woodDark bg-heritage-ivoryLight">Không gian văn hóa &amp; diễn xướng</td>
-                    <td className="p-4">Sân khấu công đường lấy diễn viên làm trung tâm với đối đáp trào phúng và nói lối.</td>
-                    <td className="p-4">Không gian nhà dài Tây Nguyên, bếp lửa cộng đồng, tiếng cồng chiêng và nghệ thuật kể khan (Klei Khan).</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-bold text-heritage-woodDark bg-heritage-ivoryLight">Đặc trưng tạo hình &amp; Mã màu</td>
-                    <td className="p-4">Mặt nạ ước lệ bộ tứ Tri huyện, Đề lại, Lính lệ, Trùm Sò (trắng mốc, đỏ son, xanh xám, vàng sậm).</td>
-                    <td className="p-4">Bóng cắt đa tầng (nhà dài Ê-đê, rừng Sáp Đen, vầng Mặt Trời rực sáng) phối hoa văn thổ cẩm đỏ – đen – vàng.</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-bold text-heritage-woodDark bg-heritage-ivoryLight">Sản phẩm thực hành STEAM</td>
-                    <td className="p-4">Bộ chân dung mặt nạ 3D bằng bìa cứng nhiều lớp, thẻ giải mã và video vi diễn 3–5 phút.</td>
-                    <td className="p-4">Sa bàn Hộp kể chuyện 3 lớp (Storybox Diorama) dùng giấy can tán sáng LED ấm, thanh trượt cơ học và Podcast QR.</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </section>

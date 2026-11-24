@@ -207,24 +207,24 @@ export default async function LearningTopicDetailPage({
               </div>
             )}
 
-            {topic.storyboxLayers && (
+            {topic.stagePlanSteps && (
               <div className="pt-4">
                 <div className="flex items-center gap-2.5">
                   <Layers className="h-6 w-6 text-heritage-moss" />
                   <h2 className="font-serif text-2xl sm:text-3xl font-bold text-heritage-woodDark">
-                    CẤU TRÚC KỸ THUẬT 3 LỚP CẢNH HỘP KỂ CHUYỆN SỬ THI ĐĂM SĂN
+                    3 HẠNG MỤC SÂN KHẤU HÓA &amp; THUYẾT MINH LỚP 10.3
                   </h2>
                 </div>
 
                 <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
-                  {topic.storyboxLayers.map((layer, idx) => (
+                  {topic.stagePlanSteps.map((layer, idx) => (
                     <TiltSpotlightCard
                       key={idx}
                       className="rounded-2xl bg-heritage-ivoryLight p-6 border border-heritage-goldAntique/55 shadow-museum"
                     >
                       <div>
                         <h3 className="font-serif text-xl font-bold text-heritage-woodDark">
-                          {layer.layerName}
+                          {layer.stageName}
                         </h3>
                         <p className="mt-2 text-sm text-heritage-ink leading-relaxed">
                           {layer.description}
@@ -232,7 +232,7 @@ export default async function LearningTopicDetailPage({
                       </div>
                       <div className="mt-4 rounded-xl bg-heritage-ivoryDeep/70 p-3.5 text-xs sm:text-sm border border-heritage-goldAntique/40">
                         <strong className="text-heritage-crimson block">
-                          Vật liệu &amp; Kỹ thuật gợi ý:
+                          Đạo cụ &amp; Tư liệu sử dụng:
                         </strong>
                         <span className="mt-1 block">{layer.materialSuggestion}</span>
                       </div>
