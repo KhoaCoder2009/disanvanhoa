@@ -627,7 +627,8 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
     classLabel: "Lớp 10.3 — Trường THPT Bình Phú",
     statusBadge: "Đầy đủ Mặt nạ, Bản vẽ, Word & 2 Video",
     hasRealMedia: true,
-    statsSummary: "7 ảnh chọn lọc • 1 file Word (.docx) • 2 video (01:38 & 00:24)",
+    statsSummary: "8 ảnh chọn lọc • 1 file Word (.docx) • 2 video (01:38 & 00:24)",
+    infographicImage: "/student-products/huyen-duong/infographic-to-1.jpg",
     heroImage: "/student-products/huyen-duong/mat-na-to-1-tri-huyen.jpg",
     cinemaScenesImages: [
       "/student-products/huyen-duong/mat-na-to-1-tri-huyen.jpg",

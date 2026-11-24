@@ -69,7 +69,7 @@ const ARCHIVE_TABS: {
   {
     id: "infographics",
     label: "Sáng tạo trẻ & Di sản",
-    countBadge: "3/4 tổ",
+    countBadge: "4/4 tổ",
     icon: <Sparkles className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
   },
   {
@@ -885,14 +885,14 @@ export const HuyenDuongStudentArchive: React.FC = () => {
           <div className="space-y-5">
             <div className="rounded-xl bg-heritage-ivoryLight p-4 border border-heritage-goldAntique/45 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <p className="text-xs sm:text-sm text-heritage-ink leading-relaxed">
-                Bộ infographic <strong>Sáng tạo trẻ &amp; Di sản</strong> do <strong>Tổ 2, Tổ 3 và Tổ 4</strong> (Lớp 10.3) thiết kế nhằm hệ thống hóa đặc trưng hóa trang, phục trang, diễn xuất, âm nhạc, liên hệ trích đoạn <em>Huyện đường</em> và thông điệp gìn giữ di sản.
+                Bộ infographic <strong>Sáng tạo trẻ &amp; Di sản</strong> do <strong>đủ 4 Tổ (Tổ 1, Tổ 2, Tổ 3, Tổ 4)</strong> (Lớp 10.3) thiết kế nhằm hệ thống hóa đặc trưng hóa trang, phục trang, diễn xuất, âm nhạc, liên hệ trích đoạn <em>Huyện đường</em> và thông điệp gìn giữ di sản.
               </p>
               <span className="shrink-0 rounded-full bg-heritage-crimson px-3 py-1 text-[11px] font-bold text-white">
                 Bấm vào từng poster để phóng to
               </span>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {HUYEN_DUONG_GROUPS_PORTFOLIO.filter((g) => g.infographicImage).map(
                 (group) => (
                   <TiltSpotlightCard
