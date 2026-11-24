@@ -8,34 +8,79 @@ export interface RubricCriterion {
   needsWorkDesc: string;
 }
 
+export interface WarmupQuestion {
+  id: string;
+  number: number;
+  question: string;
+  options: { key: "A" | "B" | "C" | "D"; text: string }[];
+  correctKey: "A" | "B" | "C" | "D";
+  feedback: string;
+}
+
 export const WARMUP_CHATGPT_META = {
-  badge: "HOẠT ĐỘNG KHỞI ĐỘNG • KẾT NỐI AI HỌC TẬP",
-  title: "KHỞI ĐỘNG CÙNG TRỢ LÝ CHATGPT",
+  badge: "HOẠT ĐỘNG KHỞI ĐỘNG • 5–7 PHÚT • CHƯA ĐỌC VĂN BẢN",
+  title: "PHIÊN XỬ KÌ LẠ – AI CÓ NHẬN RA SỰ THẬT?",
   subtitle:
-    "Trước khi bước vào giải mã văn bản và chế tác mặt nạ Tuồng đồ Huyện đường, học sinh thực hiện nhiệm vụ khởi động nhanh theo link ChatGPT của giáo viên để kích hoạt tư duy về sân khấu trào phúng dân gian.",
-  chatgptUrl: "https://chatgpt.com/",
-  samplePrompt:
-    "Đóng vai một nghệ nhân Tuồng cổ Việt Nam, hãy đặt 3 câu đố ngắn giúp học sinh lớp 10 đoán tính cách của 4 nhân vật trong trích đoạn 'Huyện đường' (Tri huyện, Đề lại, Lính lệ, Trùm Sò) dựa trên màu sắc mặt nạ và dáng lông mày ước lệ. Chưa tiết lộ đáp án ngay, chờ học sinh trả lời từng câu.",
-  warmupSteps: [
+    "Một vụ kiện tại công đường xưa... Người dân đến cửa quan để tìm công lí. Nhưng điều gì có thể xảy ra phía sau cánh cửa công đường? Hãy thử tài phán đoán qua 3 câu hỏi tình huống và phản biện nhận định của AI trước khi bước vào văn bản Huyện đường.",
+  chatgptUrl: "https://chatgpt.com/share/6b051f99-2164-83ec-a884-925b4f2a0e2c",
+  questions: [
     {
-      step: "Bước 01",
-      title: "Mở phiên Khởi động ChatGPT",
-      detail:
-        "Nhấp nút mở ChatGPT (hoặc dán câu lệnh gợi ý của giáo viên) để tương tác hỏi – đáp nhanh trong 3 phút đầu tiết học.",
+      id: "warmup-q1",
+      number: 1,
+      question:
+        "Một người dân mang đơn đến công đường để kêu oan. Theo em, người có trách nhiệm xử kiện cần làm gì trước tiên?",
+      options: [
+        { key: "A", text: "Nghe và xem xét chứng cứ của các bên" },
+        { key: "B", text: "Yêu cầu người dân nộp tiền trước" },
+        { key: "C", text: "Tin ngay lời người có chức quyền" },
+        { key: "D", text: "Tìm cách kết thúc vụ việc thật nhanh" },
+      ],
+      correctKey: "A",
+      feedback:
+        "Chính xác! Người xử kiện công minh phải lắng nghe và xem xét chứng cứ khách quan của các bên trước khi phán xét.",
     },
     {
-      step: "Bước 02",
-      title: "Đoán mã màu & thần thái vai Tuồng",
-      detail:
-        "Quan sát gợi ý về màu trắng mốc, đen nâu, đỏ hề tuồng, vàng nhợt và dự đoán bản chất từng nhân vật chốn công đường.",
+      id: "warmup-q2",
+      number: 2,
+      question:
+        "Nếu người có quyền lực lợi dụng chức vụ để vòi vĩnh người dân, điều gì đáng phê phán nhất?",
+      options: [
+        { key: "A", text: "Người dân không biết cách trình bày" },
+        { key: "B", text: "Sự lạm quyền và trục lợi cá nhân" },
+        { key: "C", text: "Công việc ở công đường quá nhiều" },
+        { key: "D", text: "Người dân đến kiện quá đông" },
+      ],
+      correctKey: "B",
+      feedback:
+        "Đúng rồi! Dùng quyền lực công để mưu lợi riêng làm mất công bằng và gây bất bình cho người dân.",
     },
     {
-      step: "Bước 03",
-      title: "Kết nối vào nhiệm vụ 4 Tổ Lớp 10.3",
-      detail:
-        "Chốt từ khóa tính cách của nhân vật Tổ mình đảm nhận (Tri huyện / Đề lại / Lính lệ / Trùm Sò) để bắt đầu thiết kế bản vẽ mặt nạ.",
+      id: "warmup-q3",
+      number: 3,
+      question:
+        "Theo em, cách nào có thể phê phán thói xấu của những kẻ có quyền lực một cách sâu cay?",
+      options: [
+        { key: "A", text: "Kể lại sự việc bằng giọng trung tính" },
+        { key: "B", text: "Ca ngợi những người có chức quyền" },
+        { key: "C", text: "Dùng tiếng cười, sự hài hước và châm biếm" },
+        { key: "D", text: "Im lặng trước những điều sai trái" },
+      ],
+      correctKey: "C",
+      feedback:
+        "Chính xác! Tiếng cười hài hước, châm biếm giúp vạch trần thói hư tật xấu một cách sắc bén và sâu cay — cũng là tinh thần của tuồng đồ dân gian.",
     },
-  ],
+  ] as WarmupQuestion[],
+  aiDebate: {
+    badge: "TÍCH HỢP AI • THỬ THÁCH PHẢN BIỆN",
+    statement:
+      "“Một người có vẻ ngoài đạo mạo, ngồi ở vị trí quyền lực thì chắc chắn là người chính trực.”",
+    promptQuestion: "Em đồng ý hay không đồng ý? Vì sao?",
+    stances: ["Đồng ý", "Không đồng ý", "Chưa thể kết luận"] as const,
+    guidingQuestion:
+      "Vậy làm thế nào để nhận ra bản chất thật sự của một con người? Liệu vẻ ngoài và chức danh có phản ánh đúng phẩm chất bên trong?",
+    lessonBridge:
+      "Trong sân khấu tuồng, nhân vật không chỉ được nhận diện qua lời nói, hành động mà còn được thể hiện bằng hình thức nghệ thuật ước lệ, cách điệu. Có những nhân vật mang dáng vẻ đường bệ, đạo mạo nhưng bản chất lại hoàn toàn trái ngược. Hôm nay, chúng ta sẽ cùng khám phá điều thú vị ấy qua trích đoạn Huyện đường (trích tuồng Nghêu, Sò, Ốc, Hến), đồng thời vận dụng hiểu biết về nhân vật để thiết kế những chiếc mặt nạ tuồng độc đáo.",
+  },
 };
 
 export const RUBRIC_META = {

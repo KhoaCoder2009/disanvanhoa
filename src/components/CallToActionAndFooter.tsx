@@ -53,7 +53,7 @@ export const CallToActionAndFooter: React.FC = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-12 border-b border-heritage-goldAntique/30 pb-10">
             {/* Cột 1: Tên website, Khẩu hiệu, Mục đích học tập */}
-            <div className="md:col-span-5 space-y-3.5">
+            <div className="md:col-span-7 space-y-3.5">
               <div className="flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-heritage-crimson text-heritage-goldSoft border border-heritage-goldAntique">
                   <Landmark className="h-5 w-5" aria-hidden="true" />
@@ -78,7 +78,7 @@ export const CallToActionAndFooter: React.FC = () => {
             </div>
 
             {/* Cột 2: Liên kết cuộn nhanh 5 chặng trên Scrolling Landing Page */}
-            <div className="md:col-span-3 space-y-2.5">
+            <div className="md:col-span-5 space-y-2.5">
               <h3 className="font-serif text-base font-bold text-heritage-goldSoft">
                 Lộ trình Cuộn Trang chủ
               </h3>
@@ -116,38 +116,11 @@ export const CallToActionAndFooter: React.FC = () => {
               </ul>
             </div>
 
-            {/* Cột 3: Nguồn tư liệu, Bản quyền & Thông tin Giáo viên */}
-            <div className="md:col-span-4 space-y-3 text-xs sm:text-sm">
-              <h3 className="font-serif text-base font-bold text-heritage-goldSoft">
-                Thông tin Quản lý &amp; Bản quyền Tư liệu
-              </h3>
-              <div className="rounded-xl bg-heritage-woodLight/60 p-4 border border-heritage-goldAntique/30 space-y-1.5 text-heritage-ivory/90">
-                <p>
-                  <strong className="text-heritage-goldSoft">Phụ trách chuyên môn:</strong>{" "}
-                  {SITE_CONFIG.teacherInfo.teacherName}
-                </p>
-                <p>
-                  <strong className="text-heritage-goldSoft">Đơn vị:</strong>{" "}
-                  {SITE_CONFIG.teacherInfo.schoolUnit}
-                </p>
-                <p>
-                  <strong className="text-heritage-goldSoft">Nguồn ngữ liệu:</strong>{" "}
-                  Sách giáo khoa Ngữ văn 10 (Chương trình GDPT 2018) &amp; Tư liệu nghệ thuật sân khấu dân gian Việt Nam hợp pháp.
-                </p>
-              </div>
-              <p className="text-xs text-heritage-ivory/75 leading-relaxed">
-                {SITE_CONFIG.teacherInfo.contactNote}
-              </p>
-            </div>
           </div>
 
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left text-xs text-heritage-ivory/75">
             <p>
               © {SITE_CONFIG.teacherInfo.academicYear} {SITE_CONFIG.brand.vietnameseName}. Phục vụ mục đích giáo dục và nghiên cứu sư phạm.
-            </p>
-            <p className="text-heritage-goldSoft">
-              Cấu hình hệ thống tại:{" "}
-              <code className="break-all sm:break-normal">src/config/externalLinks.ts</code>
             </p>
           </div>
         </div>
