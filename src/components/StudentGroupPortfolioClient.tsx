@@ -838,6 +838,76 @@ export const StudentGroupPortfolioClient: React.FC<
               </div>
             )}
           </div>
+
+          {/* PHẦN 6: INFOGRAPHIC DI SẢN SÂN KHẤU TUỒNG (NẾU TỔ ĐÃ NỘP) */}
+          {group.infographicImage && (
+            <div className="border-t border-heritage-goldAntique/35 pt-8 mt-8">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-5">
+                <div className="flex items-center gap-2.5">
+                  <Sparkles className="h-6 w-6 text-heritage-crimson" />
+                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-heritage-woodDark">
+                    6. Infographic Tuồng — Di sản Sân khấu Dân tộc ({group.groupName})
+                  </h2>
+                </div>
+                <a
+                  href={group.infographicImage}
+                  download
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-heritage-crimson px-3.5 py-2 text-xs font-bold text-white hover:bg-heritage-woodDark transition-colors"
+                >
+                  <Download className="h-3.5 w-3.5" />
+                  <span>Tải Infographic</span>
+                </a>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center rounded-2xl bg-heritage-ivory p-4 sm:p-6 border border-heritage-goldAntique/50">
+                <div
+                  onClick={() =>
+                    setLightboxMedia({
+                      src: group.infographicImage!,
+                      title: `Infographic Tuồng — ${group.groupName} (${group.characterName})`,
+                      caption: `Sản phẩm truyền thông số tổng hợp kiến thức Tuồng & trích đoạn Huyện đường của ${group.groupName}.`,
+                    })
+                  }
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setLightboxMedia({
+                        src: group.infographicImage!,
+                        title: `Infographic Tuồng — ${group.groupName} (${group.characterName})`,
+                        caption: `Sản phẩm truyền thông số tổng hợp kiến thức Tuồng & trích đoạn Huyện đường của ${group.groupName}.`,
+                      });
+                    }
+                  }}
+                  className="lg:col-span-5 relative aspect-[3/4] w-full max-w-md mx-auto overflow-hidden rounded-xl bg-white border border-heritage-goldAntique/50 cursor-pointer group shadow-sm"
+                >
+                  <img
+                    src={group.infographicImage}
+                    alt={`Infographic Tuồng của ${group.groupName}`}
+                    loading="lazy"
+                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                  <span className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1 rounded-full bg-[#1F110E]/85 px-2.5 py-1 text-[10px] font-semibold text-[#FDE68A]">
+                    <ZoomIn className="h-3 w-3" />
+                    Phóng to
+                  </span>
+                </div>
+
+                <div className="lg:col-span-7 space-y-3">
+                  <span className="inline-block rounded-full bg-heritage-crimson px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
+                    Sản phẩm truyền thông số • {group.groupName}
+                  </span>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-heritage-woodDark">
+                    Tuồng — Di sản sân khấu dân tộc
+                  </h3>
+                  <p className="text-sm text-heritage-ink leading-relaxed">
+                    Infographic do {group.groupName} thực hiện gồm 5 mạch nội dung: (1) Giới thiệu nghệ thuật tuồng, (2) Đặc trưng nghệ thuật (hóa trang, phục trang, diễn xuất, âm nhạc, ngôn ngữ), (3) Liên hệ trích đoạn <em>Huyện đường</em>, (4) Giá trị văn hóa cần gìn giữ và (5) Thông điệp lan tỏa tới thế hệ trẻ.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* Điều hướng chuyển tiếp giữa các Tổ */}

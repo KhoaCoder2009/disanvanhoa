@@ -43,6 +43,7 @@ function getGroupPageHref(groupLabel: string): string {
 type ArchiveTab =
   | "activity-photos"
   | "mask-sketches"
+  | "infographics"
   | "word-script"
   | "mask-videos"
   | "class-drama";
@@ -64,6 +65,12 @@ const ARCHIVE_TABS: {
     label: "Phác thảo & Mặt nạ",
     countBadge: "4/4 tổ",
     icon: <PenTool className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
+  },
+  {
+    id: "infographics",
+    label: "Infographic Tuồng",
+    countBadge: "3/4 tổ",
+    icon: <Sparkles className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
   },
   {
     id: "word-script",
@@ -869,6 +876,86 @@ export const HuyenDuongStudentArchive: React.FC = () => {
                   </div>
                 </TiltSpotlightCard>
               ))}
+            </div>
+          </div>
+        )}
+
+        {/* 2B. INFOGRAPHIC TUỒNG (3/4 TỔ: TỔ 2, TỔ 3, TỔ 4) */}
+        {activeTab === "infographics" && (
+          <div className="space-y-5">
+            <div className="rounded-xl bg-heritage-ivoryLight p-4 border border-heritage-goldAntique/45 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <p className="text-xs sm:text-sm text-heritage-ink leading-relaxed">
+                Bộ <strong>Infographic Di sản Sân khấu Dân tộc – Tuồng</strong> do <strong>Tổ 2, Tổ 3 và Tổ 4</strong> (Lớp 10.3) thiết kế nhằm hệ thống hóa đặc trưng hóa trang, phục trang, diễn xuất, âm nhạc, liên hệ trích đoạn <em>Huyện đường</em> và thông điệp gìn giữ di sản.
+              </p>
+              <span className="shrink-0 rounded-full bg-heritage-crimson px-3 py-1 text-[11px] font-bold text-white">
+                Bấm vào từng poster để phóng to
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              {HUYEN_DUONG_GROUPS_PORTFOLIO.filter((g) => g.infographicImage).map(
+                (group) => (
+                  <TiltSpotlightCard
+                    key={`infographic-${group.slug}`}
+                    className="rounded-2xl bg-white border border-heritage-goldAntique/55 overflow-hidden shadow-museum flex flex-col justify-between"
+                  >
+                    <div
+                      onClick={() =>
+                        setLightboxMedia({
+                          src: group.infographicImage!,
+                          title: `Infographic Tuồng — ${group.groupName} (${group.characterName})`,
+                          caption: `Sản phẩm truyền thông số của ${group.groupName} (Lớp 10.3 — THPT Bình Phú).`,
+                        })
+                      }
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setLightboxMedia({
+                            src: group.infographicImage!,
+                            title: `Infographic Tuồng — ${group.groupName} (${group.characterName})`,
+                            caption: `Sản phẩm truyền thông số của ${group.groupName} (Lớp 10.3 — THPT Bình Phú).`,
+                          });
+                        }
+                      }}
+                      className="relative aspect-[3/4] w-full overflow-hidden bg-heritage-ivoryLight cursor-pointer group border-b border-heritage-goldAntique/35"
+                    >
+                      <img
+                        src={group.infographicImage}
+                        alt={`Infographic Tuồng của ${group.groupName} — ${group.characterName}`}
+                        loading="lazy"
+                        className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                      <span className="absolute top-3 left-3 rounded-md bg-heritage-crimson px-2.5 py-1 text-xs font-bold text-white shadow-sm">
+                        {group.groupName} • {group.characterName}
+                      </span>
+                      <span className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1 rounded-full bg-[#1F110E]/85 px-2.5 py-1 text-[10px] font-semibold text-[#FDE68A]">
+                        <ZoomIn className="h-3 w-3" />
+                        Phóng to
+                      </span>
+                    </div>
+
+                    <div className="p-4 flex items-center justify-between gap-2">
+                      <div>
+                        <h4 className="font-serif text-sm sm:text-base font-bold text-heritage-woodDark">
+                          Infographic {group.groupName}
+                        </h4>
+                        <p className="text-xs text-heritage-ink">
+                          Tuồng – Di sản sân khấu dân tộc
+                        </p>
+                      </div>
+                      <Link
+                        href={`/trien-lam-so/${group.slug}`}
+                        className="inline-flex items-center gap-1 rounded-lg bg-heritage-ivory px-3 py-1.5 text-xs font-bold text-heritage-crimson border border-heritage-crimson/30 hover:bg-heritage-crimson hover:text-white transition-colors"
+                      >
+                        <span>Xem trang Tổ</span>
+                        <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                      </Link>
+                    </div>
+                  </TiltSpotlightCard>
+                )
+              )}
             </div>
           </div>
         )}

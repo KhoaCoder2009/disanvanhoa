@@ -110,6 +110,7 @@ export interface StudentGroupPortfolio {
   presentationVideo: GroupVideoSlot;
   processVideos: ProcessVideoItem[];
   activityPhotos: ExtraClassroomPhoto[];
+  infographicImage?: string;
 }
 
 export const HUYEN_DUONG_STUDENT_ARCHIVE_META = {
@@ -763,7 +764,8 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
     classLabel: "Lớp 10.3 — Trường THPT Bình Phú",
     statusBadge: "Đầy đủ Mặt nạ, Bản vẽ, Word & Video (03:13)",
     hasRealMedia: true,
-    statsSummary: "7 hình ảnh • 1 file Word (.docx) • 1 video thuyết minh (03:13)",
+    statsSummary: "8 hình ảnh • 1 file Word (.docx) • 1 video thuyết minh (03:13)",
+    infographicImage: "/student-products/huyen-duong/infographic-to-2.jpg",
     heroImage: "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
     cinemaScenesImages: [
       "/student-products/huyen-duong/mat-na-to-2-de-lai.jpg",
@@ -905,7 +907,8 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
     classLabel: "Lớp 10.3 — Trường THPT Bình Phú",
     statusBadge: "Đầy đủ Mặt nạ, Bản vẽ & 3 Video",
     hasRealMedia: true,
-    statsSummary: "9 hình ảnh • 1 video thuyết minh (01:50) • 2 video chế tác",
+    statsSummary: "10 hình ảnh • 1 video thuyết minh (01:50) • 2 video chế tác",
+    infographicImage: "/student-products/huyen-duong/infographic-to-3.jpg",
     heroImage: "/student-products/huyen-duong/mat-na-to-3-linh-le.jpg",
     cinemaScenesImages: [
       "/student-products/huyen-duong/mat-na-to-3-linh-le.jpg",
@@ -1001,7 +1004,8 @@ export const HUYEN_DUONG_GROUPS_PORTFOLIO: StudentGroupPortfolio[] = [
     classLabel: "Lớp 10.3 — Trường THPT Bình Phú",
     statusBadge: "Đầy đủ Mặt nạ, Bản vẽ, Word & 2 Video",
     hasRealMedia: true,
-    statsSummary: "9 hình ảnh • 1 file Word (.docx) • 2 video thực tế",
+    statsSummary: "10 hình ảnh • 1 file Word (.docx) • 2 video thực tế",
+    infographicImage: "/student-products/huyen-duong/infographic-to-4.jpg",
     heroImage: "/student-products/huyen-duong/mat-na-to-4-trum-so.jpg",
     cinemaScenesImages: [
       "/student-products/huyen-duong/mat-na-to-4-trum-so.jpg",
