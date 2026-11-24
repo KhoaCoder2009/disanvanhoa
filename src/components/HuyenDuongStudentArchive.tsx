@@ -68,7 +68,7 @@ const ARCHIVE_TABS: {
   },
   {
     id: "infographics",
-    label: "Infographic Tuồng",
+    label: "Sáng tạo trẻ & Di sản",
     countBadge: "3/4 tổ",
     icon: <Sparkles className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />,
   },
@@ -885,7 +885,7 @@ export const HuyenDuongStudentArchive: React.FC = () => {
           <div className="space-y-5">
             <div className="rounded-xl bg-heritage-ivoryLight p-4 border border-heritage-goldAntique/45 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <p className="text-xs sm:text-sm text-heritage-ink leading-relaxed">
-                Bộ <strong>Infographic Di sản Sân khấu Dân tộc – Tuồng</strong> do <strong>Tổ 2, Tổ 3 và Tổ 4</strong> (Lớp 10.3) thiết kế nhằm hệ thống hóa đặc trưng hóa trang, phục trang, diễn xuất, âm nhạc, liên hệ trích đoạn <em>Huyện đường</em> và thông điệp gìn giữ di sản.
+                Bộ infographic <strong>Sáng tạo trẻ &amp; Di sản</strong> do <strong>Tổ 2, Tổ 3 và Tổ 4</strong> (Lớp 10.3) thiết kế nhằm hệ thống hóa đặc trưng hóa trang, phục trang, diễn xuất, âm nhạc, liên hệ trích đoạn <em>Huyện đường</em> và thông điệp gìn giữ di sản.
               </p>
               <span className="shrink-0 rounded-full bg-heritage-crimson px-3 py-1 text-[11px] font-bold text-white">
                 Bấm vào từng poster để phóng to
@@ -939,7 +939,7 @@ export const HuyenDuongStudentArchive: React.FC = () => {
                     <div className="p-4 flex items-center justify-between gap-2">
                       <div>
                         <h4 className="font-serif text-sm sm:text-base font-bold text-heritage-woodDark">
-                          Infographic {group.groupName}
+                          Sáng tạo trẻ &amp; Di sản — {group.groupName}
                         </h4>
                         <p className="text-xs text-heritage-ink">
                           Tuồng – Di sản sân khấu dân tộc

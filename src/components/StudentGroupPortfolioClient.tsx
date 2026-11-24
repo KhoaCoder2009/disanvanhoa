@@ -846,7 +846,7 @@ export const StudentGroupPortfolioClient: React.FC<
                 <div className="flex items-center gap-2.5">
                   <Sparkles className="h-6 w-6 text-heritage-crimson" />
                   <h2 className="font-serif text-xl sm:text-2xl font-bold text-heritage-woodDark">
-                    6. Infographic Tuồng — Di sản Sân khấu Dân tộc ({group.groupName})
+                    6. Sáng tạo trẻ &amp; Di sản ({group.groupName})
                   </h2>
                 </div>
                 <a
